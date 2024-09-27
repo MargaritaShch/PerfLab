@@ -11,11 +11,7 @@
     </div>
 
     <div class="question-grid">
-      <QuestionCard
-        v-for="q in filteredQuestions"
-        :key="q.id"
-        :question="q"
-      />
+      <QuestionCard v-for="q in filteredQuestions" :key="q.id" :question="q" />
     </div>
   </div>
 </template>

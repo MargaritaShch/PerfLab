@@ -28,9 +28,9 @@ export default {
   },
   data() {
     return {
-      likes: 0, 
+      likes: 0,
       comments: [],
-      newComment: '' 
+      newComment: ''
     };
   },
   computed: {
@@ -47,15 +47,15 @@ export default {
   },
   methods: {
     goToDetail() {
-      this.$router.push(`/questions/${this.question.id}`); 
+      this.$router.push(`/questions/${this.question.id}`);
     },
     likeQuestion() {
-      this.likes++; 
+      this.likes++;
     },
     addComment() {
       if (this.newComment.trim()) {
-        this.comments.push(this.newComment.trim()); 
-        this.newComment = ''; 
+        this.comments.push(this.newComment.trim());
+        this.newComment = '';
       }
     }
   }
@@ -89,7 +89,7 @@ export default {
 .level-text {
   position: absolute;
   bottom: 10px;
-  right: 10px; 
+  right: 10px;
   font-weight: bold;
 }
 
@@ -118,9 +118,6 @@ export default {
   border-top: 1px solid #ccc;
 }
 
-.comments-section h4{
-  color: rgb(77, 75, 75);
-}
 .comment-item {
   background-color: #f9f9f9;
   padding: 10px;
@@ -152,14 +149,14 @@ textarea {
 }
 
 .level-intern {
-  color: green; 
+  color: green;
 }
 
 .level-junior {
-  color: blue; 
+  color: blue;
 }
 
 .level-middle {
-  color: orange; 
+  color: orange;
 }
 </style>
