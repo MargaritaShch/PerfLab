@@ -3,11 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://margaritashch.github.io/PerfLab/",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-cli-service build",
+    "serve": "vite",
+    "build": "vite build",
     "deploy": "gh-pages -d dist",
-    "preview": "vite preview"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "vue": "^3.4.37",
@@ -15,7 +16,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",
-    "gh-pages": "^6.1.1",
-    "vite": "^5.4.1"
+    "vite": "^5.4.1",
+    "gh-pages": "^5.0.0"  
   }
 }
