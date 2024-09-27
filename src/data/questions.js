@@ -24,7 +24,7 @@ export const questions = [
         <li><strong>Отчеты:</strong> Порядок формирования отчётов с результатами испытаний и сравнение с эталонными тестами.</li>
         <li><strong>Генерация:</strong> Процесс сбора и управления большим объемом данных из различных ресурсов только для реализации тестовых примеров для обеспечения функциональной надежности тестируемой системы.</li>
       </ul>
-       <img src="/src/assets/img/mlt.png" alt="MNT Image" style="width:100%; margin-top:20px;" />
+       <img :src="require('@/assets/img/mlt.png')" alt="MNT Image" style="width:100%; margin-top:20px;" />
     `,
     level: "INTERN"
     },
