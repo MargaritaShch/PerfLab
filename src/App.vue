@@ -11,47 +11,44 @@ export default {
 </script>
 
 <style>
-/* Оформление заголовка */
 .header {
-  background-color: #f0f8ff; /* Светлый голубой фон */
+  background-color: #f0f8ff; 
   padding: 20px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.1); /* Тень */
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.1); 
   margin-bottom: 20px;
 }
 
-/* Стили для заголовка */
 .header h2 {
-  color: #007bff; /* Синий цвет заголовка */
+  color: #007bff;
   font-size: 2.5em;
   margin: 0;
-  text-transform: uppercase; /* Верхний регистр */
-  letter-spacing: 2px; /* Разделение букв */
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
 }
 
-/* Слоган */
+
 .header p {
   color: #333;
   font-size: 1.2em;
   margin: 5px 0 0;
-  font-style: italic; /* Курсив */
+  font-style: italic; 
 }
 
-/* Глобальные стили для всей страницы */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #e6f2ff; /* Светло-синий фон */
+  background-color: #e6f2ff; 
   margin: 0;
   padding: 0;
 }
 
 pre {
-  white-space: pre-wrap; /* Перенос длинных строк */
-  word-wrap: break-word; /* Перенос слов для длинных строк */
+  white-space: pre-wrap; 
+  word-wrap: break-word; 
   background-color: #f4f4f4;
   padding: 10px;
   border-radius: 5px;
-  overflow-x: auto; /* Добавляем горизонтальный скролл для длинных строк */
+  overflow-x: auto; 
 }
 
 code {

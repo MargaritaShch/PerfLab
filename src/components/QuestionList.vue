@@ -106,4 +106,10 @@ export default {
   padding: 20px;
   box-sizing: border-box; 
 }
+
+@media (max-width: 768px) {
+  .question-grid {
+    grid-template-columns: 1fr; 
+  }
+}
 </style>
