@@ -6,12 +6,12 @@ import QuestionDetail from './views/QuestionDetail.vue';
 
 const routes = [
   { path: '/', component: QuestionList },
-  { path: '/questions/:id', component: QuestionDetail }
+  { path: '/questions/:id', component: QuestionDetail },
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
-  routes
+  history: createWebHashHistory(), 
+  routes,
 });
 
 createApp(App).use(router).mount('#app');
