@@ -9,7 +9,7 @@
 </template>
   
 <script>
-import { questions } from '../data/questions';
+import { questions } from '../data/LoadTestingQuestions';
 
 export default {
   data() {

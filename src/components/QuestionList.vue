@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { questions } from '../data/questions';
+import { questions } from '../data/LoadTestingQuestions';
 import QuestionCard from './QuestionCard.vue';
 
 export default {
