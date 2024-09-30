@@ -2,6 +2,13 @@
    <div class="header">
     <h2>PerfLAB</h2>
   </div>
+  <div class="main-menu">
+    <nav class="menu">
+      <router-link to="/performance" class="menu-item">Performance Engineer</router-link>
+      <router-link to="/frontend" class="menu-item">Frontend</router-link>
+      <router-link to="/backend" class="menu-item">Backend</router-link>
+    </nav>
+  </div>
   <router-view></router-view>
 </template>
 
@@ -36,7 +43,7 @@ export default {
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Roboto Slab", serif;
   background-color: #e6f2ff; 
   margin: 0;
   padding: 0;
@@ -54,5 +61,33 @@ pre {
 code {
   font-family: "Courier New", Courier, monospace;
   font-size: 14px;
+}
+
+.menu {
+  margin-top: 10px;
+}
+
+.menu-item {
+  margin: 0 15px;
+  font-size: 1.5rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  color: #0056b3;
+}
+
+.main-menu{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  .menu-item {
+  font-size: 1rem;
+ 
+}
 }
 </style>

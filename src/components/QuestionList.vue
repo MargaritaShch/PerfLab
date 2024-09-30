@@ -110,6 +110,23 @@ export default {
 @media (max-width: 768px) {
   .question-grid {
     grid-template-columns: 1fr; 
+    padding: 0 15px; 
+  }
+
+  .question-card {
+    margin: 0 0 20px 0; 
+  }
+}
+
+
+@media (max-width: 480px) {
+  .question-grid {
+    padding: 0 10px; 
+  }
+
+  .question-card {
+    padding: 15px; 
+    min-height: 220px; 
   }
 }
 </style>

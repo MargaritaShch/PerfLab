@@ -33,7 +33,7 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  text-align: center; /* Выравнивание всего текста по центру */
+  text-align: center; 
 }
 
 .question-text {
@@ -46,8 +46,8 @@ export default {
   max-width: 600px;
   width: 100%;
   padding: 20px;
-  text-align: left; /* Выравнивание текста внутри ответа по левому краю */
-  margin-bottom: 30px; /* Отступ снизу */
+  text-align: left; 
+  margin-bottom: 30px; 
 }
 
 .answer-text {
@@ -68,7 +68,7 @@ export default {
 }
 
 .back-button:hover {
-  background-color: #0056b3; /* Темно-синий цвет при наведении */
+  background-color: #0056b3; 
 }
   </style>
   
