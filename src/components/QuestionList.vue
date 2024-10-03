@@ -17,25 +17,26 @@
 </template>
 
 <script>
-import { questions } from '../data/LoadTestingQuestions';
 import QuestionCard from './QuestionCard.vue';
 
 export default {
   components: {
     QuestionCard
   },
+  props: {
+    questions: Array 
+  },
   data() {
     return {
-      questions, 
-      currentLevel: 'ALL', 
-      selectedAction: 'ALL', 
+      currentLevel: 'ALL',
+      selectedAction: 'ALL',
       shuffledQuestions: [] 
     };
   },
   computed: {
     filteredQuestions() {
       if (this.selectedAction === 'SHUFFLE') {
-        return this.shuffledQuestions; 
+        return this.shuffledQuestions;
       }
 
       if (this.currentLevel === 'ALL') {
@@ -48,9 +49,9 @@ export default {
   methods: {
     handleAction() {
       if (this.selectedAction === 'SHUFFLE') {
-        this.shuffleQuestions(); 
+        this.shuffleQuestions();
       } else {
-        this.filterLevel(this.selectedAction); 
+        this.filterLevel(this.selectedAction);
       }
     },
     filterLevel(level) {

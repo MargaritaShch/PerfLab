@@ -4,9 +4,10 @@
   </div>
   <div class="main-menu">
     <nav class="menu">
-      <router-link to="/performance" class="menu-item">Performance Engineer</router-link>
-      <router-link to="/frontend" class="menu-item">Frontend</router-link>
-      <router-link to="/backend" class="menu-item">Backend</router-link>
+      <router-link to="/performance" class="menu-item" active-class="active-menu-item">Performance Engineer</router-link>
+      <router-link to="/frontend" class="menu-item" active-class="active-menu-item">Frontend</router-link>
+      <router-link to="/backend" class="menu-item" active-class="active-menu-item">Backend</router-link>
+      <router-link to="/tools" class="menu-item" active-class="active-menu-item">Tools</router-link>
     </nav>
   </div>
   <router-view></router-view>
@@ -77,6 +78,19 @@ code {
 .menu-item:hover {
   color: #0056b3;
 }
+.menu-item:hover {
+  color: #0056b3;
+  background-color: #e0f7ff; /* Немного меняем фон при наведении */
+}
+
+.active-menu-item {
+  border: 2px solid #007bff74; 
+  background-color: #e0f7ff; 
+  color: #0056b3;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 
 .main-menu{
   text-align: center;

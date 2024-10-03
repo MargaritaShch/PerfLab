@@ -1,10 +1,11 @@
-export const questions = [
+export const LoadTestingQuestions = [
     {
       id: 1,
       question: "Что такое НТ?",
       answer: `Нагрузочное тестирование (НТ) — это проверка устойчивости и производительности программного обеспечения под нагрузкой, сопоставимой с реальными условиями использования."
       <p>Источник: <a href="https://habr.com/ru/companies/otus/articles/842150/" target="_blank">https://habr.com/ru/companies/otus/articles/842150//</a></p>`,
-      level: "INTERN"
+      level: "INTERN",
+      category: "load" 
     },
     {
       id: 2,
@@ -25,7 +26,8 @@ export const questions = [
         <li><strong>Генерация:</strong> Процесс сбора и управления большим объемом данных из различных ресурсов только для реализации тестовых примеров для обеспечения функциональной надежности тестируемой системы.</li>
       </ul>
     `,
-    level: "INTERN"
+    level: "INTERN",
+      category: "load"
     },
     {
       id: 3,
@@ -68,7 +70,8 @@ export const questions = [
       для полноценной проверки работы системы под нагрузкой.
     </p>
       `,
-      level: "INTERN"
+      level: "INTERN",
+      category: "load"
     },
     {
         id: 4,
@@ -84,7 +87,8 @@ export const questions = [
             <li><strong>Отчеты по тестам:</strong> Ссылки на подробные отчёты и краткий анализ по итогам тестов.</li>
           </ul>
         `,
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 5,
@@ -98,7 +102,8 @@ export const questions = [
             <li><strong>Останови запись</strong> — все запросы будут сохранены в виде шагов в сценарии.</li>
           </ul>
         `,
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 6,
@@ -165,7 +170,8 @@ export const questions = [
       </li>
     </ol>
         `,
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 7,
@@ -185,7 +191,8 @@ export const questions = [
     <pre><code>\${protocol}://\${host}:\${port}/api/v1/data</code></pre>
     <p>Таким образом, вместо фиксированного URL используются переменные, что облегчает изменение конфигурации и поддерживает гибкость тестирования.</p>
         `,
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 8,
@@ -206,7 +213,8 @@ export const questions = [
     </ol>
     <p>Теперь токен будет автоматически подставляться в каждый новый запрос, обеспечивая корректную работу теста.</p>
         `,
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 9,
@@ -248,7 +256,8 @@ export const questions = [
       </li>
     </ol>
         `,
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
     {
         id: 10,
@@ -263,7 +272,8 @@ export const questions = [
             <li><strong>Консультации с разработчиками и бизнес-аналитиками:</strong> Определение критичных операций и нагрузочных сценариев.</li>
           </ul>
         `,
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 11,
@@ -276,7 +286,8 @@ export const questions = [
             <li><strong>Тестирование отказоустойчивости:</strong> Оценка способности системы сохранять работоспособность в условиях неблагоприятных факторов, таких как сбои в сети и отключение серверов.</li>
           </ul>
         `,
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 12,
@@ -291,7 +302,8 @@ export const questions = [
             <li><strong>Throughput:</strong> Пропускная способность системы, измеряемая в мегабайтах или гигабайтах в секунду.</li>
           </ul>
         `,
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 13,
@@ -306,7 +318,8 @@ export const questions = [
             <li><strong>Количество блокировок:</strong> Блокировки строк или таблиц, замедляющие работу базы данных.</li>
           </ul>
         `,
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 14,
@@ -318,7 +331,8 @@ export const questions = [
             <li><strong>Нереляционные базы данных (NoSQL):</strong> могут хранить данные в различных форматах — документы, графы, ключ-значение или столбцы — без строгой схемы. Обычно они не поддерживают сложные связи, но хорошо масштабируются и оптимизированы для быстрого доступа к большим объемам неструктурированных данных. Примеры: MongoDB, Cassandra, Redis, Couchbase.</li>
           </ul>
         `,
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 15,
@@ -328,7 +342,8 @@ export const questions = [
           <pre><code>SELECT * FROM table_name;</code></pre>
           <p>Здесь <code>table_name</code> — это название таблицы, данные которой нужно посмотреть.</p>
         `,
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 16,
@@ -339,7 +354,8 @@ export const questions = [
           <p>Пример:</p>
           <pre><code>SELECT first_name, last_name FROM employees;</code></pre>
         `,
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 17,
@@ -350,7 +366,8 @@ export const questions = [
           <p>Пример:</p>
           <pre><code>SELECT * FROM employees WHERE salary > 50000;</code></pre>
         `,
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 18,
@@ -389,37 +406,43 @@ export const questions = [
           
           <p>Источник: <a href="https://skillbox.ru/media/code/chto-takoe-http-i-zachem-on-nuzhen/" target="_blank">https://skillbox.ru/media/code/chto-takoe-http-i-zachem-on-nuzhen/</a></p>
         `,
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 19,
         question: "Что такое Request?",
         answer: "Request (Запрос) — это сообщение от клиента к серверу для получения данных или выполнения операций.",
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 20,
         question: "Что такое Response?",
         answer: "Response (Ответ) — это сообщение, которое сервер отправляет в ответ на запрос клиента.",
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 21,
         question: "Что такое Headers?",
         answer: "Headers (Заголовки) — это метаинформация, передаваемая в запросах и ответах HTTP.",
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 22,
         question: "Что такое Cookie?",
         answer: "Cookie — это небольшие данные, которые сервер отправляет клиенту для хранения информации о сессиях и настройках.",
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 23,
         question: "Что такое Body?",
         answer: "Body (Тело) — это основное содержимое HTTP-запроса или ответа, содержащее данные.",
-        level: "INTERN"
+        level: "INTERN",
+        category: "load" 
       },
       {
         id: 24,
@@ -433,7 +456,8 @@ export const questions = [
             <li><strong>PATCH:</strong> Частичное обновление ресурса.</li>
           </ul>
         `,
-         level: "INTERN"
+         level: "INTERN",
+         category: "load" 
       },
       {
         id: 25,
@@ -446,7 +470,8 @@ export const questions = [
             <li><strong>500 Internal Server Error:</strong> На сервере произошла ошибка.</li>
           </ul>
         `,
-         level: "INTERN"
+         level: "INTERN",
+         category: "load" 
       },
       {
         id: 26,
@@ -458,7 +483,8 @@ export const questions = [
           <p><strong>Цикл с условием while (Java):</strong></p>
           <pre><code>int i = 0;\nwhile (i < 5) {\n    if (i % 2 == 0) {\n        System.out.println(i + " is even");\n    } else {\n        System.out.println(i + " is odd");\n    }\n    i++;\n}</code></pre>
         `,
-         level: "INTERN"
+         level: "INTERN",
+         category: "load" 
       },
       {
         id: 27,
@@ -470,7 +496,8 @@ export const questions = [
           <p><strong>Алгоритм нахождения максимума в массиве (Java):</strong></p>
           <pre><code>public class Main {\n    public static int findMax(int[] arr) {\n        int maxValue = arr[0];\n        for (int num : arr) {\n            if (num > maxValue) {\n                maxValue = num;\n            }\n        }\n        return maxValue;\n    }\n\n    public static void main(String[] args) {\n        int[] numbers = {3, 5, 1, 9, 2};\n        System.out.println(findMax(numbers));  // Вывод: 9\n    }\n}</code></pre>
         `,
-         level: "INTERN"
+         level: "INTERN",
+         category: "load" 
       },
       {
         id: 28,
@@ -482,7 +509,8 @@ export const questions = [
           <p><strong>Обращение массива (Java):</strong></p>
           <pre><code>public class Main {\n    public static void reverseArray(int[] arr) {\n        for (int i = 0; i < arr.length / 2; i++) {\n            int temp = arr[i];\n            arr[i] = arr[arr.length - 1 - i];\n            arr[arr.length - 1 - i] = temp;\n        }\n    }\n\n    public static void main(String[] args) {\n        int[] arr = {1, 2, 3, 4, 5};\n        reverseArray(arr);\n        for (int num : arr) {\n            System.out.print(num + " ");  // Вывод: 5 4 3 2 1\n        }\n    }\n}</code></pre>
         `,
-         level: "INTERN"
+         level: "INTERN",
+         category: "load" 
       },
       {
         id: 29,
@@ -545,7 +573,8 @@ export const questions = [
             <li><strong>Границы транзакций:</strong> Транзакции автоматически измеряются, но можно добавить тайминги с помощью <code>exec().startTimer().stopTimer()</code>.</li>
           </ul>
         `,
-        level: "JUNIOR"
+        level: "JUNIOR",
+        category: "load" 
       },
       {
         id: 30,
@@ -553,7 +582,8 @@ export const questions = [
         answer: `
           <p>Пейсинг — это интервал времени между выполнением последовательных действий одного и того же виртуального пользователя в нагрузочном тесте. Пейсинг контролирует интенсивность нагрузки.</p>
         `,
-        level: "JUNIOR"
+        level: "JUNIOR",
+        category: "load" 
       },
       {
         id: 31,
@@ -570,7 +600,8 @@ export const questions = [
             <li>Среднее время выполнения: 5 секунд</li>
           </ul>
         `,
-        level: "JUNIOR"
+        level: "JUNIOR",
+        category: "load" 
       },
       {
         id: 32,
@@ -606,7 +637,8 @@ export const questions = [
     <pre><code>P = (T * Vusers) / R = (5 * 100) / 16.67 = ~30 секунд</code></pre>
     <p>Это значит, что каждый виртуальный пользователь должен запускать сценарий каждые 30 секунд, чтобы достичь 1000 запросов в минуту.</p>
         `,
-        level: "JUNIOR"
+        level: "JUNIOR",
+        category: "load" 
       },
       {
         id: 33,
@@ -641,7 +673,8 @@ export const questions = [
     <h4>Заключение:</h4>
     <p>Сущность — это ключевая концепция в базах данных, которая отражает объекты, с которыми работает система, и хранит информацию о них в виде записей (строк) в таблицах.</p
         `,
-        level: "JUNIOR"
+        level: "JUNIOR",
+        category: "load" 
       },
       {
         id: 34,
@@ -660,7 +693,8 @@ export const questions = [
             </code></pre>
           </ul>
         `,
-        level: "JUNIOR"
+        level: "JUNIOR",
+        category: "load" 
       },
       {
         id: 35,
@@ -679,7 +713,8 @@ export const questions = [
           <h4>Пример:</h4>
           <p>В веб-сервере каждый запрос может обрабатываться отдельным потоком, что позволяет серверу одновременно обслуживать несколько клиентов.</p>
         `,
-        level: "JUNIOR"
+        level: "JUNIOR",
+        category: "load" 
       },
       {
         id: 36,
@@ -716,7 +751,8 @@ export const questions = [
             <li><strong>В 64-битных системах:</strong> Количество потоков может быть значительно больше (десятки тысяч), так как 64-битная система поддерживает больше памяти.</li>
           </ul>
         `,
-        level: "JUNIOR"
+        level: "JUNIOR",
+        category: "load" 
       },
       {
         id: 37,
@@ -791,7 +827,8 @@ export const questions = [
           </ul>
           <p><strong>Заключение:</strong> Виртуальный пользователь в нагрузочном тестировании — это инструмент для имитации реальных пользователей, создающий нагрузку на систему. Поток внутри приложения — это механизм параллельного выполнения задач в одном процессе программы, который повышает производительность работы приложения.</p>
         `,
-        level: "JUNIOR"
+        level: "JUNIOR",
+        category: "load" 
       },
       {
         id: 38,
@@ -805,7 +842,8 @@ export const questions = [
             <li>Сервер может иметь меньше потоков, в зависимости от своей конфигурации.</li>
           </ul>
         `,
-        level: "JUNIOR"
+        level: "JUNIOR",
+        category: "load" 
       },
       {
         id: 39,
@@ -821,7 +859,8 @@ export const questions = [
           <h4>Пример:</h4>
           <p>Приложение может создать пул из 10 коннектов. Когда пользователю нужно соединение с базой данных, оно берётся из пула. После завершения работы соединение возвращается в пул для повторного использования другими пользователями.</p>
         `,
-        level: "JUNIOR"
+        level: "JUNIOR",
+        category: "load" 
       },      
       {
         id: 40,
@@ -836,7 +875,8 @@ export const questions = [
             <li><strong>FATAL:</strong> Критические ошибки, приводящие к завершению работы приложения.</li>
           </ul>
         `,
-        level: "JUNIOR"
+        level: "JUNIOR",
+        category: "load" 
       },
       {
         id: 41,
@@ -853,7 +893,8 @@ export const questions = [
       <li><strong>Анализ событий:</strong> Определение последовательности событий и их влияние на производительность или стабильность системы.</li>
     </ol>
         `,
-        level: "JUNIOR"
+        level: "JUNIOR",
+        category: "load" 
       },
       {
         id: 42,
@@ -868,7 +909,8 @@ export const questions = [
             <pre><code>SELECT * FROM employees WHERE age > 30;</code></pre>
           </ul>
         `,
-        level: "JUNIOR"
+        level: "JUNIOR",
+        category: "load" 
       },
       {
         id: 43,
@@ -896,7 +938,8 @@ export const questions = [
             </code></pre>
           </ul>
         `,
-        level: "JUNIOR"
+        level: "JUNIOR",
+        category: "load" 
       },
       {
       id: 44,
@@ -924,7 +967,8 @@ export const questions = [
         </code></pre>
         <p>Этот запрос группирует сотрудников по отделам, вычисляет среднюю, максимальную и минимальную зарплату, и выводит только те отделы, где средняя зарплата больше 50 000.</p>
       `,
-      level: "JUNIOR"
+      level: "JUNIOR",
+      category: "load" 
     },
     {
       id: 45,
@@ -962,7 +1006,8 @@ export const questions = [
         </code></pre>
         <p>Этот код является простым примером Spring Boot приложения, которое запускает встроенный веб-сервер и предоставляет REST API с единственным HTTP-методом GET по пути <code>/hello</code>.</p>
       `,
-      level: "JUNIOR"
+      level: "JUNIOR",
+      category: "load" 
     },
     {
       id: 46,
@@ -978,7 +1023,8 @@ export const questions = [
           <li><strong>Репликация и отказоустойчивость:</strong> Kafka поддерживает репликацию данных для повышения надёжности.</li>
         </ul>
       `,
-      level: "JUNIOR"
+      level: "JUNIOR",
+      category: "load" 
     },
     {
       id: 47,
@@ -994,7 +1040,8 @@ export const questions = [
           <li><strong>ReplicaSet:</strong> Гарантирует, что заданное количество подов работает в кластере в любое время.</li>
         </ul>
       `,
-      level: "JUNIOR"
+      level: "JUNIOR",
+      category: "load" 
     },
     {
       id: 48,
@@ -1019,7 +1066,8 @@ export const questions = [
           user3,password3
         </code></pre>
       `,
-      level: "MIDDLE"
+      level: "MIDDLE",
+      category: "load" 
     },
     {
       id: 49,
@@ -1090,7 +1138,8 @@ export const questions = [
           }
         </code></pre>
       `,
-      level: "MIDDLE"
+      level: "MIDDLE",
+      category: "load" 
     },
     {
       id: 50,
@@ -1102,7 +1151,8 @@ export const questions = [
         <p><strong>4. Время работы GC (Garbage Collection):</strong> Используйте <code>jstat</code> или <code>VisualVM</code> для мониторинга.</p>
         <p><strong>5. Heap и Non-Heap память:</strong> Анализируйте состояние heap и non-heap памяти с помощью <code>jconsole</code> или <code>VisualVM</code>.</p>
       `,
-      level: "MIDDLE"
+      level: "MIDDLE",
+      category: "load" 
     },
     {
       id: 51,
@@ -1117,7 +1167,8 @@ export const questions = [
           ORDER BY duration DESC;
         </code></pre>
       `,
-      level: "MIDDLE"
+      level: "MIDDLE",
+      category: "load" 
     },
     {
       id: 52,
@@ -1128,7 +1179,8 @@ export const questions = [
         <p><strong>2. Thread Dump:</strong> Используйте команду <code>jstack</code> для получения состояния потоков:</p>
         <pre><code>jstack -l &lt;pid&gt; > threaddump.txt</code></pre>
       `,
-      level: "MIDDLE"
+      level: "MIDDLE",
+      category: "load" 
     },
     {
       id: 53,
@@ -1146,7 +1198,8 @@ export const questions = [
           WHERE first_name = 'John' AND last_name = 'Doe';
         </code></pre>
       `,
-      level: "MIDDLE"
+      level: "MIDDLE",
+      category: "load" 
     },
     {
       id: 54,
@@ -1159,7 +1212,8 @@ export const questions = [
           WHERE department = 'Marketing';
         </code></pre>
       `,
-      level: "MIDDLE"
+      level: "MIDDLE",
+      category: "load" 
     },
     {
       id: 55,
@@ -1175,7 +1229,8 @@ export const questions = [
           CREATE INDEX idx_employee_name ON employees (first_name, last_name);
         </code></pre>
       `,
-      level: "MIDDLE"
+      level: "MIDDLE",
+      category: "load" 
     },
     {
       id: 56,
@@ -1188,6 +1243,7 @@ export const questions = [
           FROM pg_stat_activity;
         </code></pre>
       `,
-      level: "MIDDLE"
+      level: "MIDDLE",
+      category: "load" 
     }
   ];
