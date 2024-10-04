@@ -2,14 +2,6 @@
    <div class="header">
     <h2>PerfLAB</h2>
   </div>
-  <div class="main-menu">
-    <nav class="menu">
-      <router-link to="/performance" class="menu-item" active-class="active-menu-item">Performance Engineer</router-link>
-      <router-link to="/frontend" class="menu-item" active-class="active-menu-item">Frontend</router-link>
-      <router-link to="/backend" class="menu-item" active-class="active-menu-item">Backend</router-link>
-      <router-link to="/tools" class="menu-item" active-class="active-menu-item">Tools</router-link>
-    </nav>
-  </div>
   <router-view></router-view>
 </template>
 
@@ -20,88 +12,65 @@ export default {
 
 <style>
 .header {
-  background-color: #f0f8ff; 
+  background-color: #ffffff; /* Белый фон для чистого вида */
   padding: 20px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень для глубины */
   margin-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0; /* Тонкая серая линия под заголовком */
 }
 
+/* Стиль заголовка */
 .header h2 {
-  color: #007bff;
+  color: #333333; /* Темный цвет для контраста */
   font-size: 2.5em;
   margin: 0;
   text-transform: uppercase; 
   letter-spacing: 2px; 
+  font-weight: bold; /* Более жирный текст */
 }
 
-
-.header p {
-  color: #333;
-  font-size: 1.2em;
-  margin: 5px 0 0;
-  font-style: italic; 
-}
-
+/* Общие стили для текста на странице */
 body {
   font-family: "Roboto Slab", serif;
-  background-color: #e6f2ff; 
+  background-color: #f7f9fc; /* Мягкий светло-серый фон */
   margin: 0;
   padding: 0;
 }
 
+/* Стили для блока с кодом и примерами */
 pre {
-  white-space: pre-wrap; 
-  word-wrap: break-word; 
-  background-color: #f4f4f4;
-  padding: 10px;
-  border-radius: 5px;
-  overflow-x: auto; 
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: #f0f0f0; /* Легкий серый фон */
+  padding: 15px;
+  border-radius: 8px; /* Скругленные углы */
+  border: 1px solid #d0d0d0; /* Легкая серая рамка */
+  overflow-x: auto;
 }
 
 code {
   font-family: "Courier New", Courier, monospace;
   font-size: 14px;
+  color: #d63384; /* Приятный оттенок розового для выделения кода */
 }
 
-.menu {
-  margin-top: 10px;
+/* Стили для текстов */
+p {
+  color: #333333; /* Четкий и контрастный текст */
+  font-size: 1.1rem;
+  line-height: 1.6; /* Пространство между строками для читабельности */
 }
 
-.menu-item {
-  margin: 0 15px;
-  font-size: 1.5rem;
-  color: #007bff;
-  text-decoration: none;
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+  .header h2 {
+    font-size: 2rem; /* Уменьшаем размер текста для мобильных */
+  }
+
+  body {
+    padding: 10px;
+  }
 }
 
-.menu-item:hover {
-  color: #0056b3;
-}
-.menu-item:hover {
-  color: #0056b3;
-  background-color: #e0f7ff; /* Немного меняем фон при наведении */
-}
-
-.active-menu-item {
-  border: 2px solid #007bff74; 
-  background-color: #e0f7ff; 
-  color: #0056b3;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-
-.main-menu{
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 480px) {
-  .menu-item {
-  font-size: 1rem;
- 
-}
-}
 </style>

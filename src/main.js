@@ -11,16 +11,19 @@ import { ChromeDevToolsQuestions } from './data/tools/ChromeDevToolsQuestions';
 import { GitQuestions } from './data/tools/GitQuestions';
 import { JavaQuestions } from './data/tools/JavaQuestions';
 import { SystemArchitectureQuestions } from './data/tools/SystemArchitectureQuestions';
+import { KafkaQuestions } from './data/tools/KafkaQuestions';
+import { KubernetesQuestions } from './data/tools/KubernetesQuestions';
 import ToolsList from './components/ToolsList.vue';
+import CategoryList from './components/CategoryList.vue'; 
 
 const routes = [
-  { path: '/', component: QuestionList, props: { questions: LoadTestingQuestions } },
-  { path: '/performance', component: QuestionList, props: { questions: LoadTestingQuestions } },
-  { path: '/frontend', component: QuestionList, props: { questions: FrontendQuestions } },
-  { path: '/backend', component: QuestionList, props: { questions: BackendQuestions } },
+  { path: '/', component: CategoryList }, 
+  { path: '/performance', component: QuestionList, props: { questions: LoadTestingQuestions, title: 'Performance Engineer' } },
+  { path: '/frontend', component: QuestionList, props: { questions: FrontendQuestions, title: 'Frontend' } },
+  { path: '/backend', component: QuestionList, props: { questions: BackendQuestions, title: 'Backend' } },
   { path: '/tools', component: ToolsList },
-  { path: '/tools/:tool', component: QuestionList, props: route => ({ questions: getToolQuestions(route.params.tool) }) },
-  { path: '/questions/:id', component: QuestionDetail }
+  { path: '/tools/:tool', component: QuestionList, props: route => ({ questions: getToolQuestions(route.params.tool), title: route.params.tool.toUpperCase() }) },
+  { path: '/questions/:id', component: QuestionDetail, props: route => ({ id: route.params.id, category: route.query.category }) }
 ];
 
 const router = createRouter({
@@ -30,7 +33,9 @@ const router = createRouter({
 
 function getToolQuestions(tool) {
   const toolsMap = {
-    architecture:SystemArchitectureQuestions,
+    kubernetes: KubernetesQuestions,
+    kafka: KafkaQuestions,
+    architecture: SystemArchitectureQuestions,
     jmeter: JmeterQuestions,
     chrome: ChromeDevToolsQuestions,
     git: GitQuestions,

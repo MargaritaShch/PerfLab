@@ -1,22 +1,29 @@
 <template>
   <div v-if="question" class="question-detail">
-    <h2 class="question-text">{{ question.question }}</h2>
+    <p class="category-label">Вопрос из категории: {{ categoryName }}</p>
+
+    <h3 class="question-text">{{ question.question }}</h3>
+
+
     <div class="answer-box">
       <div v-html="question.answer" class="answer-text"></div>
     </div>
     <router-link to="/" class="back-button">← Back to Questions</router-link>
+
     <div class="like-comments-section">
-      <!-- Блок лайков -->
+      <!-- Секция лайков -->
       <div class="like-section">
         <button @click="likeQuestion" :disabled="liked" class="like-button">
           👍 {{ likes }} Like
         </button>
       </div>
 
-      <!-- Блок комментариев -->
       <div class="comments-section">
         <h4>Комментарии:</h4>
-        <ul>
+
+        <p v-if="comments.length === 0">Комментариев пока нет.</p>
+
+        <ul v-else>
           <li v-for="(comment, index) in comments" :key="index" class="comment-item">
             <strong>{{ comment.name }}:</strong> {{ comment.text }}
           </li>
@@ -32,7 +39,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -45,12 +51,60 @@ import { ChromeDevToolsQuestions } from '../data/tools/ChromeDevToolsQuestions';
 import { GitQuestions } from '../data/tools/GitQuestions';
 import { JavaQuestions } from '../data/tools/JavaQuestions';
 import { SystemArchitectureQuestions } from '../data/tools/SystemArchitectureQuestions';
+import { KafkaQuestions } from '../data/tools/KafkaQuestions';
+import { KubernetesQuestions } from '../data/tools/KubernetesQuestions';
 
 export default {
   data() {
     return {
-      question: null
+      question: null, 
+      likes: 0, 
+      liked: false, 
+      comments: [], 
+      username: '', 
+      newComment: '', 
+      commentAdded: false, 
     };
+  },
+  methods: {
+    likeQuestion() {
+      this.liked = true;
+      this.likes++;
+      this.saveToLocalStorage(); 
+    },
+    addComment() {
+      if (this.username.trim() && this.newComment.trim()) {
+        this.comments.push({
+          name: this.username.trim(),
+          text: this.newComment.trim(),
+        });
+        this.commentAdded = true;
+        this.username = '';
+        this.newComment = '';
+        this.saveToLocalStorage(); 
+      } else {
+        alert('Пожалуйста, заполните все поля.');
+      }
+    },
+    saveToLocalStorage() {
+      const savedData = {
+        likes: this.likes,
+        liked: this.liked,
+        comments: this.comments,
+        commentAdded: this.commentAdded,
+      };
+      localStorage.setItem(`question_${this.question.id}_data`, JSON.stringify(savedData));
+    },
+    loadFromLocalStorage() {
+      const savedData = localStorage.getItem(`question_${this.question.id}_data`);
+      if (savedData) {
+        const data = JSON.parse(savedData);
+        this.likes = data.likes;
+        this.liked = data.liked;
+        this.comments = data.comments;
+        this.commentAdded = data.commentAdded;
+      }
+    }
   },
   created() {
     const id = parseInt(this.$route.params.id);
@@ -59,7 +113,6 @@ export default {
 
     let allQuestions = [];
 
-    // Фильтрация по категориям
     if (category === 'frontend') {
       allQuestions = FrontendQuestions;
     } else if (category === 'load') {
@@ -69,6 +122,8 @@ export default {
     } else if (category === 'tools' && tool) {
 
       const toolsMap = {
+        kubernetes: KubernetesQuestions,
+        kafka: KafkaQuestions,
         architecture:SystemArchitectureQuestions,
         jmeter: JmeterQuestions,
         chrome: ChromeDevToolsQuestions,

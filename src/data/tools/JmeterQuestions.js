@@ -7,7 +7,8 @@ export const JmeterQuestions = [
         <p>Apache JMeter может использоваться для тестирования производительности как статических, так и динамических ресурсов, веб-динамических приложений. Его можно использовать для моделирования высокой нагрузки на сервер, группу серверов, сеть или объект, чтобы проверить их прочность или проанализировать общую производительность при различных типах нагрузки.и</p>
         `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 2,
@@ -24,7 +25,8 @@ export const JmeterQuestions = [
         </ul>
         `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 3,
@@ -57,7 +59,8 @@ export const JmeterQuestions = [
         </ol>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 4,
@@ -90,7 +93,8 @@ export const JmeterQuestions = [
         <p>Тестовый план является центральным элементом в JMeter и позволяет гибко настраивать параметры тестирования, адаптируя их под конкретные требования.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 5,
@@ -156,7 +160,8 @@ export const JmeterQuestions = [
         </ul>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 6,
@@ -204,7 +209,8 @@ export const JmeterQuestions = [
         <p>HTTP Request сэмплер в JMeter позволяет отправлять различные виды запросов к серверам и измерять их производительность, что делает его основным инструментом для тестирования веб-приложений.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 7,
@@ -224,7 +230,8 @@ export const JmeterQuestions = [
         <p>Эти сэмплеры играют ключевую роль в тестировании производительности систем, так как именно они инициируют запросы и собирают данные для дальнейшего анализа. В зависимости от характера тестируемой системы, можно использовать различные типы сэмплеров для эффективной проверки производительности и функциональности серверов, веб-приложений, баз данных и почтовых серверов.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 8,
@@ -244,7 +251,8 @@ export const JmeterQuestions = [
         <p>Таймеры в JMeter размещаются между сэмплерами для того, чтобы применить задержку перед каждым запросом, что особенно полезно для имитации реального поведения пользователей в сети. В случае стресс-тестирования таймеры могут быть отключены для максимальной нагрузки на сервер.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter",
+        title:"Jmeter" 
     },
     {
         id: 9,
@@ -269,7 +277,8 @@ export const JmeterQuestions = [
         <p>Thread Group является начальной точкой для любого тестового плана в JMeter. Она контролирует количество виртуальных пользователей, параметры нагрузки и поведение теста в случае ошибок, а также позволяет гибко настраивать сценарии тестирования.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 10,
@@ -304,7 +313,8 @@ export const JmeterQuestions = [
         <p>Таким образом, <strong>Thread Group</strong> лучше подходит для простых сценариев тестирования с постоянной нагрузкой, в то время как <strong>Ultimate Thread Group</strong> позволяет реализовать более сложные и гибкие сценарии нагрузки.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 11,
@@ -335,7 +345,8 @@ export const JmeterQuestions = [
         <p>Таким образом, в JMeter можно гибко настраивать количество потоков, скорость их запуска и общую продолжительность теста, что позволяет моделировать различные сценарии нагрузки на систему.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 12,
@@ -359,7 +370,8 @@ export const JmeterQuestions = [
 
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 13,
@@ -383,7 +395,8 @@ export const JmeterQuestions = [
         </ul>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 14,
@@ -416,7 +429,8 @@ export const JmeterQuestions = [
         <p>Оба листенера — <strong>Aggregate Report</strong> и <strong>Summary Report</strong> — позволяют получить ключевую информацию о времени отклика и пропускной способности системы, но <strong>Aggregate Report</strong> предоставляет более детализированные данные с перцентилями, в то время как <strong>Summary Report</strong> легче по ресурсоемкости.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 15,
@@ -455,7 +469,8 @@ export const JmeterQuestions = [
     `,
         level: "JUNIOR",
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 16,
@@ -494,7 +509,8 @@ export const JmeterQuestions = [
         </ul>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 17,
@@ -532,7 +548,8 @@ export const JmeterQuestions = [
         <p>Плагины расширяют возможности JMeter, позволяя тестировщикам использовать дополнительные инструменты для создания более гибких и мощных тестовых планов.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 18,
@@ -581,7 +598,8 @@ export const JmeterQuestions = [
         <p>Используйте листенеры, такие как <strong>View Results Tree</strong> или <strong>Summary Report</strong>, для просмотра результатов и анализа данных, отправленных и полученных по WebSocket-соединению. Эти листенеры позволяют видеть как запросы, так и ответы, а также диагностировать ошибки.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 19,
@@ -626,7 +644,8 @@ export const JmeterQuestions = [
         <p>Assertion помогает убедиться, что система работает корректно и возвращает ожидаемые результаты, что важно для тестирования производительности и стабильности системы под нагрузкой.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 20,
@@ -660,7 +679,8 @@ export const JmeterQuestions = [
         <p>Если веб-приложение использует cookies для авторизации, добавление <strong>HTTP Cookie Manager</strong> позволит JMeter автоматически обрабатывать cookies при отправке запросов, чтобы сохранить состояние сессии.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 21,
@@ -711,7 +731,8 @@ export const JmeterQuestions = [
         </ul>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 22,
@@ -810,7 +831,8 @@ export const JmeterQuestions = [
         <p>Таким образом, с помощью JMeter можно тестировать REST API, измерять время отклика, проверять корректность работы API и оценивать его производительность под нагрузкой.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 23,
@@ -883,7 +905,8 @@ Content-Type: image/png
         </ul>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 24,
@@ -958,7 +981,8 @@ Content-Type: image/png
         <p>Использование таймеров в JMeter позволяет моделировать более реалистичные сценарии нагрузки, что делает тесты ближе к поведению реальных пользователей.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 25,
@@ -1009,7 +1033,8 @@ Content-Type: image/png
         <p>Конфигурационные элементы в JMeter помогают гибко настраивать тесты, управлять данными и делать тестовые сценарии более удобными и эффективными.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 26,
@@ -1072,7 +1097,8 @@ user3,password3</code></pre>
         <p>Таким образом, <strong>CSV Data Set Config</strong> позволяет динамически передавать данные в тесты, что делает их более гибкими и масштабируемыми для выполнения нагрузочного тестирования с различными входными параметрами.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 27,
@@ -1133,7 +1159,8 @@ user3,password3</code></pre>
         <p>Предположим, что вы тестируете API с логином и паролем, которые хранятся в CSV-файле. Вы можете создать <strong>CSV Data Set Config</strong>, указать файл с данными и переменные для логина и пароля, а затем использовать эти переменные в HTTP-запросах для каждого нового пользователя. Это позволяет динамически менять данные при каждом выполнении теста, что делает нагрузочные тесты более реалистичными.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 28,
@@ -1200,7 +1227,8 @@ user3,password3</code></pre>
         <p>Таким образом, <strong>JDBC Sampler</strong> в JMeter позволяет тестировать производительность баз данных, измерять время отклика и анализировать поведение базы данных под различными нагрузками.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 29,
@@ -1261,7 +1289,8 @@ user3,password3</code></pre>
             После этого вы можете запустить тест на обоих серверах, выбрав <strong>Remote Start All</strong> в JMeter, что позволит выполнять тест с обеих машин одновременно и собирать результаты.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 30,
@@ -1316,7 +1345,8 @@ vars.put("randomNumber", Integer.toString(randomNumber));</code></pre>
         <p>Допустим, вам нужно выполнить SQL-запрос к базе данных, но стандартные JDBC-сэмплеры JMeter не подходят для вашего случая. Вы можете написать кастомный Java-код в BeanShell Sampler для выполнения SQL-запроса, обработки результата и сохранения его в переменные JMeter для последующего использования в тесте.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 31,
@@ -1396,7 +1426,8 @@ vars.put("randomNumber", Integer.toString(randomNumber));</code></pre>
         <p>Таким образом, использование JMeter с InfluxDB и Grafana позволяет собирать, хранить и визуализировать метрики тестирования производительности, что делает анализ данных более наглядным и эффективным.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 32,
@@ -1481,7 +1512,8 @@ vars.put("randomNumber", Integer.toString(randomNumber));</code></pre>
         <p>Допустим, вы тестируете веб-приложение с 1000 виртуальными пользователями, выполняющими действия в течение 30 минут. Для этого можно настроить <strong>Thread Group</strong> с 1000 потоками, периодом разгона 100 секунд (10 потоков запускаются каждую секунду) и продолжительностью 1800 секунд. Используя таймеры для моделирования пауз между действиями, а также листенеры для сбора метрик, можно получить точное представление о производительности системы под нагрузкой.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 33,
@@ -1526,7 +1558,8 @@ vars.put("randomNumber", Integer.toString(randomNumber));</code></pre>
         <p>Таким образом, JMeter предоставляет множество инструментов для динамического обновления параметров теста, что делает нагрузочное тестирование гибким и более реалистичным.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 34,
@@ -1613,7 +1646,8 @@ vars.put("randomNumber", Integer.toString(randomNumber));</code></pre>
         <p>Для успешного проведения нагрузочного тестирования в JMeter важно правильно настраивать параметры теста, использовать адекватные ресурсы и избегать типичных ошибок. Следуя этим рекомендациям, вы сможете избежать большинства проблем и получить более точные результаты тестирования.</p>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     },
     {
         id: 35,
@@ -1663,6 +1697,7 @@ vars.put("randomNumber", Integer.toString(randomNumber));</code></pre>
         </ul>
     `,
         category: "tools",  
-        tool: "jmeter" 
+        tool: "jmeter" ,
+        title:"Jmeter"
     }
 ];

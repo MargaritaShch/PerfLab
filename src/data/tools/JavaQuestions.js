@@ -30,7 +30,8 @@ export const JavaQuestions = [
     <li>и другие.</li>
         `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 2,
@@ -161,7 +162,8 @@ export const JavaQuestions = [
     <p>Таким образом, основные принципы ООП (абстракция, инкапсуляция, наследование и полиморфизм) помогают разработчикам строить гибкие, масштабируемые и легко поддерживаемые системы на Java.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 3,
@@ -261,7 +263,8 @@ export const JavaQuestions = [
     </pre>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 4,
@@ -330,7 +333,8 @@ export const JavaQuestions = [
     <p>Примитивные типы данных обеспечивают эффективное использование памяти и быстродействие, тогда как ссылочные типы позволяют работать с объектами и коллекциями данных.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 5,
@@ -389,7 +393,8 @@ export const JavaQuestions = [
         <p>Таким образом, классы — это шаблоны для создания объектов, а объекты — это конкретные экземпляры, которые взаимодействуют с программой и выполняют определенные действия.</p>
         `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 6,
@@ -453,7 +458,8 @@ public class Main {
     <p>Таким образом, процесс создания объекта класса и вызова его методов включает создание экземпляра класса с использованием <code>new</code> и обращение к его методам через оператор точки.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 7,
@@ -517,7 +523,8 @@ Person person2 = new Person("Alice");  // имя "Alice", возраст по у
     <p>Таким образом, конструкторы в Java обеспечивают гибкий способ создания объектов с инициализацией полей при создании.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 8,
@@ -579,7 +586,8 @@ Person person2 = new Person("Alice");  // имя "Alice", возраст по у
         </ul>
         `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 9,
@@ -637,7 +645,8 @@ class MyBankAccount {
     <p>Без инкапсуляции код может стать неорганизованным и сложным для понимания. Поля могут быть изменены напрямую, что увеличивает вероятность ошибок и затрудняет отладку. Инкапсуляция позволяет избежать этих проблем, структурируя код более эффективно.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 10,
@@ -720,7 +729,8 @@ public class Main {
     <p>Таким образом, наследование в Java упрощает разработку, улучшает организацию кода и повышает его переиспользуемость.</p>
         `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 11,
@@ -796,7 +806,8 @@ MyInterface.staticMethod(); // Вызов статического метода
     <p>В отличие от классов, которые могут наследовать только один родительский класс, класс может реализовывать несколько интерфейсов одновременно. Это помогает создать гибкую архитектуру, в которой класс может поддерживать различные функциональности через интерфейсы.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 12,
@@ -914,7 +925,8 @@ class Bird implements Flyable {
     <p>Таким образом, абстрактные классы используются, когда требуется наследовать общее поведение с возможностью хранения состояния, а интерфейсы — для определения контракта, который могут реализовать различные классы, не связанные между собой и не имеющие общего состояния.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 13,
@@ -995,7 +1007,8 @@ public class Main {
         <p>Полиморфизм помогает создавать более гибкие и расширяемые программы, позволяя объектам разных классов по-разному реализовывать один и тот же метод. Это один из самых мощных инструментов в объектно-ориентированном программировании, который помогает писать поддерживаемый и расширяемый код.</p>
         `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 14,
@@ -1077,7 +1090,8 @@ try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)
         <p>Механизм исключений в Java помогает защитить программу от сбоев и неожиданных ситуаций. Используя <code>try</code>, <code>catch</code> и <code>finally</code>, можно безопасно обрабатывать ошибки и продолжать выполнение программы. Кроме того, Java позволяет создавать собственные типы исключений для обработки специфических ситуаций.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 15,
@@ -1129,7 +1143,8 @@ public String input() throws MyException {
         <p>Таким образом, комбинация блоков <code>try</code>, <code>catch</code> и <code>finally</code> позволяет надежно обрабатывать исключения и обеспечивать завершение работы программы даже в случае ошибки.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 16,
@@ -1180,7 +1195,8 @@ public class GarbageCollectionExample {
         <p>Важно помнить, что вызов <code>System.gc()</code> — это всего лишь запрос, и фактическая сборка мусора будет выполнена только тогда, когда JVM решит, что это необходимо.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 17,
@@ -1306,7 +1322,8 @@ System.out.println(map.get("Ключ 2")); // Выводит 2
         <p>При выборе подходящей коллекции важно учитывать, нужны ли уникальные элементы (<code>Set</code>), порядок добавления (<code>List</code>) или работа с парами ключ-значение (<code>Map</code>).</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 19,
@@ -1371,7 +1388,8 @@ public class GenericsExample {
         <p>Generics делают код более гибким и типобезопасным, упрощая работу с различными типами данных, при этом минимизируя количество ошибок в ходе компиляции. Использование дженериков также помогает избежать дублирования кода.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 20,
@@ -1415,7 +1433,8 @@ baz
         <p>Цикл <strong>for-each</strong> следует использовать, когда нужно пройтись по всем элементам коллекции без изменения или удаления элементов. Он особенно полезен, когда не требуется доступ к индексу элемента. Для операций, связанных с изменением коллекции во время итерации (например, удаление элементов), лучше использовать итераторы или классический цикл <code>for</code>.</p>
         `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 21,
@@ -1484,7 +1503,8 @@ public class Main {
         </code></pre>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 22,
@@ -1611,7 +1631,8 @@ public class TestSynchronization {
         <h4>Заключение:</h4>
         <p>Синхронизация потоков позволяет управлять доступом к общим ресурсам в многопоточных приложениях, предотвращая возможные проблемы с согласованностью данных. В Java синхронизация реализуется через ключевое слово <code>synchronized</code>, которое может быть применено к методам или блокам кода.</p>
     `,category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 23,
@@ -1667,7 +1688,8 @@ List&lt;Double&gt; pricesUsdGreater50Rub = pricesRub.stream()
         <p>Лямбда-выражения в Java позволяют писать более лаконичный код, избавляясь от лишней синтаксической нагрузки. Они делают код более понятным и удобным, особенно при работе с функциональными интерфейсами и API, такими как <code>Stream</code>.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java",
+        title:"Java" 
     },
     {
         id: 24,
@@ -1784,7 +1806,8 @@ public class ScannerExample {
         <p>Работа с файлами и потоками в Java предоставляется через множество классов для работы с символьными и байтовыми потоками. Использование буферизации и правильное управление ресурсами (через try-with-resources) помогает эффективно обрабатывать данные.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 25,
@@ -1836,7 +1859,8 @@ module ui {
         <p>Система модулей в Java помогает улучшить архитектуру приложения, управлять зависимостями и инкапсуляцией, а также повышает безопасность и производительность. Модульный подход делает код более структурированным и масштабируемым, что особенно полезно для больших проектов.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 26,
@@ -1919,7 +1943,8 @@ switch (protocol) {
         <p>Перечисления (Enum) в Java упрощают работу с предопределенными наборами значений, обеспечивают безопасность типов и помогают избегать ошибок, связанных с использованием недопустимых значений. Они могут быть расширены с помощью полей, методов, а также могут реализовывать интерфейсы, что делает их мощным инструментом в Java.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 27,
@@ -1986,7 +2011,8 @@ dependencies {
         <p>И <strong>Maven</strong>, и <strong>Gradle</strong> позволяют легко подключать сторонние библиотеки и управлять зависимостями. Maven использует XML для описания проекта, а Gradle — Groovy или Kotlin DSL. Оба инструмента активно используются в Java-разработке, и выбор между ними зависит от предпочтений команды и специфики проекта.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 28,
@@ -2054,7 +2080,8 @@ dependencies {
         <p>Для низкоуровневого доступа к базе данных в Java можно использовать <strong>JDBC</strong>, который предоставляет полный контроль над SQL-запросами, но требует больше кода для обработки данных. Для более удобной и абстрактной работы с базами данных разработчики могут использовать <strong>ORM-фреймворки</strong> (например, Hibernate), которые позволяют сосредоточиться на работе с объектами, а не с SQL-кодом.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 29,
@@ -2111,7 +2138,8 @@ dependencies {
         <p>Аннотации в Java — это мощный инструмент для улучшения читаемости кода, автоматизации задач и управления зависимостями. Они широко используются для задания метаданных и инструкций как в стандартных библиотеках, так и в сторонних фреймворках, таких как Spring и Hibernate.</p>
     `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 30,
@@ -2293,7 +2321,8 @@ dependencies {
         <p>Тестирование Java-кода с помощью JUnit — важный и полезный процесс, который помогает обеспечить качество и стабильность вашего программного обеспечения. Используя тестовые методы, утверждения, параметризованные тесты, жизненные циклы, вложенные тесты и настройки, вы можете создавать тщательно протестированные и надежные программы на языке Java.</p>
         `,
         category: "tools",  
-        tool: "java" 
+        tool: "java" ,
+        title:"Java"
     },
     {
         id: 31,
@@ -2384,7 +2413,8 @@ dependencies {
         <p>Stream API позволяет работать с данными в Java с использованием функционального подхода, значительно сокращая код и улучшая его читаемость. Потоки помогают разработчикам эффективно обрабатывать данные и обеспечивают возможность распараллеливания операций.</p>
         `,
         category: "tools",
-        tool: "java"
+        tool: "java",
+        title:"Java"
     },
     {
         id: 32,
@@ -2442,7 +2472,8 @@ dependencies {
         <p><code>Optional</code> — это мощный инструмент, который помогает избежать проблем с <code>null</code> и <code>NullPointerException</code> в Java. Он улучшает читаемость кода и делает его более безопасным. Однако, как и любой инструмент, <code>Optional</code> следует использовать с осторожностью и осознанно, чтобы не усложнять код и не снижать производительность.</p>
         `,
         category: "tools",
-        tool: "java"
+        tool: "java",
+        title:"Java"
     },
     {
         id: 33,
@@ -2503,7 +2534,8 @@ List&lt;Integer&gt; evenNumbers = numbers.stream()
 <p>Функциональные интерфейсы — это основа для использования лямбда-выражений и функционального программирования в Java. Они позволяют создавать более лаконичный, гибкий и читаемый код, особенно в сочетании со Stream API и другими функциональными возможностями языка.</p>
         `,
         category: "tools",
-        tool: "java"
+        tool: "java",
+        title:"Java"
     },
     {
         id: 34,
@@ -2616,7 +2648,8 @@ future.thenAccept(result -> System.out.println("Результат: " + result))
 <p>CompletableFuture предоставляет гибкий механизм для асинхронных задач в Java. Он позволяет создавать сложные цепочки выполнения, обрабатывать результаты и исключения, а также эффективно работать с параллельными задачами.</p>
         `,
         category: "tools",
-        tool: "java"
+        tool: "java",
+        title:"Java"
     },
     {
         id: 35,
@@ -2703,7 +2736,8 @@ public static void main(String[] args) {
 <p>Рефлексия — это мощный инструмент, который позволяет динамически взаимодействовать с программой во время её выполнения. Однако она нарушает принципы инкапсуляции, поэтому ее следует использовать с осторожностью, так как злоупотребление рефлексией может привести к сложностям в отладке и поддержке кода.</p>
         `,
         category: "tools",
-        tool: "java"
+        tool: "java",
+        title:"Java"
     },
     {
         id: 36,
@@ -2799,7 +2833,8 @@ public class MyService {
 <p>Использование Dependency Injection в Spring значительно упрощает разработку и тестирование Java-приложений. Spring предоставляет гибкие и удобные способы управления зависимостями с помощью аннотаций, конфигурационных классов и XML-файлов. DI улучшает модульность кода, упрощает его тестирование и поддержку, а также стимулирует использование хороших архитектурных практик.</p>
         `,
         category: "tools",
-        tool: "java"
+        tool: "java",
+        title:"Java"
     },
     {
         id: 37,
@@ -2885,7 +2920,8 @@ ENTRYPOINT ["java", "-jar", "myapp.jar"]
 <p>Микросервисы в контексте Java и Spring Boot предоставляют гибкость и масштабируемость для создания распределенных приложений. С помощью Spring Boot можно быстро разрабатывать, конфигурировать и разворачивать микросервисные приложения, что делает его идеальным выбором для построения современных микросервисных архитектур.</p>
         `,
         category: "tools",
-        tool: "java"
+        tool: "java",
+        title:"Java"
     },
     {
         id: 38,
@@ -2933,24 +2969,297 @@ ENTRYPOINT ["java", "-jar", "myapp.jar"]
 <p>JVM играет ключевую роль в обеспечении кроссплатформенности Java-приложений, управляя выполнением байт-кода и памятью. Сборка мусора — важная функция JVM, которая автоматически освобождает память от ненужных объектов, позволяя избежать утечек памяти и улучшить управление ресурсами. Понимание принципов работы JVM и различных алгоритмов сборки мусора помогает оптимизировать производительность Java-приложений.</p>
         `,
         category: "tools",
-        tool: "java"
+        tool: "java",
+        title:"Java"
     },
     {
         id: 39,
         question: "Что такое JPA и как организовать работу с базами данных с использованием Hibernate?",
         answer: `
+         <p><strong>JPA</strong> (Java Persistence API) — это спецификация Java для управления постоянными данными и взаимодействия с базами данных. JPA определяет набор стандартных интерфейсов и аннотаций, которые позволяют работать с базами данных, не привязываясь к конкретной реализации. Одной из наиболее популярных реализаций JPA является <strong>Hibernate</strong>.</p>
         
+        <p>Чтобы организовать работу с базами данных с использованием Hibernate, необходимо выполнить следующие шаги:</p>
+        
+        <ol>
+            <li>Добавить зависимости Hibernate и JPA в проект. Например, если используете Maven, нужно добавить зависимости в файл <code>pom.xml</code>:</li>
+            <pre><code>
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.hibernate&lt;/groupId&gt;
+                &lt;artifactId&gt;hibernate-core&lt;/artifactId&gt;
+                &lt;version&gt;5.6.0.Final&lt;/version&gt;
+            &lt;/dependency&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;javax.persistence&lt;/groupId&gt;
+                &lt;artifactId&gt;javax.persistence-api&lt;/artifactId&gt;
+                &lt;version&gt;2.2&lt;/version&gt;
+            &lt;/dependency&gt;
+            </code></pre>
+            
+            <li>Настроить файл конфигурации <code>hibernate.cfg.xml</code> для подключения к базе данных:</li>
+            <pre><code>
+            &lt;?xml version="1.0" encoding="utf-8"?&gt;
+            &lt;hibernate-configuration&gt;
+                &lt;session-factory&gt;
+                    &lt;property name="hibernate.dialect"&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;
+                    &lt;property name="hibernate.connection.driver_class"&gt;com.mysql.cj.jdbc.Driver&lt;/property&gt;
+                    &lt;property name="hibernate.connection.url"&gt;jdbc:mysql://localhost:3306/yourdatabase&lt;/property&gt;
+                    &lt;property name="hibernate.connection.username"&gt;yourusername&lt;/property&gt;
+                    &lt;property name="hibernate.connection.password"&gt;yourpassword&lt;/property&gt;
+                    &lt;property name="hibernate.hbm2ddl.auto"&gt;update&lt;/property&gt;
+                &lt;/session-factory&gt;
+            &lt;/hibernate-configuration&gt;
+            </code></pre>
+            
+            <li>Создать Entity-класс с аннотациями JPA. Например, класс <code>User</code>:</li>
+            <pre><code>
+            import javax.persistence.Entity;
+            import javax.persistence.Id;
+            import javax.persistence.Table;
+
+            @Entity
+            @Table(name = "users")
+            public class User {
+                @Id
+                private Long id;
+                private String name;
+                private String email;
+                
+                // геттеры и сеттеры
+            }
+            </code></pre>
+            
+            <li>Использовать EntityManager для выполнения операций с базой данных. Пример:</li>
+            <pre><code>
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("your-persistence-unit");
+            EntityManager em = emf.createEntityManager();
+            em.getTransaction().begin();
+
+            User user = new User();
+            user.setId(1L);
+            user.setName("John Doe");
+            user.setEmail("john@example.com");
+            em.persist(user);
+
+            em.getTransaction().commit();
+            em.close();
+            emf.close();
+            </code></pre>
+        </ol>
         `,
         category: "tools",
-        tool: "java"
+        tool: "java",
+        title:"Java"
     },
     {
         id: 40,
         question: "Что такое паттерны проектирования и какие из них можно использовать в Java?",
         answer: `
-        
+        <p><strong>Паттерны проектирования</strong> — это повторяющиеся решения общих задач, которые возникают при разработке программного обеспечения. Они помогают улучшить структуру и качество кода, делают его более гибким, понятным и легко поддерживаемым.</p>
+
+        <p>Существует три основные группы паттернов проектирования:</p>
+
+        <ul>
+            <li><strong>Порождающие паттерны</strong> — управляют процессом создания объектов.</li>
+            <li><strong>Структурные паттерны</strong> — определяют, как объекты и классы могут быть объединены в более сложные структуры.</li>
+            <li><strong>Поведенческие паттерны</strong> — отвечают за взаимодействие между объектами.</li>
+        </ul>
+
+        <p>Ниже приведены некоторые паттерны проектирования, которые можно использовать в Java:</p>
+
+        <h3>1. Порождающие паттерны</h3>
+        <ul>
+            <li><strong>Singleton (Одиночка)</strong>: Обеспечивает создание единственного экземпляра класса.</li>
+            <pre><code>
+            public class Singleton {
+                private static Singleton instance;
+
+                private Singleton() {}
+
+                public static Singleton getInstance() {
+                    if (instance == null) {
+                        instance = new Singleton();
+                    }
+                    return instance;
+                }
+            }
+            </code></pre>
+            <li><strong>Factory Method (Фабричный метод)</strong>: Делегирует создание объектов подклассам.</li>
+            <pre><code>
+            public interface Product {
+                void create();
+            }
+
+            public class ConcreteProductA implements Product {
+                @Override
+                public void create() {
+                    System.out.println("Продукт A создан");
+                }
+            }
+
+            public class ConcreteProductB implements Product {
+                @Override
+                public void create() {
+                    System.out.println("Продукт B создан");
+                }
+            }
+
+            public abstract class Creator {
+                public abstract Product factoryMethod();
+
+                public void createProduct() {
+                    Product product = factoryMethod();
+                    product.create();
+                }
+            }
+
+            public class ConcreteCreatorA extends Creator {
+                @Override
+                public Product factoryMethod() {
+                    return new ConcreteProductA();
+                }
+            }
+
+            public class ConcreteCreatorB extends Creator {
+                @Override
+                public Product factoryMethod() {
+                    return new ConcreteProductB();
+                }
+            }
+            </code></pre>
+        </ul>
+
+        <h3>2. Структурные паттерны</h3>
+        <ul>
+            <li><strong>Adapter (Адаптер)</strong>: Преобразует интерфейс одного класса в интерфейс другого, который ожидает клиент.</li>
+            <pre><code>
+            public interface Target {
+                void request();
+            }
+
+            public class Adaptee {
+                public void specificRequest() {
+                    System.out.println("Специфический запрос");
+                }
+            }
+
+            public class Adapter implements Target {
+                private Adaptee adaptee;
+
+                public Adapter(Adaptee adaptee) {
+                    this.adaptee = adaptee;
+                }
+
+                @Override
+                public void request() {
+                    adaptee.specificRequest();
+                }
+            }
+            </code></pre>
+            <li><strong>Facade (Фасад)</strong>: Упрощает доступ к сложной системе, предоставляя упрощённый интерфейс.</li>
+            <pre><code>
+            public class Subsystem1 {
+                public void operation1() {
+                    System.out.println("Выполнение операции 1");
+                }
+            }
+
+            public class Subsystem2 {
+                public void operation2() {
+                    System.out.println("Выполнение операции 2");
+                }
+            }
+
+            public class Facade {
+                private Subsystem1 subsystem1;
+                private Subsystem2 subsystem2;
+
+                public Facade() {
+                    this.subsystem1 = new Subsystem1();
+                    this.subsystem2 = new Subsystem2();
+                }
+
+                public void operation() {
+                    subsystem1.operation1();
+                    subsystem2.operation2();
+                }
+            }
+            </code></pre>
+        </ul>
+
+        <h3>3. Поведенческие паттерны</h3>
+        <ul>
+            <li><strong>Observer (Наблюдатель)</strong>: Определяет зависимость «один ко многим» между объектами.</li>
+            <pre><code>
+            import java.util.ArrayList;
+            import java.util.List;
+
+            public interface Observer {
+                void update(String message);
+            }
+
+            public class ConcreteObserver implements Observer {
+                private String name;
+
+                public ConcreteObserver(String name) {
+                    this.name = name;
+                }
+
+                @Override
+                public void update(String message) {
+                    System.out.println(name + " получил сообщение: " + message);
+                }
+            }
+
+            public class Subject {
+                private List<Observer> observers = new ArrayList<>();
+
+                public void addObserver(Observer observer) {
+                    observers.add(observer);
+                }
+
+                public void notifyObservers(String message) {
+                    for (Observer observer : observers) {
+                        observer.update(message);
+                    }
+                }
+            }
+            </code></pre>
+            <li><strong>Strategy (Стратегия)</strong>: Позволяет изменять поведение объекта на основе передаваемых стратегий.</li>
+            <pre><code>
+            public interface Strategy {
+                void execute();
+            }
+
+            public class ConcreteStrategyA implements Strategy {
+                @Override
+                public void execute() {
+                    System.out.println("Стратегия A выполнена");
+                }
+            }
+
+            public class ConcreteStrategyB implements Strategy {
+                @Override
+                public void execute() {
+                    System.out.println("Стратегия B выполнена");
+                }
+            }
+
+            public class Context {
+                private Strategy strategy;
+
+                public void setStrategy(Strategy strategy) {
+                    this.strategy = strategy;
+                }
+
+                public void executeStrategy() {
+                    strategy.execute();
+                }
+            }
+            </code></pre>
+        </ul>
         `,
         category: "tools",
-        tool: "java"
+        tool: "java",
+        title:"Java"
     }
 ];

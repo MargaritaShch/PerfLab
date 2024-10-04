@@ -11,7 +11,7 @@
     </div>
 
     <div class="question-grid">
-      <QuestionCard v-for="q in filteredQuestions" :key="q.id" :question="q" />
+      <QuestionCard v-for="q in filteredQuestions" :key="q.id" :question="q" :category="category"/>
     </div>
   </div>
 </template>
@@ -24,7 +24,9 @@ export default {
     QuestionCard
   },
   props: {
-    questions: Array 
+    questions: Array,
+    title: String,  // Для заголовка категории
+    category: String
   },
   data() {
     return {
@@ -73,11 +75,6 @@ export default {
   margin-bottom: 20px;
 }
 
-.filter-section label {
-  margin-right: 10px;
-  font-size: 1rem;
-}
-
 .filter-section select {
   padding: 10px;
   font-size: 1rem;
@@ -94,40 +91,24 @@ export default {
 
 .question-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 20px; 
+  grid-template-columns: repeat(2, 1fr);  
+  gap: 20px;  
   justify-items: center;
-  max-width: 900px; 
-  margin: 0 auto; 
+  max-width: 900px;  
+  margin: 0 auto;  
 }
 
 .question-card {
   width: 100%;
   max-width: 500px;
   padding: 20px;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
   .question-grid {
-    grid-template-columns: 1fr; 
-    padding: 0 15px; 
-  }
-
-  .question-card {
-    margin: 0 0 20px 0; 
-  }
-}
-
-
-@media (max-width: 480px) {
-  .question-grid {
-    padding: 0 10px; 
-  }
-
-  .question-card {
-    padding: 15px; 
-    min-height: 220px; 
+    grid-template-columns: 1fr;  
+    padding: 0 15px;
   }
 }
 </style>

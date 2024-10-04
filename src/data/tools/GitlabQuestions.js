@@ -147,6 +147,7 @@ export const GitlabQuestions = [
     {
         id: 30,
         question: "Как восстановить удаленный коммит или ветку в GitLab?",
-        level: "JUNIOR"
+        level: "JUNIOR",
+        title:"GitLab"
     }
 ];

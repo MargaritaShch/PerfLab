@@ -1,7 +1,7 @@
 <template>
   <div @click="goToDetail" class="question-card">
     <h3 class="question-text">{{ question.question }}</h3>
-    <p :class="levelClass" class="level-text">{{ levelText }}</p>
+    <p v-if="!isToolCategory" :class="levelClass" class="level-text">{{ levelText }}</p>
   </div>
 </template>
 
@@ -9,13 +9,6 @@
 export default {
   props: {
     question: Object
-  },
-  data() {
-    return {
-      likes: 0,
-      comments: [],
-      newComment: ''
-    };
   },
   computed: {
     levelText() {
@@ -27,6 +20,9 @@ export default {
         'level-junior': this.question.level === 'JUNIOR',
         'level-middle': this.question.level === 'MIDDLE'
       };
+    },
+    isToolCategory() {
+      return this.question.category === 'tools';
     }
   },
   methods: {
@@ -39,15 +35,6 @@ export default {
         }
       });
     },
-    likeQuestion() {
-      this.likes++;
-    },
-    addComment() {
-      if (this.newComment.trim()) {
-        this.comments.push(this.newComment.trim());
-        this.newComment = '';
-      }
-    }
   }
 };
 </script>
@@ -63,43 +50,49 @@ export default {
   height: 250px;
   margin: 15px auto;
   padding: 20px;
-  background-color: #f0f8ff;
-  border: 2px solid #007bff50;
+  background-color: #ffffff; 
+  border: 1px solid #e0e0e0; 
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(2, 2, 252, 0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   cursor: pointer;
   position: relative;
-  transition: background-color 0.3s ease;
-}
-.question-card:hover {
-  background-color: #e0f0ff;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.question-card:hover {
+  background-color: #f4f4f4; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+}
+
+/* Текст вопроса */
 .question-text {
   text-align: center;
   margin: 0;
   padding: 10px;
-  font-size: 1.2rem;
+  font-size: 1.4rem; 
+  color: #333333; 
 }
+
 
 .level-text {
   position: absolute;
   bottom: 10px;
-  right: 10px;
+  right: 20px;
   font-weight: bold;
-  margin-top: 20px;
+  font-size: 1rem;
 }
 
+
 .level-intern {
-  color: green;
+  color: #28a745; 
 }
 
 .level-junior {
-  color: blue;
+  color: #007bff; 
 }
 
 .level-middle {
-  color: orange;
+  color: #fd7e14; 
 }
 
 </style>

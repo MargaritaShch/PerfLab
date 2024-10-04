@@ -6,6 +6,12 @@
         <router-link :to="{ path: '/tools/jmeter' }">JMeter</router-link>
       </div>
       <div class="tool-card">
+        <router-link :to="{ path: '/tools/kafka' }">Kafka</router-link>
+      </div>
+      <div class="tool-card">
+        <router-link :to="{ path: '/tools/kubernetes' }">Kubernetes</router-link>
+      </div>
+      <div class="tool-card">
         <router-link :to="{ path: '/tools/chrome' }">Chrome DevTools</router-link>
       </div>
       <div class="tool-card">
