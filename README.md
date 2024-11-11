@@ -1,6 +1,5 @@
 # PerfLab: https://margaritashch.github.io/PerfLab/#/
 
-PerfLab - .
 
 ## Функционал
 
