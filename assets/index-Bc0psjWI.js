@@ -1,24 +1,24 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))r(n);new MutationObserver(n=>{for(const s of n)if(s.type==="childList")for(const i of s.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&r(i)}).observe(document,{childList:!0,subtree:!0});function o(n){const s={};return n.integrity&&(s.integrity=n.integrity),n.referrerPolicy&&(s.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?s.credentials="include":n.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function r(n){if(n.ep)return;n.ep=!0;const s=o(n);fetch(n.href,s)}})();/**
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))r(n);new MutationObserver(n=>{for(const i of n)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&r(s)}).observe(document,{childList:!0,subtree:!0});function o(n){const i={};return n.integrity&&(i.integrity=n.integrity),n.referrerPolicy&&(i.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?i.credentials="include":n.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function r(n){if(n.ep)return;n.ep=!0;const i=o(n);fetch(n.href,i)}})();/**
 * @vue/shared v3.5.6
 * (c) 2018-present Yuxi (Evan) You and Vue contributors
 * @license MIT
-**//*! #__NO_SIDE_EFFECTS__ */function Tr(e){const t=Object.create(null);for(const o of e.split(","))t[o]=1;return o=>o in t}const Y={},Rt=[],Ue=()=>{},Pi=()=>!1,Ko=e=>e.charCodeAt(0)===111&&e.charCodeAt(1)===110&&(e.charCodeAt(2)>122||e.charCodeAt(2)<97),kr=e=>e.startsWith("onUpdate:"),le=Object.assign,Pr=(e,t)=>{const o=e.indexOf(t);o>-1&&e.splice(o,1)},Ci=Object.prototype.hasOwnProperty,B=(e,t)=>Ci.call(e,t),q=Array.isArray,At=e=>no(e)==="[object Map]",Io=e=>no(e)==="[object Set]",Vr=e=>no(e)==="[object Date]",N=e=>typeof e=="function",ne=e=>typeof e=="string",Be=e=>typeof e=="symbol",te=e=>e!==null&&typeof e=="object",Gn=e=>(te(e)||N(e))&&N(e.then)&&N(e.catch),Vn=Object.prototype.toString,no=e=>Vn.call(e),wi=e=>no(e).slice(8,-1),Wn=e=>no(e)==="[object Object]",Cr=e=>ne(e)&&e!=="NaN"&&e[0]!=="-"&&""+parseInt(e,10)===e,Bt=Tr(",key,ref,ref_for,ref_key,onVnodeBeforeMount,onVnodeMounted,onVnodeBeforeUpdate,onVnodeUpdated,onVnodeBeforeUnmount,onVnodeUnmounted"),Eo=e=>{const t=Object.create(null);return o=>t[o]||(t[o]=e(o))},Mi=/-(\w)/g,_e=Eo(e=>e.replace(Mi,(t,o)=>o?o.toUpperCase():"")),Ri=/\B([A-Z])/g,St=Eo(e=>e.replace(Ri,"-$1").toLowerCase()),_o=Eo(e=>e.charAt(0).toUpperCase()+e.slice(1)),Vo=Eo(e=>e?`on${_o(e)}`:""),ct=(e,t)=>!Object.is(e,t),yo=(e,...t)=>{for(let o=0;o<e.length;o++)e[o](...t)},$n=(e,t,o,r=!1)=>{Object.defineProperty(e,t,{configurable:!0,enumerable:!1,writable:r,value:o})},Po=e=>{const t=parseFloat(e);return isNaN(t)?e:t};let Wr;const zn=()=>Wr||(Wr=typeof globalThis<"u"?globalThis:typeof self<"u"?self:typeof window<"u"?window:typeof global<"u"?global:{});function wr(e){if(q(e)){const t={};for(let o=0;o<e.length;o++){const r=e[o],n=ne(r)?Ii(r):wr(r);if(n)for(const s in n)t[s]=n[s]}return t}else if(ne(e)||te(e))return e}const Ai=/;(?![^(]*\))/g,Ji=/:([^]+)/,Ki=/\/\*[^]*?\*\//g;function Ii(e){const t={};return e.replace(Ki,"").split(Ai).forEach(o=>{if(o){const r=o.split(Ji);r.length>1&&(t[r[0].trim()]=r[1].trim())}}),t}function xo(e){let t="";if(ne(e))t=e;else if(q(e))for(let o=0;o<e.length;o++){const r=xo(e[o]);r&&(t+=r+" ")}else if(te(e))for(const o in e)e[o]&&(t+=o+" ");return t.trim()}const Ei="itemscope,allowfullscreen,formnovalidate,ismap,nomodule,novalidate,readonly",_i=Tr(Ei);function Qn(e){return!!e||e===""}function xi(e,t){if(e.length!==t.length)return!1;let o=!0;for(let r=0;o&&r<e.length;r++)o=Do(e[r],t[r]);return o}function Do(e,t){if(e===t)return!0;let o=Vr(e),r=Vr(t);if(o||r)return o&&r?e.getTime()===t.getTime():!1;if(o=Be(e),r=Be(t),o||r)return e===t;if(o=q(e),r=q(t),o||r)return o&&r?xi(e,t):!1;if(o=te(e),r=te(t),o||r){if(!o||!r)return!1;const n=Object.keys(e).length,s=Object.keys(t).length;if(n!==s)return!1;for(const i in e){const l=e.hasOwnProperty(i),a=t.hasOwnProperty(i);if(l&&!a||!l&&a||!Do(e[i],t[i]))return!1}}return String(e)===String(t)}function Di(e,t){return e.findIndex(o=>Do(o,t))}const Xn=e=>!!(e&&e.__v_isRef===!0),at=e=>ne(e)?e:e==null?"":q(e)||te(e)&&(e.toString===Vn||!N(e.toString))?Xn(e)?at(e.value):JSON.stringify(e,Yn,2):String(e),Yn=(e,t)=>Xn(t)?Yn(e,t.value):At(t)?{[`Map(${t.size})`]:[...t.entries()].reduce((o,[r,n],s)=>(o[Wo(r,s)+" =>"]=n,o),{})}:Io(t)?{[`Set(${t.size})`]:[...t.values()].map(o=>Wo(o))}:Be(t)?Wo(t):te(t)&&!q(t)&&!Wn(t)?String(t):t,Wo=(e,t="")=>{var o;return Be(e)?`Symbol(${(o=e.description)!=null?o:t})`:e};/**
+**//*! #__NO_SIDE_EFFECTS__ */function Tr(e){const t=Object.create(null);for(const o of e.split(","))t[o]=1;return o=>o in t}const Z={},Rt=[],Ge=()=>{},Cs=()=>!1,Io=e=>e.charCodeAt(0)===111&&e.charCodeAt(1)===110&&(e.charCodeAt(2)>122||e.charCodeAt(2)<97),Pr=e=>e.startsWith("onUpdate:"),le=Object.assign,kr=(e,t)=>{const o=e.indexOf(t);o>-1&&e.splice(o,1)},ws=Object.prototype.hasOwnProperty,F=(e,t)=>ws.call(e,t),O=Array.isArray,At=e=>no(e)==="[object Map]",Jo=e=>no(e)==="[object Set]",Ur=e=>no(e)==="[object Date]",N=e=>typeof e=="function",ne=e=>typeof e=="string",Fe=e=>typeof e=="symbol",te=e=>e!==null&&typeof e=="object",Bn=e=>(te(e)||N(e))&&N(e.then)&&N(e.catch),Un=Object.prototype.toString,no=e=>Un.call(e),Rs=e=>no(e).slice(8,-1),Wn=e=>no(e)==="[object Object]",Mr=e=>ne(e)&&e!=="NaN"&&e[0]!=="-"&&""+parseInt(e,10)===e,Ft=Tr(",key,ref,ref_for,ref_key,onVnodeBeforeMount,onVnodeMounted,onVnodeBeforeUpdate,onVnodeUpdated,onVnodeBeforeUnmount,onVnodeUnmounted"),Ko=e=>{const t=Object.create(null);return o=>t[o]||(t[o]=e(o))},As=/-(\w)/g,_e=Ko(e=>e.replace(As,(t,o)=>o?o.toUpperCase():"")),Es=/\B([A-Z])/g,St=Ko(e=>e.replace(Es,"-$1").toLowerCase()),_o=Ko(e=>e.charAt(0).toUpperCase()+e.slice(1)),Uo=Ko(e=>e?`on${_o(e)}`:""),ct=(e,t)=>!Object.is(e,t),bo=(e,...t)=>{for(let o=0;o<e.length;o++)e[o](...t)},Qn=(e,t,o,r=!1)=>{Object.defineProperty(e,t,{configurable:!0,enumerable:!1,writable:r,value:o})},ko=e=>{const t=parseFloat(e);return isNaN(t)?e:t};let Wr;const $n=()=>Wr||(Wr=typeof globalThis<"u"?globalThis:typeof self<"u"?self:typeof window<"u"?window:typeof global<"u"?global:{});function Cr(e){if(O(e)){const t={};for(let o=0;o<e.length;o++){const r=e[o],n=ne(r)?_s(r):Cr(r);if(n)for(const i in n)t[i]=n[i]}return t}else if(ne(e)||te(e))return e}const Is=/;(?![^(]*\))/g,Js=/:([^]+)/,Ks=/\/\*[^]*?\*\//g;function _s(e){const t={};return e.replace(Ks,"").split(Is).forEach(o=>{if(o){const r=o.split(Js);r.length>1&&(t[r[0].trim()]=r[1].trim())}}),t}function Do(e){let t="";if(ne(e))t=e;else if(O(e))for(let o=0;o<e.length;o++){const r=Do(e[o]);r&&(t+=r+" ")}else if(te(e))for(const o in e)e[o]&&(t+=o+" ");return t.trim()}const Ds="itemscope,allowfullscreen,formnovalidate,ismap,nomodule,novalidate,readonly",xs=Tr(Ds);function zn(e){return!!e||e===""}function Ls(e,t){if(e.length!==t.length)return!1;let o=!0;for(let r=0;o&&r<e.length;r++)o=xo(e[r],t[r]);return o}function xo(e,t){if(e===t)return!0;let o=Ur(e),r=Ur(t);if(o||r)return o&&r?e.getTime()===t.getTime():!1;if(o=Fe(e),r=Fe(t),o||r)return e===t;if(o=O(e),r=O(t),o||r)return o&&r?Ls(e,t):!1;if(o=te(e),r=te(t),o||r){if(!o||!r)return!1;const n=Object.keys(e).length,i=Object.keys(t).length;if(n!==i)return!1;for(const s in e){const l=e.hasOwnProperty(s),a=t.hasOwnProperty(s);if(l&&!a||!l&&a||!xo(e[s],t[s]))return!1}}return String(e)===String(t)}function Os(e,t){return e.findIndex(o=>xo(o,t))}const Xn=e=>!!(e&&e.__v_isRef===!0),ze=e=>ne(e)?e:e==null?"":O(e)||te(e)&&(e.toString===Un||!N(e.toString))?Xn(e)?ze(e.value):JSON.stringify(e,Yn,2):String(e),Yn=(e,t)=>Xn(t)?Yn(e,t.value):At(t)?{[`Map(${t.size})`]:[...t.entries()].reduce((o,[r,n],i)=>(o[Wo(r,i)+" =>"]=n,o),{})}:Jo(t)?{[`Set(${t.size})`]:[...t.values()].map(o=>Wo(o))}:Fe(t)?Wo(t):te(t)&&!O(t)&&!Wn(t)?String(t):t,Wo=(e,t="")=>{var o;return Fe(e)?`Symbol(${(o=e.description)!=null?o:t})`:e};/**
 * @vue/reactivity v3.5.6
 * (c) 2018-present Yuxi (Evan) You and Vue contributors
 * @license MIT
-**/let Pe;class Oi{constructor(t=!1){this.detached=t,this._active=!0,this.effects=[],this.cleanups=[],this._isPaused=!1,this.parent=Pe,!t&&Pe&&(this.index=(Pe.scopes||(Pe.scopes=[])).push(this)-1)}get active(){return this._active}pause(){if(this._active){this._isPaused=!0;let t,o;if(this.scopes)for(t=0,o=this.scopes.length;t<o;t++)this.scopes[t].pause();for(t=0,o=this.effects.length;t<o;t++)this.effects[t].pause()}}resume(){if(this._active&&this._isPaused){this._isPaused=!1;let t,o;if(this.scopes)for(t=0,o=this.scopes.length;t<o;t++)this.scopes[t].resume();for(t=0,o=this.effects.length;t<o;t++)this.effects[t].resume()}}run(t){if(this._active){const o=Pe;try{return Pe=this,t()}finally{Pe=o}}}on(){Pe=this}off(){Pe=this.parent}stop(t){if(this._active){let o,r;for(o=0,r=this.effects.length;o<r;o++)this.effects[o].stop();for(o=0,r=this.cleanups.length;o<r;o++)this.cleanups[o]();if(this.scopes)for(o=0,r=this.scopes.length;o<r;o++)this.scopes[o].stop(!0);if(!this.detached&&this.parent&&!t){const n=this.parent.scopes.pop();n&&n!==this&&(this.parent.scopes[this.index]=n,n.index=this.index)}this.parent=void 0,this._active=!1}}}function qi(){return Pe}let X;const $o=new WeakSet;class Zn{constructor(t){this.fn=t,this.deps=void 0,this.depsTail=void 0,this.flags=5,this.next=void 0,this.cleanup=void 0,this.scheduler=void 0,Pe&&Pe.active&&Pe.effects.push(this)}pause(){this.flags|=64}resume(){this.flags&64&&(this.flags&=-65,$o.has(this)&&($o.delete(this),this.trigger()))}notify(){this.flags&2&&!(this.flags&32)||this.flags&8||ts(this)}run(){if(!(this.flags&1))return this.fn();this.flags|=2,$r(this),os(this);const t=X,o=Ee;X=this,Ee=!0;try{return this.fn()}finally{rs(this),X=t,Ee=o,this.flags&=-3}}stop(){if(this.flags&1){for(let t=this.deps;t;t=t.nextDep)Ar(t);this.deps=this.depsTail=void 0,$r(this),this.onStop&&this.onStop(),this.flags&=-2}}trigger(){this.flags&64?$o.add(this):this.scheduler?this.scheduler():this.runIfDirty()}runIfDirty(){sr(this)&&this.run()}get dirty(){return sr(this)}}let es=0,Gt;function ts(e){e.flags|=8,e.next=Gt,Gt=e}function Mr(){es++}function Rr(){if(--es>0)return;let e;for(;Gt;){let t=Gt;for(Gt=void 0;t;){const o=t.next;if(t.next=void 0,t.flags&=-9,t.flags&1)try{t.trigger()}catch(r){e||(e=r)}t=o}}if(e)throw e}function os(e){for(let t=e.deps;t;t=t.nextDep)t.version=-1,t.prevActiveLink=t.dep.activeLink,t.dep.activeLink=t}function rs(e){let t,o=e.depsTail,r=o;for(;r;){const n=r.prevDep;r.version===-1?(r===o&&(o=n),Ar(r),Li(r)):t=r,r.dep.activeLink=r.prevActiveLink,r.prevActiveLink=void 0,r=n}e.deps=t,e.depsTail=o}function sr(e){for(let t=e.deps;t;t=t.nextDep)if(t.dep.version!==t.version||t.dep.computed&&(ns(t.dep.computed)||t.dep.version!==t.version))return!0;return!!e._dirty}function ns(e){if(e.flags&4&&!(e.flags&16)||(e.flags&=-17,e.globalVersion===Xt))return;e.globalVersion=Xt;const t=e.dep;if(e.flags|=2,t.version>0&&!e.isSSR&&e.deps&&!sr(e)){e.flags&=-3;return}const o=X,r=Ee;X=e,Ee=!0;try{os(e);const n=e.fn(e._value);(t.version===0||ct(n,e._value))&&(e._value=n,t.version++)}catch(n){throw t.version++,n}finally{X=o,Ee=r,rs(e),e.flags&=-3}}function Ar(e){const{dep:t,prevSub:o,nextSub:r}=e;if(o&&(o.nextSub=r,e.prevSub=void 0),r&&(r.prevSub=o,e.nextSub=void 0),t.subs===e&&(t.subs=o),!t.subs&&t.computed){t.computed.flags&=-5;for(let n=t.computed.deps;n;n=n.nextDep)Ar(n)}}function Li(e){const{prevDep:t,nextDep:o}=e;t&&(t.nextDep=o,e.prevDep=void 0),o&&(o.prevDep=t,e.nextDep=void 0)}let Ee=!0;const ss=[];function ut(){ss.push(Ee),Ee=!1}function pt(){const e=ss.pop();Ee=e===void 0?!0:e}function $r(e){const{cleanup:t}=e;if(e.cleanup=void 0,t){const o=X;X=void 0;try{t()}finally{X=o}}}let Xt=0;class Ni{constructor(t,o){this.sub=t,this.dep=o,this.version=o.version,this.nextDep=this.prevDep=this.nextSub=this.prevSub=this.prevActiveLink=void 0}}class Jr{constructor(t){this.computed=t,this.version=0,this.activeLink=void 0,this.subs=void 0}track(t){if(!X||!Ee||X===this.computed)return;let o=this.activeLink;if(o===void 0||o.sub!==X)o=this.activeLink=new Ni(X,this),X.deps?(o.prevDep=X.depsTail,X.depsTail.nextDep=o,X.depsTail=o):X.deps=X.depsTail=o,X.flags&4&&is(o);else if(o.version===-1&&(o.version=this.version,o.nextDep)){const r=o.nextDep;r.prevDep=o.prevDep,o.prevDep&&(o.prevDep.nextDep=r),o.prevDep=X.depsTail,o.nextDep=void 0,X.depsTail.nextDep=o,X.depsTail=o,X.deps===o&&(X.deps=r)}return o}trigger(t){this.version++,Xt++,this.notify(t)}notify(t){Mr();try{for(let o=this.subs;o;o=o.prevSub)o.sub.notify()&&o.sub.dep.notify()}finally{Rr()}}}function is(e){const t=e.dep.computed;if(t&&!e.dep.subs){t.flags|=20;for(let r=t.deps;r;r=r.nextDep)is(r)}const o=e.dep.subs;o!==e&&(e.prevSub=o,o&&(o.nextSub=e)),e.dep.subs=e}const ir=new WeakMap,yt=Symbol(""),lr=Symbol(""),Yt=Symbol("");function de(e,t,o){if(Ee&&X){let r=ir.get(e);r||ir.set(e,r=new Map);let n=r.get(o);n||r.set(o,n=new Jr),n.track()}}function Xe(e,t,o,r,n,s){const i=ir.get(e);if(!i){Xt++;return}const l=a=>{a&&a.trigger()};if(Mr(),t==="clear")i.forEach(l);else{const a=q(e),d=a&&Cr(o);if(a&&o==="length"){const p=Number(r);i.forEach((g,h)=>{(h==="length"||h===Yt||!Be(h)&&h>=p)&&l(g)})}else switch(o!==void 0&&l(i.get(o)),d&&l(i.get(Yt)),t){case"add":a?d&&l(i.get("length")):(l(i.get(yt)),At(e)&&l(i.get(lr)));break;case"delete":a||(l(i.get(yt)),At(e)&&l(i.get(lr)));break;case"set":At(e)&&l(i.get(yt));break}}Rr()}function Ct(e){const t=G(e);return t===e?t:(de(t,"iterate",Yt),Je(e)?t:t.map(ue))}function Oo(e){return de(e=G(e),"iterate",Yt),e}const Hi={__proto__:null,[Symbol.iterator](){return zo(this,Symbol.iterator,ue)},concat(...e){return Ct(this).concat(...e.map(t=>q(t)?Ct(t):t))},entries(){return zo(this,"entries",e=>(e[1]=ue(e[1]),e))},every(e,t){return We(this,"every",e,t,void 0,arguments)},filter(e,t){return We(this,"filter",e,t,o=>o.map(ue),arguments)},find(e,t){return We(this,"find",e,t,ue,arguments)},findIndex(e,t){return We(this,"findIndex",e,t,void 0,arguments)},findLast(e,t){return We(this,"findLast",e,t,ue,arguments)},findLastIndex(e,t){return We(this,"findLastIndex",e,t,void 0,arguments)},forEach(e,t){return We(this,"forEach",e,t,void 0,arguments)},includes(...e){return Qo(this,"includes",e)},indexOf(...e){return Qo(this,"indexOf",e)},join(e){return Ct(this).join(e)},lastIndexOf(...e){return Qo(this,"lastIndexOf",e)},map(e,t){return We(this,"map",e,t,void 0,arguments)},pop(){return Ht(this,"pop")},push(...e){return Ht(this,"push",e)},reduce(e,...t){return zr(this,"reduce",e,t)},reduceRight(e,...t){return zr(this,"reduceRight",e,t)},shift(){return Ht(this,"shift")},some(e,t){return We(this,"some",e,t,void 0,arguments)},splice(...e){return Ht(this,"splice",e)},toReversed(){return Ct(this).toReversed()},toSorted(e){return Ct(this).toSorted(e)},toSpliced(...e){return Ct(this).toSpliced(...e)},unshift(...e){return Ht(this,"unshift",e)},values(){return zo(this,"values",ue)}};function zo(e,t,o){const r=Oo(e),n=r[t]();return r!==e&&!Je(e)&&(n._next=n.next,n.next=()=>{const s=n._next();return s.value&&(s.value=o(s.value)),s}),n}const ji=Array.prototype;function We(e,t,o,r,n,s){const i=Oo(e),l=i!==e&&!Je(e),a=i[t];if(a!==ji[t]){const g=a.apply(e,s);return l?ue(g):g}let d=o;i!==e&&(l?d=function(g,h){return o.call(this,ue(g),h,e)}:o.length>2&&(d=function(g,h){return o.call(this,g,h,e)}));const p=a.call(i,d,r);return l&&n?n(p):p}function zr(e,t,o,r){const n=Oo(e);let s=o;return n!==e&&(Je(e)?o.length>3&&(s=function(i,l,a){return o.call(this,i,l,a,e)}):s=function(i,l,a){return o.call(this,i,ue(l),a,e)}),n[t](s,...r)}function Qo(e,t,o){const r=G(e);de(r,"iterate",Yt);const n=r[t](...o);return(n===-1||n===!1)&&_r(o[0])?(o[0]=G(o[0]),r[t](...o)):n}function Ht(e,t,o=[]){ut(),Mr();const r=G(e)[t].apply(e,o);return Rr(),pt(),r}const Fi=Tr("__proto__,__v_isRef,__isVue"),ls=new Set(Object.getOwnPropertyNames(Symbol).filter(e=>e!=="arguments"&&e!=="caller").map(e=>Symbol[e]).filter(Be));function Ui(e){Be(e)||(e=String(e));const t=G(this);return de(t,"has",e),t.hasOwnProperty(e)}class as{constructor(t=!1,o=!1){this._isReadonly=t,this._isShallow=o}get(t,o,r){const n=this._isReadonly,s=this._isShallow;if(o==="__v_isReactive")return!n;if(o==="__v_isReadonly")return n;if(o==="__v_isShallow")return s;if(o==="__v_raw")return r===(n?s?ol:gs:s?ps:us).get(t)||Object.getPrototypeOf(t)===Object.getPrototypeOf(r)?t:void 0;const i=q(t);if(!n){let a;if(i&&(a=Hi[o]))return a;if(o==="hasOwnProperty")return Ui}const l=Reflect.get(t,o,ge(t)?t:r);return(Be(o)?ls.has(o):Fi(o))||(n||de(t,"get",o),s)?l:ge(l)?i&&Cr(o)?l:l.value:te(l)?n?hs(l):Lo(l):l}}class cs extends as{constructor(t=!1){super(!1,t)}set(t,o,r,n){let s=t[o];if(!this._isShallow){const a=bt(s);if(!Je(r)&&!bt(r)&&(s=G(s),r=G(r)),!q(t)&&ge(s)&&!ge(r))return a?!1:(s.value=r,!0)}const i=q(t)&&Cr(o)?Number(o)<t.length:B(t,o),l=Reflect.set(t,o,r,ge(t)?t:n);return t===G(n)&&(i?ct(r,s)&&Xe(t,"set",o,r):Xe(t,"add",o,r)),l}deleteProperty(t,o){const r=B(t,o);t[o];const n=Reflect.deleteProperty(t,o);return n&&r&&Xe(t,"delete",o,void 0),n}has(t,o){const r=Reflect.has(t,o);return(!Be(o)||!ls.has(o))&&de(t,"has",o),r}ownKeys(t){return de(t,"iterate",q(t)?"length":yt),Reflect.ownKeys(t)}}class Bi extends as{constructor(t=!1){super(!0,t)}set(t,o){return!0}deleteProperty(t,o){return!0}}const Gi=new cs,Vi=new Bi,Wi=new cs(!0);const Kr=e=>e,qo=e=>Reflect.getPrototypeOf(e);function co(e,t,o=!1,r=!1){e=e.__v_raw;const n=G(e),s=G(t);o||(ct(t,s)&&de(n,"get",t),de(n,"get",s));const{has:i}=qo(n),l=r?Kr:o?xr:ue;if(i.call(n,t))return l(e.get(t));if(i.call(n,s))return l(e.get(s));e!==n&&e.get(t)}function uo(e,t=!1){const o=this.__v_raw,r=G(o),n=G(e);return t||(ct(e,n)&&de(r,"has",e),de(r,"has",n)),e===n?o.has(e):o.has(e)||o.has(n)}function po(e,t=!1){return e=e.__v_raw,!t&&de(G(e),"iterate",yt),Reflect.get(e,"size",e)}function Qr(e,t=!1){!t&&!Je(e)&&!bt(e)&&(e=G(e));const o=G(this);return qo(o).has.call(o,e)||(o.add(e),Xe(o,"add",e,e)),this}function Xr(e,t,o=!1){!o&&!Je(t)&&!bt(t)&&(t=G(t));const r=G(this),{has:n,get:s}=qo(r);let i=n.call(r,e);i||(e=G(e),i=n.call(r,e));const l=s.call(r,e);return r.set(e,t),i?ct(t,l)&&Xe(r,"set",e,t):Xe(r,"add",e,t),this}function Yr(e){const t=G(this),{has:o,get:r}=qo(t);let n=o.call(t,e);n||(e=G(e),n=o.call(t,e)),r&&r.call(t,e);const s=t.delete(e);return n&&Xe(t,"delete",e,void 0),s}function Zr(){const e=G(this),t=e.size!==0,o=e.clear();return t&&Xe(e,"clear",void 0,void 0),o}function go(e,t){return function(r,n){const s=this,i=s.__v_raw,l=G(i),a=t?Kr:e?xr:ue;return!e&&de(l,"iterate",yt),i.forEach((d,p)=>r.call(n,a(d),a(p),s))}}function ho(e,t,o){return function(...r){const n=this.__v_raw,s=G(n),i=At(s),l=e==="entries"||e===Symbol.iterator&&i,a=e==="keys"&&i,d=n[e](...r),p=o?Kr:t?xr:ue;return!t&&de(s,"iterate",a?lr:yt),{next(){const{value:g,done:h}=d.next();return h?{value:g,done:h}:{value:l?[p(g[0]),p(g[1])]:p(g),done:h}},[Symbol.iterator](){return this}}}}function rt(e){return function(...t){return e==="delete"?!1:e==="clear"?void 0:this}}function $i(){const e={get(s){return co(this,s)},get size(){return po(this)},has:uo,add:Qr,set:Xr,delete:Yr,clear:Zr,forEach:go(!1,!1)},t={get(s){return co(this,s,!1,!0)},get size(){return po(this)},has:uo,add(s){return Qr.call(this,s,!0)},set(s,i){return Xr.call(this,s,i,!0)},delete:Yr,clear:Zr,forEach:go(!1,!0)},o={get(s){return co(this,s,!0)},get size(){return po(this,!0)},has(s){return uo.call(this,s,!0)},add:rt("add"),set:rt("set"),delete:rt("delete"),clear:rt("clear"),forEach:go(!0,!1)},r={get(s){return co(this,s,!0,!0)},get size(){return po(this,!0)},has(s){return uo.call(this,s,!0)},add:rt("add"),set:rt("set"),delete:rt("delete"),clear:rt("clear"),forEach:go(!0,!0)};return["keys","values","entries",Symbol.iterator].forEach(s=>{e[s]=ho(s,!1,!1),o[s]=ho(s,!0,!1),t[s]=ho(s,!1,!0),r[s]=ho(s,!0,!0)}),[e,o,t,r]}const[zi,Qi,Xi,Yi]=$i();function Ir(e,t){const o=t?e?Yi:Xi:e?Qi:zi;return(r,n,s)=>n==="__v_isReactive"?!e:n==="__v_isReadonly"?e:n==="__v_raw"?r:Reflect.get(B(o,n)&&n in r?o:r,n,s)}const Zi={get:Ir(!1,!1)},el={get:Ir(!1,!0)},tl={get:Ir(!0,!1)};const us=new WeakMap,ps=new WeakMap,gs=new WeakMap,ol=new WeakMap;function rl(e){switch(e){case"Object":case"Array":return 1;case"Map":case"Set":case"WeakMap":case"WeakSet":return 2;default:return 0}}function nl(e){return e.__v_skip||!Object.isExtensible(e)?0:rl(wi(e))}function Lo(e){return bt(e)?e:Er(e,!1,Gi,Zi,us)}function ds(e){return Er(e,!1,Wi,el,ps)}function hs(e){return Er(e,!0,Vi,tl,gs)}function Er(e,t,o,r,n){if(!te(e)||e.__v_raw&&!(t&&e.__v_isReactive))return e;const s=n.get(e);if(s)return s;const i=nl(e);if(i===0)return e;const l=new Proxy(e,i===2?r:o);return n.set(e,l),l}function Jt(e){return bt(e)?Jt(e.__v_raw):!!(e&&e.__v_isReactive)}function bt(e){return!!(e&&e.__v_isReadonly)}function Je(e){return!!(e&&e.__v_isShallow)}function _r(e){return e?!!e.__v_raw:!1}function G(e){const t=e&&e.__v_raw;return t?G(t):e}function sl(e){return!B(e,"__v_skip")&&Object.isExtensible(e)&&$n(e,"__v_skip",!0),e}const ue=e=>te(e)?Lo(e):e,xr=e=>te(e)?hs(e):e;function ge(e){return e?e.__v_isRef===!0:!1}function il(e){return fs(e,!1)}function ll(e){return fs(e,!0)}function fs(e,t){return ge(e)?e:new al(e,t)}class al{constructor(t,o){this.dep=new Jr,this.__v_isRef=!0,this.__v_isShallow=!1,this._rawValue=o?t:G(t),this._value=o?t:ue(t),this.__v_isShallow=o}get value(){return this.dep.track(),this._value}set value(t){const o=this._rawValue,r=this.__v_isShallow||Je(t)||bt(t);t=r?t:G(t),ct(t,o)&&(this._rawValue=t,this._value=r?t:ue(t),this.dep.trigger())}}function Kt(e){return ge(e)?e.value:e}const cl={get:(e,t,o)=>t==="__v_raw"?e:Kt(Reflect.get(e,t,o)),set:(e,t,o,r)=>{const n=e[t];return ge(n)&&!ge(o)?(n.value=o,!0):Reflect.set(e,t,o,r)}};function ms(e){return Jt(e)?e:new Proxy(e,cl)}class ul{constructor(t,o,r){this.fn=t,this.setter=o,this._value=void 0,this.dep=new Jr(this),this.__v_isRef=!0,this.deps=void 0,this.depsTail=void 0,this.flags=16,this.globalVersion=Xt-1,this.effect=this,this.__v_isReadonly=!o,this.isSSR=r}notify(){if(this.flags|=16,!(this.flags&8)&&X!==this)return ts(this),!0}get value(){const t=this.dep.track();return ns(this),t&&(t.version=this.dep.version),this._value}set value(t){this.setter&&this.setter(t)}}function pl(e,t,o=!1){let r,n;return N(e)?r=e:(r=e.get,n=e.set),new ul(r,n,o)}const fo={},Co=new WeakMap;let ft;function gl(e,t=!1,o=ft){if(o){let r=Co.get(o);r||Co.set(o,r=[]),r.push(e)}}function dl(e,t,o=Y){const{immediate:r,deep:n,once:s,scheduler:i,augmentJob:l,call:a}=o,d=K=>n?K:Je(K)||n===!1||n===0?Qe(K,1):Qe(K);let p,g,h,m,A=!1,J=!1;if(ge(e)?(g=()=>e.value,A=Je(e)):Jt(e)?(g=()=>d(e),A=!0):q(e)?(J=!0,A=e.some(K=>Jt(K)||Je(K)),g=()=>e.map(K=>{if(ge(K))return K.value;if(Jt(K))return d(K);if(N(K))return a?a(K,2):K()})):N(e)?t?g=a?()=>a(e,2):e:g=()=>{if(h){ut();try{h()}finally{pt()}}const K=ft;ft=p;try{return a?a(e,3,[m]):e(m)}finally{ft=K}}:g=Ue,t&&n){const K=g,Q=n===!0?1/0:n;g=()=>Qe(K(),Q)}const H=qi(),x=()=>{p.stop(),H&&Pr(H.effects,p)};if(s&&t){const K=t;t=(...Q)=>{K(...Q),x()}}let _=J?new Array(e.length).fill(fo):fo;const D=K=>{if(!(!(p.flags&1)||!p.dirty&&!K))if(t){const Q=p.run();if(n||A||(J?Q.some((ie,oe)=>ct(ie,_[oe])):ct(Q,_))){h&&h();const ie=ft;ft=p;try{const oe=[Q,_===fo?void 0:J&&_[0]===fo?[]:_,m];a?a(t,3,oe):t(...oe),_=Q}finally{ft=ie}}}else p.run()};return l&&l(D),p=new Zn(g),p.scheduler=i?()=>i(D,!1):D,m=K=>gl(K,!1,p),h=p.onStop=()=>{const K=Co.get(p);if(K){if(a)a(K,4);else for(const Q of K)Q();Co.delete(p)}},t?r?D(!0):_=p.run():i?i(D.bind(null,!0),!0):p.run(),x.pause=p.pause.bind(p),x.resume=p.resume.bind(p),x.stop=x,x}function Qe(e,t=1/0,o){if(t<=0||!te(e)||e.__v_skip||(o=o||new Set,o.has(e)))return e;if(o.add(e),t--,ge(e))Qe(e.value,t,o);else if(q(e))for(let r=0;r<e.length;r++)Qe(e[r],t,o);else if(Io(e)||At(e))e.forEach(r=>{Qe(r,t,o)});else if(Wn(e)){for(const r in e)Qe(e[r],t,o);for(const r of Object.getOwnPropertySymbols(e))Object.prototype.propertyIsEnumerable.call(e,r)&&Qe(e[r],t,o)}return e}/**
+**/let Me;class qs{constructor(t=!1){this.detached=t,this._active=!0,this.effects=[],this.cleanups=[],this._isPaused=!1,this.parent=Me,!t&&Me&&(this.index=(Me.scopes||(Me.scopes=[])).push(this)-1)}get active(){return this._active}pause(){if(this._active){this._isPaused=!0;let t,o;if(this.scopes)for(t=0,o=this.scopes.length;t<o;t++)this.scopes[t].pause();for(t=0,o=this.effects.length;t<o;t++)this.effects[t].pause()}}resume(){if(this._active&&this._isPaused){this._isPaused=!1;let t,o;if(this.scopes)for(t=0,o=this.scopes.length;t<o;t++)this.scopes[t].resume();for(t=0,o=this.effects.length;t<o;t++)this.effects[t].resume()}}run(t){if(this._active){const o=Me;try{return Me=this,t()}finally{Me=o}}}on(){Me=this}off(){Me=this.parent}stop(t){if(this._active){let o,r;for(o=0,r=this.effects.length;o<r;o++)this.effects[o].stop();for(o=0,r=this.cleanups.length;o<r;o++)this.cleanups[o]();if(this.scopes)for(o=0,r=this.scopes.length;o<r;o++)this.scopes[o].stop(!0);if(!this.detached&&this.parent&&!t){const n=this.parent.scopes.pop();n&&n!==this&&(this.parent.scopes[this.index]=n,n.index=this.index)}this.parent=void 0,this._active=!1}}}function Ns(){return Me}let Y;const Qo=new WeakSet;class Zn{constructor(t){this.fn=t,this.deps=void 0,this.depsTail=void 0,this.flags=5,this.next=void 0,this.cleanup=void 0,this.scheduler=void 0,Me&&Me.active&&Me.effects.push(this)}pause(){this.flags|=64}resume(){this.flags&64&&(this.flags&=-65,Qo.has(this)&&(Qo.delete(this),this.trigger()))}notify(){this.flags&2&&!(this.flags&32)||this.flags&8||ti(this)}run(){if(!(this.flags&1))return this.fn();this.flags|=2,Qr(this),oi(this);const t=Y,o=Ke;Y=this,Ke=!0;try{return this.fn()}finally{ri(this),Y=t,Ke=o,this.flags&=-3}}stop(){if(this.flags&1){for(let t=this.deps;t;t=t.nextDep)Ar(t);this.deps=this.depsTail=void 0,Qr(this),this.onStop&&this.onStop(),this.flags&=-2}}trigger(){this.flags&64?Qo.add(this):this.scheduler?this.scheduler():this.runIfDirty()}runIfDirty(){ir(this)&&this.run()}get dirty(){return ir(this)}}let ei=0,Bt;function ti(e){e.flags|=8,e.next=Bt,Bt=e}function wr(){ei++}function Rr(){if(--ei>0)return;let e;for(;Bt;){let t=Bt;for(Bt=void 0;t;){const o=t.next;if(t.next=void 0,t.flags&=-9,t.flags&1)try{t.trigger()}catch(r){e||(e=r)}t=o}}if(e)throw e}function oi(e){for(let t=e.deps;t;t=t.nextDep)t.version=-1,t.prevActiveLink=t.dep.activeLink,t.dep.activeLink=t}function ri(e){let t,o=e.depsTail,r=o;for(;r;){const n=r.prevDep;r.version===-1?(r===o&&(o=n),Ar(r),Vs(r)):t=r,r.dep.activeLink=r.prevActiveLink,r.prevActiveLink=void 0,r=n}e.deps=t,e.depsTail=o}function ir(e){for(let t=e.deps;t;t=t.nextDep)if(t.dep.version!==t.version||t.dep.computed&&(ni(t.dep.computed)||t.dep.version!==t.version))return!0;return!!e._dirty}function ni(e){if(e.flags&4&&!(e.flags&16)||(e.flags&=-17,e.globalVersion===Xt))return;e.globalVersion=Xt;const t=e.dep;if(e.flags|=2,t.version>0&&!e.isSSR&&e.deps&&!ir(e)){e.flags&=-3;return}const o=Y,r=Ke;Y=e,Ke=!0;try{oi(e);const n=e.fn(e._value);(t.version===0||ct(n,e._value))&&(e._value=n,t.version++)}catch(n){throw t.version++,n}finally{Y=o,Ke=r,ri(e),e.flags&=-3}}function Ar(e){const{dep:t,prevSub:o,nextSub:r}=e;if(o&&(o.nextSub=r,e.prevSub=void 0),r&&(r.prevSub=o,e.nextSub=void 0),t.subs===e&&(t.subs=o),!t.subs&&t.computed){t.computed.flags&=-5;for(let n=t.computed.deps;n;n=n.nextDep)Ar(n)}}function Vs(e){const{prevDep:t,nextDep:o}=e;t&&(t.nextDep=o,e.prevDep=void 0),o&&(o.prevDep=t,e.nextDep=void 0)}let Ke=!0;const ii=[];function ut(){ii.push(Ke),Ke=!1}function gt(){const e=ii.pop();Ke=e===void 0?!0:e}function Qr(e){const{cleanup:t}=e;if(e.cleanup=void 0,t){const o=Y;Y=void 0;try{t()}finally{Y=o}}}let Xt=0;class Hs{constructor(t,o){this.sub=t,this.dep=o,this.version=o.version,this.nextDep=this.prevDep=this.nextSub=this.prevSub=this.prevActiveLink=void 0}}class Er{constructor(t){this.computed=t,this.version=0,this.activeLink=void 0,this.subs=void 0}track(t){if(!Y||!Ke||Y===this.computed)return;let o=this.activeLink;if(o===void 0||o.sub!==Y)o=this.activeLink=new Hs(Y,this),Y.deps?(o.prevDep=Y.depsTail,Y.depsTail.nextDep=o,Y.depsTail=o):Y.deps=Y.depsTail=o,Y.flags&4&&si(o);else if(o.version===-1&&(o.version=this.version,o.nextDep)){const r=o.nextDep;r.prevDep=o.prevDep,o.prevDep&&(o.prevDep.nextDep=r),o.prevDep=Y.depsTail,o.nextDep=void 0,Y.depsTail.nextDep=o,Y.depsTail=o,Y.deps===o&&(Y.deps=r)}return o}trigger(t){this.version++,Xt++,this.notify(t)}notify(t){wr();try{for(let o=this.subs;o;o=o.prevSub)o.sub.notify()&&o.sub.dep.notify()}finally{Rr()}}}function si(e){const t=e.dep.computed;if(t&&!e.dep.subs){t.flags|=20;for(let r=t.deps;r;r=r.nextDep)si(r)}const o=e.dep.subs;o!==e&&(e.prevSub=o,o&&(o.nextSub=e)),e.dep.subs=e}const sr=new WeakMap,bt=Symbol(""),lr=Symbol(""),Yt=Symbol("");function he(e,t,o){if(Ke&&Y){let r=sr.get(e);r||sr.set(e,r=new Map);let n=r.get(o);n||r.set(o,n=new Er),n.track()}}function Ye(e,t,o,r,n,i){const s=sr.get(e);if(!s){Xt++;return}const l=a=>{a&&a.trigger()};if(wr(),t==="clear")s.forEach(l);else{const a=O(e),d=a&&Mr(o);if(a&&o==="length"){const g=Number(r);s.forEach((p,h)=>{(h==="length"||h===Yt||!Fe(h)&&h>=g)&&l(p)})}else switch(o!==void 0&&l(s.get(o)),d&&l(s.get(Yt)),t){case"add":a?d&&l(s.get("length")):(l(s.get(bt)),At(e)&&l(s.get(lr)));break;case"delete":a||(l(s.get(bt)),At(e)&&l(s.get(lr)));break;case"set":At(e)&&l(s.get(bt));break}}Rr()}function Mt(e){const t=B(e);return t===e?t:(he(t,"iterate",Yt),Ee(e)?t:t.map(ge))}function Lo(e){return he(e=B(e),"iterate",Yt),e}const js={__proto__:null,[Symbol.iterator](){return $o(this,Symbol.iterator,ge)},concat(...e){return Mt(this).concat(...e.map(t=>O(t)?Mt(t):t))},entries(){return $o(this,"entries",e=>(e[1]=ge(e[1]),e))},every(e,t){return We(this,"every",e,t,void 0,arguments)},filter(e,t){return We(this,"filter",e,t,o=>o.map(ge),arguments)},find(e,t){return We(this,"find",e,t,ge,arguments)},findIndex(e,t){return We(this,"findIndex",e,t,void 0,arguments)},findLast(e,t){return We(this,"findLast",e,t,ge,arguments)},findLastIndex(e,t){return We(this,"findLastIndex",e,t,void 0,arguments)},forEach(e,t){return We(this,"forEach",e,t,void 0,arguments)},includes(...e){return zo(this,"includes",e)},indexOf(...e){return zo(this,"indexOf",e)},join(e){return Mt(this).join(e)},lastIndexOf(...e){return zo(this,"lastIndexOf",e)},map(e,t){return We(this,"map",e,t,void 0,arguments)},pop(){return Vt(this,"pop")},push(...e){return Vt(this,"push",e)},reduce(e,...t){return $r(this,"reduce",e,t)},reduceRight(e,...t){return $r(this,"reduceRight",e,t)},shift(){return Vt(this,"shift")},some(e,t){return We(this,"some",e,t,void 0,arguments)},splice(...e){return Vt(this,"splice",e)},toReversed(){return Mt(this).toReversed()},toSorted(e){return Mt(this).toSorted(e)},toSpliced(...e){return Mt(this).toSpliced(...e)},unshift(...e){return Vt(this,"unshift",e)},values(){return $o(this,"values",ge)}};function $o(e,t,o){const r=Lo(e),n=r[t]();return r!==e&&!Ee(e)&&(n._next=n.next,n.next=()=>{const i=n._next();return i.value&&(i.value=o(i.value)),i}),n}const Gs=Array.prototype;function We(e,t,o,r,n,i){const s=Lo(e),l=s!==e&&!Ee(e),a=s[t];if(a!==Gs[t]){const p=a.apply(e,i);return l?ge(p):p}let d=o;s!==e&&(l?d=function(p,h){return o.call(this,ge(p),h,e)}:o.length>2&&(d=function(p,h){return o.call(this,p,h,e)}));const g=a.call(s,d,r);return l&&n?n(g):g}function $r(e,t,o,r){const n=Lo(e);let i=o;return n!==e&&(Ee(e)?o.length>3&&(i=function(s,l,a){return o.call(this,s,l,a,e)}):i=function(s,l,a){return o.call(this,s,ge(l),a,e)}),n[t](i,...r)}function zo(e,t,o){const r=B(e);he(r,"iterate",Yt);const n=r[t](...o);return(n===-1||n===!1)&&_r(o[0])?(o[0]=B(o[0]),r[t](...o)):n}function Vt(e,t,o=[]){ut(),wr();const r=B(e)[t].apply(e,o);return Rr(),gt(),r}const Fs=Tr("__proto__,__v_isRef,__isVue"),li=new Set(Object.getOwnPropertyNames(Symbol).filter(e=>e!=="arguments"&&e!=="caller").map(e=>Symbol[e]).filter(Fe));function Bs(e){Fe(e)||(e=String(e));const t=B(this);return he(t,"has",e),t.hasOwnProperty(e)}class ai{constructor(t=!1,o=!1){this._isReadonly=t,this._isShallow=o}get(t,o,r){const n=this._isReadonly,i=this._isShallow;if(o==="__v_isReactive")return!n;if(o==="__v_isReadonly")return n;if(o==="__v_isShallow")return i;if(o==="__v_raw")return r===(n?i?nl:pi:i?gi:ui).get(t)||Object.getPrototypeOf(t)===Object.getPrototypeOf(r)?t:void 0;const s=O(t);if(!n){let a;if(s&&(a=js[o]))return a;if(o==="hasOwnProperty")return Bs}const l=Reflect.get(t,o,de(t)?t:r);return(Fe(o)?li.has(o):Fs(o))||(n||he(t,"get",o),i)?l:de(l)?s&&Mr(o)?l:l.value:te(l)?n?hi(l):qo(l):l}}class ci extends ai{constructor(t=!1){super(!1,t)}set(t,o,r,n){let i=t[o];if(!this._isShallow){const a=yt(i);if(!Ee(r)&&!yt(r)&&(i=B(i),r=B(r)),!O(t)&&de(i)&&!de(r))return a?!1:(i.value=r,!0)}const s=O(t)&&Mr(o)?Number(o)<t.length:F(t,o),l=Reflect.set(t,o,r,de(t)?t:n);return t===B(n)&&(s?ct(r,i)&&Ye(t,"set",o,r):Ye(t,"add",o,r)),l}deleteProperty(t,o){const r=F(t,o);t[o];const n=Reflect.deleteProperty(t,o);return n&&r&&Ye(t,"delete",o,void 0),n}has(t,o){const r=Reflect.has(t,o);return(!Fe(o)||!li.has(o))&&he(t,"has",o),r}ownKeys(t){return he(t,"iterate",O(t)?"length":bt),Reflect.ownKeys(t)}}class Us extends ai{constructor(t=!1){super(!0,t)}set(t,o){return!0}deleteProperty(t,o){return!0}}const Ws=new ci,Qs=new Us,$s=new ci(!0);const Ir=e=>e,Oo=e=>Reflect.getPrototypeOf(e);function co(e,t,o=!1,r=!1){e=e.__v_raw;const n=B(e),i=B(t);o||(ct(t,i)&&he(n,"get",t),he(n,"get",i));const{has:s}=Oo(n),l=r?Ir:o?Dr:ge;if(s.call(n,t))return l(e.get(t));if(s.call(n,i))return l(e.get(i));e!==n&&e.get(t)}function uo(e,t=!1){const o=this.__v_raw,r=B(o),n=B(e);return t||(ct(e,n)&&he(r,"has",e),he(r,"has",n)),e===n?o.has(e):o.has(e)||o.has(n)}function go(e,t=!1){return e=e.__v_raw,!t&&he(B(e),"iterate",bt),Reflect.get(e,"size",e)}function zr(e,t=!1){!t&&!Ee(e)&&!yt(e)&&(e=B(e));const o=B(this);return Oo(o).has.call(o,e)||(o.add(e),Ye(o,"add",e,e)),this}function Xr(e,t,o=!1){!o&&!Ee(t)&&!yt(t)&&(t=B(t));const r=B(this),{has:n,get:i}=Oo(r);let s=n.call(r,e);s||(e=B(e),s=n.call(r,e));const l=i.call(r,e);return r.set(e,t),s?ct(t,l)&&Ye(r,"set",e,t):Ye(r,"add",e,t),this}function Yr(e){const t=B(this),{has:o,get:r}=Oo(t);let n=o.call(t,e);n||(e=B(e),n=o.call(t,e)),r&&r.call(t,e);const i=t.delete(e);return n&&Ye(t,"delete",e,void 0),i}function Zr(){const e=B(this),t=e.size!==0,o=e.clear();return t&&Ye(e,"clear",void 0,void 0),o}function po(e,t){return function(r,n){const i=this,s=i.__v_raw,l=B(s),a=t?Ir:e?Dr:ge;return!e&&he(l,"iterate",bt),s.forEach((d,g)=>r.call(n,a(d),a(g),i))}}function ho(e,t,o){return function(...r){const n=this.__v_raw,i=B(n),s=At(i),l=e==="entries"||e===Symbol.iterator&&s,a=e==="keys"&&s,d=n[e](...r),g=o?Ir:t?Dr:ge;return!t&&he(i,"iterate",a?lr:bt),{next(){const{value:p,done:h}=d.next();return h?{value:p,done:h}:{value:l?[g(p[0]),g(p[1])]:g(p),done:h}},[Symbol.iterator](){return this}}}}function nt(e){return function(...t){return e==="delete"?!1:e==="clear"?void 0:this}}function zs(){const e={get(i){return co(this,i)},get size(){return go(this)},has:uo,add:zr,set:Xr,delete:Yr,clear:Zr,forEach:po(!1,!1)},t={get(i){return co(this,i,!1,!0)},get size(){return go(this)},has:uo,add(i){return zr.call(this,i,!0)},set(i,s){return Xr.call(this,i,s,!0)},delete:Yr,clear:Zr,forEach:po(!1,!0)},o={get(i){return co(this,i,!0)},get size(){return go(this,!0)},has(i){return uo.call(this,i,!0)},add:nt("add"),set:nt("set"),delete:nt("delete"),clear:nt("clear"),forEach:po(!0,!1)},r={get(i){return co(this,i,!0,!0)},get size(){return go(this,!0)},has(i){return uo.call(this,i,!0)},add:nt("add"),set:nt("set"),delete:nt("delete"),clear:nt("clear"),forEach:po(!0,!0)};return["keys","values","entries",Symbol.iterator].forEach(i=>{e[i]=ho(i,!1,!1),o[i]=ho(i,!0,!1),t[i]=ho(i,!1,!0),r[i]=ho(i,!0,!0)}),[e,o,t,r]}const[Xs,Ys,Zs,el]=zs();function Jr(e,t){const o=t?e?el:Zs:e?Ys:Xs;return(r,n,i)=>n==="__v_isReactive"?!e:n==="__v_isReadonly"?e:n==="__v_raw"?r:Reflect.get(F(o,n)&&n in r?o:r,n,i)}const tl={get:Jr(!1,!1)},ol={get:Jr(!1,!0)},rl={get:Jr(!0,!1)};const ui=new WeakMap,gi=new WeakMap,pi=new WeakMap,nl=new WeakMap;function il(e){switch(e){case"Object":case"Array":return 1;case"Map":case"Set":case"WeakMap":case"WeakSet":return 2;default:return 0}}function sl(e){return e.__v_skip||!Object.isExtensible(e)?0:il(Rs(e))}function qo(e){return yt(e)?e:Kr(e,!1,Ws,tl,ui)}function di(e){return Kr(e,!1,$s,ol,gi)}function hi(e){return Kr(e,!0,Qs,rl,pi)}function Kr(e,t,o,r,n){if(!te(e)||e.__v_raw&&!(t&&e.__v_isReactive))return e;const i=n.get(e);if(i)return i;const s=sl(e);if(s===0)return e;const l=new Proxy(e,s===2?r:o);return n.set(e,l),l}function Et(e){return yt(e)?Et(e.__v_raw):!!(e&&e.__v_isReactive)}function yt(e){return!!(e&&e.__v_isReadonly)}function Ee(e){return!!(e&&e.__v_isShallow)}function _r(e){return e?!!e.__v_raw:!1}function B(e){const t=e&&e.__v_raw;return t?B(t):e}function ll(e){return!F(e,"__v_skip")&&Object.isExtensible(e)&&Qn(e,"__v_skip",!0),e}const ge=e=>te(e)?qo(e):e,Dr=e=>te(e)?hi(e):e;function de(e){return e?e.__v_isRef===!0:!1}function al(e){return fi(e,!1)}function cl(e){return fi(e,!0)}function fi(e,t){return de(e)?e:new ul(e,t)}class ul{constructor(t,o){this.dep=new Er,this.__v_isRef=!0,this.__v_isShallow=!1,this._rawValue=o?t:B(t),this._value=o?t:ge(t),this.__v_isShallow=o}get value(){return this.dep.track(),this._value}set value(t){const o=this._rawValue,r=this.__v_isShallow||Ee(t)||yt(t);t=r?t:B(t),ct(t,o)&&(this._rawValue=t,this._value=r?t:ge(t),this.dep.trigger())}}function It(e){return de(e)?e.value:e}const gl={get:(e,t,o)=>t==="__v_raw"?e:It(Reflect.get(e,t,o)),set:(e,t,o,r)=>{const n=e[t];return de(n)&&!de(o)?(n.value=o,!0):Reflect.set(e,t,o,r)}};function mi(e){return Et(e)?e:new Proxy(e,gl)}class pl{constructor(t,o,r){this.fn=t,this.setter=o,this._value=void 0,this.dep=new Er(this),this.__v_isRef=!0,this.deps=void 0,this.depsTail=void 0,this.flags=16,this.globalVersion=Xt-1,this.effect=this,this.__v_isReadonly=!o,this.isSSR=r}notify(){if(this.flags|=16,!(this.flags&8)&&Y!==this)return ti(this),!0}get value(){const t=this.dep.track();return ni(this),t&&(t.version=this.dep.version),this._value}set value(t){this.setter&&this.setter(t)}}function dl(e,t,o=!1){let r,n;return N(e)?r=e:(r=e.get,n=e.set),new pl(r,n,o)}const fo={},Mo=new WeakMap;let ft;function hl(e,t=!1,o=ft){if(o){let r=Mo.get(o);r||Mo.set(o,r=[]),r.push(e)}}function fl(e,t,o=Z){const{immediate:r,deep:n,once:i,scheduler:s,augmentJob:l,call:a}=o,d=I=>n?I:Ee(I)||n===!1||n===0?Xe(I,1):Xe(I);let g,p,h,m,A=!1,E=!1;if(de(e)?(p=()=>e.value,A=Ee(e)):Et(e)?(p=()=>d(e),A=!0):O(e)?(E=!0,A=e.some(I=>Et(I)||Ee(I)),p=()=>e.map(I=>{if(de(I))return I.value;if(Et(I))return d(I);if(N(I))return a?a(I,2):I()})):N(e)?t?p=a?()=>a(e,2):e:p=()=>{if(h){ut();try{h()}finally{gt()}}const I=ft;ft=g;try{return a?a(e,3,[m]):e(m)}finally{ft=I}}:p=Ge,t&&n){const I=p,X=n===!0?1/0:n;p=()=>Xe(I(),X)}const H=Ns(),D=()=>{g.stop(),H&&kr(H.effects,g)};if(i&&t){const I=t;t=(...X)=>{I(...X),D()}}let _=E?new Array(e.length).fill(fo):fo;const x=I=>{if(!(!(g.flags&1)||!g.dirty&&!I))if(t){const X=g.run();if(n||A||(E?X.some((se,oe)=>ct(se,_[oe])):ct(X,_))){h&&h();const se=ft;ft=g;try{const oe=[X,_===fo?void 0:E&&_[0]===fo?[]:_,m];a?a(t,3,oe):t(...oe),_=X}finally{ft=se}}}else g.run()};return l&&l(x),g=new Zn(p),g.scheduler=s?()=>s(x,!1):x,m=I=>hl(I,!1,g),h=g.onStop=()=>{const I=Mo.get(g);if(I){if(a)a(I,4);else for(const X of I)X();Mo.delete(g)}},t?r?x(!0):_=g.run():s?s(x.bind(null,!0),!0):g.run(),D.pause=g.pause.bind(g),D.resume=g.resume.bind(g),D.stop=D,D}function Xe(e,t=1/0,o){if(t<=0||!te(e)||e.__v_skip||(o=o||new Set,o.has(e)))return e;if(o.add(e),t--,de(e))Xe(e.value,t,o);else if(O(e))for(let r=0;r<e.length;r++)Xe(e[r],t,o);else if(Jo(e)||At(e))e.forEach(r=>{Xe(r,t,o)});else if(Wn(e)){for(const r in e)Xe(e[r],t,o);for(const r of Object.getOwnPropertySymbols(e))Object.prototype.propertyIsEnumerable.call(e,r)&&Xe(e[r],t,o)}return e}/**
 * @vue/runtime-core v3.5.6
 * (c) 2018-present Yuxi (Evan) You and Vue contributors
 * @license MIT
-**/function so(e,t,o,r){try{return r?e(...r):e()}catch(n){No(n,t,o)}}function Ge(e,t,o,r){if(N(e)){const n=so(e,t,o,r);return n&&Gn(n)&&n.catch(s=>{No(s,t,o)}),n}if(q(e)){const n=[];for(let s=0;s<e.length;s++)n.push(Ge(e[s],t,o,r));return n}}function No(e,t,o,r=!0){const n=t?t.vnode:null,{errorHandler:s,throwUnhandledErrorInProduction:i}=t&&t.appContext.config||Y;if(t){let l=t.parent;const a=t.proxy,d=`https://vuejs.org/error-reference/#runtime-${o}`;for(;l;){const p=l.ec;if(p){for(let g=0;g<p.length;g++)if(p[g](e,a,d)===!1)return}l=l.parent}if(s){ut(),so(s,null,10,[e,a,d]),pt();return}}hl(e,o,n,r,i)}function hl(e,t,o,r=!0,n=!1){if(n)throw e;console.error(e)}let Zt=!1,ar=!1;const fe=[];let je=0;const It=[];let st=null,wt=0;const ys=Promise.resolve();let Dr=null;function Or(e){const t=Dr||ys;return e?t.then(this?e.bind(this):e):t}function fl(e){let t=Zt?je+1:0,o=fe.length;for(;t<o;){const r=t+o>>>1,n=fe[r],s=eo(n);s<e||s===e&&n.flags&2?t=r+1:o=r}return t}function qr(e){if(!(e.flags&1)){const t=eo(e),o=fe[fe.length-1];!o||!(e.flags&2)&&t>=eo(o)?fe.push(e):fe.splice(fl(t),0,e),e.flags|=1,bs()}}function bs(){!Zt&&!ar&&(ar=!0,Dr=ys.then(Ss))}function ml(e){q(e)?It.push(...e):st&&e.id===-1?st.splice(wt+1,0,e):e.flags&1||(It.push(e),e.flags|=1),bs()}function en(e,t,o=Zt?je+1:0){for(;o<fe.length;o++){const r=fe[o];if(r&&r.flags&2){if(e&&r.id!==e.uid)continue;fe.splice(o,1),o--,r.flags&4&&(r.flags&=-2),r(),r.flags&=-2}}}function vs(e){if(It.length){const t=[...new Set(It)].sort((o,r)=>eo(o)-eo(r));if(It.length=0,st){st.push(...t);return}for(st=t,wt=0;wt<st.length;wt++){const o=st[wt];o.flags&4&&(o.flags&=-2),o.flags&8||o(),o.flags&=-2}st=null,wt=0}}const eo=e=>e.id==null?e.flags&2?-1:1/0:e.id;function Ss(e){ar=!1,Zt=!0;try{for(je=0;je<fe.length;je++){const t=fe[je];t&&!(t.flags&8)&&(t.flags&4&&(t.flags&=-2),so(t,t.i,t.i?15:14),t.flags&=-2)}}finally{for(;je<fe.length;je++){const t=fe[je];t&&(t.flags&=-2)}je=0,fe.length=0,vs(),Zt=!1,Dr=null,(fe.length||It.length)&&Ss()}}let we=null,Ts=null;function wo(e){const t=we;return we=e,Ts=e&&e.type.__scopeId||null,t}function Ce(e,t=we,o){if(!t||e._n)return e;const r=(...n)=>{r._d&&un(-1);const s=wo(t);let i;try{i=e(...n)}finally{wo(s),r._d&&un(1)}return i};return r._n=!0,r._c=!0,r._d=!0,r}function cr(e,t){if(we===null)return e;const o=Bo(we),r=e.dirs||(e.dirs=[]);for(let n=0;n<t.length;n++){let[s,i,l,a=Y]=t[n];s&&(N(s)&&(s={mounted:s,updated:s}),s.deep&&Qe(i),r.push({dir:s,instance:o,value:i,oldValue:void 0,arg:l,modifiers:a}))}return e}function dt(e,t,o,r){const n=e.dirs,s=t&&t.dirs;for(let i=0;i<n.length;i++){const l=n[i];s&&(l.oldValue=s[i].value);let a=l.dir[r];a&&(ut(),Ge(a,o,8,[e.el,l,e,t]),pt())}}const yl=Symbol("_vte"),bl=e=>e.__isTeleport;function Lr(e,t){e.shapeFlag&6&&e.component?(e.transition=t,Lr(e.component.subTree,t)):e.shapeFlag&128?(e.ssContent.transition=t.clone(e.ssContent),e.ssFallback.transition=t.clone(e.ssFallback)):e.transition=t}/*! #__NO_SIDE_EFFECTS__ */function ks(e,t){return N(e)?le({name:e.name},t,{setup:e}):e}function Ps(e){e.ids=[e.ids[0]+e.ids[2]+++"-",0,0]}function ur(e,t,o,r,n=!1){if(q(e)){e.forEach((A,J)=>ur(A,t&&(q(t)?t[J]:t),o,r,n));return}if(Vt(r)&&!n)return;const s=r.shapeFlag&4?Bo(r.component):r.el,i=n?null:s,{i:l,r:a}=e,d=t&&t.r,p=l.refs===Y?l.refs={}:l.refs,g=l.setupState,h=G(g),m=g===Y?()=>!1:A=>B(h,A);if(d!=null&&d!==a&&(ne(d)?(p[d]=null,m(d)&&(g[d]=null)):ge(d)&&(d.value=null)),N(a))so(a,l,12,[i,p]);else{const A=ne(a),J=ge(a);if(A||J){const H=()=>{if(e.f){const x=A?m(a)?g[a]:p[a]:a.value;n?q(x)&&Pr(x,s):q(x)?x.includes(s)||x.push(s):A?(p[a]=[s],m(a)&&(g[a]=p[a])):(a.value=[s],e.k&&(p[e.k]=a.value))}else A?(p[a]=i,m(a)&&(g[a]=i)):J&&(a.value=i,e.k&&(p[e.k]=i))};i?(H.id=-1,ke(H,o)):H()}}}const Vt=e=>!!e.type.__asyncLoader,Cs=e=>e.type.__isKeepAlive;function vl(e,t){ws(e,"a",t)}function Sl(e,t){ws(e,"da",t)}function ws(e,t,o=pe){const r=e.__wdc||(e.__wdc=()=>{let n=o;for(;n;){if(n.isDeactivated)return;n=n.parent}return e()});if(Ho(t,r,o),o){let n=o.parent;for(;n&&n.parent;)Cs(n.parent.vnode)&&Tl(r,t,o,n),n=n.parent}}function Tl(e,t,o,r){const n=Ho(t,e,r,!0);Ms(()=>{Pr(r[t],n)},o)}function Ho(e,t,o=pe,r=!1){if(o){const n=o[e]||(o[e]=[]),s=t.__weh||(t.__weh=(...i)=>{ut();const l=lo(o),a=Ge(t,o,e,i);return l(),pt(),a});return r?n.unshift(s):n.push(s),s}}const Ze=e=>(t,o=pe)=>{(!Uo||e==="sp")&&Ho(e,(...r)=>t(...r),o)},kl=Ze("bm"),Pl=Ze("m"),Cl=Ze("bu"),wl=Ze("u"),Ml=Ze("bum"),Ms=Ze("um"),Rl=Ze("sp"),Al=Ze("rtg"),Jl=Ze("rtc");function Kl(e,t=pe){Ho("ec",e,t)}const Rs="components";function io(e,t){return El(Rs,e,!0,t)||e}const Il=Symbol.for("v-ndc");function El(e,t,o=!0,r=!1){const n=we||pe;if(n){const s=n.type;if(e===Rs){const l=va(s,!1);if(l&&(l===t||l===_e(t)||l===_o(_e(t))))return s}const i=tn(n[e]||s[e],t)||tn(n.appContext[e],t);return!i&&r?s:i}}function tn(e,t){return e&&(e[t]||e[_e(t)]||e[_o(_e(t))])}function As(e,t,o,r){let n;const s=o,i=q(e);if(i||ne(e)){const l=i&&Jt(e);let a=!1;l&&(a=!Je(e),e=Oo(e)),n=new Array(e.length);for(let d=0,p=e.length;d<p;d++)n[d]=t(a?ue(e[d]):e[d],d,void 0,s)}else if(typeof e=="number"){n=new Array(e);for(let l=0;l<e;l++)n[l]=t(l+1,l,void 0,s)}else if(te(e))if(e[Symbol.iterator])n=Array.from(e,(l,a)=>t(l,a,void 0,s));else{const l=Object.keys(e);n=new Array(l.length);for(let a=0,d=l.length;a<d;a++){const p=l[a];n[a]=t(e[p],p,a,s)}}else n=[];return n}const pr=e=>e?Qs(e)?Bo(e):pr(e.parent):null,Wt=le(Object.create(null),{$:e=>e,$el:e=>e.vnode.el,$data:e=>e.data,$props:e=>e.props,$attrs:e=>e.attrs,$slots:e=>e.slots,$refs:e=>e.refs,$parent:e=>pr(e.parent),$root:e=>pr(e.root),$host:e=>e.ce,$emit:e=>e.emit,$options:e=>Nr(e),$forceUpdate:e=>e.f||(e.f=()=>{qr(e.update)}),$nextTick:e=>e.n||(e.n=Or.bind(e.proxy)),$watch:e=>Zl.bind(e)}),Xo=(e,t)=>e!==Y&&!e.__isScriptSetup&&B(e,t),_l={get({_:e},t){if(t==="__v_skip")return!0;const{ctx:o,setupState:r,data:n,props:s,accessCache:i,type:l,appContext:a}=e;let d;if(t[0]!=="$"){const m=i[t];if(m!==void 0)switch(m){case 1:return r[t];case 2:return n[t];case 4:return o[t];case 3:return s[t]}else{if(Xo(r,t))return i[t]=1,r[t];if(n!==Y&&B(n,t))return i[t]=2,n[t];if((d=e.propsOptions[0])&&B(d,t))return i[t]=3,s[t];if(o!==Y&&B(o,t))return i[t]=4,o[t];gr&&(i[t]=0)}}const p=Wt[t];let g,h;if(p)return t==="$attrs"&&de(e.attrs,"get",""),p(e);if((g=l.__cssModules)&&(g=g[t]))return g;if(o!==Y&&B(o,t))return i[t]=4,o[t];if(h=a.config.globalProperties,B(h,t))return h[t]},set({_:e},t,o){const{data:r,setupState:n,ctx:s}=e;return Xo(n,t)?(n[t]=o,!0):r!==Y&&B(r,t)?(r[t]=o,!0):B(e.props,t)||t[0]==="$"&&t.slice(1)in e?!1:(s[t]=o,!0)},has({_:{data:e,setupState:t,accessCache:o,ctx:r,appContext:n,propsOptions:s}},i){let l;return!!o[i]||e!==Y&&B(e,i)||Xo(t,i)||(l=s[0])&&B(l,i)||B(r,i)||B(Wt,i)||B(n.config.globalProperties,i)},defineProperty(e,t,o){return o.get!=null?e._.accessCache[t]=0:B(o,"value")&&this.set(e,t,o.value,null),Reflect.defineProperty(e,t,o)}};function on(e){return q(e)?e.reduce((t,o)=>(t[o]=null,t),{}):e}let gr=!0;function xl(e){const t=Nr(e),o=e.proxy,r=e.ctx;gr=!1,t.beforeCreate&&rn(t.beforeCreate,e,"bc");const{data:n,computed:s,methods:i,watch:l,provide:a,inject:d,created:p,beforeMount:g,mounted:h,beforeUpdate:m,updated:A,activated:J,deactivated:H,beforeDestroy:x,beforeUnmount:_,destroyed:D,unmounted:K,render:Q,renderTracked:ie,renderTriggered:oe,errorCaptured:De,serverPrefetch:et,expose:Oe,inheritAttrs:tt,components:gt,directives:qe,filters:Lt}=t;if(d&&Dl(d,r,null),i)for(const z in i){const U=i[z];N(U)&&(r[z]=U.bind(o))}if(n){const z=n.call(o,o);te(z)&&(e.data=Lo(z))}if(gr=!0,s)for(const z in s){const U=s[z],Ve=N(U)?U.bind(o,o):N(U.get)?U.get.bind(o,o):Ue,ot=!N(U)&&N(U.set)?U.set.bind(o):Ue,Le=Ie({get:Ve,set:ot});Object.defineProperty(r,z,{enumerable:!0,configurable:!0,get:()=>Le.value,set:me=>Le.value=me})}if(l)for(const z in l)Js(l[z],r,o,z);if(a){const z=N(a)?a.call(o):a;Reflect.ownKeys(z).forEach(U=>{bo(U,z[U])})}p&&rn(p,e,"c");function se(z,U){q(U)?U.forEach(Ve=>z(Ve.bind(o))):U&&z(U.bind(o))}if(se(kl,g),se(Pl,h),se(Cl,m),se(wl,A),se(vl,J),se(Sl,H),se(Kl,De),se(Jl,ie),se(Al,oe),se(Ml,_),se(Ms,K),se(Rl,et),q(Oe))if(Oe.length){const z=e.exposed||(e.exposed={});Oe.forEach(U=>{Object.defineProperty(z,U,{get:()=>o[U],set:Ve=>o[U]=Ve})})}else e.exposed||(e.exposed={});Q&&e.render===Ue&&(e.render=Q),tt!=null&&(e.inheritAttrs=tt),gt&&(e.components=gt),qe&&(e.directives=qe),et&&Ps(e)}function Dl(e,t,o=Ue){q(e)&&(e=dr(e));for(const r in e){const n=e[r];let s;te(n)?"default"in n?s=Ye(n.from||r,n.default,!0):s=Ye(n.from||r):s=Ye(n),ge(s)?Object.defineProperty(t,r,{enumerable:!0,configurable:!0,get:()=>s.value,set:i=>s.value=i}):t[r]=s}}function rn(e,t,o){Ge(q(e)?e.map(r=>r.bind(t.proxy)):e.bind(t.proxy),t,o)}function Js(e,t,o,r){let n=r.includes(".")?Us(o,r):()=>o[r];if(ne(e)){const s=t[e];N(s)&&vo(n,s)}else if(N(e))vo(n,e.bind(o));else if(te(e))if(q(e))e.forEach(s=>Js(s,t,o,r));else{const s=N(e.handler)?e.handler.bind(o):t[e.handler];N(s)&&vo(n,s,e)}}function Nr(e){const t=e.type,{mixins:o,extends:r}=t,{mixins:n,optionsCache:s,config:{optionMergeStrategies:i}}=e.appContext,l=s.get(t);let a;return l?a=l:!n.length&&!o&&!r?a=t:(a={},n.length&&n.forEach(d=>Mo(a,d,i,!0)),Mo(a,t,i)),te(t)&&s.set(t,a),a}function Mo(e,t,o,r=!1){const{mixins:n,extends:s}=t;s&&Mo(e,s,o,!0),n&&n.forEach(i=>Mo(e,i,o,!0));for(const i in t)if(!(r&&i==="expose")){const l=Ol[i]||o&&o[i];e[i]=l?l(e[i],t[i]):t[i]}return e}const Ol={data:nn,props:sn,emits:sn,methods:Ut,computed:Ut,beforeCreate:he,created:he,beforeMount:he,mounted:he,beforeUpdate:he,updated:he,beforeDestroy:he,beforeUnmount:he,destroyed:he,unmounted:he,activated:he,deactivated:he,errorCaptured:he,serverPrefetch:he,components:Ut,directives:Ut,watch:Ll,provide:nn,inject:ql};function nn(e,t){return t?e?function(){return le(N(e)?e.call(this,this):e,N(t)?t.call(this,this):t)}:t:e}function ql(e,t){return Ut(dr(e),dr(t))}function dr(e){if(q(e)){const t={};for(let o=0;o<e.length;o++)t[e[o]]=e[o];return t}return e}function he(e,t){return e?[...new Set([].concat(e,t))]:t}function Ut(e,t){return e?le(Object.create(null),e,t):t}function sn(e,t){return e?q(e)&&q(t)?[...new Set([...e,...t])]:le(Object.create(null),on(e),on(t??{})):t}function Ll(e,t){if(!e)return t;if(!t)return e;const o=le(Object.create(null),e);for(const r in t)o[r]=he(e[r],t[r]);return o}function Ks(){return{app:null,config:{isNativeTag:Pi,performance:!1,globalProperties:{},optionMergeStrategies:{},errorHandler:void 0,warnHandler:void 0,compilerOptions:{}},mixins:[],components:{},directives:{},provides:Object.create(null),optionsCache:new WeakMap,propsCache:new WeakMap,emitsCache:new WeakMap}}let Nl=0;function Hl(e,t){return function(r,n=null){N(r)||(r=le({},r)),n!=null&&!te(n)&&(n=null);const s=Ks(),i=new WeakSet,l=[];let a=!1;const d=s.app={_uid:Nl++,_component:r,_props:n,_container:null,_context:s,_instance:null,version:Ta,get config(){return s.config},set config(p){},use(p,...g){return i.has(p)||(p&&N(p.install)?(i.add(p),p.install(d,...g)):N(p)&&(i.add(p),p(d,...g))),d},mixin(p){return s.mixins.includes(p)||s.mixins.push(p),d},component(p,g){return g?(s.components[p]=g,d):s.components[p]},directive(p,g){return g?(s.directives[p]=g,d):s.directives[p]},mount(p,g,h){if(!a){const m=d._ceVNode||Z(r,n);return m.appContext=s,h===!0?h="svg":h===!1&&(h=void 0),g&&t?t(m,p):e(m,p,h),a=!0,d._container=p,p.__vue_app__=d,Bo(m.component)}},onUnmount(p){l.push(p)},unmount(){a&&(Ge(l,d._instance,16),e(null,d._container),delete d._container.__vue_app__)},provide(p,g){return s.provides[p]=g,d},runWithContext(p){const g=Et;Et=d;try{return p()}finally{Et=g}}};return d}}let Et=null;function bo(e,t){if(pe){let o=pe.provides;const r=pe.parent&&pe.parent.provides;r===o&&(o=pe.provides=Object.create(r)),o[e]=t}}function Ye(e,t,o=!1){const r=pe||we;if(r||Et){const n=Et?Et._context.provides:r?r.parent==null?r.vnode.appContext&&r.vnode.appContext.provides:r.parent.provides:void 0;if(n&&e in n)return n[e];if(arguments.length>1)return o&&N(t)?t.call(r&&r.proxy):t}}const Is={},Es=()=>Object.create(Is),_s=e=>Object.getPrototypeOf(e)===Is;function jl(e,t,o,r=!1){const n={},s=Es();e.propsDefaults=Object.create(null),xs(e,t,n,s);for(const i in e.propsOptions[0])i in n||(n[i]=void 0);o?e.props=r?n:ds(n):e.type.props?e.props=n:e.props=s,e.attrs=s}function Fl(e,t,o,r){const{props:n,attrs:s,vnode:{patchFlag:i}}=e,l=G(n),[a]=e.propsOptions;let d=!1;if((r||i>0)&&!(i&16)){if(i&8){const p=e.vnode.dynamicProps;for(let g=0;g<p.length;g++){let h=p[g];if(jo(e.emitsOptions,h))continue;const m=t[h];if(a)if(B(s,h))m!==s[h]&&(s[h]=m,d=!0);else{const A=_e(h);n[A]=hr(a,l,A,m,e,!1)}else m!==s[h]&&(s[h]=m,d=!0)}}}else{xs(e,t,n,s)&&(d=!0);let p;for(const g in l)(!t||!B(t,g)&&((p=St(g))===g||!B(t,p)))&&(a?o&&(o[g]!==void 0||o[p]!==void 0)&&(n[g]=hr(a,l,g,void 0,e,!0)):delete n[g]);if(s!==l)for(const g in s)(!t||!B(t,g))&&(delete s[g],d=!0)}d&&Xe(e.attrs,"set","")}function xs(e,t,o,r){const[n,s]=e.propsOptions;let i=!1,l;if(t)for(let a in t){if(Bt(a))continue;const d=t[a];let p;n&&B(n,p=_e(a))?!s||!s.includes(p)?o[p]=d:(l||(l={}))[p]=d:jo(e.emitsOptions,a)||(!(a in r)||d!==r[a])&&(r[a]=d,i=!0)}if(s){const a=G(o),d=l||Y;for(let p=0;p<s.length;p++){const g=s[p];o[g]=hr(n,a,g,d[g],e,!B(d,g))}}return i}function hr(e,t,o,r,n,s){const i=e[o];if(i!=null){const l=B(i,"default");if(l&&r===void 0){const a=i.default;if(i.type!==Function&&!i.skipFactory&&N(a)){const{propsDefaults:d}=n;if(o in d)r=d[o];else{const p=lo(n);r=d[o]=a.call(null,t),p()}}else r=a;n.ce&&n.ce._setProp(o,r)}i[0]&&(s&&!l?r=!1:i[1]&&(r===""||r===St(o))&&(r=!0))}return r}const Ul=new WeakMap;function Ds(e,t,o=!1){const r=o?Ul:t.propsCache,n=r.get(e);if(n)return n;const s=e.props,i={},l=[];let a=!1;if(!N(e)){const p=g=>{a=!0;const[h,m]=Ds(g,t,!0);le(i,h),m&&l.push(...m)};!o&&t.mixins.length&&t.mixins.forEach(p),e.extends&&p(e.extends),e.mixins&&e.mixins.forEach(p)}if(!s&&!a)return te(e)&&r.set(e,Rt),Rt;if(q(s))for(let p=0;p<s.length;p++){const g=_e(s[p]);ln(g)&&(i[g]=Y)}else if(s)for(const p in s){const g=_e(p);if(ln(g)){const h=s[p],m=i[g]=q(h)||N(h)?{type:h}:le({},h),A=m.type;let J=!1,H=!0;if(q(A))for(let x=0;x<A.length;++x){const _=A[x],D=N(_)&&_.name;if(D==="Boolean"){J=!0;break}else D==="String"&&(H=!1)}else J=N(A)&&A.name==="Boolean";m[0]=J,m[1]=H,(J||B(m,"default"))&&l.push(g)}}const d=[i,l];return te(e)&&r.set(e,d),d}function ln(e){return e[0]!=="$"&&!Bt(e)}const Os=e=>e[0]==="_"||e==="$stable",Hr=e=>q(e)?e.map(Fe):[Fe(e)],Bl=(e,t,o)=>{if(t._n)return t;const r=Ce((...n)=>Hr(t(...n)),o);return r._c=!1,r},qs=(e,t,o)=>{const r=e._ctx;for(const n in e){if(Os(n))continue;const s=e[n];if(N(s))t[n]=Bl(n,s,r);else if(s!=null){const i=Hr(s);t[n]=()=>i}}},Ls=(e,t)=>{const o=Hr(t);e.slots.default=()=>o},Ns=(e,t,o)=>{for(const r in t)(o||r!=="_")&&(e[r]=t[r])},Gl=(e,t,o)=>{const r=e.slots=Es();if(e.vnode.shapeFlag&32){const n=t._;n?(Ns(r,t,o),o&&$n(r,"_",n,!0)):qs(t,r)}else t&&Ls(e,t)},Vl=(e,t,o)=>{const{vnode:r,slots:n}=e;let s=!0,i=Y;if(r.shapeFlag&32){const l=t._;l?o&&l===1?s=!1:Ns(n,t,o):(s=!t.$stable,qs(t,n)),i=t}else t&&(Ls(e,t),i={default:1});if(s)for(const l in n)!Os(l)&&i[l]==null&&delete n[l]},ke=ia;function Wl(e){return $l(e)}function $l(e,t){const o=zn();o.__VUE__=!0;const{insert:r,remove:n,patchProp:s,createElement:i,createText:l,createComment:a,setText:d,setElementText:p,parentNode:g,nextSibling:h,setScopeId:m=Ue,insertStaticContent:A}=e,J=(c,u,f,v=null,y=null,S=null,C=void 0,P=null,k=!!u.dynamicChildren)=>{if(c===u)return;c&&!jt(c,u)&&(v=b(c),me(c,y,S,!0),c=null),u.patchFlag===-2&&(k=!1,u.dynamicChildren=null);const{type:T,ref:O,shapeFlag:M}=u;switch(T){case Fo:H(c,u,f,v);break;case vt:x(c,u,f,v);break;case So:c==null&&_(u,f,v,C);break;case Ae:gt(c,u,f,v,y,S,C,P,k);break;default:M&1?Q(c,u,f,v,y,S,C,P,k):M&6?qe(c,u,f,v,y,S,C,P,k):(M&64||M&128)&&T.process(c,u,f,v,y,S,C,P,k,I)}O!=null&&y&&ur(O,c&&c.ref,S,u||c,!u)},H=(c,u,f,v)=>{if(c==null)r(u.el=l(u.children),f,v);else{const y=u.el=c.el;u.children!==c.children&&d(y,u.children)}},x=(c,u,f,v)=>{c==null?r(u.el=a(u.children||""),f,v):u.el=c.el},_=(c,u,f,v)=>{[c.el,c.anchor]=A(c.children,u,f,v,c.el,c.anchor)},D=({el:c,anchor:u},f,v)=>{let y;for(;c&&c!==u;)y=h(c),r(c,f,v),c=y;r(u,f,v)},K=({el:c,anchor:u})=>{let f;for(;c&&c!==u;)f=h(c),n(c),c=f;n(u)},Q=(c,u,f,v,y,S,C,P,k)=>{u.type==="svg"?C="svg":u.type==="math"&&(C="mathml"),c==null?ie(u,f,v,y,S,C,P,k):et(c,u,y,S,C,P,k)},ie=(c,u,f,v,y,S,C,P)=>{let k,T;const{props:O,shapeFlag:M,transition:E,dirs:L}=c;if(k=c.el=i(c.type,S,O&&O.is,O),M&8?p(k,c.children):M&16&&De(c.children,k,null,v,y,Yo(c,S),C,P),L&&dt(c,null,v,"created"),oe(k,c,c.scopeId,C,v),O){for(const ee in O)ee!=="value"&&!Bt(ee)&&s(k,ee,null,O[ee],S,v);"value"in O&&s(k,"value",null,O.value,S),(T=O.onVnodeBeforeMount)&&He(T,v,c)}L&&dt(c,null,v,"beforeMount");const F=zl(y,E);F&&E.beforeEnter(k),r(k,u,f),((T=O&&O.onVnodeMounted)||F||L)&&ke(()=>{T&&He(T,v,c),F&&E.enter(k),L&&dt(c,null,v,"mounted")},y)},oe=(c,u,f,v,y)=>{if(f&&m(c,f),v)for(let S=0;S<v.length;S++)m(c,v[S]);if(y){let S=y.subTree;if(u===S||Gs(S.type)&&(S.ssContent===u||S.ssFallback===u)){const C=y.vnode;oe(c,C,C.scopeId,C.slotScopeIds,y.parent)}}},De=(c,u,f,v,y,S,C,P,k=0)=>{for(let T=k;T<c.length;T++){const O=c[T]=P?it(c[T]):Fe(c[T]);J(null,O,u,f,v,y,S,C,P)}},et=(c,u,f,v,y,S,C)=>{const P=u.el=c.el;let{patchFlag:k,dynamicChildren:T,dirs:O}=u;k|=c.patchFlag&16;const M=c.props||Y,E=u.props||Y;let L;if(f&&ht(f,!1),(L=E.onVnodeBeforeUpdate)&&He(L,f,u,c),O&&dt(u,c,f,"beforeUpdate"),f&&ht(f,!0),(M.innerHTML&&E.innerHTML==null||M.textContent&&E.textContent==null)&&p(P,""),T?Oe(c.dynamicChildren,T,P,f,v,Yo(u,y),S):C||U(c,u,P,null,f,v,Yo(u,y),S,!1),k>0){if(k&16)tt(P,M,E,f,y);else if(k&2&&M.class!==E.class&&s(P,"class",null,E.class,y),k&4&&s(P,"style",M.style,E.style,y),k&8){const F=u.dynamicProps;for(let ee=0;ee<F.length;ee++){const W=F[ee],ve=M[W],ae=E[W];(ae!==ve||W==="value")&&s(P,W,ve,ae,y,f)}}k&1&&c.children!==u.children&&p(P,u.children)}else!C&&T==null&&tt(P,M,E,f,y);((L=E.onVnodeUpdated)||O)&&ke(()=>{L&&He(L,f,u,c),O&&dt(u,c,f,"updated")},v)},Oe=(c,u,f,v,y,S,C)=>{for(let P=0;P<u.length;P++){const k=c[P],T=u[P],O=k.el&&(k.type===Ae||!jt(k,T)||k.shapeFlag&70)?g(k.el):f;J(k,T,O,null,v,y,S,C,!0)}},tt=(c,u,f,v,y)=>{if(u!==f){if(u!==Y)for(const S in u)!Bt(S)&&!(S in f)&&s(c,S,u[S],null,y,v);for(const S in f){if(Bt(S))continue;const C=f[S],P=u[S];C!==P&&S!=="value"&&s(c,S,P,C,y,v)}"value"in f&&s(c,"value",u.value,f.value,y)}},gt=(c,u,f,v,y,S,C,P,k)=>{const T=u.el=c?c.el:l(""),O=u.anchor=c?c.anchor:l("");let{patchFlag:M,dynamicChildren:E,slotScopeIds:L}=u;L&&(P=P?P.concat(L):L),c==null?(r(T,f,v),r(O,f,v),De(u.children||[],f,O,y,S,C,P,k)):M>0&&M&64&&E&&c.dynamicChildren?(Oe(c.dynamicChildren,E,f,y,S,C,P),(u.key!=null||y&&u===y.subTree)&&Hs(c,u,!0)):U(c,u,f,O,y,S,C,P,k)},qe=(c,u,f,v,y,S,C,P,k)=>{u.slotScopeIds=P,c==null?u.shapeFlag&512?y.ctx.activate(u,f,v,C,k):Lt(u,f,v,y,S,C,k):Tt(c,u,k)},Lt=(c,u,f,v,y,S,C)=>{const P=c.component=ha(c,v,y);if(Cs(c)&&(P.ctx.renderer=I),fa(P,!1,C),P.asyncDep){if(y&&y.registerDep(P,se,C),!c.el){const k=P.subTree=Z(vt);x(null,k,u,f)}}else se(P,c,u,f,y,S,C)},Tt=(c,u,f)=>{const v=u.component=c.component;if(na(c,u,f))if(v.asyncDep&&!v.asyncResolved){z(v,u,f);return}else v.next=u,v.update();else u.el=c.el,v.vnode=u},se=(c,u,f,v,y,S,C)=>{const P=()=>{if(c.isMounted){let{next:M,bu:E,u:L,parent:F,vnode:ee}=c;{const Se=js(c);if(Se){M&&(M.el=ee.el,z(c,M,C)),Se.asyncDep.then(()=>{c.isUnmounted||P()});return}}let W=M,ve;ht(c,!1),M?(M.el=ee.el,z(c,M,C)):M=ee,E&&yo(E),(ve=M.props&&M.props.onVnodeBeforeUpdate)&&He(ve,F,M,ee),ht(c,!0);const ae=Zo(c),Ke=c.subTree;c.subTree=ae,J(Ke,ae,g(Ke.el),b(Ke),c,y,S),M.el=ae.el,W===null&&sa(c,ae.el),L&&ke(L,y),(ve=M.props&&M.props.onVnodeUpdated)&&ke(()=>He(ve,F,M,ee),y)}else{let M;const{el:E,props:L}=u,{bm:F,m:ee,parent:W,root:ve,type:ae}=c,Ke=Vt(u);if(ht(c,!1),F&&yo(F),!Ke&&(M=L&&L.onVnodeBeforeMount)&&He(M,W,u),ht(c,!0),E&&re){const Se=()=>{c.subTree=Zo(c),re(E,c.subTree,c,y,null)};Ke&&ae.__asyncHydrate?ae.__asyncHydrate(E,c,Se):Se()}else{ve.ce&&ve.ce._injectChildStyle(ae);const Se=c.subTree=Zo(c);J(null,Se,f,v,c,y,S),u.el=Se.el}if(ee&&ke(ee,y),!Ke&&(M=L&&L.onVnodeMounted)){const Se=u;ke(()=>He(M,W,Se),y)}(u.shapeFlag&256||W&&Vt(W.vnode)&&W.vnode.shapeFlag&256)&&c.a&&ke(c.a,y),c.isMounted=!0,u=f=v=null}};c.scope.on();const k=c.effect=new Zn(P);c.scope.off();const T=c.update=k.run.bind(k),O=c.job=k.runIfDirty.bind(k);O.i=c,O.id=c.uid,k.scheduler=()=>qr(O),ht(c,!0),T()},z=(c,u,f)=>{u.component=c;const v=c.vnode.props;c.vnode=u,c.next=null,Fl(c,u.props,v,f),Vl(c,u.children,f),ut(),en(c),pt()},U=(c,u,f,v,y,S,C,P,k=!1)=>{const T=c&&c.children,O=c?c.shapeFlag:0,M=u.children,{patchFlag:E,shapeFlag:L}=u;if(E>0){if(E&128){ot(T,M,f,v,y,S,C,P,k);return}else if(E&256){Ve(T,M,f,v,y,S,C,P,k);return}}L&8?(O&16&&Re(T,y,S),M!==T&&p(f,M)):O&16?L&16?ot(T,M,f,v,y,S,C,P,k):Re(T,y,S,!0):(O&8&&p(f,""),L&16&&De(M,f,v,y,S,C,P,k))},Ve=(c,u,f,v,y,S,C,P,k)=>{c=c||Rt,u=u||Rt;const T=c.length,O=u.length,M=Math.min(T,O);let E;for(E=0;E<M;E++){const L=u[E]=k?it(u[E]):Fe(u[E]);J(c[E],L,f,null,y,S,C,P,k)}T>O?Re(c,y,S,!0,!1,M):De(u,f,v,y,S,C,P,k,M)},ot=(c,u,f,v,y,S,C,P,k)=>{let T=0;const O=u.length;let M=c.length-1,E=O-1;for(;T<=M&&T<=E;){const L=c[T],F=u[T]=k?it(u[T]):Fe(u[T]);if(jt(L,F))J(L,F,f,null,y,S,C,P,k);else break;T++}for(;T<=M&&T<=E;){const L=c[M],F=u[E]=k?it(u[E]):Fe(u[E]);if(jt(L,F))J(L,F,f,null,y,S,C,P,k);else break;M--,E--}if(T>M){if(T<=E){const L=E+1,F=L<O?u[L].el:v;for(;T<=E;)J(null,u[T]=k?it(u[T]):Fe(u[T]),f,F,y,S,C,P,k),T++}}else if(T>E)for(;T<=M;)me(c[T],y,S,!0),T++;else{const L=T,F=T,ee=new Map;for(T=F;T<=E;T++){const Te=u[T]=k?it(u[T]):Fe(u[T]);Te.key!=null&&ee.set(Te.key,T)}let W,ve=0;const ae=E-F+1;let Ke=!1,Se=0;const Nt=new Array(ae);for(T=0;T<ae;T++)Nt[T]=0;for(T=L;T<=M;T++){const Te=c[T];if(ve>=ae){me(Te,y,S,!0);continue}let Ne;if(Te.key!=null)Ne=ee.get(Te.key);else for(W=F;W<=E;W++)if(Nt[W-F]===0&&jt(Te,u[W])){Ne=W;break}Ne===void 0?me(Te,y,S,!0):(Nt[Ne-F]=T+1,Ne>=Se?Se=Ne:Ke=!0,J(Te,u[Ne],f,null,y,S,C,P,k),ve++)}const Br=Ke?Ql(Nt):Rt;for(W=Br.length-1,T=ae-1;T>=0;T--){const Te=F+T,Ne=u[Te],Gr=Te+1<O?u[Te+1].el:v;Nt[T]===0?J(null,Ne,f,Gr,y,S,C,P,k):Ke&&(W<0||T!==Br[W]?Le(Ne,f,Gr,2):W--)}}},Le=(c,u,f,v,y=null)=>{const{el:S,type:C,transition:P,children:k,shapeFlag:T}=c;if(T&6){Le(c.component.subTree,u,f,v);return}if(T&128){c.suspense.move(u,f,v);return}if(T&64){C.move(c,u,f,I);return}if(C===Ae){r(S,u,f);for(let M=0;M<k.length;M++)Le(k[M],u,f,v);r(c.anchor,u,f);return}if(C===So){D(c,u,f);return}if(v!==2&&T&1&&P)if(v===0)P.beforeEnter(S),r(S,u,f),ke(()=>P.enter(S),y);else{const{leave:M,delayLeave:E,afterLeave:L}=P,F=()=>r(S,u,f),ee=()=>{M(S,()=>{F(),L&&L()})};E?E(S,F,ee):ee()}else r(S,u,f)},me=(c,u,f,v=!1,y=!1)=>{const{type:S,props:C,ref:P,children:k,dynamicChildren:T,shapeFlag:O,patchFlag:M,dirs:E,cacheIndex:L}=c;if(M===-2&&(y=!1),P!=null&&ur(P,null,f,c,!0),L!=null&&(u.renderCache[L]=void 0),O&256){u.ctx.deactivate(c);return}const F=O&1&&E,ee=!Vt(c);let W;if(ee&&(W=C&&C.onVnodeBeforeUnmount)&&He(W,u,c),O&6)ao(c.component,f,v);else{if(O&128){c.suspense.unmount(f,v);return}F&&dt(c,null,u,"beforeUnmount"),O&64?c.type.remove(c,u,f,I,v):T&&!T.hasOnce&&(S!==Ae||M>0&&M&64)?Re(T,u,f,!1,!0):(S===Ae&&M&384||!y&&O&16)&&Re(k,u,f),v&&kt(c)}(ee&&(W=C&&C.onVnodeUnmounted)||F)&&ke(()=>{W&&He(W,u,c),F&&dt(c,null,u,"unmounted")},f)},kt=c=>{const{type:u,el:f,anchor:v,transition:y}=c;if(u===Ae){Pt(f,v);return}if(u===So){K(c);return}const S=()=>{n(f),y&&!y.persisted&&y.afterLeave&&y.afterLeave()};if(c.shapeFlag&1&&y&&!y.persisted){const{leave:C,delayLeave:P}=y,k=()=>C(f,S);P?P(c.el,S,k):k()}else S()},Pt=(c,u)=>{let f;for(;c!==u;)f=h(c),n(c),c=f;n(u)},ao=(c,u,f)=>{const{bum:v,scope:y,job:S,subTree:C,um:P,m:k,a:T}=c;an(k),an(T),v&&yo(v),y.stop(),S&&(S.flags|=8,me(C,c,u,f)),P&&ke(P,u),ke(()=>{c.isUnmounted=!0},u),u&&u.pendingBranch&&!u.isUnmounted&&c.asyncDep&&!c.asyncResolved&&c.suspenseId===u.pendingId&&(u.deps--,u.deps===0&&u.resolve())},Re=(c,u,f,v=!1,y=!1,S=0)=>{for(let C=S;C<c.length;C++)me(c[C],u,f,v,y)},b=c=>{if(c.shapeFlag&6)return b(c.component.subTree);if(c.shapeFlag&128)return c.suspense.next();const u=h(c.anchor||c.el),f=u&&u[yl];return f?h(f):u};let R=!1;const w=(c,u,f)=>{c==null?u._vnode&&me(u._vnode,null,null,!0):J(u._vnode||null,c,u,null,null,null,f),u._vnode=c,R||(R=!0,en(),vs(),R=!1)},I={p:J,um:me,m:Le,r:kt,mt:Lt,mc:De,pc:U,pbc:Oe,n:b,o:e};let V,re;return{render:w,hydrate:V,createApp:Hl(w,V)}}function Yo({type:e,props:t},o){return o==="svg"&&e==="foreignObject"||o==="mathml"&&e==="annotation-xml"&&t&&t.encoding&&t.encoding.includes("html")?void 0:o}function ht({effect:e,job:t},o){o?(e.flags|=32,t.flags|=4):(e.flags&=-33,t.flags&=-5)}function zl(e,t){return(!e||e&&!e.pendingBranch)&&t&&!t.persisted}function Hs(e,t,o=!1){const r=e.children,n=t.children;if(q(r)&&q(n))for(let s=0;s<r.length;s++){const i=r[s];let l=n[s];l.shapeFlag&1&&!l.dynamicChildren&&((l.patchFlag<=0||l.patchFlag===32)&&(l=n[s]=it(n[s]),l.el=i.el),!o&&l.patchFlag!==-2&&Hs(i,l)),l.type===Fo&&(l.el=i.el)}}function Ql(e){const t=e.slice(),o=[0];let r,n,s,i,l;const a=e.length;for(r=0;r<a;r++){const d=e[r];if(d!==0){if(n=o[o.length-1],e[n]<d){t[r]=n,o.push(r);continue}for(s=0,i=o.length-1;s<i;)l=s+i>>1,e[o[l]]<d?s=l+1:i=l;d<e[o[s]]&&(s>0&&(t[r]=o[s-1]),o[s]=r)}}for(s=o.length,i=o[s-1];s-- >0;)o[s]=i,i=t[i];return o}function js(e){const t=e.subTree.component;if(t)return t.asyncDep&&!t.asyncResolved?t:js(t)}function an(e){if(e)for(let t=0;t<e.length;t++)e[t].flags|=8}const Xl=Symbol.for("v-scx"),Yl=()=>Ye(Xl);function vo(e,t,o){return Fs(e,t,o)}function Fs(e,t,o=Y){const{immediate:r,deep:n,flush:s,once:i}=o,l=le({},o);let a;if(Uo)if(s==="sync"){const h=Yl();a=h.__watcherHandles||(h.__watcherHandles=[])}else if(!t||r)l.once=!0;else{const h=()=>{};return h.stop=Ue,h.resume=Ue,h.pause=Ue,h}const d=pe;l.call=(h,m,A)=>Ge(h,d,m,A);let p=!1;s==="post"?l.scheduler=h=>{ke(h,d&&d.suspense)}:s!=="sync"&&(p=!0,l.scheduler=(h,m)=>{m?h():qr(h)}),l.augmentJob=h=>{t&&(h.flags|=4),p&&(h.flags|=2,d&&(h.id=d.uid,h.i=d))};const g=dl(e,t,l);return a&&a.push(g),g}function Zl(e,t,o){const r=this.proxy,n=ne(e)?e.includes(".")?Us(r,e):()=>r[e]:e.bind(r,r);let s;N(t)?s=t:(s=t.handler,o=t);const i=lo(this),l=Fs(n,s.bind(r),o);return i(),l}function Us(e,t){const o=t.split(".");return()=>{let r=e;for(let n=0;n<o.length&&r;n++)r=r[o[n]];return r}}const ea=(e,t)=>t==="modelValue"||t==="model-value"?e.modelModifiers:e[`${t}Modifiers`]||e[`${_e(t)}Modifiers`]||e[`${St(t)}Modifiers`];function ta(e,t,...o){if(e.isUnmounted)return;const r=e.vnode.props||Y;let n=o;const s=t.startsWith("update:"),i=s&&ea(r,t.slice(7));i&&(i.trim&&(n=o.map(p=>ne(p)?p.trim():p)),i.number&&(n=o.map(Po)));let l,a=r[l=Vo(t)]||r[l=Vo(_e(t))];!a&&s&&(a=r[l=Vo(St(t))]),a&&Ge(a,e,6,n);const d=r[l+"Once"];if(d){if(!e.emitted)e.emitted={};else if(e.emitted[l])return;e.emitted[l]=!0,Ge(d,e,6,n)}}function Bs(e,t,o=!1){const r=t.emitsCache,n=r.get(e);if(n!==void 0)return n;const s=e.emits;let i={},l=!1;if(!N(e)){const a=d=>{const p=Bs(d,t,!0);p&&(l=!0,le(i,p))};!o&&t.mixins.length&&t.mixins.forEach(a),e.extends&&a(e.extends),e.mixins&&e.mixins.forEach(a)}return!s&&!l?(te(e)&&r.set(e,null),null):(q(s)?s.forEach(a=>i[a]=null):le(i,s),te(e)&&r.set(e,i),i)}function jo(e,t){return!e||!Ko(t)?!1:(t=t.slice(2).replace(/Once$/,""),B(e,t[0].toLowerCase()+t.slice(1))||B(e,St(t))||B(e,t))}function Zo(e){const{type:t,vnode:o,proxy:r,withProxy:n,propsOptions:[s],slots:i,attrs:l,emit:a,render:d,renderCache:p,props:g,data:h,setupState:m,ctx:A,inheritAttrs:J}=e,H=wo(e);let x,_;try{if(o.shapeFlag&4){const K=n||r,Q=K;x=Fe(d.call(Q,K,p,g,m,h,A)),_=l}else{const K=t;x=Fe(K.length>1?K(g,{attrs:l,slots:i,emit:a}):K(g,null)),_=t.props?l:oa(l)}}catch(K){$t.length=0,No(K,e,1),x=Z(vt)}let D=x;if(_&&J!==!1){const K=Object.keys(_),{shapeFlag:Q}=D;K.length&&Q&7&&(s&&K.some(kr)&&(_=ra(_,s)),D=xt(D,_,!1,!0))}return o.dirs&&(D=xt(D,null,!1,!0),D.dirs=D.dirs?D.dirs.concat(o.dirs):o.dirs),o.transition&&Lr(D,o.transition),x=D,wo(H),x}const oa=e=>{let t;for(const o in e)(o==="class"||o==="style"||Ko(o))&&((t||(t={}))[o]=e[o]);return t},ra=(e,t)=>{const o={};for(const r in e)(!kr(r)||!(r.slice(9)in t))&&(o[r]=e[r]);return o};function na(e,t,o){const{props:r,children:n,component:s}=e,{props:i,children:l,patchFlag:a}=t,d=s.emitsOptions;if(t.dirs||t.transition)return!0;if(o&&a>=0){if(a&1024)return!0;if(a&16)return r?cn(r,i,d):!!i;if(a&8){const p=t.dynamicProps;for(let g=0;g<p.length;g++){const h=p[g];if(i[h]!==r[h]&&!jo(d,h))return!0}}}else return(n||l)&&(!l||!l.$stable)?!0:r===i?!1:r?i?cn(r,i,d):!0:!!i;return!1}function cn(e,t,o){const r=Object.keys(t);if(r.length!==Object.keys(e).length)return!0;for(let n=0;n<r.length;n++){const s=r[n];if(t[s]!==e[s]&&!jo(o,s))return!0}return!1}function sa({vnode:e,parent:t},o){for(;t;){const r=t.subTree;if(r.suspense&&r.suspense.activeBranch===e&&(r.el=e.el),r===e)(e=t.vnode).el=o,t=t.parent;else break}}const Gs=e=>e.__isSuspense;function ia(e,t){t&&t.pendingBranch?q(e)?t.effects.push(...e):t.effects.push(e):ml(e)}const Ae=Symbol.for("v-fgt"),Fo=Symbol.for("v-txt"),vt=Symbol.for("v-cmt"),So=Symbol.for("v-stc"),$t=[];let Me=null;function ce(e=!1){$t.push(Me=e?null:[])}function la(){$t.pop(),Me=$t[$t.length-1]||null}let to=1;function un(e){to+=e,e<0&&Me&&(Me.hasOnce=!0)}function Vs(e){return e.dynamicChildren=to>0?Me||Rt:null,la(),to>0&&Me&&Me.push(e),e}function ye(e,t,o,r,n,s){return Vs(j(e,t,o,r,n,s,!0))}function Ws(e,t,o,r,n){return Vs(Z(e,t,o,r,n,!0))}function fr(e){return e?e.__v_isVNode===!0:!1}function jt(e,t){return e.type===t.type&&e.key===t.key}const $s=({key:e})=>e??null,To=({ref:e,ref_key:t,ref_for:o})=>(typeof e=="number"&&(e=""+e),e!=null?ne(e)||ge(e)||N(e)?{i:we,r:e,k:t,f:!!o}:e:null);function j(e,t=null,o=null,r=0,n=null,s=e===Ae?0:1,i=!1,l=!1){const a={__v_isVNode:!0,__v_skip:!0,type:e,props:t,key:t&&$s(t),ref:t&&To(t),scopeId:Ts,slotScopeIds:null,children:o,component:null,suspense:null,ssContent:null,ssFallback:null,dirs:null,transition:null,el:null,anchor:null,target:null,targetStart:null,targetAnchor:null,staticCount:0,shapeFlag:s,patchFlag:r,dynamicProps:n,dynamicChildren:null,appContext:null,ctx:we};return l?(jr(a,o),s&128&&e.normalize(a)):o&&(a.shapeFlag|=ne(o)?8:16),to>0&&!i&&Me&&(a.patchFlag>0||s&6)&&a.patchFlag!==32&&Me.push(a),a}const Z=aa;function aa(e,t=null,o=null,r=0,n=null,s=!1){if((!e||e===Il)&&(e=vt),fr(e)){const l=xt(e,t,!0);return o&&jr(l,o),to>0&&!s&&Me&&(l.shapeFlag&6?Me[Me.indexOf(e)]=l:Me.push(l)),l.patchFlag=-2,l}if(Sa(e)&&(e=e.__vccOpts),t){t=ca(t);let{class:l,style:a}=t;l&&!ne(l)&&(t.class=xo(l)),te(a)&&(_r(a)&&!q(a)&&(a=le({},a)),t.style=wr(a))}const i=ne(e)?1:Gs(e)?128:bl(e)?64:te(e)?4:N(e)?2:0;return j(e,t,o,r,n,i,s,!0)}function ca(e){return e?_r(e)||_s(e)?le({},e):e:null}function xt(e,t,o=!1,r=!1){const{props:n,ref:s,patchFlag:i,children:l,transition:a}=e,d=t?pa(n||{},t):n,p={__v_isVNode:!0,__v_skip:!0,type:e.type,props:d,key:d&&$s(d),ref:t&&t.ref?o&&s?q(s)?s.concat(To(t)):[s,To(t)]:To(t):s,scopeId:e.scopeId,slotScopeIds:e.slotScopeIds,children:l,target:e.target,targetStart:e.targetStart,targetAnchor:e.targetAnchor,staticCount:e.staticCount,shapeFlag:e.shapeFlag,patchFlag:t&&e.type!==Ae?i===-1?16:i|16:i,dynamicProps:e.dynamicProps,dynamicChildren:e.dynamicChildren,appContext:e.appContext,dirs:e.dirs,transition:a,component:e.component,suspense:e.suspense,ssContent:e.ssContent&&xt(e.ssContent),ssFallback:e.ssFallback&&xt(e.ssFallback),el:e.el,anchor:e.anchor,ctx:e.ctx,ce:e.ce};return a&&r&&Lr(p,a.clone(p)),p}function be(e=" ",t=0){return Z(Fo,null,e,t)}function ua(e,t){const o=Z(So,null,e);return o.staticCount=t,o}function zs(e="",t=!1){return t?(ce(),Ws(vt,null,e)):Z(vt,null,e)}function Fe(e){return e==null||typeof e=="boolean"?Z(vt):q(e)?Z(Ae,null,e.slice()):typeof e=="object"?it(e):Z(Fo,null,String(e))}function it(e){return e.el===null&&e.patchFlag!==-1||e.memo?e:xt(e)}function jr(e,t){let o=0;const{shapeFlag:r}=e;if(t==null)t=null;else if(q(t))o=16;else if(typeof t=="object")if(r&65){const n=t.default;n&&(n._c&&(n._d=!1),jr(e,n()),n._c&&(n._d=!0));return}else{o=32;const n=t._;!n&&!_s(t)?t._ctx=we:n===3&&we&&(we.slots._===1?t._=1:(t._=2,e.patchFlag|=1024))}else N(t)?(t={default:t,_ctx:we},o=32):(t=String(t),r&64?(o=16,t=[be(t)]):o=8);e.children=t,e.shapeFlag|=o}function pa(...e){const t={};for(let o=0;o<e.length;o++){const r=e[o];for(const n in r)if(n==="class")t.class!==r.class&&(t.class=xo([t.class,r.class]));else if(n==="style")t.style=wr([t.style,r.style]);else if(Ko(n)){const s=t[n],i=r[n];i&&s!==i&&!(q(s)&&s.includes(i))&&(t[n]=s?[].concat(s,i):i)}else n!==""&&(t[n]=r[n])}return t}function He(e,t,o,r=null){Ge(e,t,7,[o,r])}const ga=Ks();let da=0;function ha(e,t,o){const r=e.type,n=(t?t.appContext:e.appContext)||ga,s={uid:da++,vnode:e,type:r,parent:t,appContext:n,root:null,next:null,subTree:null,effect:null,update:null,job:null,scope:new Oi(!0),render:null,proxy:null,exposed:null,exposeProxy:null,withProxy:null,provides:t?t.provides:Object.create(n.provides),ids:t?t.ids:["",0,0],accessCache:null,renderCache:[],components:null,directives:null,propsOptions:Ds(r,n),emitsOptions:Bs(r,n),emit:null,emitted:null,propsDefaults:Y,inheritAttrs:r.inheritAttrs,ctx:Y,data:Y,props:Y,attrs:Y,slots:Y,refs:Y,setupState:Y,setupContext:null,suspense:o,suspenseId:o?o.pendingId:0,asyncDep:null,asyncResolved:!1,isMounted:!1,isUnmounted:!1,isDeactivated:!1,bc:null,c:null,bm:null,m:null,bu:null,u:null,um:null,bum:null,da:null,a:null,rtg:null,rtc:null,ec:null,sp:null};return s.ctx={_:s},s.root=t?t.root:s,s.emit=ta.bind(null,s),e.ce&&e.ce(s),s}let pe=null,Ro,mr;{const e=zn(),t=(o,r)=>{let n;return(n=e[o])||(n=e[o]=[]),n.push(r),s=>{n.length>1?n.forEach(i=>i(s)):n[0](s)}};Ro=t("__VUE_INSTANCE_SETTERS__",o=>pe=o),mr=t("__VUE_SSR_SETTERS__",o=>Uo=o)}const lo=e=>{const t=pe;return Ro(e),e.scope.on(),()=>{e.scope.off(),Ro(t)}},pn=()=>{pe&&pe.scope.off(),Ro(null)};function Qs(e){return e.vnode.shapeFlag&4}let Uo=!1;function fa(e,t=!1,o=!1){t&&mr(t);const{props:r,children:n}=e.vnode,s=Qs(e);jl(e,r,s,t),Gl(e,n,o);const i=s?ma(e,t):void 0;return t&&mr(!1),i}function ma(e,t){const o=e.type;e.accessCache=Object.create(null),e.proxy=new Proxy(e.ctx,_l);const{setup:r}=o;if(r){const n=e.setupContext=r.length>1?ba(e):null,s=lo(e);ut();const i=so(r,e,0,[e.props,n]);if(pt(),s(),Gn(i)){if(Vt(e)||Ps(e),i.then(pn,pn),t)return i.then(l=>{gn(e,l,t)}).catch(l=>{No(l,e,0)});e.asyncDep=i}else gn(e,i,t)}else Xs(e,t)}function gn(e,t,o){N(t)?e.type.__ssrInlineRender?e.ssrRender=t:e.render=t:te(t)&&(e.setupState=ms(t)),Xs(e,o)}let dn;function Xs(e,t,o){const r=e.type;if(!e.render){if(!t&&dn&&!r.render){const n=r.template||Nr(e).template;if(n){const{isCustomElement:s,compilerOptions:i}=e.appContext.config,{delimiters:l,compilerOptions:a}=r,d=le(le({isCustomElement:s,delimiters:l},i),a);r.render=dn(n,d)}}e.render=r.render||Ue}{const n=lo(e);ut();try{xl(e)}finally{pt(),n()}}}const ya={get(e,t){return de(e,"get",""),e[t]}};function ba(e){const t=o=>{e.exposed=o||{}};return{attrs:new Proxy(e.attrs,ya),slots:e.slots,emit:e.emit,expose:t}}function Bo(e){return e.exposed?e.exposeProxy||(e.exposeProxy=new Proxy(ms(sl(e.exposed)),{get(t,o){if(o in t)return t[o];if(o in Wt)return Wt[o](e)},has(t,o){return o in t||o in Wt}})):e.proxy}function va(e,t=!0){return N(e)?e.displayName||e.name:e.name||t&&e.__name}function Sa(e){return N(e)&&"__vccOpts"in e}const Ie=(e,t)=>pl(e,t,Uo);function Ys(e,t,o){const r=arguments.length;return r===2?te(t)&&!q(t)?fr(t)?Z(e,null,[t]):Z(e,t):Z(e,null,t):(r>3?o=Array.prototype.slice.call(arguments,2):r===3&&fr(o)&&(o=[o]),Z(e,t,o))}const Ta="3.5.6";/**
+**/function io(e,t,o,r){try{return r?e(...r):e()}catch(n){No(n,t,o)}}function Be(e,t,o,r){if(N(e)){const n=io(e,t,o,r);return n&&Bn(n)&&n.catch(i=>{No(i,t,o)}),n}if(O(e)){const n=[];for(let i=0;i<e.length;i++)n.push(Be(e[i],t,o,r));return n}}function No(e,t,o,r=!0){const n=t?t.vnode:null,{errorHandler:i,throwUnhandledErrorInProduction:s}=t&&t.appContext.config||Z;if(t){let l=t.parent;const a=t.proxy,d=`https://vuejs.org/error-reference/#runtime-${o}`;for(;l;){const g=l.ec;if(g){for(let p=0;p<g.length;p++)if(g[p](e,a,d)===!1)return}l=l.parent}if(i){ut(),io(i,null,10,[e,a,d]),gt();return}}ml(e,o,n,r,s)}function ml(e,t,o,r=!0,n=!1){if(n)throw e;console.error(e)}let Zt=!1,ar=!1;const be=[];let He=0;const Jt=[];let st=null,Ct=0;const bi=Promise.resolve();let xr=null;function Lr(e){const t=xr||bi;return e?t.then(this?e.bind(this):e):t}function bl(e){let t=Zt?He+1:0,o=be.length;for(;t<o;){const r=t+o>>>1,n=be[r],i=eo(n);i<e||i===e&&n.flags&2?t=r+1:o=r}return t}function Or(e){if(!(e.flags&1)){const t=eo(e),o=be[be.length-1];!o||!(e.flags&2)&&t>=eo(o)?be.push(e):be.splice(bl(t),0,e),e.flags|=1,yi()}}function yi(){!Zt&&!ar&&(ar=!0,xr=bi.then(Si))}function yl(e){O(e)?Jt.push(...e):st&&e.id===-1?st.splice(Ct+1,0,e):e.flags&1||(Jt.push(e),e.flags|=1),yi()}function en(e,t,o=Zt?He+1:0){for(;o<be.length;o++){const r=be[o];if(r&&r.flags&2){if(e&&r.id!==e.uid)continue;be.splice(o,1),o--,r.flags&4&&(r.flags&=-2),r(),r.flags&=-2}}}function vi(e){if(Jt.length){const t=[...new Set(Jt)].sort((o,r)=>eo(o)-eo(r));if(Jt.length=0,st){st.push(...t);return}for(st=t,Ct=0;Ct<st.length;Ct++){const o=st[Ct];o.flags&4&&(o.flags&=-2),o.flags&8||o(),o.flags&=-2}st=null,Ct=0}}const eo=e=>e.id==null?e.flags&2?-1:1/0:e.id;function Si(e){ar=!1,Zt=!0;try{for(He=0;He<be.length;He++){const t=be[He];t&&!(t.flags&8)&&(t.flags&4&&(t.flags&=-2),io(t,t.i,t.i?15:14),t.flags&=-2)}}finally{for(;He<be.length;He++){const t=be[He];t&&(t.flags&=-2)}He=0,be.length=0,vi(),Zt=!1,xr=null,(be.length||Jt.length)&&Si()}}let Ce=null,Ti=null;function Co(e){const t=Ce;return Ce=e,Ti=e&&e.type.__scopeId||null,t}function me(e,t=Ce,o){if(!t||e._n)return e;const r=(...n)=>{r._d&&un(-1);const i=Co(t);let s;try{s=e(...n)}finally{Co(i),r._d&&un(1)}return s};return r._n=!0,r._c=!0,r._d=!0,r}function cr(e,t){if(Ce===null)return e;const o=Fo(Ce),r=e.dirs||(e.dirs=[]);for(let n=0;n<t.length;n++){let[i,s,l,a=Z]=t[n];i&&(N(i)&&(i={mounted:i,updated:i}),i.deep&&Xe(s),r.push({dir:i,instance:o,value:s,oldValue:void 0,arg:l,modifiers:a}))}return e}function dt(e,t,o,r){const n=e.dirs,i=t&&t.dirs;for(let s=0;s<n.length;s++){const l=n[s];i&&(l.oldValue=i[s].value);let a=l.dir[r];a&&(ut(),Be(a,o,8,[e.el,l,e,t]),gt())}}const vl=Symbol("_vte"),Sl=e=>e.__isTeleport;function qr(e,t){e.shapeFlag&6&&e.component?(e.transition=t,qr(e.component.subTree,t)):e.shapeFlag&128?(e.ssContent.transition=t.clone(e.ssContent),e.ssFallback.transition=t.clone(e.ssFallback)):e.transition=t}/*! #__NO_SIDE_EFFECTS__ */function Pi(e,t){return N(e)?le({name:e.name},t,{setup:e}):e}function ki(e){e.ids=[e.ids[0]+e.ids[2]+++"-",0,0]}function ur(e,t,o,r,n=!1){if(O(e)){e.forEach((A,E)=>ur(A,t&&(O(t)?t[E]:t),o,r,n));return}if(Ut(r)&&!n)return;const i=r.shapeFlag&4?Fo(r.component):r.el,s=n?null:i,{i:l,r:a}=e,d=t&&t.r,g=l.refs===Z?l.refs={}:l.refs,p=l.setupState,h=B(p),m=p===Z?()=>!1:A=>F(h,A);if(d!=null&&d!==a&&(ne(d)?(g[d]=null,m(d)&&(p[d]=null)):de(d)&&(d.value=null)),N(a))io(a,l,12,[s,g]);else{const A=ne(a),E=de(a);if(A||E){const H=()=>{if(e.f){const D=A?m(a)?p[a]:g[a]:a.value;n?O(D)&&kr(D,i):O(D)?D.includes(i)||D.push(i):A?(g[a]=[i],m(a)&&(p[a]=g[a])):(a.value=[i],e.k&&(g[e.k]=a.value))}else A?(g[a]=s,m(a)&&(p[a]=s)):E&&(a.value=s,e.k&&(g[e.k]=s))};s?(H.id=-1,ke(H,o)):H()}}}const Ut=e=>!!e.type.__asyncLoader,Mi=e=>e.type.__isKeepAlive;function Tl(e,t){Ci(e,"a",t)}function Pl(e,t){Ci(e,"da",t)}function Ci(e,t,o=pe){const r=e.__wdc||(e.__wdc=()=>{let n=o;for(;n;){if(n.isDeactivated)return;n=n.parent}return e()});if(Vo(t,r,o),o){let n=o.parent;for(;n&&n.parent;)Mi(n.parent.vnode)&&kl(r,t,o,n),n=n.parent}}function kl(e,t,o,r){const n=Vo(t,e,r,!0);wi(()=>{kr(r[t],n)},o)}function Vo(e,t,o=pe,r=!1){if(o){const n=o[e]||(o[e]=[]),i=t.__weh||(t.__weh=(...s)=>{ut();const l=lo(o),a=Be(t,o,e,s);return l(),gt(),a});return r?n.unshift(i):n.push(i),i}}const et=e=>(t,o=pe)=>{(!Go||e==="sp")&&Vo(e,(...r)=>t(...r),o)},Ml=et("bm"),Cl=et("m"),wl=et("bu"),Rl=et("u"),Al=et("bum"),wi=et("um"),El=et("sp"),Il=et("rtg"),Jl=et("rtc");function Kl(e,t=pe){Vo("ec",e,t)}const Ri="components";function so(e,t){return Dl(Ri,e,!0,t)||e}const _l=Symbol.for("v-ndc");function Dl(e,t,o=!0,r=!1){const n=Ce||pe;if(n){const i=n.type;if(e===Ri){const l=Ta(i,!1);if(l&&(l===t||l===_e(t)||l===_o(_e(t))))return i}const s=tn(n[e]||i[e],t)||tn(n.appContext[e],t);return!s&&r?i:s}}function tn(e,t){return e&&(e[t]||e[_e(t)]||e[_o(_e(t))])}function Ai(e,t,o,r){let n;const i=o,s=O(e);if(s||ne(e)){const l=s&&Et(e);let a=!1;l&&(a=!Ee(e),e=Lo(e)),n=new Array(e.length);for(let d=0,g=e.length;d<g;d++)n[d]=t(a?ge(e[d]):e[d],d,void 0,i)}else if(typeof e=="number"){n=new Array(e);for(let l=0;l<e;l++)n[l]=t(l+1,l,void 0,i)}else if(te(e))if(e[Symbol.iterator])n=Array.from(e,(l,a)=>t(l,a,void 0,i));else{const l=Object.keys(e);n=new Array(l.length);for(let a=0,d=l.length;a<d;a++){const g=l[a];n[a]=t(e[g],g,a,i)}}else n=[];return n}const gr=e=>e?zi(e)?Fo(e):gr(e.parent):null,Wt=le(Object.create(null),{$:e=>e,$el:e=>e.vnode.el,$data:e=>e.data,$props:e=>e.props,$attrs:e=>e.attrs,$slots:e=>e.slots,$refs:e=>e.refs,$parent:e=>gr(e.parent),$root:e=>gr(e.root),$host:e=>e.ce,$emit:e=>e.emit,$options:e=>Nr(e),$forceUpdate:e=>e.f||(e.f=()=>{Or(e.update)}),$nextTick:e=>e.n||(e.n=Lr.bind(e.proxy)),$watch:e=>ta.bind(e)}),Xo=(e,t)=>e!==Z&&!e.__isScriptSetup&&F(e,t),xl={get({_:e},t){if(t==="__v_skip")return!0;const{ctx:o,setupState:r,data:n,props:i,accessCache:s,type:l,appContext:a}=e;let d;if(t[0]!=="$"){const m=s[t];if(m!==void 0)switch(m){case 1:return r[t];case 2:return n[t];case 4:return o[t];case 3:return i[t]}else{if(Xo(r,t))return s[t]=1,r[t];if(n!==Z&&F(n,t))return s[t]=2,n[t];if((d=e.propsOptions[0])&&F(d,t))return s[t]=3,i[t];if(o!==Z&&F(o,t))return s[t]=4,o[t];pr&&(s[t]=0)}}const g=Wt[t];let p,h;if(g)return t==="$attrs"&&he(e.attrs,"get",""),g(e);if((p=l.__cssModules)&&(p=p[t]))return p;if(o!==Z&&F(o,t))return s[t]=4,o[t];if(h=a.config.globalProperties,F(h,t))return h[t]},set({_:e},t,o){const{data:r,setupState:n,ctx:i}=e;return Xo(n,t)?(n[t]=o,!0):r!==Z&&F(r,t)?(r[t]=o,!0):F(e.props,t)||t[0]==="$"&&t.slice(1)in e?!1:(i[t]=o,!0)},has({_:{data:e,setupState:t,accessCache:o,ctx:r,appContext:n,propsOptions:i}},s){let l;return!!o[s]||e!==Z&&F(e,s)||Xo(t,s)||(l=i[0])&&F(l,s)||F(r,s)||F(Wt,s)||F(n.config.globalProperties,s)},defineProperty(e,t,o){return o.get!=null?e._.accessCache[t]=0:F(o,"value")&&this.set(e,t,o.value,null),Reflect.defineProperty(e,t,o)}};function on(e){return O(e)?e.reduce((t,o)=>(t[o]=null,t),{}):e}let pr=!0;function Ll(e){const t=Nr(e),o=e.proxy,r=e.ctx;pr=!1,t.beforeCreate&&rn(t.beforeCreate,e,"bc");const{data:n,computed:i,methods:s,watch:l,provide:a,inject:d,created:g,beforeMount:p,mounted:h,beforeUpdate:m,updated:A,activated:E,deactivated:H,beforeDestroy:D,beforeUnmount:_,destroyed:x,unmounted:I,render:X,renderTracked:se,renderTriggered:oe,errorCaptured:xe,serverPrefetch:tt,expose:Le,inheritAttrs:ot,components:pt,directives:Oe,filters:qt}=t;if(d&&Ol(d,r,null),s)for(const z in s){const G=s[z];N(G)&&(r[z]=G.bind(o))}if(n){const z=n.call(o,o);te(z)&&(e.data=qo(z))}if(pr=!0,i)for(const z in i){const G=i[z],Ue=N(G)?G.bind(o,o):N(G.get)?G.get.bind(o,o):Ge,rt=!N(G)&&N(G.set)?G.set.bind(o):Ge,qe=Je({get:Ue,set:rt});Object.defineProperty(r,z,{enumerable:!0,configurable:!0,get:()=>qe.value,set:ye=>qe.value=ye})}if(l)for(const z in l)Ei(l[z],r,o,z);if(a){const z=N(a)?a.call(o):a;Reflect.ownKeys(z).forEach(G=>{yo(G,z[G])})}g&&rn(g,e,"c");function ie(z,G){O(G)?G.forEach(Ue=>z(Ue.bind(o))):G&&z(G.bind(o))}if(ie(Ml,p),ie(Cl,h),ie(wl,m),ie(Rl,A),ie(Tl,E),ie(Pl,H),ie(Kl,xe),ie(Jl,se),ie(Il,oe),ie(Al,_),ie(wi,I),ie(El,tt),O(Le))if(Le.length){const z=e.exposed||(e.exposed={});Le.forEach(G=>{Object.defineProperty(z,G,{get:()=>o[G],set:Ue=>o[G]=Ue})})}else e.exposed||(e.exposed={});X&&e.render===Ge&&(e.render=X),ot!=null&&(e.inheritAttrs=ot),pt&&(e.components=pt),Oe&&(e.directives=Oe),tt&&ki(e)}function Ol(e,t,o=Ge){O(e)&&(e=dr(e));for(const r in e){const n=e[r];let i;te(n)?"default"in n?i=Ze(n.from||r,n.default,!0):i=Ze(n.from||r):i=Ze(n),de(i)?Object.defineProperty(t,r,{enumerable:!0,configurable:!0,get:()=>i.value,set:s=>i.value=s}):t[r]=i}}function rn(e,t,o){Be(O(e)?e.map(r=>r.bind(t.proxy)):e.bind(t.proxy),t,o)}function Ei(e,t,o,r){let n=r.includes(".")?Gi(o,r):()=>o[r];if(ne(e)){const i=t[e];N(i)&&vo(n,i)}else if(N(e))vo(n,e.bind(o));else if(te(e))if(O(e))e.forEach(i=>Ei(i,t,o,r));else{const i=N(e.handler)?e.handler.bind(o):t[e.handler];N(i)&&vo(n,i,e)}}function Nr(e){const t=e.type,{mixins:o,extends:r}=t,{mixins:n,optionsCache:i,config:{optionMergeStrategies:s}}=e.appContext,l=i.get(t);let a;return l?a=l:!n.length&&!o&&!r?a=t:(a={},n.length&&n.forEach(d=>wo(a,d,s,!0)),wo(a,t,s)),te(t)&&i.set(t,a),a}function wo(e,t,o,r=!1){const{mixins:n,extends:i}=t;i&&wo(e,i,o,!0),n&&n.forEach(s=>wo(e,s,o,!0));for(const s in t)if(!(r&&s==="expose")){const l=ql[s]||o&&o[s];e[s]=l?l(e[s],t[s]):t[s]}return e}const ql={data:nn,props:sn,emits:sn,methods:Gt,computed:Gt,beforeCreate:fe,created:fe,beforeMount:fe,mounted:fe,beforeUpdate:fe,updated:fe,beforeDestroy:fe,beforeUnmount:fe,destroyed:fe,unmounted:fe,activated:fe,deactivated:fe,errorCaptured:fe,serverPrefetch:fe,components:Gt,directives:Gt,watch:Vl,provide:nn,inject:Nl};function nn(e,t){return t?e?function(){return le(N(e)?e.call(this,this):e,N(t)?t.call(this,this):t)}:t:e}function Nl(e,t){return Gt(dr(e),dr(t))}function dr(e){if(O(e)){const t={};for(let o=0;o<e.length;o++)t[e[o]]=e[o];return t}return e}function fe(e,t){return e?[...new Set([].concat(e,t))]:t}function Gt(e,t){return e?le(Object.create(null),e,t):t}function sn(e,t){return e?O(e)&&O(t)?[...new Set([...e,...t])]:le(Object.create(null),on(e),on(t??{})):t}function Vl(e,t){if(!e)return t;if(!t)return e;const o=le(Object.create(null),e);for(const r in t)o[r]=fe(e[r],t[r]);return o}function Ii(){return{app:null,config:{isNativeTag:Cs,performance:!1,globalProperties:{},optionMergeStrategies:{},errorHandler:void 0,warnHandler:void 0,compilerOptions:{}},mixins:[],components:{},directives:{},provides:Object.create(null),optionsCache:new WeakMap,propsCache:new WeakMap,emitsCache:new WeakMap}}let Hl=0;function jl(e,t){return function(r,n=null){N(r)||(r=le({},r)),n!=null&&!te(n)&&(n=null);const i=Ii(),s=new WeakSet,l=[];let a=!1;const d=i.app={_uid:Hl++,_component:r,_props:n,_container:null,_context:i,_instance:null,version:ka,get config(){return i.config},set config(g){},use(g,...p){return s.has(g)||(g&&N(g.install)?(s.add(g),g.install(d,...p)):N(g)&&(s.add(g),g(d,...p))),d},mixin(g){return i.mixins.includes(g)||i.mixins.push(g),d},component(g,p){return p?(i.components[g]=p,d):i.components[g]},directive(g,p){return p?(i.directives[g]=p,d):i.directives[g]},mount(g,p,h){if(!a){const m=d._ceVNode||$(r,n);return m.appContext=i,h===!0?h="svg":h===!1&&(h=void 0),p&&t?t(m,g):e(m,g,h),a=!0,d._container=g,g.__vue_app__=d,Fo(m.component)}},onUnmount(g){l.push(g)},unmount(){a&&(Be(l,d._instance,16),e(null,d._container),delete d._container.__vue_app__)},provide(g,p){return i.provides[g]=p,d},runWithContext(g){const p=Kt;Kt=d;try{return g()}finally{Kt=p}}};return d}}let Kt=null;function yo(e,t){if(pe){let o=pe.provides;const r=pe.parent&&pe.parent.provides;r===o&&(o=pe.provides=Object.create(r)),o[e]=t}}function Ze(e,t,o=!1){const r=pe||Ce;if(r||Kt){const n=Kt?Kt._context.provides:r?r.parent==null?r.vnode.appContext&&r.vnode.appContext.provides:r.parent.provides:void 0;if(n&&e in n)return n[e];if(arguments.length>1)return o&&N(t)?t.call(r&&r.proxy):t}}const Ji={},Ki=()=>Object.create(Ji),_i=e=>Object.getPrototypeOf(e)===Ji;function Gl(e,t,o,r=!1){const n={},i=Ki();e.propsDefaults=Object.create(null),Di(e,t,n,i);for(const s in e.propsOptions[0])s in n||(n[s]=void 0);o?e.props=r?n:di(n):e.type.props?e.props=n:e.props=i,e.attrs=i}function Fl(e,t,o,r){const{props:n,attrs:i,vnode:{patchFlag:s}}=e,l=B(n),[a]=e.propsOptions;let d=!1;if((r||s>0)&&!(s&16)){if(s&8){const g=e.vnode.dynamicProps;for(let p=0;p<g.length;p++){let h=g[p];if(Ho(e.emitsOptions,h))continue;const m=t[h];if(a)if(F(i,h))m!==i[h]&&(i[h]=m,d=!0);else{const A=_e(h);n[A]=hr(a,l,A,m,e,!1)}else m!==i[h]&&(i[h]=m,d=!0)}}}else{Di(e,t,n,i)&&(d=!0);let g;for(const p in l)(!t||!F(t,p)&&((g=St(p))===p||!F(t,g)))&&(a?o&&(o[p]!==void 0||o[g]!==void 0)&&(n[p]=hr(a,l,p,void 0,e,!0)):delete n[p]);if(i!==l)for(const p in i)(!t||!F(t,p))&&(delete i[p],d=!0)}d&&Ye(e.attrs,"set","")}function Di(e,t,o,r){const[n,i]=e.propsOptions;let s=!1,l;if(t)for(let a in t){if(Ft(a))continue;const d=t[a];let g;n&&F(n,g=_e(a))?!i||!i.includes(g)?o[g]=d:(l||(l={}))[g]=d:Ho(e.emitsOptions,a)||(!(a in r)||d!==r[a])&&(r[a]=d,s=!0)}if(i){const a=B(o),d=l||Z;for(let g=0;g<i.length;g++){const p=i[g];o[p]=hr(n,a,p,d[p],e,!F(d,p))}}return s}function hr(e,t,o,r,n,i){const s=e[o];if(s!=null){const l=F(s,"default");if(l&&r===void 0){const a=s.default;if(s.type!==Function&&!s.skipFactory&&N(a)){const{propsDefaults:d}=n;if(o in d)r=d[o];else{const g=lo(n);r=d[o]=a.call(null,t),g()}}else r=a;n.ce&&n.ce._setProp(o,r)}s[0]&&(i&&!l?r=!1:s[1]&&(r===""||r===St(o))&&(r=!0))}return r}const Bl=new WeakMap;function xi(e,t,o=!1){const r=o?Bl:t.propsCache,n=r.get(e);if(n)return n;const i=e.props,s={},l=[];let a=!1;if(!N(e)){const g=p=>{a=!0;const[h,m]=xi(p,t,!0);le(s,h),m&&l.push(...m)};!o&&t.mixins.length&&t.mixins.forEach(g),e.extends&&g(e.extends),e.mixins&&e.mixins.forEach(g)}if(!i&&!a)return te(e)&&r.set(e,Rt),Rt;if(O(i))for(let g=0;g<i.length;g++){const p=_e(i[g]);ln(p)&&(s[p]=Z)}else if(i)for(const g in i){const p=_e(g);if(ln(p)){const h=i[g],m=s[p]=O(h)||N(h)?{type:h}:le({},h),A=m.type;let E=!1,H=!0;if(O(A))for(let D=0;D<A.length;++D){const _=A[D],x=N(_)&&_.name;if(x==="Boolean"){E=!0;break}else x==="String"&&(H=!1)}else E=N(A)&&A.name==="Boolean";m[0]=E,m[1]=H,(E||F(m,"default"))&&l.push(p)}}const d=[s,l];return te(e)&&r.set(e,d),d}function ln(e){return e[0]!=="$"&&!Ft(e)}const Li=e=>e[0]==="_"||e==="$stable",Vr=e=>O(e)?e.map(je):[je(e)],Ul=(e,t,o)=>{if(t._n)return t;const r=me((...n)=>Vr(t(...n)),o);return r._c=!1,r},Oi=(e,t,o)=>{const r=e._ctx;for(const n in e){if(Li(n))continue;const i=e[n];if(N(i))t[n]=Ul(n,i,r);else if(i!=null){const s=Vr(i);t[n]=()=>s}}},qi=(e,t)=>{const o=Vr(t);e.slots.default=()=>o},Ni=(e,t,o)=>{for(const r in t)(o||r!=="_")&&(e[r]=t[r])},Wl=(e,t,o)=>{const r=e.slots=Ki();if(e.vnode.shapeFlag&32){const n=t._;n?(Ni(r,t,o),o&&Qn(r,"_",n,!0)):Oi(t,r)}else t&&qi(e,t)},Ql=(e,t,o)=>{const{vnode:r,slots:n}=e;let i=!0,s=Z;if(r.shapeFlag&32){const l=t._;l?o&&l===1?i=!1:Ni(n,t,o):(i=!t.$stable,Oi(t,n)),s=t}else t&&(qi(e,t),s={default:1});if(i)for(const l in n)!Li(l)&&s[l]==null&&delete n[l]},ke=aa;function $l(e){return zl(e)}function zl(e,t){const o=$n();o.__VUE__=!0;const{insert:r,remove:n,patchProp:i,createElement:s,createText:l,createComment:a,setText:d,setElementText:g,parentNode:p,nextSibling:h,setScopeId:m=Ge,insertStaticContent:A}=e,E=(c,u,f,v=null,b=null,S=null,M=void 0,k=null,P=!!u.dynamicChildren)=>{if(c===u)return;c&&!Ht(c,u)&&(v=y(c),ye(c,b,S,!0),c=null),u.patchFlag===-2&&(P=!1,u.dynamicChildren=null);const{type:T,ref:L,shapeFlag:w}=u;switch(T){case jo:H(c,u,f,v);break;case vt:D(c,u,f,v);break;case So:c==null&&_(u,f,v,M);break;case Ae:pt(c,u,f,v,b,S,M,k,P);break;default:w&1?X(c,u,f,v,b,S,M,k,P):w&6?Oe(c,u,f,v,b,S,M,k,P):(w&64||w&128)&&T.process(c,u,f,v,b,S,M,k,P,J)}L!=null&&b&&ur(L,c&&c.ref,S,u||c,!u)},H=(c,u,f,v)=>{if(c==null)r(u.el=l(u.children),f,v);else{const b=u.el=c.el;u.children!==c.children&&d(b,u.children)}},D=(c,u,f,v)=>{c==null?r(u.el=a(u.children||""),f,v):u.el=c.el},_=(c,u,f,v)=>{[c.el,c.anchor]=A(c.children,u,f,v,c.el,c.anchor)},x=({el:c,anchor:u},f,v)=>{let b;for(;c&&c!==u;)b=h(c),r(c,f,v),c=b;r(u,f,v)},I=({el:c,anchor:u})=>{let f;for(;c&&c!==u;)f=h(c),n(c),c=f;n(u)},X=(c,u,f,v,b,S,M,k,P)=>{u.type==="svg"?M="svg":u.type==="math"&&(M="mathml"),c==null?se(u,f,v,b,S,M,k,P):tt(c,u,b,S,M,k,P)},se=(c,u,f,v,b,S,M,k)=>{let P,T;const{props:L,shapeFlag:w,transition:K,dirs:q}=c;if(P=c.el=s(c.type,S,L&&L.is,L),w&8?g(P,c.children):w&16&&xe(c.children,P,null,v,b,Yo(c,S),M,k),q&&dt(c,null,v,"created"),oe(P,c,c.scopeId,M,v),L){for(const ee in L)ee!=="value"&&!Ft(ee)&&i(P,ee,null,L[ee],S,v);"value"in L&&i(P,"value",null,L.value,S),(T=L.onVnodeBeforeMount)&&Ve(T,v,c)}q&&dt(c,null,v,"beforeMount");const j=Xl(b,K);j&&K.beforeEnter(P),r(P,u,f),((T=L&&L.onVnodeMounted)||j||q)&&ke(()=>{T&&Ve(T,v,c),j&&K.enter(P),q&&dt(c,null,v,"mounted")},b)},oe=(c,u,f,v,b)=>{if(f&&m(c,f),v)for(let S=0;S<v.length;S++)m(c,v[S]);if(b){let S=b.subTree;if(u===S||Bi(S.type)&&(S.ssContent===u||S.ssFallback===u)){const M=b.vnode;oe(c,M,M.scopeId,M.slotScopeIds,b.parent)}}},xe=(c,u,f,v,b,S,M,k,P=0)=>{for(let T=P;T<c.length;T++){const L=c[T]=k?lt(c[T]):je(c[T]);E(null,L,u,f,v,b,S,M,k)}},tt=(c,u,f,v,b,S,M)=>{const k=u.el=c.el;let{patchFlag:P,dynamicChildren:T,dirs:L}=u;P|=c.patchFlag&16;const w=c.props||Z,K=u.props||Z;let q;if(f&&ht(f,!1),(q=K.onVnodeBeforeUpdate)&&Ve(q,f,u,c),L&&dt(u,c,f,"beforeUpdate"),f&&ht(f,!0),(w.innerHTML&&K.innerHTML==null||w.textContent&&K.textContent==null)&&g(k,""),T?Le(c.dynamicChildren,T,k,f,v,Yo(u,b),S):M||G(c,u,k,null,f,v,Yo(u,b),S,!1),P>0){if(P&16)ot(k,w,K,f,b);else if(P&2&&w.class!==K.class&&i(k,"class",null,K.class,b),P&4&&i(k,"style",w.style,K.style,b),P&8){const j=u.dynamicProps;for(let ee=0;ee<j.length;ee++){const W=j[ee],Se=w[W],ae=K[W];(ae!==Se||W==="value")&&i(k,W,Se,ae,b,f)}}P&1&&c.children!==u.children&&g(k,u.children)}else!M&&T==null&&ot(k,w,K,f,b);((q=K.onVnodeUpdated)||L)&&ke(()=>{q&&Ve(q,f,u,c),L&&dt(u,c,f,"updated")},v)},Le=(c,u,f,v,b,S,M)=>{for(let k=0;k<u.length;k++){const P=c[k],T=u[k],L=P.el&&(P.type===Ae||!Ht(P,T)||P.shapeFlag&70)?p(P.el):f;E(P,T,L,null,v,b,S,M,!0)}},ot=(c,u,f,v,b)=>{if(u!==f){if(u!==Z)for(const S in u)!Ft(S)&&!(S in f)&&i(c,S,u[S],null,b,v);for(const S in f){if(Ft(S))continue;const M=f[S],k=u[S];M!==k&&S!=="value"&&i(c,S,k,M,b,v)}"value"in f&&i(c,"value",u.value,f.value,b)}},pt=(c,u,f,v,b,S,M,k,P)=>{const T=u.el=c?c.el:l(""),L=u.anchor=c?c.anchor:l("");let{patchFlag:w,dynamicChildren:K,slotScopeIds:q}=u;q&&(k=k?k.concat(q):q),c==null?(r(T,f,v),r(L,f,v),xe(u.children||[],f,L,b,S,M,k,P)):w>0&&w&64&&K&&c.dynamicChildren?(Le(c.dynamicChildren,K,f,b,S,M,k),(u.key!=null||b&&u===b.subTree)&&Vi(c,u,!0)):G(c,u,f,L,b,S,M,k,P)},Oe=(c,u,f,v,b,S,M,k,P)=>{u.slotScopeIds=k,c==null?u.shapeFlag&512?b.ctx.activate(u,f,v,M,P):qt(u,f,v,b,S,M,P):Tt(c,u,P)},qt=(c,u,f,v,b,S,M)=>{const k=c.component=ma(c,v,b);if(Mi(c)&&(k.ctx.renderer=J),ba(k,!1,M),k.asyncDep){if(b&&b.registerDep(k,ie,M),!c.el){const P=k.subTree=$(vt);D(null,P,u,f)}}else ie(k,c,u,f,b,S,M)},Tt=(c,u,f)=>{const v=u.component=c.component;if(sa(c,u,f))if(v.asyncDep&&!v.asyncResolved){z(v,u,f);return}else v.next=u,v.update();else u.el=c.el,v.vnode=u},ie=(c,u,f,v,b,S,M)=>{const k=()=>{if(c.isMounted){let{next:w,bu:K,u:q,parent:j,vnode:ee}=c;{const Te=Hi(c);if(Te){w&&(w.el=ee.el,z(c,w,M)),Te.asyncDep.then(()=>{c.isUnmounted||k()});return}}let W=w,Se;ht(c,!1),w?(w.el=ee.el,z(c,w,M)):w=ee,K&&bo(K),(Se=w.props&&w.props.onVnodeBeforeUpdate)&&Ve(Se,j,w,ee),ht(c,!0);const ae=Zo(c),Ie=c.subTree;c.subTree=ae,E(Ie,ae,p(Ie.el),y(Ie),c,b,S),w.el=ae.el,W===null&&la(c,ae.el),q&&ke(q,b),(Se=w.props&&w.props.onVnodeUpdated)&&ke(()=>Ve(Se,j,w,ee),b)}else{let w;const{el:K,props:q}=u,{bm:j,m:ee,parent:W,root:Se,type:ae}=c,Ie=Ut(u);if(ht(c,!1),j&&bo(j),!Ie&&(w=q&&q.onVnodeBeforeMount)&&Ve(w,W,u),ht(c,!0),K&&re){const Te=()=>{c.subTree=Zo(c),re(K,c.subTree,c,b,null)};Ie&&ae.__asyncHydrate?ae.__asyncHydrate(K,c,Te):Te()}else{Se.ce&&Se.ce._injectChildStyle(ae);const Te=c.subTree=Zo(c);E(null,Te,f,v,c,b,S),u.el=Te.el}if(ee&&ke(ee,b),!Ie&&(w=q&&q.onVnodeMounted)){const Te=u;ke(()=>Ve(w,W,Te),b)}(u.shapeFlag&256||W&&Ut(W.vnode)&&W.vnode.shapeFlag&256)&&c.a&&ke(c.a,b),c.isMounted=!0,u=f=v=null}};c.scope.on();const P=c.effect=new Zn(k);c.scope.off();const T=c.update=P.run.bind(P),L=c.job=P.runIfDirty.bind(P);L.i=c,L.id=c.uid,P.scheduler=()=>Or(L),ht(c,!0),T()},z=(c,u,f)=>{u.component=c;const v=c.vnode.props;c.vnode=u,c.next=null,Fl(c,u.props,v,f),Ql(c,u.children,f),ut(),en(c),gt()},G=(c,u,f,v,b,S,M,k,P=!1)=>{const T=c&&c.children,L=c?c.shapeFlag:0,w=u.children,{patchFlag:K,shapeFlag:q}=u;if(K>0){if(K&128){rt(T,w,f,v,b,S,M,k,P);return}else if(K&256){Ue(T,w,f,v,b,S,M,k,P);return}}q&8?(L&16&&Re(T,b,S),w!==T&&g(f,w)):L&16?q&16?rt(T,w,f,v,b,S,M,k,P):Re(T,b,S,!0):(L&8&&g(f,""),q&16&&xe(w,f,v,b,S,M,k,P))},Ue=(c,u,f,v,b,S,M,k,P)=>{c=c||Rt,u=u||Rt;const T=c.length,L=u.length,w=Math.min(T,L);let K;for(K=0;K<w;K++){const q=u[K]=P?lt(u[K]):je(u[K]);E(c[K],q,f,null,b,S,M,k,P)}T>L?Re(c,b,S,!0,!1,w):xe(u,f,v,b,S,M,k,P,w)},rt=(c,u,f,v,b,S,M,k,P)=>{let T=0;const L=u.length;let w=c.length-1,K=L-1;for(;T<=w&&T<=K;){const q=c[T],j=u[T]=P?lt(u[T]):je(u[T]);if(Ht(q,j))E(q,j,f,null,b,S,M,k,P);else break;T++}for(;T<=w&&T<=K;){const q=c[w],j=u[K]=P?lt(u[K]):je(u[K]);if(Ht(q,j))E(q,j,f,null,b,S,M,k,P);else break;w--,K--}if(T>w){if(T<=K){const q=K+1,j=q<L?u[q].el:v;for(;T<=K;)E(null,u[T]=P?lt(u[T]):je(u[T]),f,j,b,S,M,k,P),T++}}else if(T>K)for(;T<=w;)ye(c[T],b,S,!0),T++;else{const q=T,j=T,ee=new Map;for(T=j;T<=K;T++){const Pe=u[T]=P?lt(u[T]):je(u[T]);Pe.key!=null&&ee.set(Pe.key,T)}let W,Se=0;const ae=K-j+1;let Ie=!1,Te=0;const Nt=new Array(ae);for(T=0;T<ae;T++)Nt[T]=0;for(T=q;T<=w;T++){const Pe=c[T];if(Se>=ae){ye(Pe,b,S,!0);continue}let Ne;if(Pe.key!=null)Ne=ee.get(Pe.key);else for(W=j;W<=K;W++)if(Nt[W-j]===0&&Ht(Pe,u[W])){Ne=W;break}Ne===void 0?ye(Pe,b,S,!0):(Nt[Ne-j]=T+1,Ne>=Te?Te=Ne:Ie=!0,E(Pe,u[Ne],f,null,b,S,M,k,P),Se++)}const Fr=Ie?Yl(Nt):Rt;for(W=Fr.length-1,T=ae-1;T>=0;T--){const Pe=j+T,Ne=u[Pe],Br=Pe+1<L?u[Pe+1].el:v;Nt[T]===0?E(null,Ne,f,Br,b,S,M,k,P):Ie&&(W<0||T!==Fr[W]?qe(Ne,f,Br,2):W--)}}},qe=(c,u,f,v,b=null)=>{const{el:S,type:M,transition:k,children:P,shapeFlag:T}=c;if(T&6){qe(c.component.subTree,u,f,v);return}if(T&128){c.suspense.move(u,f,v);return}if(T&64){M.move(c,u,f,J);return}if(M===Ae){r(S,u,f);for(let w=0;w<P.length;w++)qe(P[w],u,f,v);r(c.anchor,u,f);return}if(M===So){x(c,u,f);return}if(v!==2&&T&1&&k)if(v===0)k.beforeEnter(S),r(S,u,f),ke(()=>k.enter(S),b);else{const{leave:w,delayLeave:K,afterLeave:q}=k,j=()=>r(S,u,f),ee=()=>{w(S,()=>{j(),q&&q()})};K?K(S,j,ee):ee()}else r(S,u,f)},ye=(c,u,f,v=!1,b=!1)=>{const{type:S,props:M,ref:k,children:P,dynamicChildren:T,shapeFlag:L,patchFlag:w,dirs:K,cacheIndex:q}=c;if(w===-2&&(b=!1),k!=null&&ur(k,null,f,c,!0),q!=null&&(u.renderCache[q]=void 0),L&256){u.ctx.deactivate(c);return}const j=L&1&&K,ee=!Ut(c);let W;if(ee&&(W=M&&M.onVnodeBeforeUnmount)&&Ve(W,u,c),L&6)ao(c.component,f,v);else{if(L&128){c.suspense.unmount(f,v);return}j&&dt(c,null,u,"beforeUnmount"),L&64?c.type.remove(c,u,f,J,v):T&&!T.hasOnce&&(S!==Ae||w>0&&w&64)?Re(T,u,f,!1,!0):(S===Ae&&w&384||!b&&L&16)&&Re(P,u,f),v&&Pt(c)}(ee&&(W=M&&M.onVnodeUnmounted)||j)&&ke(()=>{W&&Ve(W,u,c),j&&dt(c,null,u,"unmounted")},f)},Pt=c=>{const{type:u,el:f,anchor:v,transition:b}=c;if(u===Ae){kt(f,v);return}if(u===So){I(c);return}const S=()=>{n(f),b&&!b.persisted&&b.afterLeave&&b.afterLeave()};if(c.shapeFlag&1&&b&&!b.persisted){const{leave:M,delayLeave:k}=b,P=()=>M(f,S);k?k(c.el,S,P):P()}else S()},kt=(c,u)=>{let f;for(;c!==u;)f=h(c),n(c),c=f;n(u)},ao=(c,u,f)=>{const{bum:v,scope:b,job:S,subTree:M,um:k,m:P,a:T}=c;an(P),an(T),v&&bo(v),b.stop(),S&&(S.flags|=8,ye(M,c,u,f)),k&&ke(k,u),ke(()=>{c.isUnmounted=!0},u),u&&u.pendingBranch&&!u.isUnmounted&&c.asyncDep&&!c.asyncResolved&&c.suspenseId===u.pendingId&&(u.deps--,u.deps===0&&u.resolve())},Re=(c,u,f,v=!1,b=!1,S=0)=>{for(let M=S;M<c.length;M++)ye(c[M],u,f,v,b)},y=c=>{if(c.shapeFlag&6)return y(c.component.subTree);if(c.shapeFlag&128)return c.suspense.next();const u=h(c.anchor||c.el),f=u&&u[vl];return f?h(f):u};let R=!1;const C=(c,u,f)=>{c==null?u._vnode&&ye(u._vnode,null,null,!0):E(u._vnode||null,c,u,null,null,null,f),u._vnode=c,R||(R=!0,en(),vi(),R=!1)},J={p:E,um:ye,m:qe,r:Pt,mt:qt,mc:xe,pc:G,pbc:Le,n:y,o:e};let U,re;return{render:C,hydrate:U,createApp:jl(C,U)}}function Yo({type:e,props:t},o){return o==="svg"&&e==="foreignObject"||o==="mathml"&&e==="annotation-xml"&&t&&t.encoding&&t.encoding.includes("html")?void 0:o}function ht({effect:e,job:t},o){o?(e.flags|=32,t.flags|=4):(e.flags&=-33,t.flags&=-5)}function Xl(e,t){return(!e||e&&!e.pendingBranch)&&t&&!t.persisted}function Vi(e,t,o=!1){const r=e.children,n=t.children;if(O(r)&&O(n))for(let i=0;i<r.length;i++){const s=r[i];let l=n[i];l.shapeFlag&1&&!l.dynamicChildren&&((l.patchFlag<=0||l.patchFlag===32)&&(l=n[i]=lt(n[i]),l.el=s.el),!o&&l.patchFlag!==-2&&Vi(s,l)),l.type===jo&&(l.el=s.el)}}function Yl(e){const t=e.slice(),o=[0];let r,n,i,s,l;const a=e.length;for(r=0;r<a;r++){const d=e[r];if(d!==0){if(n=o[o.length-1],e[n]<d){t[r]=n,o.push(r);continue}for(i=0,s=o.length-1;i<s;)l=i+s>>1,e[o[l]]<d?i=l+1:s=l;d<e[o[i]]&&(i>0&&(t[r]=o[i-1]),o[i]=r)}}for(i=o.length,s=o[i-1];i-- >0;)o[i]=s,s=t[s];return o}function Hi(e){const t=e.subTree.component;if(t)return t.asyncDep&&!t.asyncResolved?t:Hi(t)}function an(e){if(e)for(let t=0;t<e.length;t++)e[t].flags|=8}const Zl=Symbol.for("v-scx"),ea=()=>Ze(Zl);function vo(e,t,o){return ji(e,t,o)}function ji(e,t,o=Z){const{immediate:r,deep:n,flush:i,once:s}=o,l=le({},o);let a;if(Go)if(i==="sync"){const h=ea();a=h.__watcherHandles||(h.__watcherHandles=[])}else if(!t||r)l.once=!0;else{const h=()=>{};return h.stop=Ge,h.resume=Ge,h.pause=Ge,h}const d=pe;l.call=(h,m,A)=>Be(h,d,m,A);let g=!1;i==="post"?l.scheduler=h=>{ke(h,d&&d.suspense)}:i!=="sync"&&(g=!0,l.scheduler=(h,m)=>{m?h():Or(h)}),l.augmentJob=h=>{t&&(h.flags|=4),g&&(h.flags|=2,d&&(h.id=d.uid,h.i=d))};const p=fl(e,t,l);return a&&a.push(p),p}function ta(e,t,o){const r=this.proxy,n=ne(e)?e.includes(".")?Gi(r,e):()=>r[e]:e.bind(r,r);let i;N(t)?i=t:(i=t.handler,o=t);const s=lo(this),l=ji(n,i.bind(r),o);return s(),l}function Gi(e,t){const o=t.split(".");return()=>{let r=e;for(let n=0;n<o.length&&r;n++)r=r[o[n]];return r}}const oa=(e,t)=>t==="modelValue"||t==="model-value"?e.modelModifiers:e[`${t}Modifiers`]||e[`${_e(t)}Modifiers`]||e[`${St(t)}Modifiers`];function ra(e,t,...o){if(e.isUnmounted)return;const r=e.vnode.props||Z;let n=o;const i=t.startsWith("update:"),s=i&&oa(r,t.slice(7));s&&(s.trim&&(n=o.map(g=>ne(g)?g.trim():g)),s.number&&(n=o.map(ko)));let l,a=r[l=Uo(t)]||r[l=Uo(_e(t))];!a&&i&&(a=r[l=Uo(St(t))]),a&&Be(a,e,6,n);const d=r[l+"Once"];if(d){if(!e.emitted)e.emitted={};else if(e.emitted[l])return;e.emitted[l]=!0,Be(d,e,6,n)}}function Fi(e,t,o=!1){const r=t.emitsCache,n=r.get(e);if(n!==void 0)return n;const i=e.emits;let s={},l=!1;if(!N(e)){const a=d=>{const g=Fi(d,t,!0);g&&(l=!0,le(s,g))};!o&&t.mixins.length&&t.mixins.forEach(a),e.extends&&a(e.extends),e.mixins&&e.mixins.forEach(a)}return!i&&!l?(te(e)&&r.set(e,null),null):(O(i)?i.forEach(a=>s[a]=null):le(s,i),te(e)&&r.set(e,s),s)}function Ho(e,t){return!e||!Io(t)?!1:(t=t.slice(2).replace(/Once$/,""),F(e,t[0].toLowerCase()+t.slice(1))||F(e,St(t))||F(e,t))}function Zo(e){const{type:t,vnode:o,proxy:r,withProxy:n,propsOptions:[i],slots:s,attrs:l,emit:a,render:d,renderCache:g,props:p,data:h,setupState:m,ctx:A,inheritAttrs:E}=e,H=Co(e);let D,_;try{if(o.shapeFlag&4){const I=n||r,X=I;D=je(d.call(X,I,g,p,m,h,A)),_=l}else{const I=t;D=je(I.length>1?I(p,{attrs:l,slots:s,emit:a}):I(p,null)),_=t.props?l:na(l)}}catch(I){Qt.length=0,No(I,e,1),D=$(vt)}let x=D;if(_&&E!==!1){const I=Object.keys(_),{shapeFlag:X}=x;I.length&&X&7&&(i&&I.some(Pr)&&(_=ia(_,i)),x=Dt(x,_,!1,!0))}return o.dirs&&(x=Dt(x,null,!1,!0),x.dirs=x.dirs?x.dirs.concat(o.dirs):o.dirs),o.transition&&qr(x,o.transition),D=x,Co(H),D}const na=e=>{let t;for(const o in e)(o==="class"||o==="style"||Io(o))&&((t||(t={}))[o]=e[o]);return t},ia=(e,t)=>{const o={};for(const r in e)(!Pr(r)||!(r.slice(9)in t))&&(o[r]=e[r]);return o};function sa(e,t,o){const{props:r,children:n,component:i}=e,{props:s,children:l,patchFlag:a}=t,d=i.emitsOptions;if(t.dirs||t.transition)return!0;if(o&&a>=0){if(a&1024)return!0;if(a&16)return r?cn(r,s,d):!!s;if(a&8){const g=t.dynamicProps;for(let p=0;p<g.length;p++){const h=g[p];if(s[h]!==r[h]&&!Ho(d,h))return!0}}}else return(n||l)&&(!l||!l.$stable)?!0:r===s?!1:r?s?cn(r,s,d):!0:!!s;return!1}function cn(e,t,o){const r=Object.keys(t);if(r.length!==Object.keys(e).length)return!0;for(let n=0;n<r.length;n++){const i=r[n];if(t[i]!==e[i]&&!Ho(o,i))return!0}return!1}function la({vnode:e,parent:t},o){for(;t;){const r=t.subTree;if(r.suspense&&r.suspense.activeBranch===e&&(r.el=e.el),r===e)(e=t.vnode).el=o,t=t.parent;else break}}const Bi=e=>e.__isSuspense;function aa(e,t){t&&t.pendingBranch?O(e)?t.effects.push(...e):t.effects.push(e):yl(e)}const Ae=Symbol.for("v-fgt"),jo=Symbol.for("v-txt"),vt=Symbol.for("v-cmt"),So=Symbol.for("v-stc"),Qt=[];let we=null;function ue(e=!1){Qt.push(we=e?null:[])}function ca(){Qt.pop(),we=Qt[Qt.length-1]||null}let to=1;function un(e){to+=e,e<0&&we&&(we.hasOnce=!0)}function Ui(e){return e.dynamicChildren=to>0?we||Rt:null,ca(),to>0&&we&&we.push(e),e}function ve(e,t,o,r,n,i){return Ui(V(e,t,o,r,n,i,!0))}function Wi(e,t,o,r,n){return Ui($(e,t,o,r,n,!0))}function fr(e){return e?e.__v_isVNode===!0:!1}function Ht(e,t){return e.type===t.type&&e.key===t.key}const Qi=({key:e})=>e??null,To=({ref:e,ref_key:t,ref_for:o})=>(typeof e=="number"&&(e=""+e),e!=null?ne(e)||de(e)||N(e)?{i:Ce,r:e,k:t,f:!!o}:e:null);function V(e,t=null,o=null,r=0,n=null,i=e===Ae?0:1,s=!1,l=!1){const a={__v_isVNode:!0,__v_skip:!0,type:e,props:t,key:t&&Qi(t),ref:t&&To(t),scopeId:Ti,slotScopeIds:null,children:o,component:null,suspense:null,ssContent:null,ssFallback:null,dirs:null,transition:null,el:null,anchor:null,target:null,targetStart:null,targetAnchor:null,staticCount:0,shapeFlag:i,patchFlag:r,dynamicProps:n,dynamicChildren:null,appContext:null,ctx:Ce};return l?(Hr(a,o),i&128&&e.normalize(a)):o&&(a.shapeFlag|=ne(o)?8:16),to>0&&!s&&we&&(a.patchFlag>0||i&6)&&a.patchFlag!==32&&we.push(a),a}const $=ua;function ua(e,t=null,o=null,r=0,n=null,i=!1){if((!e||e===_l)&&(e=vt),fr(e)){const l=Dt(e,t,!0);return o&&Hr(l,o),to>0&&!i&&we&&(l.shapeFlag&6?we[we.indexOf(e)]=l:we.push(l)),l.patchFlag=-2,l}if(Pa(e)&&(e=e.__vccOpts),t){t=ga(t);let{class:l,style:a}=t;l&&!ne(l)&&(t.class=Do(l)),te(a)&&(_r(a)&&!O(a)&&(a=le({},a)),t.style=Cr(a))}const s=ne(e)?1:Bi(e)?128:Sl(e)?64:te(e)?4:N(e)?2:0;return V(e,t,o,r,n,s,i,!0)}function ga(e){return e?_r(e)||_i(e)?le({},e):e:null}function Dt(e,t,o=!1,r=!1){const{props:n,ref:i,patchFlag:s,children:l,transition:a}=e,d=t?da(n||{},t):n,g={__v_isVNode:!0,__v_skip:!0,type:e.type,props:d,key:d&&Qi(d),ref:t&&t.ref?o&&i?O(i)?i.concat(To(t)):[i,To(t)]:To(t):i,scopeId:e.scopeId,slotScopeIds:e.slotScopeIds,children:l,target:e.target,targetStart:e.targetStart,targetAnchor:e.targetAnchor,staticCount:e.staticCount,shapeFlag:e.shapeFlag,patchFlag:t&&e.type!==Ae?s===-1?16:s|16:s,dynamicProps:e.dynamicProps,dynamicChildren:e.dynamicChildren,appContext:e.appContext,dirs:e.dirs,transition:a,component:e.component,suspense:e.suspense,ssContent:e.ssContent&&Dt(e.ssContent),ssFallback:e.ssFallback&&Dt(e.ssFallback),el:e.el,anchor:e.anchor,ctx:e.ctx,ce:e.ce};return a&&r&&qr(g,a.clone(g)),g}function ce(e=" ",t=0){return $(jo,null,e,t)}function pa(e,t){const o=$(So,null,e);return o.staticCount=t,o}function $i(e="",t=!1){return t?(ue(),Wi(vt,null,e)):$(vt,null,e)}function je(e){return e==null||typeof e=="boolean"?$(vt):O(e)?$(Ae,null,e.slice()):typeof e=="object"?lt(e):$(jo,null,String(e))}function lt(e){return e.el===null&&e.patchFlag!==-1||e.memo?e:Dt(e)}function Hr(e,t){let o=0;const{shapeFlag:r}=e;if(t==null)t=null;else if(O(t))o=16;else if(typeof t=="object")if(r&65){const n=t.default;n&&(n._c&&(n._d=!1),Hr(e,n()),n._c&&(n._d=!0));return}else{o=32;const n=t._;!n&&!_i(t)?t._ctx=Ce:n===3&&Ce&&(Ce.slots._===1?t._=1:(t._=2,e.patchFlag|=1024))}else N(t)?(t={default:t,_ctx:Ce},o=32):(t=String(t),r&64?(o=16,t=[ce(t)]):o=8);e.children=t,e.shapeFlag|=o}function da(...e){const t={};for(let o=0;o<e.length;o++){const r=e[o];for(const n in r)if(n==="class")t.class!==r.class&&(t.class=Do([t.class,r.class]));else if(n==="style")t.style=Cr([t.style,r.style]);else if(Io(n)){const i=t[n],s=r[n];s&&i!==s&&!(O(i)&&i.includes(s))&&(t[n]=i?[].concat(i,s):s)}else n!==""&&(t[n]=r[n])}return t}function Ve(e,t,o,r=null){Be(e,t,7,[o,r])}const ha=Ii();let fa=0;function ma(e,t,o){const r=e.type,n=(t?t.appContext:e.appContext)||ha,i={uid:fa++,vnode:e,type:r,parent:t,appContext:n,root:null,next:null,subTree:null,effect:null,update:null,job:null,scope:new qs(!0),render:null,proxy:null,exposed:null,exposeProxy:null,withProxy:null,provides:t?t.provides:Object.create(n.provides),ids:t?t.ids:["",0,0],accessCache:null,renderCache:[],components:null,directives:null,propsOptions:xi(r,n),emitsOptions:Fi(r,n),emit:null,emitted:null,propsDefaults:Z,inheritAttrs:r.inheritAttrs,ctx:Z,data:Z,props:Z,attrs:Z,slots:Z,refs:Z,setupState:Z,setupContext:null,suspense:o,suspenseId:o?o.pendingId:0,asyncDep:null,asyncResolved:!1,isMounted:!1,isUnmounted:!1,isDeactivated:!1,bc:null,c:null,bm:null,m:null,bu:null,u:null,um:null,bum:null,da:null,a:null,rtg:null,rtc:null,ec:null,sp:null};return i.ctx={_:i},i.root=t?t.root:i,i.emit=ra.bind(null,i),e.ce&&e.ce(i),i}let pe=null,Ro,mr;{const e=$n(),t=(o,r)=>{let n;return(n=e[o])||(n=e[o]=[]),n.push(r),i=>{n.length>1?n.forEach(s=>s(i)):n[0](i)}};Ro=t("__VUE_INSTANCE_SETTERS__",o=>pe=o),mr=t("__VUE_SSR_SETTERS__",o=>Go=o)}const lo=e=>{const t=pe;return Ro(e),e.scope.on(),()=>{e.scope.off(),Ro(t)}},gn=()=>{pe&&pe.scope.off(),Ro(null)};function zi(e){return e.vnode.shapeFlag&4}let Go=!1;function ba(e,t=!1,o=!1){t&&mr(t);const{props:r,children:n}=e.vnode,i=zi(e);Gl(e,r,i,t),Wl(e,n,o);const s=i?ya(e,t):void 0;return t&&mr(!1),s}function ya(e,t){const o=e.type;e.accessCache=Object.create(null),e.proxy=new Proxy(e.ctx,xl);const{setup:r}=o;if(r){const n=e.setupContext=r.length>1?Sa(e):null,i=lo(e);ut();const s=io(r,e,0,[e.props,n]);if(gt(),i(),Bn(s)){if(Ut(e)||ki(e),s.then(gn,gn),t)return s.then(l=>{pn(e,l,t)}).catch(l=>{No(l,e,0)});e.asyncDep=s}else pn(e,s,t)}else Xi(e,t)}function pn(e,t,o){N(t)?e.type.__ssrInlineRender?e.ssrRender=t:e.render=t:te(t)&&(e.setupState=mi(t)),Xi(e,o)}let dn;function Xi(e,t,o){const r=e.type;if(!e.render){if(!t&&dn&&!r.render){const n=r.template||Nr(e).template;if(n){const{isCustomElement:i,compilerOptions:s}=e.appContext.config,{delimiters:l,compilerOptions:a}=r,d=le(le({isCustomElement:i,delimiters:l},s),a);r.render=dn(n,d)}}e.render=r.render||Ge}{const n=lo(e);ut();try{Ll(e)}finally{gt(),n()}}}const va={get(e,t){return he(e,"get",""),e[t]}};function Sa(e){const t=o=>{e.exposed=o||{}};return{attrs:new Proxy(e.attrs,va),slots:e.slots,emit:e.emit,expose:t}}function Fo(e){return e.exposed?e.exposeProxy||(e.exposeProxy=new Proxy(mi(ll(e.exposed)),{get(t,o){if(o in t)return t[o];if(o in Wt)return Wt[o](e)},has(t,o){return o in t||o in Wt}})):e.proxy}function Ta(e,t=!0){return N(e)?e.displayName||e.name:e.name||t&&e.__name}function Pa(e){return N(e)&&"__vccOpts"in e}const Je=(e,t)=>dl(e,t,Go);function Yi(e,t,o){const r=arguments.length;return r===2?te(t)&&!O(t)?fr(t)?$(e,null,[t]):$(e,t):$(e,null,t):(r>3?o=Array.prototype.slice.call(arguments,2):r===3&&fr(o)&&(o=[o]),$(e,t,o))}const ka="3.5.6";/**
 * @vue/runtime-dom v3.5.6
 * (c) 2018-present Yuxi (Evan) You and Vue contributors
 * @license MIT
-**/let yr;const hn=typeof window<"u"&&window.trustedTypes;if(hn)try{yr=hn.createPolicy("vue",{createHTML:e=>e})}catch{}const Zs=yr?e=>yr.createHTML(e):e=>e,ka="http://www.w3.org/2000/svg",Pa="http://www.w3.org/1998/Math/MathML",ze=typeof document<"u"?document:null,fn=ze&&ze.createElement("template"),Ca={insert:(e,t,o)=>{t.insertBefore(e,o||null)},remove:e=>{const t=e.parentNode;t&&t.removeChild(e)},createElement:(e,t,o,r)=>{const n=t==="svg"?ze.createElementNS(ka,e):t==="mathml"?ze.createElementNS(Pa,e):o?ze.createElement(e,{is:o}):ze.createElement(e);return e==="select"&&r&&r.multiple!=null&&n.setAttribute("multiple",r.multiple),n},createText:e=>ze.createTextNode(e),createComment:e=>ze.createComment(e),setText:(e,t)=>{e.nodeValue=t},setElementText:(e,t)=>{e.textContent=t},parentNode:e=>e.parentNode,nextSibling:e=>e.nextSibling,querySelector:e=>ze.querySelector(e),setScopeId(e,t){e.setAttribute(t,"")},insertStaticContent(e,t,o,r,n,s){const i=o?o.previousSibling:t.lastChild;if(n&&(n===s||n.nextSibling))for(;t.insertBefore(n.cloneNode(!0),o),!(n===s||!(n=n.nextSibling)););else{fn.innerHTML=Zs(r==="svg"?`<svg>${e}</svg>`:r==="mathml"?`<math>${e}</math>`:e);const l=fn.content;if(r==="svg"||r==="mathml"){const a=l.firstChild;for(;a.firstChild;)l.appendChild(a.firstChild);l.removeChild(a)}t.insertBefore(l,o)}return[i?i.nextSibling:t.firstChild,o?o.previousSibling:t.lastChild]}},wa=Symbol("_vtc");function Ma(e,t,o){const r=e[wa];r&&(t=(t?[t,...r]:[...r]).join(" ")),t==null?e.removeAttribute("class"):o?e.setAttribute("class",t):e.className=t}const mn=Symbol("_vod"),Ra=Symbol("_vsh"),Aa=Symbol(""),Ja=/(^|;)\s*display\s*:/;function Ka(e,t,o){const r=e.style,n=ne(o);let s=!1;if(o&&!n){if(t)if(ne(t))for(const i of t.split(";")){const l=i.slice(0,i.indexOf(":")).trim();o[l]==null&&ko(r,l,"")}else for(const i in t)o[i]==null&&ko(r,i,"");for(const i in o)i==="display"&&(s=!0),ko(r,i,o[i])}else if(n){if(t!==o){const i=r[Aa];i&&(o+=";"+i),r.cssText=o,s=Ja.test(o)}}else t&&e.removeAttribute("style");mn in e&&(e[mn]=s?r.display:"",e[Ra]&&(r.display="none"))}const yn=/\s*!important$/;function ko(e,t,o){if(q(o))o.forEach(r=>ko(e,t,r));else if(o==null&&(o=""),t.startsWith("--"))e.setProperty(t,o);else{const r=Ia(e,t);yn.test(o)?e.setProperty(St(r),o.replace(yn,""),"important"):e[r]=o}}const bn=["Webkit","Moz","ms"],er={};function Ia(e,t){const o=er[t];if(o)return o;let r=_e(t);if(r!=="filter"&&r in e)return er[t]=r;r=_o(r);for(let n=0;n<bn.length;n++){const s=bn[n]+r;if(s in e)return er[t]=s}return t}const vn="http://www.w3.org/1999/xlink";function Sn(e,t,o,r,n,s=_i(t)){r&&t.startsWith("xlink:")?o==null?e.removeAttributeNS(vn,t.slice(6,t.length)):e.setAttributeNS(vn,t,o):o==null||s&&!Qn(o)?e.removeAttribute(t):e.setAttribute(t,s?"":Be(o)?String(o):o)}function Ea(e,t,o,r){if(t==="innerHTML"||t==="textContent"){o!=null&&(e[t]=t==="innerHTML"?Zs(o):o);return}const n=e.tagName;if(t==="value"&&n!=="PROGRESS"&&!n.includes("-")){const i=n==="OPTION"?e.getAttribute("value")||"":e.value,l=o==null?e.type==="checkbox"?"on":"":String(o);(i!==l||!("_value"in e))&&(e.value=l),o==null&&e.removeAttribute(t),e._value=o;return}let s=!1;if(o===""||o==null){const i=typeof e[t];i==="boolean"?o=Qn(o):o==null&&i==="string"?(o="",s=!0):i==="number"&&(o=0,s=!0)}try{e[t]=o}catch{}s&&e.removeAttribute(t)}function mt(e,t,o,r){e.addEventListener(t,o,r)}function _a(e,t,o,r){e.removeEventListener(t,o,r)}const Tn=Symbol("_vei");function xa(e,t,o,r,n=null){const s=e[Tn]||(e[Tn]={}),i=s[t];if(r&&i)i.value=r;else{const[l,a]=Da(t);if(r){const d=s[t]=La(r,n);mt(e,l,d,a)}else i&&(_a(e,l,i,a),s[t]=void 0)}}const kn=/(?:Once|Passive|Capture)$/;function Da(e){let t;if(kn.test(e)){t={};let r;for(;r=e.match(kn);)e=e.slice(0,e.length-r[0].length),t[r[0].toLowerCase()]=!0}return[e[2]===":"?e.slice(3):St(e.slice(2)),t]}let tr=0;const Oa=Promise.resolve(),qa=()=>tr||(Oa.then(()=>tr=0),tr=Date.now());function La(e,t){const o=r=>{if(!r._vts)r._vts=Date.now();else if(r._vts<=o.attached)return;Ge(Na(r,o.value),t,5,[r])};return o.value=e,o.attached=qa(),o}function Na(e,t){if(q(t)){const o=e.stopImmediatePropagation;return e.stopImmediatePropagation=()=>{o.call(e),e._stopped=!0},t.map(r=>n=>!n._stopped&&r&&r(n))}else return t}const Pn=e=>e.charCodeAt(0)===111&&e.charCodeAt(1)===110&&e.charCodeAt(2)>96&&e.charCodeAt(2)<123,Ha=(e,t,o,r,n,s)=>{const i=n==="svg";t==="class"?Ma(e,r,i):t==="style"?Ka(e,o,r):Ko(t)?kr(t)||xa(e,t,o,r,s):(t[0]==="."?(t=t.slice(1),!0):t[0]==="^"?(t=t.slice(1),!1):ja(e,t,r,i))?(Ea(e,t,r),!e.tagName.includes("-")&&(t==="value"||t==="checked"||t==="selected")&&Sn(e,t,r,i,s,t!=="value")):(t==="true-value"?e._trueValue=r:t==="false-value"&&(e._falseValue=r),Sn(e,t,r,i))};function ja(e,t,o,r){if(r)return!!(t==="innerHTML"||t==="textContent"||t in e&&Pn(t)&&N(o));if(t==="spellcheck"||t==="draggable"||t==="translate"||t==="form"||t==="list"&&e.tagName==="INPUT"||t==="type"&&e.tagName==="TEXTAREA")return!1;if(t==="width"||t==="height"){const n=e.tagName;if(n==="IMG"||n==="VIDEO"||n==="CANVAS"||n==="SOURCE")return!1}return Pn(t)&&ne(o)?!1:!!(t in e||e._isVueCE&&(/[A-Z]/.test(t)||!ne(o)))}const Ao=e=>{const t=e.props["onUpdate:modelValue"]||!1;return q(t)?o=>yo(t,o):t};function Fa(e){e.target.composing=!0}function Cn(e){const t=e.target;t.composing&&(t.composing=!1,t.dispatchEvent(new Event("input")))}const _t=Symbol("_assign"),wn={created(e,{modifiers:{lazy:t,trim:o,number:r}},n){e[_t]=Ao(n);const s=r||n.props&&n.props.type==="number";mt(e,t?"change":"input",i=>{if(i.target.composing)return;let l=e.value;o&&(l=l.trim()),s&&(l=Po(l)),e[_t](l)}),o&&mt(e,"change",()=>{e.value=e.value.trim()}),t||(mt(e,"compositionstart",Fa),mt(e,"compositionend",Cn),mt(e,"change",Cn))},mounted(e,{value:t}){e.value=t??""},beforeUpdate(e,{value:t,oldValue:o,modifiers:{lazy:r,trim:n,number:s}},i){if(e[_t]=Ao(i),e.composing)return;const l=(s||e.type==="number")&&!/^0\d/.test(e.value)?Po(e.value):e.value,a=t??"";l!==a&&(document.activeElement===e&&e.type!=="range"&&(r&&t===o||n&&e.value.trim()===a)||(e.value=a))}},Ua={deep:!0,created(e,{value:t,modifiers:{number:o}},r){const n=Io(t);mt(e,"change",()=>{const s=Array.prototype.filter.call(e.options,i=>i.selected).map(i=>o?Po(Jo(i)):Jo(i));e[_t](e.multiple?n?new Set(s):s:s[0]),e._assigning=!0,Or(()=>{e._assigning=!1})}),e[_t]=Ao(r)},mounted(e,{value:t,modifiers:{number:o}}){Mn(e,t)},beforeUpdate(e,t,o){e[_t]=Ao(o)},updated(e,{value:t,modifiers:{number:o}}){e._assigning||Mn(e,t)}};function Mn(e,t,o){const r=e.multiple,n=q(t);if(!(r&&!n&&!Io(t))){for(let s=0,i=e.options.length;s<i;s++){const l=e.options[s],a=Jo(l);if(r)if(n){const d=typeof a;d==="string"||d==="number"?l.selected=t.some(p=>String(p)===String(a)):l.selected=Di(t,a)>-1}else l.selected=t.has(a);else if(Do(Jo(l),t)){e.selectedIndex!==s&&(e.selectedIndex=s);return}}!r&&e.selectedIndex!==-1&&(e.selectedIndex=-1)}}function Jo(e){return"_value"in e?e._value:e.value}const Ba=le({patchProp:Ha},Ca);let Rn;function Ga(){return Rn||(Rn=Wl(Ba))}const Va=(...e)=>{const t=Ga().createApp(...e),{mount:o}=t;return t.mount=r=>{const n=$a(r);if(!n)return;const s=t._component;!N(s)&&!s.render&&!s.template&&(s.template=n.innerHTML),n.nodeType===1&&(n.textContent="");const i=o(n,!1,Wa(n));return n instanceof Element&&(n.removeAttribute("v-cloak"),n.setAttribute("data-v-app","")),i},t};function Wa(e){if(e instanceof SVGElement)return"svg";if(typeof MathMLElement=="function"&&e instanceof MathMLElement)return"mathml"}function $a(e){return ne(e)?document.querySelector(e):e}const qt=(e,t)=>{const o=e.__vccOpts||e;for(const[r,n]of t)o[r]=n;return o},za={};function Qa(e,t,o,r,n,s){const i=io("router-view");return ce(),ye(Ae,null,[t[0]||(t[0]=j("div",{class:"header"},[j("h2",null,"PerfLAB")],-1)),Z(i)],64)}const Xa=qt(za,[["render",Qa]]);/*!
+**/let br;const hn=typeof window<"u"&&window.trustedTypes;if(hn)try{br=hn.createPolicy("vue",{createHTML:e=>e})}catch{}const Zi=br?e=>br.createHTML(e):e=>e,Ma="http://www.w3.org/2000/svg",Ca="http://www.w3.org/1998/Math/MathML",$e=typeof document<"u"?document:null,fn=$e&&$e.createElement("template"),wa={insert:(e,t,o)=>{t.insertBefore(e,o||null)},remove:e=>{const t=e.parentNode;t&&t.removeChild(e)},createElement:(e,t,o,r)=>{const n=t==="svg"?$e.createElementNS(Ma,e):t==="mathml"?$e.createElementNS(Ca,e):o?$e.createElement(e,{is:o}):$e.createElement(e);return e==="select"&&r&&r.multiple!=null&&n.setAttribute("multiple",r.multiple),n},createText:e=>$e.createTextNode(e),createComment:e=>$e.createComment(e),setText:(e,t)=>{e.nodeValue=t},setElementText:(e,t)=>{e.textContent=t},parentNode:e=>e.parentNode,nextSibling:e=>e.nextSibling,querySelector:e=>$e.querySelector(e),setScopeId(e,t){e.setAttribute(t,"")},insertStaticContent(e,t,o,r,n,i){const s=o?o.previousSibling:t.lastChild;if(n&&(n===i||n.nextSibling))for(;t.insertBefore(n.cloneNode(!0),o),!(n===i||!(n=n.nextSibling)););else{fn.innerHTML=Zi(r==="svg"?`<svg>${e}</svg>`:r==="mathml"?`<math>${e}</math>`:e);const l=fn.content;if(r==="svg"||r==="mathml"){const a=l.firstChild;for(;a.firstChild;)l.appendChild(a.firstChild);l.removeChild(a)}t.insertBefore(l,o)}return[s?s.nextSibling:t.firstChild,o?o.previousSibling:t.lastChild]}},Ra=Symbol("_vtc");function Aa(e,t,o){const r=e[Ra];r&&(t=(t?[t,...r]:[...r]).join(" ")),t==null?e.removeAttribute("class"):o?e.setAttribute("class",t):e.className=t}const mn=Symbol("_vod"),Ea=Symbol("_vsh"),Ia=Symbol(""),Ja=/(^|;)\s*display\s*:/;function Ka(e,t,o){const r=e.style,n=ne(o);let i=!1;if(o&&!n){if(t)if(ne(t))for(const s of t.split(";")){const l=s.slice(0,s.indexOf(":")).trim();o[l]==null&&Po(r,l,"")}else for(const s in t)o[s]==null&&Po(r,s,"");for(const s in o)s==="display"&&(i=!0),Po(r,s,o[s])}else if(n){if(t!==o){const s=r[Ia];s&&(o+=";"+s),r.cssText=o,i=Ja.test(o)}}else t&&e.removeAttribute("style");mn in e&&(e[mn]=i?r.display:"",e[Ea]&&(r.display="none"))}const bn=/\s*!important$/;function Po(e,t,o){if(O(o))o.forEach(r=>Po(e,t,r));else if(o==null&&(o=""),t.startsWith("--"))e.setProperty(t,o);else{const r=_a(e,t);bn.test(o)?e.setProperty(St(r),o.replace(bn,""),"important"):e[r]=o}}const yn=["Webkit","Moz","ms"],er={};function _a(e,t){const o=er[t];if(o)return o;let r=_e(t);if(r!=="filter"&&r in e)return er[t]=r;r=_o(r);for(let n=0;n<yn.length;n++){const i=yn[n]+r;if(i in e)return er[t]=i}return t}const vn="http://www.w3.org/1999/xlink";function Sn(e,t,o,r,n,i=xs(t)){r&&t.startsWith("xlink:")?o==null?e.removeAttributeNS(vn,t.slice(6,t.length)):e.setAttributeNS(vn,t,o):o==null||i&&!zn(o)?e.removeAttribute(t):e.setAttribute(t,i?"":Fe(o)?String(o):o)}function Da(e,t,o,r){if(t==="innerHTML"||t==="textContent"){o!=null&&(e[t]=t==="innerHTML"?Zi(o):o);return}const n=e.tagName;if(t==="value"&&n!=="PROGRESS"&&!n.includes("-")){const s=n==="OPTION"?e.getAttribute("value")||"":e.value,l=o==null?e.type==="checkbox"?"on":"":String(o);(s!==l||!("_value"in e))&&(e.value=l),o==null&&e.removeAttribute(t),e._value=o;return}let i=!1;if(o===""||o==null){const s=typeof e[t];s==="boolean"?o=zn(o):o==null&&s==="string"?(o="",i=!0):s==="number"&&(o=0,i=!0)}try{e[t]=o}catch{}i&&e.removeAttribute(t)}function mt(e,t,o,r){e.addEventListener(t,o,r)}function xa(e,t,o,r){e.removeEventListener(t,o,r)}const Tn=Symbol("_vei");function La(e,t,o,r,n=null){const i=e[Tn]||(e[Tn]={}),s=i[t];if(r&&s)s.value=r;else{const[l,a]=Oa(t);if(r){const d=i[t]=Va(r,n);mt(e,l,d,a)}else s&&(xa(e,l,s,a),i[t]=void 0)}}const Pn=/(?:Once|Passive|Capture)$/;function Oa(e){let t;if(Pn.test(e)){t={};let r;for(;r=e.match(Pn);)e=e.slice(0,e.length-r[0].length),t[r[0].toLowerCase()]=!0}return[e[2]===":"?e.slice(3):St(e.slice(2)),t]}let tr=0;const qa=Promise.resolve(),Na=()=>tr||(qa.then(()=>tr=0),tr=Date.now());function Va(e,t){const o=r=>{if(!r._vts)r._vts=Date.now();else if(r._vts<=o.attached)return;Be(Ha(r,o.value),t,5,[r])};return o.value=e,o.attached=Na(),o}function Ha(e,t){if(O(t)){const o=e.stopImmediatePropagation;return e.stopImmediatePropagation=()=>{o.call(e),e._stopped=!0},t.map(r=>n=>!n._stopped&&r&&r(n))}else return t}const kn=e=>e.charCodeAt(0)===111&&e.charCodeAt(1)===110&&e.charCodeAt(2)>96&&e.charCodeAt(2)<123,ja=(e,t,o,r,n,i)=>{const s=n==="svg";t==="class"?Aa(e,r,s):t==="style"?Ka(e,o,r):Io(t)?Pr(t)||La(e,t,o,r,i):(t[0]==="."?(t=t.slice(1),!0):t[0]==="^"?(t=t.slice(1),!1):Ga(e,t,r,s))?(Da(e,t,r),!e.tagName.includes("-")&&(t==="value"||t==="checked"||t==="selected")&&Sn(e,t,r,s,i,t!=="value")):(t==="true-value"?e._trueValue=r:t==="false-value"&&(e._falseValue=r),Sn(e,t,r,s))};function Ga(e,t,o,r){if(r)return!!(t==="innerHTML"||t==="textContent"||t in e&&kn(t)&&N(o));if(t==="spellcheck"||t==="draggable"||t==="translate"||t==="form"||t==="list"&&e.tagName==="INPUT"||t==="type"&&e.tagName==="TEXTAREA")return!1;if(t==="width"||t==="height"){const n=e.tagName;if(n==="IMG"||n==="VIDEO"||n==="CANVAS"||n==="SOURCE")return!1}return kn(t)&&ne(o)?!1:!!(t in e||e._isVueCE&&(/[A-Z]/.test(t)||!ne(o)))}const Ao=e=>{const t=e.props["onUpdate:modelValue"]||!1;return O(t)?o=>bo(t,o):t};function Fa(e){e.target.composing=!0}function Mn(e){const t=e.target;t.composing&&(t.composing=!1,t.dispatchEvent(new Event("input")))}const _t=Symbol("_assign"),Cn={created(e,{modifiers:{lazy:t,trim:o,number:r}},n){e[_t]=Ao(n);const i=r||n.props&&n.props.type==="number";mt(e,t?"change":"input",s=>{if(s.target.composing)return;let l=e.value;o&&(l=l.trim()),i&&(l=ko(l)),e[_t](l)}),o&&mt(e,"change",()=>{e.value=e.value.trim()}),t||(mt(e,"compositionstart",Fa),mt(e,"compositionend",Mn),mt(e,"change",Mn))},mounted(e,{value:t}){e.value=t??""},beforeUpdate(e,{value:t,oldValue:o,modifiers:{lazy:r,trim:n,number:i}},s){if(e[_t]=Ao(s),e.composing)return;const l=(i||e.type==="number")&&!/^0\d/.test(e.value)?ko(e.value):e.value,a=t??"";l!==a&&(document.activeElement===e&&e.type!=="range"&&(r&&t===o||n&&e.value.trim()===a)||(e.value=a))}},Ba={deep:!0,created(e,{value:t,modifiers:{number:o}},r){const n=Jo(t);mt(e,"change",()=>{const i=Array.prototype.filter.call(e.options,s=>s.selected).map(s=>o?ko(Eo(s)):Eo(s));e[_t](e.multiple?n?new Set(i):i:i[0]),e._assigning=!0,Lr(()=>{e._assigning=!1})}),e[_t]=Ao(r)},mounted(e,{value:t,modifiers:{number:o}}){wn(e,t)},beforeUpdate(e,t,o){e[_t]=Ao(o)},updated(e,{value:t,modifiers:{number:o}}){e._assigning||wn(e,t)}};function wn(e,t,o){const r=e.multiple,n=O(t);if(!(r&&!n&&!Jo(t))){for(let i=0,s=e.options.length;i<s;i++){const l=e.options[i],a=Eo(l);if(r)if(n){const d=typeof a;d==="string"||d==="number"?l.selected=t.some(g=>String(g)===String(a)):l.selected=Os(t,a)>-1}else l.selected=t.has(a);else if(xo(Eo(l),t)){e.selectedIndex!==i&&(e.selectedIndex=i);return}}!r&&e.selectedIndex!==-1&&(e.selectedIndex=-1)}}function Eo(e){return"_value"in e?e._value:e.value}const Ua=le({patchProp:ja},wa);let Rn;function Wa(){return Rn||(Rn=$l(Ua))}const Qa=(...e)=>{const t=Wa().createApp(...e),{mount:o}=t;return t.mount=r=>{const n=za(r);if(!n)return;const i=t._component;!N(i)&&!i.render&&!i.template&&(i.template=n.innerHTML),n.nodeType===1&&(n.textContent="");const s=o(n,!1,$a(n));return n instanceof Element&&(n.removeAttribute("v-cloak"),n.setAttribute("data-v-app","")),s},t};function $a(e){if(e instanceof SVGElement)return"svg";if(typeof MathMLElement=="function"&&e instanceof MathMLElement)return"mathml"}function za(e){return ne(e)?document.querySelector(e):e}const Ot=(e,t)=>{const o=e.__vccOpts||e;for(const[r,n]of t)o[r]=n;return o},Xa={};function Ya(e,t,o,r,n,i){const s=so("router-view");return ue(),ve(Ae,null,[t[0]||(t[0]=V("div",{class:"header"},[V("h2",null,"PerfLAB")],-1)),$(s)],64)}const Za=Ot(Xa,[["render",Ya]]);/*!
   * vue-router v4.4.5
   * (c) 2024 Eduardo San Martin Morote
   * @license MIT
-  */const Mt=typeof document<"u";function ei(e){return typeof e=="object"||"displayName"in e||"props"in e||"__vccOpts"in e}function Ya(e){return e.__esModule||e[Symbol.toStringTag]==="Module"||e.default&&ei(e.default)}const $=Object.assign;function or(e,t){const o={};for(const r in t){const n=t[r];o[r]=xe(n)?n.map(e):e(n)}return o}const zt=()=>{},xe=Array.isArray,ti=/#/g,Za=/&/g,ec=/\//g,tc=/=/g,oc=/\?/g,oi=/\+/g,rc=/%5B/g,nc=/%5D/g,ri=/%5E/g,sc=/%60/g,ni=/%7B/g,ic=/%7C/g,si=/%7D/g,lc=/%20/g;function Fr(e){return encodeURI(""+e).replace(ic,"|").replace(rc,"[").replace(nc,"]")}function ac(e){return Fr(e).replace(ni,"{").replace(si,"}").replace(ri,"^")}function br(e){return Fr(e).replace(oi,"%2B").replace(lc,"+").replace(ti,"%23").replace(Za,"%26").replace(sc,"`").replace(ni,"{").replace(si,"}").replace(ri,"^")}function cc(e){return br(e).replace(tc,"%3D")}function uc(e){return Fr(e).replace(ti,"%23").replace(oc,"%3F")}function pc(e){return e==null?"":uc(e).replace(ec,"%2F")}function oo(e){try{return decodeURIComponent(""+e)}catch{}return""+e}const gc=/\/$/,dc=e=>e.replace(gc,"");function rr(e,t,o="/"){let r,n={},s="",i="";const l=t.indexOf("#");let a=t.indexOf("?");return l<a&&l>=0&&(a=-1),a>-1&&(r=t.slice(0,a),s=t.slice(a+1,l>-1?l:t.length),n=e(s)),l>-1&&(r=r||t.slice(0,l),i=t.slice(l,t.length)),r=yc(r??t,o),{fullPath:r+(s&&"?")+s+i,path:r,query:n,hash:oo(i)}}function hc(e,t){const o=t.query?e(t.query):"";return t.path+(o&&"?")+o+(t.hash||"")}function An(e,t){return!t||!e.toLowerCase().startsWith(t.toLowerCase())?e:e.slice(t.length)||"/"}function fc(e,t,o){const r=t.matched.length-1,n=o.matched.length-1;return r>-1&&r===n&&Dt(t.matched[r],o.matched[n])&&ii(t.params,o.params)&&e(t.query)===e(o.query)&&t.hash===o.hash}function Dt(e,t){return(e.aliasOf||e)===(t.aliasOf||t)}function ii(e,t){if(Object.keys(e).length!==Object.keys(t).length)return!1;for(const o in e)if(!mc(e[o],t[o]))return!1;return!0}function mc(e,t){return xe(e)?Jn(e,t):xe(t)?Jn(t,e):e===t}function Jn(e,t){return xe(t)?e.length===t.length&&e.every((o,r)=>o===t[r]):e.length===1&&e[0]===t}function yc(e,t){if(e.startsWith("/"))return e;if(!e)return t;const o=t.split("/"),r=e.split("/"),n=r[r.length-1];(n===".."||n===".")&&r.push("");let s=o.length-1,i,l;for(i=0;i<r.length;i++)if(l=r[i],l!==".")if(l==="..")s>1&&s--;else break;return o.slice(0,s).join("/")+"/"+r.slice(i).join("/")}const nt={path:"/",name:void 0,params:{},query:{},hash:"",fullPath:"/",matched:[],meta:{},redirectedFrom:void 0};var ro;(function(e){e.pop="pop",e.push="push"})(ro||(ro={}));var Qt;(function(e){e.back="back",e.forward="forward",e.unknown=""})(Qt||(Qt={}));function bc(e){if(!e)if(Mt){const t=document.querySelector("base");e=t&&t.getAttribute("href")||"/",e=e.replace(/^\w+:\/\/[^\/]+/,"")}else e="/";return e[0]!=="/"&&e[0]!=="#"&&(e="/"+e),dc(e)}const vc=/^[^#]+#/;function Sc(e,t){return e.replace(vc,"#")+t}function Tc(e,t){const o=document.documentElement.getBoundingClientRect(),r=e.getBoundingClientRect();return{behavior:t.behavior,left:r.left-o.left-(t.left||0),top:r.top-o.top-(t.top||0)}}const Go=()=>({left:window.scrollX,top:window.scrollY});function kc(e){let t;if("el"in e){const o=e.el,r=typeof o=="string"&&o.startsWith("#"),n=typeof o=="string"?r?document.getElementById(o.slice(1)):document.querySelector(o):o;if(!n)return;t=Tc(n,e)}else t=e;"scrollBehavior"in document.documentElement.style?window.scrollTo(t):window.scrollTo(t.left!=null?t.left:window.scrollX,t.top!=null?t.top:window.scrollY)}function Kn(e,t){return(history.state?history.state.position-t:-1)+e}const vr=new Map;function Pc(e,t){vr.set(e,t)}function Cc(e){const t=vr.get(e);return vr.delete(e),t}let wc=()=>location.protocol+"//"+location.host;function li(e,t){const{pathname:o,search:r,hash:n}=t,s=e.indexOf("#");if(s>-1){let l=n.includes(e.slice(s))?e.slice(s).length:1,a=n.slice(l);return a[0]!=="/"&&(a="/"+a),An(a,"")}return An(o,e)+r+n}function Mc(e,t,o,r){let n=[],s=[],i=null;const l=({state:h})=>{const m=li(e,location),A=o.value,J=t.value;let H=0;if(h){if(o.value=m,t.value=h,i&&i===A){i=null;return}H=J?h.position-J.position:0}else r(m);n.forEach(x=>{x(o.value,A,{delta:H,type:ro.pop,direction:H?H>0?Qt.forward:Qt.back:Qt.unknown})})};function a(){i=o.value}function d(h){n.push(h);const m=()=>{const A=n.indexOf(h);A>-1&&n.splice(A,1)};return s.push(m),m}function p(){const{history:h}=window;h.state&&h.replaceState($({},h.state,{scroll:Go()}),"")}function g(){for(const h of s)h();s=[],window.removeEventListener("popstate",l),window.removeEventListener("beforeunload",p)}return window.addEventListener("popstate",l),window.addEventListener("beforeunload",p,{passive:!0}),{pauseListeners:a,listen:d,destroy:g}}function In(e,t,o,r=!1,n=!1){return{back:e,current:t,forward:o,replaced:r,position:window.history.length,scroll:n?Go():null}}function Rc(e){const{history:t,location:o}=window,r={value:li(e,o)},n={value:t.state};n.value||s(r.value,{back:null,current:r.value,forward:null,position:t.length-1,replaced:!0,scroll:null},!0);function s(a,d,p){const g=e.indexOf("#"),h=g>-1?(o.host&&document.querySelector("base")?e:e.slice(g))+a:wc()+e+a;try{t[p?"replaceState":"pushState"](d,"",h),n.value=d}catch(m){console.error(m),o[p?"replace":"assign"](h)}}function i(a,d){const p=$({},t.state,In(n.value.back,a,n.value.forward,!0),d,{position:n.value.position});s(a,p,!0),r.value=a}function l(a,d){const p=$({},n.value,t.state,{forward:a,scroll:Go()});s(p.current,p,!0);const g=$({},In(r.value,a,null),{position:p.position+1},d);s(a,g,!1),r.value=a}return{location:r,state:n,push:l,replace:i}}function Ac(e){e=bc(e);const t=Rc(e),o=Mc(e,t.state,t.location,t.replace);function r(s,i=!0){i||o.pauseListeners(),history.go(s)}const n=$({location:"",base:e,go:r,createHref:Sc.bind(null,e)},t,o);return Object.defineProperty(n,"location",{enumerable:!0,get:()=>t.location.value}),Object.defineProperty(n,"state",{enumerable:!0,get:()=>t.state.value}),n}function Jc(e){return e=location.host?e||location.pathname+location.search:"",e.includes("#")||(e+="#"),Ac(e)}function Kc(e){return typeof e=="string"||e&&typeof e=="object"}function ai(e){return typeof e=="string"||typeof e=="symbol"}const ci=Symbol("");var En;(function(e){e[e.aborted=4]="aborted",e[e.cancelled=8]="cancelled",e[e.duplicated=16]="duplicated"})(En||(En={}));function Ot(e,t){return $(new Error,{type:e,[ci]:!0},t)}function $e(e,t){return e instanceof Error&&ci in e&&(t==null||!!(e.type&t))}const _n="[^/]+?",Ic={sensitive:!1,strict:!1,start:!0,end:!0},Ec=/[.+*?^${}()[\]/\\]/g;function _c(e,t){const o=$({},Ic,t),r=[];let n=o.start?"^":"";const s=[];for(const d of e){const p=d.length?[]:[90];o.strict&&!d.length&&(n+="/");for(let g=0;g<d.length;g++){const h=d[g];let m=40+(o.sensitive?.25:0);if(h.type===0)g||(n+="/"),n+=h.value.replace(Ec,"\\$&"),m+=40;else if(h.type===1){const{value:A,repeatable:J,optional:H,regexp:x}=h;s.push({name:A,repeatable:J,optional:H});const _=x||_n;if(_!==_n){m+=10;try{new RegExp(`(${_})`)}catch(K){throw new Error(`Invalid custom RegExp for param "${A}" (${_}): `+K.message)}}let D=J?`((?:${_})(?:/(?:${_}))*)`:`(${_})`;g||(D=H&&d.length<2?`(?:/${D})`:"/"+D),H&&(D+="?"),n+=D,m+=20,H&&(m+=-8),J&&(m+=-20),_===".*"&&(m+=-50)}p.push(m)}r.push(p)}if(o.strict&&o.end){const d=r.length-1;r[d][r[d].length-1]+=.7000000000000001}o.strict||(n+="/?"),o.end?n+="$":o.strict&&(n+="(?:/|$)");const i=new RegExp(n,o.sensitive?"":"i");function l(d){const p=d.match(i),g={};if(!p)return null;for(let h=1;h<p.length;h++){const m=p[h]||"",A=s[h-1];g[A.name]=m&&A.repeatable?m.split("/"):m}return g}function a(d){let p="",g=!1;for(const h of e){(!g||!p.endsWith("/"))&&(p+="/"),g=!1;for(const m of h)if(m.type===0)p+=m.value;else if(m.type===1){const{value:A,repeatable:J,optional:H}=m,x=A in d?d[A]:"";if(xe(x)&&!J)throw new Error(`Provided param "${A}" is an array but it is not repeatable (* or + modifiers)`);const _=xe(x)?x.join("/"):x;if(!_)if(H)h.length<2&&(p.endsWith("/")?p=p.slice(0,-1):g=!0);else throw new Error(`Missing required param "${A}"`);p+=_}}return p||"/"}return{re:i,score:r,keys:s,parse:l,stringify:a}}function xc(e,t){let o=0;for(;o<e.length&&o<t.length;){const r=t[o]-e[o];if(r)return r;o++}return e.length<t.length?e.length===1&&e[0]===80?-1:1:e.length>t.length?t.length===1&&t[0]===80?1:-1:0}function ui(e,t){let o=0;const r=e.score,n=t.score;for(;o<r.length&&o<n.length;){const s=xc(r[o],n[o]);if(s)return s;o++}if(Math.abs(n.length-r.length)===1){if(xn(r))return 1;if(xn(n))return-1}return n.length-r.length}function xn(e){const t=e[e.length-1];return e.length>0&&t[t.length-1]<0}const Dc={type:0,value:""},Oc=/[a-zA-Z0-9_]/;function qc(e){if(!e)return[[]];if(e==="/")return[[Dc]];if(!e.startsWith("/"))throw new Error(`Invalid path "${e}"`);function t(m){throw new Error(`ERR (${o})/"${d}": ${m}`)}let o=0,r=o;const n=[];let s;function i(){s&&n.push(s),s=[]}let l=0,a,d="",p="";function g(){d&&(o===0?s.push({type:0,value:d}):o===1||o===2||o===3?(s.length>1&&(a==="*"||a==="+")&&t(`A repeatable param (${d}) must be alone in its segment. eg: '/:ids+.`),s.push({type:1,value:d,regexp:p,repeatable:a==="*"||a==="+",optional:a==="*"||a==="?"})):t("Invalid state to consume buffer"),d="")}function h(){d+=a}for(;l<e.length;){if(a=e[l++],a==="\\"&&o!==2){r=o,o=4;continue}switch(o){case 0:a==="/"?(d&&g(),i()):a===":"?(g(),o=1):h();break;case 4:h(),o=r;break;case 1:a==="("?o=2:Oc.test(a)?h():(g(),o=0,a!=="*"&&a!=="?"&&a!=="+"&&l--);break;case 2:a===")"?p[p.length-1]=="\\"?p=p.slice(0,-1)+a:o=3:p+=a;break;case 3:g(),o=0,a!=="*"&&a!=="?"&&a!=="+"&&l--,p="";break;default:t("Unknown state");break}}return o===2&&t(`Unfinished custom RegExp for param "${d}"`),g(),i(),n}function Lc(e,t,o){const r=_c(qc(e.path),o),n=$(r,{record:e,parent:t,children:[],alias:[]});return t&&!n.record.aliasOf==!t.record.aliasOf&&t.children.push(n),n}function Nc(e,t){const o=[],r=new Map;t=Ln({strict:!1,end:!0,sensitive:!1},t);function n(g){return r.get(g)}function s(g,h,m){const A=!m,J=On(g);J.aliasOf=m&&m.record;const H=Ln(t,g),x=[J];if("alias"in g){const K=typeof g.alias=="string"?[g.alias]:g.alias;for(const Q of K)x.push(On($({},J,{components:m?m.record.components:J.components,path:Q,aliasOf:m?m.record:J})))}let _,D;for(const K of x){const{path:Q}=K;if(h&&Q[0]!=="/"){const ie=h.record.path,oe=ie[ie.length-1]==="/"?"":"/";K.path=h.record.path+(Q&&oe+Q)}if(_=Lc(K,h,H),m?m.alias.push(_):(D=D||_,D!==_&&D.alias.push(_),A&&g.name&&!qn(_)&&i(g.name)),pi(_)&&a(_),J.children){const ie=J.children;for(let oe=0;oe<ie.length;oe++)s(ie[oe],_,m&&m.children[oe])}m=m||_}return D?()=>{i(D)}:zt}function i(g){if(ai(g)){const h=r.get(g);h&&(r.delete(g),o.splice(o.indexOf(h),1),h.children.forEach(i),h.alias.forEach(i))}else{const h=o.indexOf(g);h>-1&&(o.splice(h,1),g.record.name&&r.delete(g.record.name),g.children.forEach(i),g.alias.forEach(i))}}function l(){return o}function a(g){const h=Fc(g,o);o.splice(h,0,g),g.record.name&&!qn(g)&&r.set(g.record.name,g)}function d(g,h){let m,A={},J,H;if("name"in g&&g.name){if(m=r.get(g.name),!m)throw Ot(1,{location:g});H=m.record.name,A=$(Dn(h.params,m.keys.filter(D=>!D.optional).concat(m.parent?m.parent.keys.filter(D=>D.optional):[]).map(D=>D.name)),g.params&&Dn(g.params,m.keys.map(D=>D.name))),J=m.stringify(A)}else if(g.path!=null)J=g.path,m=o.find(D=>D.re.test(J)),m&&(A=m.parse(J),H=m.record.name);else{if(m=h.name?r.get(h.name):o.find(D=>D.re.test(h.path)),!m)throw Ot(1,{location:g,currentLocation:h});H=m.record.name,A=$({},h.params,g.params),J=m.stringify(A)}const x=[];let _=m;for(;_;)x.unshift(_.record),_=_.parent;return{name:H,path:J,params:A,matched:x,meta:jc(x)}}e.forEach(g=>s(g));function p(){o.length=0,r.clear()}return{addRoute:s,resolve:d,removeRoute:i,clearRoutes:p,getRoutes:l,getRecordMatcher:n}}function Dn(e,t){const o={};for(const r of t)r in e&&(o[r]=e[r]);return o}function On(e){const t={path:e.path,redirect:e.redirect,name:e.name,meta:e.meta||{},aliasOf:e.aliasOf,beforeEnter:e.beforeEnter,props:Hc(e),children:e.children||[],instances:{},leaveGuards:new Set,updateGuards:new Set,enterCallbacks:{},components:"components"in e?e.components||null:e.component&&{default:e.component}};return Object.defineProperty(t,"mods",{value:{}}),t}function Hc(e){const t={},o=e.props||!1;if("component"in e)t.default=o;else for(const r in e.components)t[r]=typeof o=="object"?o[r]:o;return t}function qn(e){for(;e;){if(e.record.aliasOf)return!0;e=e.parent}return!1}function jc(e){return e.reduce((t,o)=>$(t,o.meta),{})}function Ln(e,t){const o={};for(const r in e)o[r]=r in t?t[r]:e[r];return o}function Fc(e,t){let o=0,r=t.length;for(;o!==r;){const s=o+r>>1;ui(e,t[s])<0?r=s:o=s+1}const n=Uc(e);return n&&(r=t.lastIndexOf(n,r-1)),r}function Uc(e){let t=e;for(;t=t.parent;)if(pi(t)&&ui(e,t)===0)return t}function pi({record:e}){return!!(e.name||e.components&&Object.keys(e.components).length||e.redirect)}function Bc(e){const t={};if(e===""||e==="?")return t;const r=(e[0]==="?"?e.slice(1):e).split("&");for(let n=0;n<r.length;++n){const s=r[n].replace(oi," "),i=s.indexOf("="),l=oo(i<0?s:s.slice(0,i)),a=i<0?null:oo(s.slice(i+1));if(l in t){let d=t[l];xe(d)||(d=t[l]=[d]),d.push(a)}else t[l]=a}return t}function Nn(e){let t="";for(let o in e){const r=e[o];if(o=cc(o),r==null){r!==void 0&&(t+=(t.length?"&":"")+o);continue}(xe(r)?r.map(s=>s&&br(s)):[r&&br(r)]).forEach(s=>{s!==void 0&&(t+=(t.length?"&":"")+o,s!=null&&(t+="="+s))})}return t}function Gc(e){const t={};for(const o in e){const r=e[o];r!==void 0&&(t[o]=xe(r)?r.map(n=>n==null?null:""+n):r==null?r:""+r)}return t}const Vc=Symbol(""),Hn=Symbol(""),Ur=Symbol(""),gi=Symbol(""),Sr=Symbol("");function Ft(){let e=[];function t(r){return e.push(r),()=>{const n=e.indexOf(r);n>-1&&e.splice(n,1)}}function o(){e=[]}return{add:t,list:()=>e.slice(),reset:o}}function lt(e,t,o,r,n,s=i=>i()){const i=r&&(r.enterCallbacks[n]=r.enterCallbacks[n]||[]);return()=>new Promise((l,a)=>{const d=h=>{h===!1?a(Ot(4,{from:o,to:t})):h instanceof Error?a(h):Kc(h)?a(Ot(2,{from:t,to:h})):(i&&r.enterCallbacks[n]===i&&typeof h=="function"&&i.push(h),l())},p=s(()=>e.call(r&&r.instances[n],t,o,d));let g=Promise.resolve(p);e.length<3&&(g=g.then(d)),g.catch(h=>a(h))})}function nr(e,t,o,r,n=s=>s()){const s=[];for(const i of e)for(const l in i.components){let a=i.components[l];if(!(t!=="beforeRouteEnter"&&!i.instances[l]))if(ei(a)){const p=(a.__vccOpts||a)[t];p&&s.push(lt(p,o,r,i,l,n))}else{let d=a();s.push(()=>d.then(p=>{if(!p)throw new Error(`Couldn't resolve component "${l}" at "${i.path}"`);const g=Ya(p)?p.default:p;i.mods[l]=p,i.components[l]=g;const m=(g.__vccOpts||g)[t];return m&&lt(m,o,r,i,l,n)()}))}}return s}function jn(e){const t=Ye(Ur),o=Ye(gi),r=Ie(()=>{const a=Kt(e.to);return t.resolve(a)}),n=Ie(()=>{const{matched:a}=r.value,{length:d}=a,p=a[d-1],g=o.matched;if(!p||!g.length)return-1;const h=g.findIndex(Dt.bind(null,p));if(h>-1)return h;const m=Fn(a[d-2]);return d>1&&Fn(p)===m&&g[g.length-1].path!==m?g.findIndex(Dt.bind(null,a[d-2])):h}),s=Ie(()=>n.value>-1&&Qc(o.params,r.value.params)),i=Ie(()=>n.value>-1&&n.value===o.matched.length-1&&ii(o.params,r.value.params));function l(a={}){return zc(a)?t[Kt(e.replace)?"replace":"push"](Kt(e.to)).catch(zt):Promise.resolve()}return{route:r,href:Ie(()=>r.value.href),isActive:s,isExactActive:i,navigate:l}}const Wc=ks({name:"RouterLink",compatConfig:{MODE:3},props:{to:{type:[String,Object],required:!0},replace:Boolean,activeClass:String,exactActiveClass:String,custom:Boolean,ariaCurrentValue:{type:String,default:"page"}},useLink:jn,setup(e,{slots:t}){const o=Lo(jn(e)),{options:r}=Ye(Ur),n=Ie(()=>({[Un(e.activeClass,r.linkActiveClass,"router-link-active")]:o.isActive,[Un(e.exactActiveClass,r.linkExactActiveClass,"router-link-exact-active")]:o.isExactActive}));return()=>{const s=t.default&&t.default(o);return e.custom?s:Ys("a",{"aria-current":o.isExactActive?e.ariaCurrentValue:null,href:o.href,onClick:o.navigate,class:n.value},s)}}}),$c=Wc;function zc(e){if(!(e.metaKey||e.altKey||e.ctrlKey||e.shiftKey)&&!e.defaultPrevented&&!(e.button!==void 0&&e.button!==0)){if(e.currentTarget&&e.currentTarget.getAttribute){const t=e.currentTarget.getAttribute("target");if(/\b_blank\b/i.test(t))return}return e.preventDefault&&e.preventDefault(),!0}}function Qc(e,t){for(const o in t){const r=t[o],n=e[o];if(typeof r=="string"){if(r!==n)return!1}else if(!xe(n)||n.length!==r.length||r.some((s,i)=>s!==n[i]))return!1}return!0}function Fn(e){return e?e.aliasOf?e.aliasOf.path:e.path:""}const Un=(e,t,o)=>e??t??o,Xc=ks({name:"RouterView",inheritAttrs:!1,props:{name:{type:String,default:"default"},route:Object},compatConfig:{MODE:3},setup(e,{attrs:t,slots:o}){const r=Ye(Sr),n=Ie(()=>e.route||r.value),s=Ye(Hn,0),i=Ie(()=>{let d=Kt(s);const{matched:p}=n.value;let g;for(;(g=p[d])&&!g.components;)d++;return d}),l=Ie(()=>n.value.matched[i.value]);bo(Hn,Ie(()=>i.value+1)),bo(Vc,l),bo(Sr,n);const a=il();return vo(()=>[a.value,l.value,e.name],([d,p,g],[h,m,A])=>{p&&(p.instances[g]=d,m&&m!==p&&d&&d===h&&(p.leaveGuards.size||(p.leaveGuards=m.leaveGuards),p.updateGuards.size||(p.updateGuards=m.updateGuards))),d&&p&&(!m||!Dt(p,m)||!h)&&(p.enterCallbacks[g]||[]).forEach(J=>J(d))},{flush:"post"}),()=>{const d=n.value,p=e.name,g=l.value,h=g&&g.components[p];if(!h)return Bn(o.default,{Component:h,route:d});const m=g.props[p],A=m?m===!0?d.params:typeof m=="function"?m(d):m:null,H=Ys(h,$({},A,t,{onVnodeUnmounted:x=>{x.component.isUnmounted&&(g.instances[p]=null)},ref:a}));return Bn(o.default,{Component:H,route:d})||H}}});function Bn(e,t){if(!e)return null;const o=e(t);return o.length===1?o[0]:o}const Yc=Xc;function Zc(e){const t=Nc(e.routes,e),o=e.parseQuery||Bc,r=e.stringifyQuery||Nn,n=e.history,s=Ft(),i=Ft(),l=Ft(),a=ll(nt);let d=nt;Mt&&e.scrollBehavior&&"scrollRestoration"in history&&(history.scrollRestoration="manual");const p=or.bind(null,b=>""+b),g=or.bind(null,pc),h=or.bind(null,oo);function m(b,R){let w,I;return ai(b)?(w=t.getRecordMatcher(b),I=R):I=b,t.addRoute(I,w)}function A(b){const R=t.getRecordMatcher(b);R&&t.removeRoute(R)}function J(){return t.getRoutes().map(b=>b.record)}function H(b){return!!t.getRecordMatcher(b)}function x(b,R){if(R=$({},R||a.value),typeof b=="string"){const u=rr(o,b,R.path),f=t.resolve({path:u.path},R),v=n.createHref(u.fullPath);return $(u,f,{params:h(f.params),hash:oo(u.hash),redirectedFrom:void 0,href:v})}let w;if(b.path!=null)w=$({},b,{path:rr(o,b.path,R.path).path});else{const u=$({},b.params);for(const f in u)u[f]==null&&delete u[f];w=$({},b,{params:g(u)}),R.params=g(R.params)}const I=t.resolve(w,R),V=b.hash||"";I.params=p(h(I.params));const re=hc(r,$({},b,{hash:ac(V),path:I.path})),c=n.createHref(re);return $({fullPath:re,hash:V,query:r===Nn?Gc(b.query):b.query||{}},I,{redirectedFrom:void 0,href:c})}function _(b){return typeof b=="string"?rr(o,b,a.value.path):$({},b)}function D(b,R){if(d!==b)return Ot(8,{from:R,to:b})}function K(b){return oe(b)}function Q(b){return K($(_(b),{replace:!0}))}function ie(b){const R=b.matched[b.matched.length-1];if(R&&R.redirect){const{redirect:w}=R;let I=typeof w=="function"?w(b):w;return typeof I=="string"&&(I=I.includes("?")||I.includes("#")?I=_(I):{path:I},I.params={}),$({query:b.query,hash:b.hash,params:I.path!=null?{}:b.params},I)}}function oe(b,R){const w=d=x(b),I=a.value,V=b.state,re=b.force,c=b.replace===!0,u=ie(w);if(u)return oe($(_(u),{state:typeof u=="object"?$({},V,u.state):V,force:re,replace:c}),R||w);const f=w;f.redirectedFrom=R;let v;return!re&&fc(r,I,w)&&(v=Ot(16,{to:f,from:I}),Le(I,I,!0,!1)),(v?Promise.resolve(v):Oe(f,I)).catch(y=>$e(y)?$e(y,2)?y:ot(y):U(y,f,I)).then(y=>{if(y){if($e(y,2))return oe($({replace:c},_(y.to),{state:typeof y.to=="object"?$({},V,y.to.state):V,force:re}),R||f)}else y=gt(f,I,!0,c,V);return tt(f,I,y),y})}function De(b,R){const w=D(b,R);return w?Promise.reject(w):Promise.resolve()}function et(b){const R=Pt.values().next().value;return R&&typeof R.runWithContext=="function"?R.runWithContext(b):b()}function Oe(b,R){let w;const[I,V,re]=eu(b,R);w=nr(I.reverse(),"beforeRouteLeave",b,R);for(const u of I)u.leaveGuards.forEach(f=>{w.push(lt(f,b,R))});const c=De.bind(null,b,R);return w.push(c),Re(w).then(()=>{w=[];for(const u of s.list())w.push(lt(u,b,R));return w.push(c),Re(w)}).then(()=>{w=nr(V,"beforeRouteUpdate",b,R);for(const u of V)u.updateGuards.forEach(f=>{w.push(lt(f,b,R))});return w.push(c),Re(w)}).then(()=>{w=[];for(const u of re)if(u.beforeEnter)if(xe(u.beforeEnter))for(const f of u.beforeEnter)w.push(lt(f,b,R));else w.push(lt(u.beforeEnter,b,R));return w.push(c),Re(w)}).then(()=>(b.matched.forEach(u=>u.enterCallbacks={}),w=nr(re,"beforeRouteEnter",b,R,et),w.push(c),Re(w))).then(()=>{w=[];for(const u of i.list())w.push(lt(u,b,R));return w.push(c),Re(w)}).catch(u=>$e(u,8)?u:Promise.reject(u))}function tt(b,R,w){l.list().forEach(I=>et(()=>I(b,R,w)))}function gt(b,R,w,I,V){const re=D(b,R);if(re)return re;const c=R===nt,u=Mt?history.state:{};w&&(I||c?n.replace(b.fullPath,$({scroll:c&&u&&u.scroll},V)):n.push(b.fullPath,V)),a.value=b,Le(b,R,w,c),ot()}let qe;function Lt(){qe||(qe=n.listen((b,R,w)=>{if(!ao.listening)return;const I=x(b),V=ie(I);if(V){oe($(V,{replace:!0}),I).catch(zt);return}d=I;const re=a.value;Mt&&Pc(Kn(re.fullPath,w.delta),Go()),Oe(I,re).catch(c=>$e(c,12)?c:$e(c,2)?(oe(c.to,I).then(u=>{$e(u,20)&&!w.delta&&w.type===ro.pop&&n.go(-1,!1)}).catch(zt),Promise.reject()):(w.delta&&n.go(-w.delta,!1),U(c,I,re))).then(c=>{c=c||gt(I,re,!1),c&&(w.delta&&!$e(c,8)?n.go(-w.delta,!1):w.type===ro.pop&&$e(c,20)&&n.go(-1,!1)),tt(I,re,c)}).catch(zt)}))}let Tt=Ft(),se=Ft(),z;function U(b,R,w){ot(b);const I=se.list();return I.length?I.forEach(V=>V(b,R,w)):console.error(b),Promise.reject(b)}function Ve(){return z&&a.value!==nt?Promise.resolve():new Promise((b,R)=>{Tt.add([b,R])})}function ot(b){return z||(z=!b,Lt(),Tt.list().forEach(([R,w])=>b?w(b):R()),Tt.reset()),b}function Le(b,R,w,I){const{scrollBehavior:V}=e;if(!Mt||!V)return Promise.resolve();const re=!w&&Cc(Kn(b.fullPath,0))||(I||!w)&&history.state&&history.state.scroll||null;return Or().then(()=>V(b,R,re)).then(c=>c&&kc(c)).catch(c=>U(c,b,R))}const me=b=>n.go(b);let kt;const Pt=new Set,ao={currentRoute:a,listening:!0,addRoute:m,removeRoute:A,clearRoutes:t.clearRoutes,hasRoute:H,getRoutes:J,resolve:x,options:e,push:K,replace:Q,go:me,back:()=>me(-1),forward:()=>me(1),beforeEach:s.add,beforeResolve:i.add,afterEach:l.add,onError:se.add,isReady:Ve,install(b){const R=this;b.component("RouterLink",$c),b.component("RouterView",Yc),b.config.globalProperties.$router=R,Object.defineProperty(b.config.globalProperties,"$route",{enumerable:!0,get:()=>Kt(a)}),Mt&&!kt&&a.value===nt&&(kt=!0,K(n.location).catch(V=>{}));const w={};for(const V in nt)Object.defineProperty(w,V,{get:()=>a.value[V],enumerable:!0});b.provide(Ur,R),b.provide(gi,ds(w)),b.provide(Sr,a);const I=b.unmount;Pt.add(b),b.unmount=function(){Pt.delete(b),Pt.size<1&&(d=nt,qe&&qe(),qe=null,a.value=nt,kt=!1,z=!1),I()}}};function Re(b){return b.reduce((R,w)=>R.then(()=>et(w)),Promise.resolve())}return ao}function eu(e,t){const o=[],r=[],n=[],s=Math.max(t.matched.length,e.matched.length);for(let i=0;i<s;i++){const l=t.matched[i];l&&(e.matched.find(d=>Dt(d,l))?r.push(l):o.push(l));const a=e.matched[i];a&&(t.matched.find(d=>Dt(d,a))||n.push(a))}return[o,r,n]}const tu={props:{question:Object},computed:{levelText(){return`Level: ${this.question.level}`},levelClass(){return{"level-intern":this.question.level==="INTERN","level-junior":this.question.level==="JUNIOR","level-middle":this.question.level==="MIDDLE"}},isToolCategory(){return this.question.category==="tools"}},methods:{goToDetail(){this.$router.push({path:`/questions/${this.question.id}`,query:{category:this.question.category||"unknown",tool:this.question.tool||null}})}}},ou={class:"question-text"};function ru(e,t,o,r,n,s){return ce(),ye("div",{onClick:t[0]||(t[0]=(...i)=>s.goToDetail&&s.goToDetail(...i)),class:"question-card"},[j("h3",ou,at(o.question.question),1),s.isToolCategory?zs("",!0):(ce(),ye("p",{key:0,class:xo([s.levelClass,"level-text"])},at(s.levelText),3))])}const nu=qt(tu,[["render",ru],["__scopeId","data-v-8511bba8"]]),su={components:{QuestionCard:nu},props:{questions:Array,title:String,category:String},data(){return{currentLevel:"ALL",selectedAction:"ALL",shuffledQuestions:[]}},computed:{filteredQuestions(){return this.selectedAction==="SHUFFLE"?this.shuffledQuestions:this.currentLevel==="ALL"?this.questions:this.questions.filter(e=>e.level===this.currentLevel)}},methods:{handleAction(){this.selectedAction==="SHUFFLE"?this.shuffleQuestions():this.filterLevel(this.selectedAction)},filterLevel(e){this.currentLevel=e},shuffleQuestions(){this.shuffledQuestions=[...this.questions].sort(()=>Math.random()-.5)}}},iu={class:"filter-section"},lu={class:"question-grid"};function au(e,t,o,r,n,s){const i=io("QuestionCard");return ce(),ye("div",null,[j("div",iu,[cr(j("select",{"onUpdate:modelValue":t[0]||(t[0]=l=>n.selectedAction=l),id:"levelFilter",onChange:t[1]||(t[1]=(...l)=>s.handleAction&&s.handleAction(...l))},t[2]||(t[2]=[ua('<option value="ALL" data-v-5c845b25>Все уровни</option><option value="INTERN" data-v-5c845b25>Intern</option><option value="JUNIOR" data-v-5c845b25>Junior</option><option value="MIDDLE" data-v-5c845b25>Middle</option><option value="SHUFFLE" data-v-5c845b25>Перемешать вопросы</option>',5)]),544),[[Ua,n.selectedAction]])]),j("div",lu,[(ce(!0),ye(Ae,null,As(s.filteredQuestions,l=>(ce(),Ws(i,{key:l.id,question:l,category:o.category},null,8,["question","category"]))),128))])])}const mo=qt(su,[["render",au],["__scopeId","data-v-5c845b25"]]),di=[{id:1,question:"Что такое цикл событий (event loop) и как он работает?",answer:`
+  */const wt=typeof document<"u";function es(e){return typeof e=="object"||"displayName"in e||"props"in e||"__vccOpts"in e}function ec(e){return e.__esModule||e[Symbol.toStringTag]==="Module"||e.default&&es(e.default)}const Q=Object.assign;function or(e,t){const o={};for(const r in t){const n=t[r];o[r]=De(n)?n.map(e):e(n)}return o}const $t=()=>{},De=Array.isArray,ts=/#/g,tc=/&/g,oc=/\//g,rc=/=/g,nc=/\?/g,os=/\+/g,ic=/%5B/g,sc=/%5D/g,rs=/%5E/g,lc=/%60/g,ns=/%7B/g,ac=/%7C/g,is=/%7D/g,cc=/%20/g;function jr(e){return encodeURI(""+e).replace(ac,"|").replace(ic,"[").replace(sc,"]")}function uc(e){return jr(e).replace(ns,"{").replace(is,"}").replace(rs,"^")}function yr(e){return jr(e).replace(os,"%2B").replace(cc,"+").replace(ts,"%23").replace(tc,"%26").replace(lc,"`").replace(ns,"{").replace(is,"}").replace(rs,"^")}function gc(e){return yr(e).replace(rc,"%3D")}function pc(e){return jr(e).replace(ts,"%23").replace(nc,"%3F")}function dc(e){return e==null?"":pc(e).replace(oc,"%2F")}function oo(e){try{return decodeURIComponent(""+e)}catch{}return""+e}const hc=/\/$/,fc=e=>e.replace(hc,"");function rr(e,t,o="/"){let r,n={},i="",s="";const l=t.indexOf("#");let a=t.indexOf("?");return l<a&&l>=0&&(a=-1),a>-1&&(r=t.slice(0,a),i=t.slice(a+1,l>-1?l:t.length),n=e(i)),l>-1&&(r=r||t.slice(0,l),s=t.slice(l,t.length)),r=vc(r??t,o),{fullPath:r+(i&&"?")+i+s,path:r,query:n,hash:oo(s)}}function mc(e,t){const o=t.query?e(t.query):"";return t.path+(o&&"?")+o+(t.hash||"")}function An(e,t){return!t||!e.toLowerCase().startsWith(t.toLowerCase())?e:e.slice(t.length)||"/"}function bc(e,t,o){const r=t.matched.length-1,n=o.matched.length-1;return r>-1&&r===n&&xt(t.matched[r],o.matched[n])&&ss(t.params,o.params)&&e(t.query)===e(o.query)&&t.hash===o.hash}function xt(e,t){return(e.aliasOf||e)===(t.aliasOf||t)}function ss(e,t){if(Object.keys(e).length!==Object.keys(t).length)return!1;for(const o in e)if(!yc(e[o],t[o]))return!1;return!0}function yc(e,t){return De(e)?En(e,t):De(t)?En(t,e):e===t}function En(e,t){return De(t)?e.length===t.length&&e.every((o,r)=>o===t[r]):e.length===1&&e[0]===t}function vc(e,t){if(e.startsWith("/"))return e;if(!e)return t;const o=t.split("/"),r=e.split("/"),n=r[r.length-1];(n===".."||n===".")&&r.push("");let i=o.length-1,s,l;for(s=0;s<r.length;s++)if(l=r[s],l!==".")if(l==="..")i>1&&i--;else break;return o.slice(0,i).join("/")+"/"+r.slice(s).join("/")}const it={path:"/",name:void 0,params:{},query:{},hash:"",fullPath:"/",matched:[],meta:{},redirectedFrom:void 0};var ro;(function(e){e.pop="pop",e.push="push"})(ro||(ro={}));var zt;(function(e){e.back="back",e.forward="forward",e.unknown=""})(zt||(zt={}));function Sc(e){if(!e)if(wt){const t=document.querySelector("base");e=t&&t.getAttribute("href")||"/",e=e.replace(/^\w+:\/\/[^\/]+/,"")}else e="/";return e[0]!=="/"&&e[0]!=="#"&&(e="/"+e),fc(e)}const Tc=/^[^#]+#/;function Pc(e,t){return e.replace(Tc,"#")+t}function kc(e,t){const o=document.documentElement.getBoundingClientRect(),r=e.getBoundingClientRect();return{behavior:t.behavior,left:r.left-o.left-(t.left||0),top:r.top-o.top-(t.top||0)}}const Bo=()=>({left:window.scrollX,top:window.scrollY});function Mc(e){let t;if("el"in e){const o=e.el,r=typeof o=="string"&&o.startsWith("#"),n=typeof o=="string"?r?document.getElementById(o.slice(1)):document.querySelector(o):o;if(!n)return;t=kc(n,e)}else t=e;"scrollBehavior"in document.documentElement.style?window.scrollTo(t):window.scrollTo(t.left!=null?t.left:window.scrollX,t.top!=null?t.top:window.scrollY)}function In(e,t){return(history.state?history.state.position-t:-1)+e}const vr=new Map;function Cc(e,t){vr.set(e,t)}function wc(e){const t=vr.get(e);return vr.delete(e),t}let Rc=()=>location.protocol+"//"+location.host;function ls(e,t){const{pathname:o,search:r,hash:n}=t,i=e.indexOf("#");if(i>-1){let l=n.includes(e.slice(i))?e.slice(i).length:1,a=n.slice(l);return a[0]!=="/"&&(a="/"+a),An(a,"")}return An(o,e)+r+n}function Ac(e,t,o,r){let n=[],i=[],s=null;const l=({state:h})=>{const m=ls(e,location),A=o.value,E=t.value;let H=0;if(h){if(o.value=m,t.value=h,s&&s===A){s=null;return}H=E?h.position-E.position:0}else r(m);n.forEach(D=>{D(o.value,A,{delta:H,type:ro.pop,direction:H?H>0?zt.forward:zt.back:zt.unknown})})};function a(){s=o.value}function d(h){n.push(h);const m=()=>{const A=n.indexOf(h);A>-1&&n.splice(A,1)};return i.push(m),m}function g(){const{history:h}=window;h.state&&h.replaceState(Q({},h.state,{scroll:Bo()}),"")}function p(){for(const h of i)h();i=[],window.removeEventListener("popstate",l),window.removeEventListener("beforeunload",g)}return window.addEventListener("popstate",l),window.addEventListener("beforeunload",g,{passive:!0}),{pauseListeners:a,listen:d,destroy:p}}function Jn(e,t,o,r=!1,n=!1){return{back:e,current:t,forward:o,replaced:r,position:window.history.length,scroll:n?Bo():null}}function Ec(e){const{history:t,location:o}=window,r={value:ls(e,o)},n={value:t.state};n.value||i(r.value,{back:null,current:r.value,forward:null,position:t.length-1,replaced:!0,scroll:null},!0);function i(a,d,g){const p=e.indexOf("#"),h=p>-1?(o.host&&document.querySelector("base")?e:e.slice(p))+a:Rc()+e+a;try{t[g?"replaceState":"pushState"](d,"",h),n.value=d}catch(m){console.error(m),o[g?"replace":"assign"](h)}}function s(a,d){const g=Q({},t.state,Jn(n.value.back,a,n.value.forward,!0),d,{position:n.value.position});i(a,g,!0),r.value=a}function l(a,d){const g=Q({},n.value,t.state,{forward:a,scroll:Bo()});i(g.current,g,!0);const p=Q({},Jn(r.value,a,null),{position:g.position+1},d);i(a,p,!1),r.value=a}return{location:r,state:n,push:l,replace:s}}function Ic(e){e=Sc(e);const t=Ec(e),o=Ac(e,t.state,t.location,t.replace);function r(i,s=!0){s||o.pauseListeners(),history.go(i)}const n=Q({location:"",base:e,go:r,createHref:Pc.bind(null,e)},t,o);return Object.defineProperty(n,"location",{enumerable:!0,get:()=>t.location.value}),Object.defineProperty(n,"state",{enumerable:!0,get:()=>t.state.value}),n}function Jc(e){return e=location.host?e||location.pathname+location.search:"",e.includes("#")||(e+="#"),Ic(e)}function Kc(e){return typeof e=="string"||e&&typeof e=="object"}function as(e){return typeof e=="string"||typeof e=="symbol"}const cs=Symbol("");var Kn;(function(e){e[e.aborted=4]="aborted",e[e.cancelled=8]="cancelled",e[e.duplicated=16]="duplicated"})(Kn||(Kn={}));function Lt(e,t){return Q(new Error,{type:e,[cs]:!0},t)}function Qe(e,t){return e instanceof Error&&cs in e&&(t==null||!!(e.type&t))}const _n="[^/]+?",_c={sensitive:!1,strict:!1,start:!0,end:!0},Dc=/[.+*?^${}()[\]/\\]/g;function xc(e,t){const o=Q({},_c,t),r=[];let n=o.start?"^":"";const i=[];for(const d of e){const g=d.length?[]:[90];o.strict&&!d.length&&(n+="/");for(let p=0;p<d.length;p++){const h=d[p];let m=40+(o.sensitive?.25:0);if(h.type===0)p||(n+="/"),n+=h.value.replace(Dc,"\\$&"),m+=40;else if(h.type===1){const{value:A,repeatable:E,optional:H,regexp:D}=h;i.push({name:A,repeatable:E,optional:H});const _=D||_n;if(_!==_n){m+=10;try{new RegExp(`(${_})`)}catch(I){throw new Error(`Invalid custom RegExp for param "${A}" (${_}): `+I.message)}}let x=E?`((?:${_})(?:/(?:${_}))*)`:`(${_})`;p||(x=H&&d.length<2?`(?:/${x})`:"/"+x),H&&(x+="?"),n+=x,m+=20,H&&(m+=-8),E&&(m+=-20),_===".*"&&(m+=-50)}g.push(m)}r.push(g)}if(o.strict&&o.end){const d=r.length-1;r[d][r[d].length-1]+=.7000000000000001}o.strict||(n+="/?"),o.end?n+="$":o.strict&&(n+="(?:/|$)");const s=new RegExp(n,o.sensitive?"":"i");function l(d){const g=d.match(s),p={};if(!g)return null;for(let h=1;h<g.length;h++){const m=g[h]||"",A=i[h-1];p[A.name]=m&&A.repeatable?m.split("/"):m}return p}function a(d){let g="",p=!1;for(const h of e){(!p||!g.endsWith("/"))&&(g+="/"),p=!1;for(const m of h)if(m.type===0)g+=m.value;else if(m.type===1){const{value:A,repeatable:E,optional:H}=m,D=A in d?d[A]:"";if(De(D)&&!E)throw new Error(`Provided param "${A}" is an array but it is not repeatable (* or + modifiers)`);const _=De(D)?D.join("/"):D;if(!_)if(H)h.length<2&&(g.endsWith("/")?g=g.slice(0,-1):p=!0);else throw new Error(`Missing required param "${A}"`);g+=_}}return g||"/"}return{re:s,score:r,keys:i,parse:l,stringify:a}}function Lc(e,t){let o=0;for(;o<e.length&&o<t.length;){const r=t[o]-e[o];if(r)return r;o++}return e.length<t.length?e.length===1&&e[0]===80?-1:1:e.length>t.length?t.length===1&&t[0]===80?1:-1:0}function us(e,t){let o=0;const r=e.score,n=t.score;for(;o<r.length&&o<n.length;){const i=Lc(r[o],n[o]);if(i)return i;o++}if(Math.abs(n.length-r.length)===1){if(Dn(r))return 1;if(Dn(n))return-1}return n.length-r.length}function Dn(e){const t=e[e.length-1];return e.length>0&&t[t.length-1]<0}const Oc={type:0,value:""},qc=/[a-zA-Z0-9_]/;function Nc(e){if(!e)return[[]];if(e==="/")return[[Oc]];if(!e.startsWith("/"))throw new Error(`Invalid path "${e}"`);function t(m){throw new Error(`ERR (${o})/"${d}": ${m}`)}let o=0,r=o;const n=[];let i;function s(){i&&n.push(i),i=[]}let l=0,a,d="",g="";function p(){d&&(o===0?i.push({type:0,value:d}):o===1||o===2||o===3?(i.length>1&&(a==="*"||a==="+")&&t(`A repeatable param (${d}) must be alone in its segment. eg: '/:ids+.`),i.push({type:1,value:d,regexp:g,repeatable:a==="*"||a==="+",optional:a==="*"||a==="?"})):t("Invalid state to consume buffer"),d="")}function h(){d+=a}for(;l<e.length;){if(a=e[l++],a==="\\"&&o!==2){r=o,o=4;continue}switch(o){case 0:a==="/"?(d&&p(),s()):a===":"?(p(),o=1):h();break;case 4:h(),o=r;break;case 1:a==="("?o=2:qc.test(a)?h():(p(),o=0,a!=="*"&&a!=="?"&&a!=="+"&&l--);break;case 2:a===")"?g[g.length-1]=="\\"?g=g.slice(0,-1)+a:o=3:g+=a;break;case 3:p(),o=0,a!=="*"&&a!=="?"&&a!=="+"&&l--,g="";break;default:t("Unknown state");break}}return o===2&&t(`Unfinished custom RegExp for param "${d}"`),p(),s(),n}function Vc(e,t,o){const r=xc(Nc(e.path),o),n=Q(r,{record:e,parent:t,children:[],alias:[]});return t&&!n.record.aliasOf==!t.record.aliasOf&&t.children.push(n),n}function Hc(e,t){const o=[],r=new Map;t=qn({strict:!1,end:!0,sensitive:!1},t);function n(p){return r.get(p)}function i(p,h,m){const A=!m,E=Ln(p);E.aliasOf=m&&m.record;const H=qn(t,p),D=[E];if("alias"in p){const I=typeof p.alias=="string"?[p.alias]:p.alias;for(const X of I)D.push(Ln(Q({},E,{components:m?m.record.components:E.components,path:X,aliasOf:m?m.record:E})))}let _,x;for(const I of D){const{path:X}=I;if(h&&X[0]!=="/"){const se=h.record.path,oe=se[se.length-1]==="/"?"":"/";I.path=h.record.path+(X&&oe+X)}if(_=Vc(I,h,H),m?m.alias.push(_):(x=x||_,x!==_&&x.alias.push(_),A&&p.name&&!On(_)&&s(p.name)),gs(_)&&a(_),E.children){const se=E.children;for(let oe=0;oe<se.length;oe++)i(se[oe],_,m&&m.children[oe])}m=m||_}return x?()=>{s(x)}:$t}function s(p){if(as(p)){const h=r.get(p);h&&(r.delete(p),o.splice(o.indexOf(h),1),h.children.forEach(s),h.alias.forEach(s))}else{const h=o.indexOf(p);h>-1&&(o.splice(h,1),p.record.name&&r.delete(p.record.name),p.children.forEach(s),p.alias.forEach(s))}}function l(){return o}function a(p){const h=Fc(p,o);o.splice(h,0,p),p.record.name&&!On(p)&&r.set(p.record.name,p)}function d(p,h){let m,A={},E,H;if("name"in p&&p.name){if(m=r.get(p.name),!m)throw Lt(1,{location:p});H=m.record.name,A=Q(xn(h.params,m.keys.filter(x=>!x.optional).concat(m.parent?m.parent.keys.filter(x=>x.optional):[]).map(x=>x.name)),p.params&&xn(p.params,m.keys.map(x=>x.name))),E=m.stringify(A)}else if(p.path!=null)E=p.path,m=o.find(x=>x.re.test(E)),m&&(A=m.parse(E),H=m.record.name);else{if(m=h.name?r.get(h.name):o.find(x=>x.re.test(h.path)),!m)throw Lt(1,{location:p,currentLocation:h});H=m.record.name,A=Q({},h.params,p.params),E=m.stringify(A)}const D=[];let _=m;for(;_;)D.unshift(_.record),_=_.parent;return{name:H,path:E,params:A,matched:D,meta:Gc(D)}}e.forEach(p=>i(p));function g(){o.length=0,r.clear()}return{addRoute:i,resolve:d,removeRoute:s,clearRoutes:g,getRoutes:l,getRecordMatcher:n}}function xn(e,t){const o={};for(const r of t)r in e&&(o[r]=e[r]);return o}function Ln(e){const t={path:e.path,redirect:e.redirect,name:e.name,meta:e.meta||{},aliasOf:e.aliasOf,beforeEnter:e.beforeEnter,props:jc(e),children:e.children||[],instances:{},leaveGuards:new Set,updateGuards:new Set,enterCallbacks:{},components:"components"in e?e.components||null:e.component&&{default:e.component}};return Object.defineProperty(t,"mods",{value:{}}),t}function jc(e){const t={},o=e.props||!1;if("component"in e)t.default=o;else for(const r in e.components)t[r]=typeof o=="object"?o[r]:o;return t}function On(e){for(;e;){if(e.record.aliasOf)return!0;e=e.parent}return!1}function Gc(e){return e.reduce((t,o)=>Q(t,o.meta),{})}function qn(e,t){const o={};for(const r in e)o[r]=r in t?t[r]:e[r];return o}function Fc(e,t){let o=0,r=t.length;for(;o!==r;){const i=o+r>>1;us(e,t[i])<0?r=i:o=i+1}const n=Bc(e);return n&&(r=t.lastIndexOf(n,r-1)),r}function Bc(e){let t=e;for(;t=t.parent;)if(gs(t)&&us(e,t)===0)return t}function gs({record:e}){return!!(e.name||e.components&&Object.keys(e.components).length||e.redirect)}function Uc(e){const t={};if(e===""||e==="?")return t;const r=(e[0]==="?"?e.slice(1):e).split("&");for(let n=0;n<r.length;++n){const i=r[n].replace(os," "),s=i.indexOf("="),l=oo(s<0?i:i.slice(0,s)),a=s<0?null:oo(i.slice(s+1));if(l in t){let d=t[l];De(d)||(d=t[l]=[d]),d.push(a)}else t[l]=a}return t}function Nn(e){let t="";for(let o in e){const r=e[o];if(o=gc(o),r==null){r!==void 0&&(t+=(t.length?"&":"")+o);continue}(De(r)?r.map(i=>i&&yr(i)):[r&&yr(r)]).forEach(i=>{i!==void 0&&(t+=(t.length?"&":"")+o,i!=null&&(t+="="+i))})}return t}function Wc(e){const t={};for(const o in e){const r=e[o];r!==void 0&&(t[o]=De(r)?r.map(n=>n==null?null:""+n):r==null?r:""+r)}return t}const Qc=Symbol(""),Vn=Symbol(""),Gr=Symbol(""),ps=Symbol(""),Sr=Symbol("");function jt(){let e=[];function t(r){return e.push(r),()=>{const n=e.indexOf(r);n>-1&&e.splice(n,1)}}function o(){e=[]}return{add:t,list:()=>e.slice(),reset:o}}function at(e,t,o,r,n,i=s=>s()){const s=r&&(r.enterCallbacks[n]=r.enterCallbacks[n]||[]);return()=>new Promise((l,a)=>{const d=h=>{h===!1?a(Lt(4,{from:o,to:t})):h instanceof Error?a(h):Kc(h)?a(Lt(2,{from:t,to:h})):(s&&r.enterCallbacks[n]===s&&typeof h=="function"&&s.push(h),l())},g=i(()=>e.call(r&&r.instances[n],t,o,d));let p=Promise.resolve(g);e.length<3&&(p=p.then(d)),p.catch(h=>a(h))})}function nr(e,t,o,r,n=i=>i()){const i=[];for(const s of e)for(const l in s.components){let a=s.components[l];if(!(t!=="beforeRouteEnter"&&!s.instances[l]))if(es(a)){const g=(a.__vccOpts||a)[t];g&&i.push(at(g,o,r,s,l,n))}else{let d=a();i.push(()=>d.then(g=>{if(!g)throw new Error(`Couldn't resolve component "${l}" at "${s.path}"`);const p=ec(g)?g.default:g;s.mods[l]=g,s.components[l]=p;const m=(p.__vccOpts||p)[t];return m&&at(m,o,r,s,l,n)()}))}}return i}function Hn(e){const t=Ze(Gr),o=Ze(ps),r=Je(()=>{const a=It(e.to);return t.resolve(a)}),n=Je(()=>{const{matched:a}=r.value,{length:d}=a,g=a[d-1],p=o.matched;if(!g||!p.length)return-1;const h=p.findIndex(xt.bind(null,g));if(h>-1)return h;const m=jn(a[d-2]);return d>1&&jn(g)===m&&p[p.length-1].path!==m?p.findIndex(xt.bind(null,a[d-2])):h}),i=Je(()=>n.value>-1&&Yc(o.params,r.value.params)),s=Je(()=>n.value>-1&&n.value===o.matched.length-1&&ss(o.params,r.value.params));function l(a={}){return Xc(a)?t[It(e.replace)?"replace":"push"](It(e.to)).catch($t):Promise.resolve()}return{route:r,href:Je(()=>r.value.href),isActive:i,isExactActive:s,navigate:l}}const $c=Pi({name:"RouterLink",compatConfig:{MODE:3},props:{to:{type:[String,Object],required:!0},replace:Boolean,activeClass:String,exactActiveClass:String,custom:Boolean,ariaCurrentValue:{type:String,default:"page"}},useLink:Hn,setup(e,{slots:t}){const o=qo(Hn(e)),{options:r}=Ze(Gr),n=Je(()=>({[Gn(e.activeClass,r.linkActiveClass,"router-link-active")]:o.isActive,[Gn(e.exactActiveClass,r.linkExactActiveClass,"router-link-exact-active")]:o.isExactActive}));return()=>{const i=t.default&&t.default(o);return e.custom?i:Yi("a",{"aria-current":o.isExactActive?e.ariaCurrentValue:null,href:o.href,onClick:o.navigate,class:n.value},i)}}}),zc=$c;function Xc(e){if(!(e.metaKey||e.altKey||e.ctrlKey||e.shiftKey)&&!e.defaultPrevented&&!(e.button!==void 0&&e.button!==0)){if(e.currentTarget&&e.currentTarget.getAttribute){const t=e.currentTarget.getAttribute("target");if(/\b_blank\b/i.test(t))return}return e.preventDefault&&e.preventDefault(),!0}}function Yc(e,t){for(const o in t){const r=t[o],n=e[o];if(typeof r=="string"){if(r!==n)return!1}else if(!De(n)||n.length!==r.length||r.some((i,s)=>i!==n[s]))return!1}return!0}function jn(e){return e?e.aliasOf?e.aliasOf.path:e.path:""}const Gn=(e,t,o)=>e??t??o,Zc=Pi({name:"RouterView",inheritAttrs:!1,props:{name:{type:String,default:"default"},route:Object},compatConfig:{MODE:3},setup(e,{attrs:t,slots:o}){const r=Ze(Sr),n=Je(()=>e.route||r.value),i=Ze(Vn,0),s=Je(()=>{let d=It(i);const{matched:g}=n.value;let p;for(;(p=g[d])&&!p.components;)d++;return d}),l=Je(()=>n.value.matched[s.value]);yo(Vn,Je(()=>s.value+1)),yo(Qc,l),yo(Sr,n);const a=al();return vo(()=>[a.value,l.value,e.name],([d,g,p],[h,m,A])=>{g&&(g.instances[p]=d,m&&m!==g&&d&&d===h&&(g.leaveGuards.size||(g.leaveGuards=m.leaveGuards),g.updateGuards.size||(g.updateGuards=m.updateGuards))),d&&g&&(!m||!xt(g,m)||!h)&&(g.enterCallbacks[p]||[]).forEach(E=>E(d))},{flush:"post"}),()=>{const d=n.value,g=e.name,p=l.value,h=p&&p.components[g];if(!h)return Fn(o.default,{Component:h,route:d});const m=p.props[g],A=m?m===!0?d.params:typeof m=="function"?m(d):m:null,H=Yi(h,Q({},A,t,{onVnodeUnmounted:D=>{D.component.isUnmounted&&(p.instances[g]=null)},ref:a}));return Fn(o.default,{Component:H,route:d})||H}}});function Fn(e,t){if(!e)return null;const o=e(t);return o.length===1?o[0]:o}const eu=Zc;function tu(e){const t=Hc(e.routes,e),o=e.parseQuery||Uc,r=e.stringifyQuery||Nn,n=e.history,i=jt(),s=jt(),l=jt(),a=cl(it);let d=it;wt&&e.scrollBehavior&&"scrollRestoration"in history&&(history.scrollRestoration="manual");const g=or.bind(null,y=>""+y),p=or.bind(null,dc),h=or.bind(null,oo);function m(y,R){let C,J;return as(y)?(C=t.getRecordMatcher(y),J=R):J=y,t.addRoute(J,C)}function A(y){const R=t.getRecordMatcher(y);R&&t.removeRoute(R)}function E(){return t.getRoutes().map(y=>y.record)}function H(y){return!!t.getRecordMatcher(y)}function D(y,R){if(R=Q({},R||a.value),typeof y=="string"){const u=rr(o,y,R.path),f=t.resolve({path:u.path},R),v=n.createHref(u.fullPath);return Q(u,f,{params:h(f.params),hash:oo(u.hash),redirectedFrom:void 0,href:v})}let C;if(y.path!=null)C=Q({},y,{path:rr(o,y.path,R.path).path});else{const u=Q({},y.params);for(const f in u)u[f]==null&&delete u[f];C=Q({},y,{params:p(u)}),R.params=p(R.params)}const J=t.resolve(C,R),U=y.hash||"";J.params=g(h(J.params));const re=mc(r,Q({},y,{hash:uc(U),path:J.path})),c=n.createHref(re);return Q({fullPath:re,hash:U,query:r===Nn?Wc(y.query):y.query||{}},J,{redirectedFrom:void 0,href:c})}function _(y){return typeof y=="string"?rr(o,y,a.value.path):Q({},y)}function x(y,R){if(d!==y)return Lt(8,{from:R,to:y})}function I(y){return oe(y)}function X(y){return I(Q(_(y),{replace:!0}))}function se(y){const R=y.matched[y.matched.length-1];if(R&&R.redirect){const{redirect:C}=R;let J=typeof C=="function"?C(y):C;return typeof J=="string"&&(J=J.includes("?")||J.includes("#")?J=_(J):{path:J},J.params={}),Q({query:y.query,hash:y.hash,params:J.path!=null?{}:y.params},J)}}function oe(y,R){const C=d=D(y),J=a.value,U=y.state,re=y.force,c=y.replace===!0,u=se(C);if(u)return oe(Q(_(u),{state:typeof u=="object"?Q({},U,u.state):U,force:re,replace:c}),R||C);const f=C;f.redirectedFrom=R;let v;return!re&&bc(r,J,C)&&(v=Lt(16,{to:f,from:J}),qe(J,J,!0,!1)),(v?Promise.resolve(v):Le(f,J)).catch(b=>Qe(b)?Qe(b,2)?b:rt(b):G(b,f,J)).then(b=>{if(b){if(Qe(b,2))return oe(Q({replace:c},_(b.to),{state:typeof b.to=="object"?Q({},U,b.to.state):U,force:re}),R||f)}else b=pt(f,J,!0,c,U);return ot(f,J,b),b})}function xe(y,R){const C=x(y,R);return C?Promise.reject(C):Promise.resolve()}function tt(y){const R=kt.values().next().value;return R&&typeof R.runWithContext=="function"?R.runWithContext(y):y()}function Le(y,R){let C;const[J,U,re]=ou(y,R);C=nr(J.reverse(),"beforeRouteLeave",y,R);for(const u of J)u.leaveGuards.forEach(f=>{C.push(at(f,y,R))});const c=xe.bind(null,y,R);return C.push(c),Re(C).then(()=>{C=[];for(const u of i.list())C.push(at(u,y,R));return C.push(c),Re(C)}).then(()=>{C=nr(U,"beforeRouteUpdate",y,R);for(const u of U)u.updateGuards.forEach(f=>{C.push(at(f,y,R))});return C.push(c),Re(C)}).then(()=>{C=[];for(const u of re)if(u.beforeEnter)if(De(u.beforeEnter))for(const f of u.beforeEnter)C.push(at(f,y,R));else C.push(at(u.beforeEnter,y,R));return C.push(c),Re(C)}).then(()=>(y.matched.forEach(u=>u.enterCallbacks={}),C=nr(re,"beforeRouteEnter",y,R,tt),C.push(c),Re(C))).then(()=>{C=[];for(const u of s.list())C.push(at(u,y,R));return C.push(c),Re(C)}).catch(u=>Qe(u,8)?u:Promise.reject(u))}function ot(y,R,C){l.list().forEach(J=>tt(()=>J(y,R,C)))}function pt(y,R,C,J,U){const re=x(y,R);if(re)return re;const c=R===it,u=wt?history.state:{};C&&(J||c?n.replace(y.fullPath,Q({scroll:c&&u&&u.scroll},U)):n.push(y.fullPath,U)),a.value=y,qe(y,R,C,c),rt()}let Oe;function qt(){Oe||(Oe=n.listen((y,R,C)=>{if(!ao.listening)return;const J=D(y),U=se(J);if(U){oe(Q(U,{replace:!0}),J).catch($t);return}d=J;const re=a.value;wt&&Cc(In(re.fullPath,C.delta),Bo()),Le(J,re).catch(c=>Qe(c,12)?c:Qe(c,2)?(oe(c.to,J).then(u=>{Qe(u,20)&&!C.delta&&C.type===ro.pop&&n.go(-1,!1)}).catch($t),Promise.reject()):(C.delta&&n.go(-C.delta,!1),G(c,J,re))).then(c=>{c=c||pt(J,re,!1),c&&(C.delta&&!Qe(c,8)?n.go(-C.delta,!1):C.type===ro.pop&&Qe(c,20)&&n.go(-1,!1)),ot(J,re,c)}).catch($t)}))}let Tt=jt(),ie=jt(),z;function G(y,R,C){rt(y);const J=ie.list();return J.length?J.forEach(U=>U(y,R,C)):console.error(y),Promise.reject(y)}function Ue(){return z&&a.value!==it?Promise.resolve():new Promise((y,R)=>{Tt.add([y,R])})}function rt(y){return z||(z=!y,qt(),Tt.list().forEach(([R,C])=>y?C(y):R()),Tt.reset()),y}function qe(y,R,C,J){const{scrollBehavior:U}=e;if(!wt||!U)return Promise.resolve();const re=!C&&wc(In(y.fullPath,0))||(J||!C)&&history.state&&history.state.scroll||null;return Lr().then(()=>U(y,R,re)).then(c=>c&&Mc(c)).catch(c=>G(c,y,R))}const ye=y=>n.go(y);let Pt;const kt=new Set,ao={currentRoute:a,listening:!0,addRoute:m,removeRoute:A,clearRoutes:t.clearRoutes,hasRoute:H,getRoutes:E,resolve:D,options:e,push:I,replace:X,go:ye,back:()=>ye(-1),forward:()=>ye(1),beforeEach:i.add,beforeResolve:s.add,afterEach:l.add,onError:ie.add,isReady:Ue,install(y){const R=this;y.component("RouterLink",zc),y.component("RouterView",eu),y.config.globalProperties.$router=R,Object.defineProperty(y.config.globalProperties,"$route",{enumerable:!0,get:()=>It(a)}),wt&&!Pt&&a.value===it&&(Pt=!0,I(n.location).catch(U=>{}));const C={};for(const U in it)Object.defineProperty(C,U,{get:()=>a.value[U],enumerable:!0});y.provide(Gr,R),y.provide(ps,di(C)),y.provide(Sr,a);const J=y.unmount;kt.add(y),y.unmount=function(){kt.delete(y),kt.size<1&&(d=it,Oe&&Oe(),Oe=null,a.value=it,Pt=!1,z=!1),J()}}};function Re(y){return y.reduce((R,C)=>R.then(()=>tt(C)),Promise.resolve())}return ao}function ou(e,t){const o=[],r=[],n=[],i=Math.max(t.matched.length,e.matched.length);for(let s=0;s<i;s++){const l=t.matched[s];l&&(e.matched.find(d=>xt(d,l))?r.push(l):o.push(l));const a=e.matched[s];a&&(t.matched.find(d=>xt(d,a))||n.push(a))}return[o,r,n]}const ru={props:{question:Object},computed:{levelText(){return`Level: ${this.question.level}`},levelClass(){return{"level-intern":this.question.level==="INTERN","level-junior":this.question.level==="JUNIOR","level-middle":this.question.level==="MIDDLE"}},isToolCategory(){return this.question.category==="tools"}},methods:{goToDetail(){this.$router.push({path:`/questions/${this.question.id}`,query:{category:this.question.category||"unknown",tool:this.question.tool||null}})}}},nu={class:"question-text"};function iu(e,t,o,r,n,i){return ue(),ve("div",{class:"question-card",onClick:t[0]||(t[0]=(...s)=>i.goToDetail&&i.goToDetail(...s))},[V("h3",nu,ze(o.question.question),1),i.isToolCategory?$i("",!0):(ue(),ve("p",{key:0,class:Do([i.levelClass,"level-text"])},ze(i.levelText),3))])}const su=Ot(ru,[["render",iu],["__scopeId","data-v-0010a746"]]),lu={components:{QuestionCard:su},props:{questions:Array,title:String,category:String},data(){return{currentLevel:"ALL",selectedAction:"ALL",shuffledQuestions:[]}},computed:{filteredQuestions(){return this.selectedAction==="SHUFFLE"?this.shuffledQuestions:this.currentLevel==="ALL"?this.questions:this.questions.filter(e=>e.level===this.currentLevel)}},methods:{handleAction(){this.selectedAction==="SHUFFLE"?this.shuffleQuestions():this.filterLevel(this.selectedAction)},filterLevel(e){this.currentLevel=e},shuffleQuestions(){this.shuffledQuestions=[...this.questions].sort(()=>Math.random()-.5)}}},au={class:"title"},cu={class:"filter-section"},uu={class:"question-grid"};function gu(e,t,o,r,n,i){const s=so("QuestionCard");return ue(),ve("div",null,[V("h2",au,ze(o.title),1),V("div",cu,[cr(V("select",{id:"levelFilter","onUpdate:modelValue":t[0]||(t[0]=l=>n.selectedAction=l),onChange:t[1]||(t[1]=(...l)=>i.handleAction&&i.handleAction(...l))},t[2]||(t[2]=[pa('<option value="ALL" data-v-c3e7ac17>Все уровни</option><option value="INTERN" data-v-c3e7ac17>Intern</option><option value="JUNIOR" data-v-c3e7ac17>Junior</option><option value="MIDDLE" data-v-c3e7ac17>Middle</option><option value="SHUFFLE" data-v-c3e7ac17>Перемешать вопросы</option>',5)]),544),[[Ba,n.selectedAction]])]),V("div",uu,[(ue(!0),ve(Ae,null,Ai(i.filteredQuestions,l=>(ue(),Wi(s,{key:l.id,question:l,category:o.category},null,8,["question","category"]))),128))])])}const mo=Ot(lu,[["render",gu],["__scopeId","data-v-c3e7ac17"]]),ds=[{id:1,question:"Что такое цикл событий (event loop) и как он работает?",answer:`
           <p>Цикл событий (event loop) - это механизм, используемый в JavaScript для обработки событий и выполнения асинхронного кода. Он позволяет программе эффективно обрабатывать события, такие как пользовательские действия, таймеры, сетевые запросы и другие асинхронные операции.</p>
           <p>Работа цикла событий в JavaScript обычно выглядит следующим образом:</p>
           <ol>
@@ -419,141 +419,61 @@
     
     console.log(sum(1, 2, 3, 4, 5)); // 15
           </code></pre>
-        `,level:"JUNIOR",category:"frontend"}],hi=[{id:1,question:"Что такое НТ?",answer:`Нагрузочное тестирование (НТ) — это проверка устойчивости и производительности программного обеспечения под нагрузкой, сопоставимой с реальными условиями использования."
-      <p>Источник: <a href="https://habr.com/ru/companies/otus/articles/842150/" target="_blank">https://habr.com/ru/companies/otus/articles/842150//</a></p>`,level:"INTERN",category:"load"},{id:2,question:"Что такое МНТ?",answer:`
-      <p>Методика нагрузочного тестирования (МНТ) – согласованный с заказчиком документ, регламентирующий проводимые тесты, средства тестирования, профиль нагрузки, SLA (Service level agreement – соглашение о качестве предоставляемых услуг).</p>
+        `,level:"JUNIOR",category:"frontend"}],hs=[{id:1,question:"Что такое НТ? Что такое МНТ? Из каких разделов состоит?",answer:`
+    <p><strong>Нагрузочное тестирование (НТ)</strong> — это один из видов тестирования производительности, при котором оценивается работа программного обеспечения под ожидаемой нагрузкой, посредством эмулиции действий большого кол-ва виртуальных пользователей.</p>
+
+    <p><strong>Методика нагрузочного тестирования (МНТ)</strong> – согласованный с заказчиком документ, регламентирующий проводимые тесты, средства тестирования, профиль нагрузки, SLA (Service level agreement – соглашение о качестве предоставляемых услуг).</p>
+
+    <p><strong>Разделы МНТ:</strong> </p>
       <ul>
-        <li><strong>Объект тестирования:</strong> Описание системы и её функций.</li>
-        <li><strong>Цели испытаний:</strong> Определение максимальной нагрузки, проверка требований, выявление узких мест.</li>
-        <li><strong>Конфигурация оборудования:</strong> Описание ресурсов (CPU, память), используемых для тестирования на различных стендах.</li>
-        <li><strong>Требования к производительности:</strong> Определение допустимых показателей (например, утилизация CPU и RAM, процент ошибок).</li>
-        <li><strong>Сценарии нагрузочного тестирования:</strong> Ссылки на сценарии и описание запросов для выполнения тестов.</li>
-        <li><strong>Профили нагрузки:</strong> Описание интенсивности запросов и задержек.</li>
-        <li><strong>Список нагрузочных испытаний:</strong> Тесты на максимальную нагрузку, стабильность, с указанием ключевых метрик.</li>
-        <li><strong>Средства нагрузочного тестирования:</strong> Инструменты для тестирования (Locust, Grafana, Prometheus) и генерация нагрузки.</li>
-        <li><strong>Список метрик:</strong> Время отклика, успешность операций, пропускная способность системы.</li>
-        <li><strong>Отчеты:</strong> Порядок формирования отчётов с результатами испытаний и сравнение с эталонными тестами.</li>
-        <li><strong>Генерация:</strong> Процесс сбора и управления большим объемом данных из различных ресурсов только для реализации тестовых примеров для обеспечения функциональной надежности тестируемой системы.</li>
-      </ul>
-    `,level:"INTERN",category:"load"},{id:3,question:"В МНТ есть раздел генерация БД, о чем он и зачем нужен?",answer:`
-         <p><strong>Основные цели раздела "Генерация БД":</strong></p>
+      <li><strong>1.Объект тестирования:</strong> Общее описание системы, её назначения и структуры, включая архитектуру.</li>
+      <li><strong>2.Цели испытаний:</strong> Определение ключевых целей, таких как установление максимальной пропускной способности системы, проверка стабильной работы в течение длительного времени, и выявление возможных узких мест в производительности.</li>
+      <li><strong>3.Требования к производительности:</strong> Описание допустимых показателей системы, включая время отклика, уровень доступности, процент ошибок, а также утилизацию ресурсов, таких как CPU и RAM.</li>
+      <li><strong>4.Сценарии нагрузочного тестирования:</strong> Перечень сценариев, которые отражают реальные случаи использования системы.</li>
+      <li><strong>5.Нагрузочные испытания:</strong> Описание различных видов нагрузочных тестов, таких как тест на определение максимальной нагрузки и тесты стабильности.</li>
+      <li><strong>6.Профили нагрузки:</strong> Указание интенсивности запросов, количества пользователей и интервалов между запросами.</li>
+        <p><strong>Профиль нагрузки</strong> — это набор операций с заданными интенсивностями, полученный на основе сбора статистических данных либо определенный путем анализа требований к тестируемой системе.</p>
+          <p><strong>Методы сбора профиля НТ:</strong></p>
+          <ul>
+            <li><strong>Анализ бизнес-требований:</strong> Сбор данных о прогнозируемом количестве пользователей и типичных сценариях использования.</li>
+            <li><strong>Логирование реальных пользователей:</strong> Анализ логов реальных систем для определения характерных нагрузок.</li>
+            <li><strong>Анализ мониторинга системы:</strong> Использование данных мониторинга производительности (например, Grafana, Prometheus) для понимания, как система работает под нагрузкой.</li>
+            <li><strong>Консультации с разработчиками и бизнес-аналитиками:</strong> Определение критичных операций и нагрузочных сценариев.</li>
+          </ul>
+      <li><strong>7.Конфигурация стендов:</strong> Описание тестовых стендов, включая количество и параметры виртуальных машин, баз данных и сетевой инфраструктуры, используемой для проведения тестирования. Оборудование должно быть максимально приближено к продуктивной среде.</li>
+      <li><strong>8.Средства нагрузочного тестирования:</strong> Описание используемых инструментов, таких как JMeter и другие средства, обеспечивающие генерацию нагрузки + заглушки.</li>
+      <li><strong>9.Мониторинг:</strong> Описание системы мониторинга, используемой для отслеживания состояния системы и её ключевых метрик во время нагрузочного тестирования, включая ссылки на дашборды и метрики.</li>
+      <li><strong>10.Отчеты и анализ:</strong> Описание процесса подготовки отчётов с результатами тестов, включая формат их предоставления.</li>
+      <li><strong>11.Ограничения тестирования:</strong> Описание ограничений и допущений, которые необходимо учитывать при проведении тестирования, таких как несовершенства архитектуры или несоотвествие тестового и продового стендов.</li>
+      <li><strong>12.Генерация данных:</strong> Подготовка тестовых данных, соответствующих структуре и объёму данных в рабочей среде.</li>
+
+    <p><strong>Основные цели раздела "Генерация БД":</strong></p>
+    <p>Для проведения нагрузочного тестирования важно создать реалистичные данные, имитирующие рабочие условия. Это включает создание большого объёма данных в базе, чтобы проверить производительность системы под нагрузкой. Генерация данных также помогает создать условия для тестирования сложных SQL-запросов и имитирует поведение реальных пользователей. Вот как это можно сделать:</p>
     
     <ol>
-      <li><strong>Создание объёма данных:</strong> 
-        Для проведения нагрузочного тестирования требуется, чтобы база данных содержала значительное количество записей (например, пользователей, транзакций, продуктов). 
-        Это помогает симулировать реальную работу системы под высокой нагрузкой. Генерация данных позволяет протестировать работу системы с большими объёмами информации 
-        и убедиться, что она справляется с нагрузкой.
-      </li>
+      <li><strong>Создание объёма данных:</strong> Генерируйте большое количество записей (например, пользователей, транзакций) для тестов, что помогает симулировать реальную работу системы под высокой нагрузкой. Используйте SQL-скрипты или инструменты для автоматической генерации записей.</li>
 
-      <li><strong>Реалистичное тестирование:</strong> 
-        Данные, генерируемые для тестов, должны быть максимально приближены к реальным данным. Это позволит более точно оценить поведение системы в продакшене. 
-        Генерация данных может включать создание не только записей в таблицах, но и заполнение связей между таблицами, создание индексов и других элементов структуры базы данных.
-      </li>
+      <li><strong>Использование инструментов:</strong> Для генерации данных часто применяются инструменты, такие как <code>Faker</code> (для создания случайных данных), <code>JMeter</code> или <code>DataFactory</code> (для массового создания данных). Они могут генерировать тестовые наборы данных с различными параметрами.</li>
 
-      <li><strong>Сценарии тестирования:</strong> 
-        Некоторые сценарии нагрузочного тестирования могут предполагать выполнение операций с различными объёмами данных. Например, тестирование производительности поиска по базе данных 
-        или выполнения сложных SQL-запросов. Для таких тестов необходима база с различным количеством записей.
-      </li>
+      <li><strong>Реалистичные данные:</strong> Убедитесь, что сгенерированные данные имеют связи между таблицами и индексы, чтобы тестирование было максимально приближено к реальной эксплуатации базы данных.</li>
 
-      <li><strong>Избежание дублирования:</strong> 
-        Генерация данных также может помочь избежать использования одних и тех же данных многими виртуальными пользователями, что сделает тестирование более приближённым к реальной эксплуатации.
-      </li>
+      <li><strong>Тестирование сложных запросов:</strong> Если сценарий требует выполнения сложных SQL-запросов, создайте данные для тестирования производительности запросов, включая <code>JOIN</code>, <code>GROUP BY</code>, и другие операции.</li>
+
+      <li><strong>Избежание дублирования данных:</strong> Генерация уникальных данных для каждого виртуального пользователя помогает избежать одних и тех же записей, что приближает тестирование к реальным условиям эксплуатации системы.</li>
     </ol>
-
-    <p><strong>Зачем нужна генерация БД:</strong></p>
-    <ul>
-      <li>Тестирование на больших объёмах данных: Генерация БД позволяет протестировать систему с реальными объёмами данных, которые она будет обрабатывать в продакшене.</li>
-      <li>Подготовка данных для разных тестовых сценариев: Разные типы тестов могут требовать различных данных (например, для сценариев с чтением, записью, обновлением или удалением данных).</li>
-      <li>Оценка производительности базы данных: Нагрузка на базу данных и время отклика зависят от количества данных. Генерация данных позволяет создать условия, при которых можно оценить, как система будет работать под реальной нагрузкой.</li>
-      <li>Имитирование реальных условий: Генерация БД создаёт реальные или реалистичные данные, чтобы симулировать реальные сценарии использования.</li>
     </ul>
-
-    <p>
-      Таким образом, раздел "Генерация БД" является важной частью подготовки к нагрузочному тестированию, так как он обеспечивает наличие данных 
-      для полноценной проверки работы системы под нагрузкой.
-    </p>
-      `,level:"INTERN",category:"load"},{id:4,question:"Что нужно прописывать в отчёте?",answer:`
-          <ul>
-            <li><strong>Объект тестирования:</strong> Описание системы, как в МНТ.</li>
-            <li><strong>Цели испытаний:</strong> Конкретные задачи теста, например, выявление узких мест.</li>
-            <li><strong>Конфигурация стендов:</strong> Параметры ресурсов (CPU, память, количество реплик).</li>
-            <li><strong>Требования к производительности:</strong> Описание достигнутых результатов по утилизации ресурсов и процент ошибок.</li>
-            <li><strong>Результаты тестов:</strong> Метрики по времени отклика, пропускной способности, количеству ошибок и успешных операций.</li>
-            <li><strong>Анализ результатов:</strong> Сравнение с эталонными тестами (если применимо) и выявление проблем.</li>
-            <li><strong>Отчеты по тестам:</strong> Ссылки на подробные отчёты и краткий анализ по итогам тестов.</li>
-          </ul>
-        `,level:"INTERN",category:"load"},{id:5,question:"Как записать простой скрипт с помощью Recording в JMeter?",answer:`
-          <ul>
-            <li><strong>Открой JMeter</strong> и добавь HTTP(S) Test Script Recorder.</li>
-            <li><strong>Настрой прокси-сервер</strong> для захвата трафика (укажи порт).</li>
-            <li><strong>Добавь Thread Group</strong> для организации сценария.</li>
-            <li><strong>Запусти запись</strong> и проведи необходимые действия в браузере/приложении.</li>
-            <li><strong>Останови запись</strong> — все запросы будут сохранены в виде шагов в сценарии.</li>
-          </ul>
-        `,level:"INTERN",category:"load"},{id:6,question:"Основные шаги настройки скрипта в JMeter после записи?",answer:`
-         <ol>
-      <li><strong>Очистка скрипта:</strong>
-        <ul>
-          <li>Удалите ненужные запросы (статические ресурсы: CSS, JS, изображения).</li>
-          <li>Группируйте запросы с помощью Transaction Controller для удобства и измерения времени выполнения транзакций.</li>
-        </ul>
-      </li>
-
-      <li><strong>Параметризация:</strong>
-        <ul>
-          <li>Используйте CSV Data Set Config для замены статических данных (логины, пароли) на динамические переменные из файла.</li>
-          <li>Пример:
-            <pre>
-              POST /login
-              {
-                "username": "\${username}",
-                "password": "\${password}"
-              }
-            </pre>
-          </li>
-        </ul>
-      </li>
-
-      <li><strong>Корреляция:</strong>
-        <ul>
-          <li>Извлекайте динамические данные (например, токены) с помощью Regular Expression Extractor или JSON Extractor.</li>
-          <li>Пример регулярного выражения: <code>"sessionId":"(.+?)"</code>.</li>
-        </ul>
-      </li>
-
-      <li><strong>Добавление тайм-аутов (Think Time):</strong>
-        <ul>
-          <li>Добавьте паузы между запросами с помощью Constant Timer или Uniform Random Timer для симуляции реального поведения пользователей.</li>
-        </ul>
-      </li>
-
-      <li><strong>Настройка Thread Group:</strong>
-        <ul>
-          <li>Установите количество пользователей (Number of Threads), время разгона (Ramp-Up Period) и количество повторений сценария (Loop Count).</li>
-        </ul>
-      </li>
-
-      <li><strong>Проверки (Assertions):</strong>
-        <ul>
-          <li>Добавьте Response Assertion для проверки кода ответа или содержания ответа, чтобы убедиться, что запросы успешны.</li>
-        </ul>
-      </li>
-
-      <li><strong>Сбор метрик (Listeners):</strong>
-        <ul>
-          <li>Используйте Summary Report, View Results Tree для сбора метрик по времени отклика, проценту ошибок и другим параметрам.</li>
-        </ul>
-      </li>
-
-      <li><strong>Мониторинг производительности:</strong>
-        <ul>
-          <li>Добавьте PerfMon Metrics Collector для мониторинга нагрузки на сервер (CPU, память) во время тестов.</li>
-        </ul>
-      </li>
-    </ol>
-        `,level:"INTERN",category:"load"},{id:7,question:"Что такое параметризация?",answer:`
-          <p>Параметризация — это процесс использования переменных вместо фиксированных данных в запросах. Это позволяет запускать тест с различными значениями (например, разные логины) для симуляции реальных пользователей.</p>
-    <p>Пример из вашего проекта: В вашем файле JMeter используется User Defined Variables, где определены следующие переменные:</p>
+      `,level:"INTERN",category:"load",title:"Perfomance engineer"},{id:2,question:"Что нужно прописывать в отчёте?",answer:`
+    <ul>
+      <li><strong>1.Цели тестирования:</strong> Определение стабильности системы при постоянной нагрузке и выявление проблем производительности.</li>
+      <li><strong>2.Выводы:</strong> Обобщение ключевых результатов тестирования, включая стабильность системы, время отклика, наличие ошибок, и способность системы выдерживать нагрузку.</li>
+      <li><strong>3.Описание теста:</strong> Характеристика проведенного теста, включая сценарии нагрузки, длительность, RPS (запросы в секунду) и тип нагрузки.</li>
+      <li><strong>4.Результаты тестирования:</strong> Представление данных о времени отклика, стабильности RPS, отсутствии ошибок и показателей производительности системы, таких как утилизация CPU и памяти.</li>
+      <li><strong>5.Конфигурация среды для тестирования:</strong> Описание настроек стенда и ресурсов, используемых в тесте (например, количество реплик, ограничения по CPU и памяти), а также соответствие тестовой среды продуктивной.</li>
+      <li><strong>6.Графики и ссылки:</strong> Ссылки на графики с метриками производительности, такие как использование ресурсов и производительность системы в течение теста.</li>
+    </ul>
+        `,level:"INTERN",category:"load",title:"Perfomance engineer"},{id:3,question:"Что такое параметризация? Что такое корреляция?",answer:`
+    <p><strong>Параметризация</strong> — это процесс использования переменных вместо фиксированных данных в запросах. Это позволяет запускать тест с различными значениями (например, разные логины) для симуляции реальных пользователей.</p>
+    <p>Пример из моего проекта: В  файле JMeter используется User Defined Variables, где определены следующие переменные:</p>
     <ul>
       <li>protocol = https</li>
       <li>port = 443</li>
@@ -564,10 +484,10 @@
     </ul>
     <p>Эти переменные используются в запросах для построения URL и других параметров:</p>
     <pre><code>\${protocol}://\${host}:\${port}/api/v1/data</code></pre>
-    <p>Таким образом, вместо фиксированного URL используются переменные, что облегчает изменение конфигурации и поддерживает гибкость тестирования.</p>
-        `,level:"INTERN",category:"load"},{id:8,question:"Что такое корреляция?",answer:`
-         <p>Корреляция — это извлечение динамических данных (например, токенов) из ответа одного запроса для последующего использования в другом запросе. Это необходимо, когда система генерирует уникальные данные для каждой сессии.</p>
-    <p>Пример из вашего проекта: Предположим, что сервер возвращает токен авторизации в одном из запросов, который нужно использовать в дальнейшем для аутентификации. Для этого используется JSON Extractor:</p>
+    <p>Таким образом, вместо фиксированного URL используются переменные, что облегчает изменение конфигурации и поддерживает гибкость тестирования.</p> 
+    
+    <p><strong>Корреляция</strong> — это извлечение динамических данных (например, токенов) из ответа одного запроса для последующего использования в другом запросе. Это необходимо, когда система генерирует уникальные данные для каждой сессии.</p>
+    <p>Пример из моего проекта: Предположим, что сервер возвращает токен авторизации в одном из запросов, который нужно использовать в дальнейшем для аутентификации. Для этого используется JSON Extractor:</p>
     <ol>
       <li>Добавьте JSON Extractor в запрос, где возвращается токен:
         <ul>
@@ -579,9 +499,80 @@
         <pre><code>Authorization: Bearer \${accessToken}</code></pre>
       </li>
     </ol>
-    <p>Теперь токен будет автоматически подставляться в каждый новый запрос, обеспечивая корректную работу теста.</p>
-        `,level:"INTERN",category:"load"},{id:9,question:"Виды проверок в JMeter",answer:`
+    <p>Теперь токен будет автоматически подставляться в каждый новый запрос, обеспечивая корректную работу теста.</p>`,level:"INTERN",category:"load",title:"Perfomance engineer"},{id:4,question:"Как записать простой скрипт с помощью Recording в JMeter? Основные шаги настройки скрипта в JMeter после записи?",answer:`
+          <ul>
+            <li><strong>Открой JMeter</strong> и добавь HTTP(S) Test Script Recorder.</li>
+            <li><strong>Настрой прокси-сервер</strong> для захвата трафика (укажи порт).</li>
+            <li><strong>Добавь Thread Group</strong> для организации сценария.</li>
+            <li><strong>Запусти запись</strong> и проведи необходимые действия в браузере/приложении.</li>
+            <li><strong>Останови запись</strong> — все запросы будут сохранены в виде шагов в сценарии.</li>
+          </ul>
+
+          <p><strong>Основные шаги настройки скрипта в JMeter после записи:</strong></p>
           <ol>
+          <li><strong>Очистка скрипта:</strong>
+            <ul>
+              <li>Удалите ненужные запросы (статические ресурсы: CSS, JS, изображения).</li>
+              <li>Группируйте запросы с помощью Transaction Controller для удобства и измерения времени выполнения транзакций.</li>
+            </ul>
+          </li>
+
+          <li><strong>Параметризация:</strong>
+            <ul>
+              <li>Используйте CSV Data Set Config для замены статических данных (логины, пароли) на динамические переменные из файла.</li>
+              <li>Пример:
+                <pre>
+                  POST /login
+                  {
+                    "username": "\${username}",
+                    "password": "\${password}"
+                  }
+                </pre>
+              </li>
+            </ul>
+          </li>
+
+          <li><strong>Корреляция:</strong>
+            <ul>
+              <li>Извлекайте динамические данные (например, токены) с помощью Regular Expression Extractor или JSON Extractor.</li>
+              <li>Пример регулярного выражения: <code>"sessionId":"(.+?)"</code>.</li>
+            </ul>
+          </li>
+
+          <li><strong>Добавление тайм-аутов (Think Time):</strong>
+            <ul>
+              <li>Добавьте паузы между запросами с помощью Constant Timer или Uniform Random Timer для симуляции реального поведения пользователей.</li>
+            </ul>
+          </li>
+
+          <li><strong>Пейсинг:</strong>
+            <ul>
+              <li>Установите интервал между началом выполнения каждого сценария, чтобы моделировать задержку между действиями пользователей.</li>
+              <li>Пейсинг можно настроить с помощью JSR223 Sampler или Timers, рассчитывая время до следующего запуска сценария.</li>
+              <li>Пример: если сценарий выполняется за 30 секунд, а требуется запускать его каждые 60 секунд, добавьте таймер на 30 секунд между выполнениями.</li>
+            </ul>
+          </li>
+
+          <li><strong>Настройка Thread Group:</strong>
+            <ul>
+              <li>Установите количество пользователей (Number of Threads), время разгона (Ramp-Up Period) и количество повторений сценария (Loop Count).</li>
+            </ul>
+          </li>
+
+          <li><strong>Проверки (Assertions):</strong>
+            <ul>
+              <li>Добавьте Response Assertion для проверки кода ответа или содержания ответа, чтобы убедиться, что запросы успешны.</li>
+            </ul>
+          </li>
+
+          <li><strong>Сбор метрик (Listeners):</strong>
+            <ul>
+              <li>Используйте Summary Report, View Results Tree для сбора метрик по времени отклика, проценту ошибок и другим параметрам.</li>
+            </ul>
+          </li>
+      </ol>
+        `,level:"INTERN",category:"load",title:"Perfomance engineer"},{id:5,question:"Виды проверок в JMeter",answer:`
+      <ol>
       <li><strong>Response Assertion:</strong>
         <p>Применяется для проверки ответа от сервера. Позволяет проверять код ответа HTTP, тело ответа, заголовки и сообщения об ошибках.</p>
         <ul>
@@ -610,67 +601,524 @@
         <p>Проверка содержимого JSON-ответов.</p>
         <pre><code>Пример: Проверка, что JSON-ответ содержит поле "status": "Success"</code></pre>
       </li>
-      
-      <li><strong>JSR223/BeanShell Assertion:</strong>
-        <p>Используется для кастомных проверок с помощью скриптов на Groovy или BeanShell.</p>
-        <pre><code>Пример: Проверка, что длина тела ответа больше 100 символов.</code></pre>
-      </li>
     </ol>
-        `,level:"INTERN",category:"load"},{id:10,question:"Определение профиля НТ и методы его сбора",answer:`
-          <p>Профиль нагрузки — это набор операций с заданными интенсивностями, полученный на основе сбора статистических данных либо определенный путем анализа требований к тестируемой системе.</p>
-          <p><strong>Методы сбора профиля НТ:</strong></p>
-          <ul>
-            <li><strong>Анализ бизнес-требований:</strong> Сбор данных о прогнозируемом количестве пользователей и типичных сценариях использования.</li>
-            <li><strong>Логирование реальных пользователей:</strong> Анализ логов реальных систем для определения характерных нагрузок.</li>
-            <li><strong>Анализ мониторинга системы:</strong> Использование данных мониторинга производительности (например, Grafana, Prometheus) для понимания, как система работает под нагрузкой.</li>
-            <li><strong>Консультации с разработчиками и бизнес-аналитиками:</strong> Определение критичных операций и нагрузочных сценариев.</li>
-          </ul>
-        `,level:"INTERN",category:"load"},{id:11,question:"Перечень основных тестов нагрузочного тестирования и их цели",answer:`
-          <ul>
-            <li><strong>Тест на максимальную нагрузку:</strong> Определение предела, при котором система перестает справляться с запросами. Цель — найти узкие места.</li>
-            <li><strong>Тест стабильности:</strong> Проверка работы системы при постоянной нагрузке в течение длительного времени (например, 10 часов). Цель — выявить проблемы с утечкой памяти и нестабильностью работы.</li>
-            <li><strong>Стрессовое тестирование:</strong> Тестирование системы при экстремальных условиях, когда ее ресурсы могут быть исчерпаны. Основная цель — проверка устойчивости системы при экстремальных условиях.</li>
-            <li><strong>Тестирование отказоустойчивости:</strong> Оценка способности системы сохранять работоспособность в условиях неблагоприятных факторов, таких как сбои в сети и отключение серверов.</li>
-          </ul>
-        `,level:"INTERN",category:"load"},{id:12,question:"Основные метрики, на которые смотрят в Grafana при нагрузочном тестировании",answer:`
-          <ul>
-            <li><strong>CPU Utilization:</strong> Показывает, сколько процессорных ресурсов использует система.</li>
-            <li><strong>Memory Utilization:</strong> Показывает использование оперативной памяти, важно, чтобы оно не превышало 80%.</li>
-            <li><strong>Request Rate (RPS):</strong> Количество запросов в секунду, которые система обрабатывает.</li>
-            <li><strong>Response Time:</strong> Время отклика системы, особенно важно для критичных операций.</li>
-            <li><strong>Error Rate:</strong> Процент ошибок в системе, следует отслеживать, чтобы он был ниже 1%.</li>
-            <li><strong>Throughput:</strong> Пропускная способность системы, измеряемая в мегабайтах или гигабайтах в секунду.</li>
-          </ul>
-        `,level:"INTERN",category:"load"},{id:13,question:"Статистика базы данных",answer:`
-          <ul>
-            <li><strong>Количество запросов:</strong> Общее количество SQL-запросов, обрабатываемых базой данных.</li>
-            <li><strong>Время выполнения запросов:</strong> Показывает среднее, максимальное и минимальное время выполнения запросов.</li>
-            <li><strong>Количество соединений:</strong> Количество активных соединений к базе данных.</li>
-            <li><strong>Закэшированные данные:</strong> Статистика использования кэша для ускорения выполнения запросов.</li>
-            <li><strong>Использование индексов:</strong> Статистика использования индексов для оптимизации запросов.</li>
-            <li><strong>Количество блокировок:</strong> Блокировки строк или таблиц, замедляющие работу базы данных.</li>
-          </ul>
-        `,level:"INTERN",category:"load"},{id:14,question:"Различия между реляционной и нереляционной БД",answer:`
-        <p>База данных (БД) — это организованная коллекция данных, предназначенная для хранения, управления и обработки информации. Базы данных позволяют эффективно сохранять большие объёмы данных, легко находить нужные сведения и управлять ими. Базы данных могут быть реляционными и нереляционными</p>
-          <ul>
-            <li><strong>Реляционные базы данных (RDBMS):</strong> организуют данные в таблицы с четко определенной схемой (строки и столбцы). Они поддерживают сложные связи между таблицами с помощью первичных и внешних ключей, что делает их идеальными для работы с четко структурированными данными и сложными взаимосвязями. Для работы с данными используют язык SQL. Примеры: MySQL, PostgreSQL, Oracle, SQL Server.</li>
-            <li><strong>Нереляционные базы данных (NoSQL):</strong> могут хранить данные в различных форматах — документы, графы, ключ-значение или столбцы — без строгой схемы. Обычно они не поддерживают сложные связи, но хорошо масштабируются и оптимизированы для быстрого доступа к большим объемам неструктурированных данных. Примеры: MongoDB, Cassandra, Redis, Couchbase.</li>
-          </ul>
-        `,level:"INTERN",category:"load"},{id:15,question:"Как посмотреть, что находится в конкретной таблице?",answer:`
-          <p>Для этого можно использовать следующий SQL-запрос:</p>
-          <pre><code>SELECT * FROM table_name;</code></pre>
-          <p>Здесь <code>table_name</code> — это название таблицы, данные которой нужно посмотреть.</p>
-        `,level:"INTERN",category:"load"},{id:16,question:"Как выбрать конкретные столбцы?",answer:`
-          <p>Для этого нужно указать конкретные столбцы в SQL-запросе:</p>
-          <pre><code>SELECT column1, column2 FROM table_name;</code></pre>
+        `,level:"INTERN",category:"load",title:"Perfomance engineer"},{id:6,question:"Что такое пейсинг? Как правильно вычислять пейсинг и количество пользователей?",answer:`
+      <p>Пейсинг — это интервал времени между выполнением последовательных действий одного и того же виртуального пользователя в нагрузочном тесте. Пейсинг контролирует интенсивность нагрузки.</p>
+          <p>Формула пейсинга:</p>
+          <pre><code>
+            Пейсинг = (60 / Целевая нагрузка) - Время выполнения сценария
+          </code></pre>
           <p>Пример:</p>
-          <pre><code>SELECT first_name, last_name FROM employees;</code></pre>
-        `,level:"INTERN",category:"load"},{id:17,question:"Как писать условия для фильтрации? (WHERE)",answer:`
-          <p>Для фильтрации данных используется ключевое слово <code>WHERE</code>:</p>
-          <pre><code>SELECT * FROM table_name WHERE condition;</code></pre>
-          <p>Пример:</p>
-          <pre><code>SELECT * FROM employees WHERE salary > 50000;</code></pre>
-        `,level:"INTERN",category:"load"},{id:18,question:"Что такое HTTP протокол?",answer:`
+          <ul>
+            <li>Целевая нагрузка: 1000 запросов в минуту</li>
+            <li>100 пользователей</li>
+            <li>Среднее время выполнения: 5 секунд</li>
+          </ul>
+
+      <p><strong>Как рассчитать количество пользователей:</strong></p>
+        <p>Количество пользователей определяется исходя из целевой нагрузки (RPS) и времени выполнения сценария:</p>
+        <pre><code>
+          Количество пользователей = (RPS * Время выполнения сценария)
+        </code></pre>
+        <p>Где:</p>
+        <ul>
+          <li><strong>RPS (Requests Per Second)</strong> — количество запросов в секунду, которое система должна обрабатывать.</li>
+          <li><strong>Время выполнения сценария</strong> — время, необходимое для выполнения одного цикла действий пользователя.</li>
+        </ul>
+    <p>Пример расчета:</p>
+    <ul>
+      <li>Целевая нагрузка: 0.14 RPS</li>
+      <li>Среднее время выполнения сценария: 5 секунд</li>
+      <li>Количество пользователей = 0.14 * 5 = 0.7 (округляем до 1 пользователя)</li>
+    </ul>
+    <p>Таким образом, при расчете количества пользователей важно учитывать целевую нагрузку и среднее время выполнения сценария, чтобы правильно распределить нагрузку и добиться реалистичного моделирования поведения пользователей в тесте.</p>
+          `,level:"JUNIOR",category:"load",title:"Perfomance engineer"},{id:7,question:"Что такое пулы данных в нагрузочном тестировании и как их использовать?",answer:`
+        <p>Пулы данных — это наборы данных, которые используются для параметризации запросов в тестах, чтобы симулировать различные входные данные и избежать отправки однотипных запросов.</p>
+        <p><strong>Зачем нужны пулы данных:</strong></p>
+        <ul>
+          <li>Они позволяют разнообразить запросы, обеспечивая более реалистичное тестирование.</li>
+          <li>Помогают избежать кэширования запросов.</li>
+          <li>Используются для тестирования больших объёмов данных.</li>
+        </ul>
+        <p><strong>Как использовать пулы данных в нагрузочном тестировании:</strong></p>
+        <ol>
+          <li>Подготовьте пул данных в виде файла (например, CSV).</li>
+          <li>Настройте инструменты (JMeter, Locust) для использования данных из этого файла.</li>
+        </ol>
+        <p>Пример использования пула данных в JMeter:</p>
+        <pre><code>
+          user1,password1
+          user2,password2
+          user3,password3
+        </code></pre>
+      `,level:"MIDDLE",category:"load",title:"Perfomance engineer"},{id:8,question:"Что такое сущность в БД?",answer:`
+           <p>Сущность в базе данных (БД) — это объект или концепция, которая представляет собой некоторую информацию, которую необходимо хранить в системе. В контексте реляционных баз данных сущность обычно отображается в виде таблицы, где каждая строка представляет собой запись (экземпляр сущности), а столбцы — атрибуты (свойства) сущности.</p>
+    
+    <h4>Основные характеристики сущности:</h4>
+    <ol>
+      <li>Сущность — это объект, который может быть идентифицирован в системе. Примеры сущностей: пользователи, заказы, товары, транзакции и т.д.</li>
+      <li>Атрибуты сущности — это характеристики, которые описывают сущность. Например, сущность "Пользователь" может иметь атрибуты, такие как имя, электронная почта, возраст и т.д.</li>
+      <li>Экземпляры сущности — это конкретные записи в таблице базы данных. Например, каждый пользователь в таблице "Пользователи" — это экземпляр сущности "Пользователь".</li>
+    </ol>
+    
+    <h4>Пример:</h4>
+    <p>Для сущности "Пользователь" может быть создана таблица в базе данных, которая содержит следующие атрибуты:</p>
+    <ul>
+      <li>id (идентификатор пользователя),</li>
+      <li>first_name (имя),</li>
+      <li>last_name (фамилия),</li>
+      <li>email (электронная почта).</li>
+    </ul>
+    
+    <h4>Пример таблицы "Пользователи":</h4>
+    <pre><code>id   first_name  last_name  email
+1    Иван        Иванов     ivan@example.com
+2    Ольга       Смирнова   olga@example.com
+    </code></pre>
+    
+    <p>В данном случае сущность — это "Пользователь", а каждая строка таблицы представляет собой конкретного пользователя, то есть экземпляр этой сущности.</p>
+    
+    <h4>Заключение:</h4>
+    <p>Сущность — это ключевая концепция в базах данных, которая отражает объекты, с которыми работает система, и хранит информацию о них в виде записей (строк) в таблицах.</p
+        `,level:"JUNIOR",category:"load",title:"Perfomance engineer"},{id:9,question:"Парсинг логов это? Делала ли ты парсинг логов?",answer:`
+       <p>Этот лог-парсер создан для анализа активности в системе по файлу логов. Он позволяет получить статистику использования отдельных HTTP-методов, определить время пиковых нагрузок и рассчитать метрики для дальнейшего тестирования. Вот краткое описание его работы:</p>
+
+<h3>Цели парсера:</h3>
+<ul>
+    <li>Обработка логов для подсчета запросов к ключевым API-методам.</li>
+    <li>Определение количества запросов в секунду (RPS), запросов в минуту (RPM) и расчета пейсинга для каждого метода.</li>
+    <li>Генерация конфигураций на основе собранных данных для инструмента нагрузочного тестирования JMeter.</li>
+</ul>
+
+<h3>Основные компоненты:</h3>
+
+<p><strong>Main.java:</strong> Этот класс является точкой входа в программу. Он запускает процесс анализа логов, считывая данные из лог-файлов. В результате:</p>
+<ul>
+    <li>Создает объект Parser, который выполняет парсинг файла логов и собирает статистику по релевантным HTTP-методам и путям.</li>
+    <li>После завершения парсинга выводит общую статистику запросов, а также пиковый час, чтобы выделить временной интервал с наибольшей активностью.</li>
+    <li>Рассчитывает пейсинг (интервалы между запросами) и создает конфигурацию для JMeter на основе собранных данных, что упрощает дальнейшую настройку нагрузочного тестирования.</li>
+</ul>
+
+<p><strong>Parser.java:</strong> Это основной класс, который отвечает за чтение и обработку логов.</p>
+<ul>
+    <li>Построчно читает лог-файл, извлекая для каждого запроса временную метку, HTTP-метод и путь.</li>
+    <li>Проводит проверку на релевантность запроса, то есть проверяет, относится ли запрос к ключевым методам и путям, заданным в настройках.</li>
+    <li>Обновляет статистику в RequestStatistics, добавляя данные о каждом релевантном запросе (например, увеличивая счетчик вызовов для соответствующего метода и часа).</li>
+</ul>
+
+<p><strong>RequestStatistics.java:</strong> Этот класс собирает и управляет статистикой по всем релевантным запросам.</p>
+<ul>
+    <li>Ведет учет общего количества запросов для каждого метода и часа, а также поддерживает агрегированную статистику.</li>
+    <li>Рассчитывает интенсивность запросов — RPS (Requests per Second) и RPM (Requests per Minute) для каждого метода.</li>
+    <li>Определяет пиковый час, то есть час, когда система обрабатывала наибольшее количество запросов.</li>
+    <li>Генерирует пейсинг — расчет интервалов между запросами для настройки JMeter, что помогает равномерно распределить нагрузку.</li>
+    <li>Формирует конфигурацию для JMeter на основе собранных данных, задавая необходимые интервалы и интенсивность запросов для тестирования.</li>
+</ul>
+
+<h3>Ключевые метрики:</h3>
+<ul>
+    <li><strong>Общее количество вызовов:</strong> общий подсчет запросов к указанным API-методам.</li>
+    <li><strong>RPS и RPM:</strong> интенсивность запросов (в секунду и в минуту), важная для планирования нагрузки.</li>
+    <li><strong>Пиковый час:</strong> временной интервал с наибольшей нагрузкой, полезный для настройки JMeter.</li>
+    <li><strong>Пейсинг:</strong> время между запросами для оптимального распределения нагрузки.</li>
+</ul>
+    `,level:"MIDDLE",category:"load",title:"Performance engineer"},{id:10,question:"Основные серверные метрики, на которые смотрят в Grafana при нагрузочном тестировании",answer:`
+        <h2>Основные Серверные Метрики и Возможные Проблемы</h2>
+
+        <h3>CPU Usage (Использование процессора)</h3>
+        <ul>
+            <li><strong>CPU Load (Нагрузка на процессор):</strong> средняя нагрузка на процессор, измеряется в единицах нагрузки (например, значение 1.0 для одного ядра означает, что нагрузка равна 100% его мощности).
+                <ul>
+                    <li><em>Проблемы:</em> Если нагрузка consistently превышает 70–80% от его мощности, это может указывать на перегрузку, что приводит к замедлению системы.</li>
+                    <li><em>Причины:</em> Слишком много процессов пытаются одновременно использовать процессор, неэффективное использование ресурсов или ошибки в коде, вызывающие избыточные вычисления.</li>
+                </ul>
+            </li>
+            <li><strong>CPU Utilization (Занятость процессора):</strong> процент времени, в течение которого процессор занят, измеряется в процентах (%).
+                <ul>
+                    <li><em>Проблемы:</em> Постоянная высокая занятость (выше 80%) может привести к замедлению отклика системы и общей деградации производительности.</li>
+                    <li><em>Причины:</em> Недостаток процессорных ядер, чрезмерная нагрузка со стороны приложений или фоновых процессов.</li>
+                </ul>
+            </li>
+            <li><strong>Context Switches (Переключения контекста):</strong> количество переключений между задачами, измеряется в количестве переключений в секунду (переключения/сек).
+                <ul>
+                    <li><em>Проблемы:</em> Слишком много переключений приводит к увеличению нагрузки на процессор, снижению его производительности и замедлению выполнения задач.</li>
+                    <li><em>Причины:</em> Чрезмерное количество процессов или потоков, активно конкурирующих за ресурсы процессора, что увеличивает нагрузку на ОС.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Memory Usage (Использование памяти)</h3>
+        <ul>
+            <li><strong>Memory Utilization (Занятость памяти):</strong> процент занятой оперативной памяти, измеряется в процентах (%).
+                <ul>
+                    <li><em>Проблемы:</em> Высокая занятость (90% и выше) может вызвать недостаток памяти для новых задач и привести к снижению производительности из-за подкачки.</li>
+                    <li><em>Причины:</em> Утечки памяти в приложениях, высокий объем данных или неправильно настроенные процессы.</li>
+                </ul>
+            </li>
+            <li><strong>Swap Usage (Использование подкачки):</strong> объем занятой подкачки, измеряется в мегабайтах (МБ) или процентах (%) от всего объема подкачки.
+                <ul>
+                    <li><em>Проблемы:</em> Чрезмерное использование подкачки замедляет систему, так как чтение с диска происходит гораздо медленнее, чем из оперативной памяти.</li>
+                    <li><em>Причины:</em> Недостаток оперативной памяти для работы активных процессов или утечки памяти.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Disk Usage (Использование диска)</h3>
+        <ul>
+            <li><strong>Disk Read/Write (Операции чтения/записи на диск):</strong> количество данных, читаемых и записываемых на диск, измеряется в мегабайтах в секунду (МБ/с) или гигабайтах в секунду (ГБ/с).
+                <ul>
+                    <li><em>Проблемы:</em> Высокая частота операций может привести к износу диска и снижению скорости операций из-за перегрузки.</li>
+                    <li><em>Причины:</em> Интенсивная запись и чтение данных, вызванные обработкой больших объемов или неэффективными операциями на уровне БД.</li>
+                </ul>
+            </li>
+            <li><strong>Disk I/O Utilization (Занятость диска):</strong> процент времени, в течение которого диск занят операциями ввода-вывода, измеряется в процентах (%).
+                <ul>
+                    <li><em>Проблемы:</em> Высокая занятость (80% и выше) указывает на перегрузку, которая может вызвать задержки во всех операциях, требующих доступ к диску.</li>
+                    <li><em>Причины:</em> Чрезмерное количество запросов к диску, большие объемы записи или чтения, недостаточная скорость дисков.</li>
+                </ul>
+            </li>
+            <li><strong>Disk Space Utilization (Занятость пространства на диске):</strong> занятое и доступное пространство на диске, измеряется в гигабайтах (ГБ) или процентах (%).
+                <ul>
+                    <li><em>Проблемы:</em> При заполнении диска (90% и более) система может перестать выполнять операции записи, что вызовет ошибки или зависания.</li>
+                    <li><em>Причины:</em> Неэффективное использование пространства, отсутствие автоматической очистки данных.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Network Usage (Использование сети)</h3>
+        <ul>
+            <li><strong>Network In/Out (Входящий и исходящий трафик):</strong> объем данных, проходящих через сетевой интерфейс, измеряется в мегабайтах в секунду (МБ/с) или гигабайтах в секунду (ГБ/с).
+                <ul>
+                    <li><em>Проблемы:</em> Высокий объем трафика может привести к перегрузке сети, потере пакетов и увеличению задержек.</li>
+                    <li><em>Причины:</em> Повышенная нагрузка от клиентов, утечки данных или неэффективные сетевые операции.</li>
+                </ul>
+            </li>
+            <li><strong>Network Errors (Сетевые ошибки):</strong> количество ошибок передачи данных, измеряется в количестве ошибок в секунду (ошибки/сек).
+                <ul>
+                    <li><em>Проблемы:</em> Ошибки связи указывают на проблемы с подключением, которые могут привести к недоступности сервисов или потере данных.</li>
+                    <li><em>Причины:</em> Проблемы с сетевыми настройками, плохое качество соединения или перегрузка сети.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Request Rate (Частота запросов)</h3>
+        <ul>
+            <li><strong>HTTP Requests per Second (Количество HTTP-запросов в секунду):</strong> измеряется в запросах в секунду (запросы/сек).
+                <ul>
+                    <li><em>Проблемы:</em> Слишком высокая частота запросов может перегрузить сервер, вызывая задержки и отказ в обслуживании.</li>
+                    <li><em>Причины:</em> Внезапный рост количества пользователей, неэффективное распределение нагрузки или атаки на систему.</li>
+                </ul>
+            </li>
+            <li><strong>Error Rate (Частота ошибок):</strong> процент ошибок среди всех запросов, измеряется в процентах (%).
+                <ul>
+                    <li><em>Проблемы:</em> Высокий процент ошибок в запросах может указывать на проблемы с сервером или сетью, снижающие доступность сервиса.</li>
+                    <li><em>Причины:</em> Сбои в работе приложения, сетевые проблемы или некорректные запросы.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Latency (Задержка)</h3>
+        <ul>
+            <li><strong>Response Time (Время ответа):</strong> среднее время ответа сервера на запрос, измеряется в миллисекундах (мс).
+                <ul>
+                    <li><em>Проблемы:</em> Увеличение времени ответа ведет к снижению производительности и ухудшению пользовательского опыта.</li>
+                    <li><em>Причины:</em> Низкая производительность сервера, перегрузка CPU или высокая занятость диска.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>System Load (Нагрузка на систему)</h3>
+        <ul>
+            <li><strong>System Load Average (Средняя нагрузка на систему):</strong> средняя нагрузка за 1, 5 и 15 минут, измеряется в единицах нагрузки (например, значение 1.0 для одного ядра означает, что нагрузка равна 100% его мощности).
+                <ul>
+                    <li><em>Проблемы:</em> Значение нагрузки, превышающее количество ядер (например, 4 для 4-ядерного процессора), указывает на перегрузку и может вызвать задержки.</li>
+                    <li><em>Причины:</em> Чрезмерное количество задач, активно конкурирующих за ресурсы CPU.</li>
+                </ul>
+            </li>
+        </ul>
+        `,level:"INTERN",category:"load",title:"Perfomance engineer"},{id:11,question:"Анализ базы данных? Отчет AWR или pg_stat_statements?",answer:`
+           <p><strong>Анализ базы данных</strong> в контексте нагрузочного тестирования включает оценку производительности баз данных под высокой нагрузкой. Основные задачи анализа:</p>
+           <p><strong>Для анализа работы с базой данных PostgreSQL</strong> можно использовать <code>pg_stat_activity</code> и <code>pg_stat_statements</code>. Вот как их применяют для выявления проблем и оптимизации запросов:</p>
+
+        <h3>1. pg_stat_activity — мониторинг активности</h3>
+        <p><code>pg_stat_activity</code> предоставляет информацию обо всех текущих соединениях к базе данных и выполняющихся запросах. С помощью него можно:</p>
+        <ul>
+            <li>Увидеть активные соединения, их статус (выполняется ли запрос, ожидает, завершен), а также время, которое соединение работает.</li>
+            <li>Отследить "тяжелые" запросы, занимающие много ресурсов, или запросы, находящиеся в состоянии ожидания.</li>
+            <li>Выявить запросы, которые "висят" долгое время, создавая блокировки, и понять, откуда идет нагрузка.</li>
+        </ul>
+        <p><strong>Пример использования:</strong></p>
+        <pre><code>SELECT pid, usename, application_name, state, query, wait_event_type, query_start 
+FROM pg_stat_activity 
+WHERE state = 'active';</code></pre>
+        <p>Это позволяет увидеть активные запросы и узнать, какие процессы создают наибольшую нагрузку на базу данных, чтобы можно было своевременно оптимизировать их выполнение.</p>
+
+        <h3>2. pg_stat_statements — сбор статистики по запросам</h3>
+        <p><code>pg_stat_statements</code> используется для анализа производительности запросов, собирая статистику по всем выполненным запросам. Эта статистика включает количество запусков каждого запроса, среднее время выполнения и количество возвращенных строк.</p>
+        <p><code>pg_stat_statements</code> помогает понять, какие запросы выполняются часто и занимают много ресурсов, а значит, нуждаются в оптимизации.</p>
+        <p><strong>Пример использования:</strong></p>
+        <pre><code>SELECT query, calls, total_time, mean_time, rows 
+FROM pg_stat_statements 
+ORDER BY total_time DESC 
+LIMIT 10;</code></pre>
+        <p>Это позволяет увидеть запросы, которые тратят больше всего времени на выполнение, и выбрать их для анализа на предмет оптимизации.</p>
+
+        <h3>Работа с индексами и анализ с EXPLAIN и EXPLAIN ANALYZE</h3>
+        <p>Индексы значительно ускоряют выборку данных, создавая структуру для быстрого поиска по заданным полям. Например, индекс на колонку <code>user_id</code> в таблице ускоряет выполнение запросов, фильтрующих или сортирующих данные по <code>user_id</code>.</p>
+
+        <h4>EXPLAIN — анализ плана выполнения</h4>
+        <p>Команда <code>EXPLAIN</code> показывает план выполнения SQL-запроса без его фактического выполнения. Она позволяет понять, как оптимизатор PostgreSQL планирует выполнять запрос — например, какие индексы будут использоваться.</p>
+        <p>С помощью <code>EXPLAIN</code> можно проверить, используются ли созданные индексы в запросах, и, если нет, внести изменения в запрос или индексы.</p>
+        <p><strong>Пример использования:</strong></p>
+        <pre><code>EXPLAIN SELECT * FROM orders WHERE user_id = 123;</code></pre>
+        <p>Это покажет, планирует ли PostgreSQL использовать индекс на <code>user_id</code> при выборке данных. Если нет, возможно, индекс создан неверно, или запрос нужно переписать.</p>
+
+        <h4>EXPLAIN ANALYZE — анализ фактического выполнения</h4>
+        <p><code>EXPLAIN ANALYZE</code> выполняет запрос и показывает фактический план выполнения с реальными показателями времени и количества обработанных строк.</p>
+        <p>С помощью <code>EXPLAIN ANALYZE</code> можно проверить, насколько эффективно работают индексы и какие этапы выполнения занимают больше всего времени. Это особенно важно при оптимизации сложных запросов.</p>
+        <p><strong>Пример использования:</strong></p>
+        <pre><code>EXPLAIN ANALYZE SELECT * FROM orders WHERE user_id = 123;</code></pre>
+        <p>Результат покажет, сколько времени потребовалось на выполнение каждого этапа, что позволяет оценить, насколько эффективно запрос использует индекс и есть ли "узкие места" в плане выполнения.</p>
+
+        <h4>Почему важно использовать индексы с EXPLAIN и EXPLAIN ANALYZE</h4>
+        <p>Индексы ускоряют выполнение запросов, но не всегда оптимизатор их выбирает. <code>EXPLAIN</code> помогает понять, какие индексы использует планировщик, а <code>EXPLAIN ANALYZE</code> — подтверждает, насколько это ускоряет запрос. Таким образом, можно увидеть, есть ли смысл добавлять индексы или изменять их для улучшения производительности.</p>
+
+        <h2>Пример выполнения задания</h2>
+         <p><strong>Анализ базы данных</strong> в контексте нагрузочного тестирования включает оценку производительности баз данных под высокой нагрузкой. Основные задачи анализа:</p>
+        
+        <p><strong>Цель профилирования:</strong> Целью данного профилирования является выявление и устранение узких мест в производительности базы данных, а также оптимизация медленно выполняющихся запросов для сокращения времени их выполнения и снижения нагрузки на ресурсы системы. Профилирование помогает лучше понять, какие запросы требуют наибольших затрат времени и ресурсов, чтобы можно было улучшить их выполнение с помощью индексации и других методов оптимизации.</p>
+
+        <h3>Шаги выполнения задания</h3>
+        <h4>Инициализация базы данных и подготовка данных</h4>
+        <p>Запущен скрипт <code>sql_init.sql</code> для создания таблицы <code>test_v2</code> и заполнения ее 5 миллионами записей.</p>
+
+        <h4>Запуск нового JAR-файла и тестовый запрос</h4>
+        <p>Новый JAR-файл был успешно развернут на порту 8080. После этого выполнен тестовый запрос <code>GET localhost:8080/test/query</code>, и зафиксировано исходное время выполнения.</p>
+
+        <h4>Настройка pg_stat_statements</h4>
+        <p>Настроен плагин <code>pg_stat_statements</code> для отслеживания выполнения запросов в PostgreSQL.</p>
+
+        <h4>Анализ медленных запросов</h4>
+        <p>Используя <code>pg_stat_statements</code>, обнаружен наиболее медленно выполняющийся запрос:</p>
+        <pre><code>SELECT * FROM foo ORDER BY c1;</code></pre>
+        <p><strong>Причины замедления:</strong> Запрос выполнял сортировку по полю <code>c1</code>, загружая все данные из таблицы, что создавало высокую нагрузку на память и замедляло работу. Использование <code>SELECT *</code> привело к загрузке всех полей, что замедлило выполнение.</p>
+        <p><strong>Исходное состояние:</strong> Запрос выполнялся через параллельный последовательный скан с последующей сортировкой на диске, что приводило к высокой нагрузке на дисковую систему и увеличивало время выполнения.</p>
+
+        <h4>Оптимизация</h4>
+        <p>Для оптимизации был создан индекс по полю <code>c1</code>, что позволило значительно ускорить выполнение сортировки:</p>
+        <pre><code>CREATE INDEX idx_foo_c1 ON foo(c1);</code></pre>
+        <p>Благодаря этому индексу запрос перешел от последовательного сканирования к индексному сканированию, что уменьшило объем работы для каждого выполнения запроса.</p>
+
+        <h4>Результаты оптимизации</h4>
+        <ul>
+            <li><strong>Исходное время выполнения:</strong> 31,230 мс.</li>
+            <li><strong>Время выполнения после оптимизации:</strong> 24,140 мс.</li>
+            <li><strong>Улучшение производительности:</strong> Оптимизация уменьшила время выполнения на 22,7%.</li>
+        </ul>
+
+        <h3>Заключение</h3>
+        <p>Оптимизация с помощью индекса позволила значительно сократить время выполнения запроса <code>SELECT * FROM foo ORDER BY c1</code>. Переход к индексному сканированию позволил уменьшить нагрузку на дисковую систему и оптимизировать распределение ресурсов при выполнении запросов к базе данных.</p>
+
+        <h4>Сброс статистики</h4>
+        <p>Для сброса статистики в <code>pg_stat_statements</code> 
+        `,level:"INTERN",category:"load",title:"Perfomance engineer"},{id:12,question:"Что такое многопоточность? Какой есть редел в потоках у приложения? Что такое поток?",answer:`
+      <p><strong>Многопоточность</strong> — это способность программы или системы выполнять несколько потоков (или задач) одновременно. Каждый поток представляет собой отдельный поток выполнения внутри процесса и может работать независимо от других потоков. В контексте нагрузочного тестирования многопоточность позволяет имитировать большое количество пользователей, отправляющих запросы к системе одновременно.</p>
+
+        <h3>Основные понятия о многопоточности:</h3>
+        <ul>
+            <li><strong>Поток:</strong> Единица выполнения внутри процесса. Каждый поток работает независимо, но разделяет память и ресурсы процесса.</li>
+            <li><strong>Параллелизм:</strong> Возможность одновременного выполнения нескольких потоков на разных ядрах процессора.</li>
+            <li><strong>Конкурентность:</strong> Одновременное выполнение нескольких задач, которые могут переключаться между собой, используя общее время процессора, даже на одном ядре.</li>
+        </ul>
+
+        <h3>Многопоточность и база данных (БД):</h3>
+        <p>В нагрузочном тестировании, когда множество потоков отправляют запросы к БД одновременно, важно понимать, как эти запросы обрабатываются и как происходит взаимодействие между потоками и БД.</p>
+
+        <h4>Взаимодействие потоков с БД (коннекты):</h4>
+        <ul>
+            <li><strong>Подключения (коннекты):</strong> Каждый поток должен установить соединение с БД для выполнения запроса. Это подключение называют коннектом. Как правило, каждый поток может создавать отдельное соединение с БД, чтобы отправить запросы на чтение или запись данных.</li>
+            <li><strong>Пул соединений (Connection Pool):</strong> Чтобы эффективно управлять подключениями, используют пул соединений. Это набор предсозданных коннектов, которые повторно используются потоками. Пул помогает:
+                <ul>
+                    <li>Уменьшить накладные расходы на создание/закрытие соединений.</li>
+                    <li>Избежать ситуации, когда слишком много потоков одновременно создают коннекты, что может перегрузить БД.</li>
+                </ul>
+            </li>
+            <li><strong>Блокировки:</strong> Когда несколько потоков пытаются одновременно обновить одни и те же данные, возникает проблема блокировок. Блокировки помогают избежать конфликтов, когда один поток меняет данные, а другой пытается к ним обратиться.</li>
+            <li><strong>Транзакции:</strong> Группы операций, выполняемых как единое целое. При работе с несколькими потоками важно, чтобы транзакции не мешали друг другу, иначе это может привести к потерям данных или нарушению их целостности.</li>
+        </ul>
+        <h3>Ограничения потоков и коннектов</h3>
+        <p>Количество потоков и подключений (коннектов) к базе данных ограничено и зависит от различных факторов:</p>
+        <ul>
+            <li><strong>Ограничения ресурсов сервера:</strong> Количество доступных процессорных ядер и объём оперативной памяти сервера ограничивают число одновременно работающих потоков. Слишком большое количество потоков может привести к снижению производительности, так как процессор будет тратить время на переключение между ними.</li>
+            <li><strong>Конфигурация пула соединений БД:</strong> Пул соединений имеет заданный максимум, который ограничивает количество активных соединений с БД. Этот предел защищает БД от перегрузки, но также ограничивает максимальное количество потоков, которые могут работать одновременно.</li>
+            <li><strong>Настройки операционной системы:</strong> Операционная система имеет лимиты на количество файловых дескрипторов, которые можно открыть одновременно, а каждое подключение к БД может использовать один или несколько дескрипторов.</li>
+            <li><strong>Конкурентный доступ к данным:</strong> С увеличением числа потоков могут возникнуть задержки из-за блокировок и транзакций, необходимых для обеспечения целостности данных, особенно при выполнении операций записи.</li>
+        </ul>
+        <h4>Пример:</h4>
+        <p>Представьте себе систему интернет-банка, где несколько пользователей пытаются одновременно перевести деньги:</p>
+        <ul>
+            <li>Многопоточность позволяет каждому пользователю в своём потоке выполнять действия параллельно, создавая нагрузку на БД.</li>
+            <li>Пул соединений распределяет запросы на подключение, чтобы уменьшить нагрузку и обеспечить доступ к БД для каждого потока.</li>
+            <li>Блокировки и транзакции защищают от ситуаций, когда несколько пользователей пытаются изменить один и тот же счёт одновременно.</li>
+        </ul>
+  `,level:"JUNIOR",category:"load",title:"Perfomance engineer"},{id:13,question:"Различия между реляционной и нереляционной БД? Статистика БД? Как посмотреть, что находится в конкретной таблице? Как писать условия для фильтрации? (WHERE)Как выбрать конкретные столбцы? Какте еще часто используемые команды есть?",answer:`
+     <h3>База данных (БД) — это организованная коллекция данных, предназначенная для хранения, управления и обработки информации. Базы данных позволяют эффективно сохранять большие объёмы данных, легко находить нужные сведения и управлять ими. Базы данных могут быть реляционными и нереляционными.</h3>
+      
+      <ul>
+        <li><strong>Реляционные базы данных (RDBMS):</strong> организуют данные в таблицы с четко определенной схемой (строки и столбцы). Они поддерживают сложные связи между таблицами с помощью первичных и внешних ключей. Реляционные базы данных используют язык SQL для работы с данными и отлично подходят для структурированных данных.</li>
+        <p><strong>Примеры реляционных баз данных:</strong></p>
+        <ul>
+          <li><strong>MySQL:</strong> Открытая СУБД, широко используемая для веб-приложений и бизнес-систем.</li>
+          <li><strong>PostgreSQL:</strong> Расширяемая и мощная база данных с поддержкой сложных операций и стандартов SQL.</li>
+          <li><strong>Oracle:</strong> Коммерческая база данных с высокой производительностью, часто используемая для крупных корпоративных систем.</li>
+          <li><strong>SQL Server:</strong> СУБД от Microsoft, используемая для бизнес-приложений и крупных систем управления данными.</li>
+        </ul>
+
+        <li><strong>Нереляционные базы данных (NoSQL):</strong> могут хранить данные в различных форматах — документы, графы, ключ-значение или столбцы. Эти базы данных не требуют строгой схемы и предназначены для работы с неструктурированными данными. Они хорошо масштабируются и оптимизированы для быстрого доступа к большим объемам данных.</li>
+        <p><strong>Виды нереляционных баз данных и примеры:</strong></p>
+
+        <ul>
+          <li><strong>Документно-ориентированные базы данных:</strong> 
+            <ul>
+              <li><strong>MongoDB:</strong> Хранит данные в формате JSON-подобных документов, что делает её гибкой для хранения неструктурированных данных.</li>
+              <li><strong>Couchbase:</strong> Документная база данных, поддерживающая модель "ключ-значение" и синхронизацию данных в реальном времени.</li>
+            </ul>
+          </li>
+          
+          <li><strong>Графовые базы данных:</strong>
+            <ul>
+              <li><strong>Neo4j:</strong> Использует графовую модель данных для представления и управления связями между данными, что делает её эффективной для работы с социальными сетями, рекомендациями и др.</li>
+              <li><strong>Amazon Neptune:</strong> Полностью управляемая графовая база данных, оптимизированная для хранения и обработки сложных сетевых данных.</li>
+            </ul>
+          </li>
+
+          <li><strong>Ключ-значение:</strong> 
+            <ul>
+              <li><strong>Redis:</strong> Высокоскоростная база данных типа "ключ-значение", часто используемая для кэширования данных и работы с сессиями.</li>
+              <li><strong>Amazon DynamoDB:</strong> Быстро масштабируемая NoSQL база данных, использующая модель "ключ-значение" и предназначенная для высоконагруженных приложений.</li>
+            </ul>
+          </li>
+
+          <li><strong>Сторожевые базы данных (Column-Family):</strong>
+            <ul>
+              <li><strong>Apache Cassandra:</strong> СУБД, оптимизированная для масштабируемых распределённых данных, основанных на модели "ключ-значение", но с хранением данных по столбцам.</li>
+              <li><strong>HBase:</strong> Распределенная база данных, построенная на основе HDFS, которая поддерживает хранение больших данных по столбцам.</li>
+            </ul>
+          </li>
+        </ul>
+      </ul>
+
+    <h3>Статистика БД</h3>
+    <ul>
+      <li><strong>Количество запросов:</strong> Общее количество SQL-запросов, обрабатываемых базой данных.</li>
+      <li><strong>Время выполнения запросов:</strong> Показывает среднее, максимальное и минимальное время выполнения запросов.</li>
+      <li><strong>Количество соединений:</strong> Количество активных соединений к базе данных.</li>
+      <li><strong>Закэшированные данные:</strong> Статистика использования кэша для ускорения выполнения запросов.</li>
+      <li><strong>Использование индексов:</strong> Статистика использования индексов для оптимизации запросов.</li>
+      <li><strong>Количество блокировок:</strong> Блокировки строк или таблиц, замедляющие работу базы данных.</li>
+    </ul>
+
+    <h3>Для работы с данными в базе, мы используем SQL-запросы:</h3>
+    <ul>
+      <li><strong>Как посмотреть, что находится в конкретной таблице?</strong></li>
+      <p>Для того чтобы увидеть все данные из таблицы, можно использовать команду <code>SELECT *</code>, где <code>*</code> означает выбор всех столбцов.</p>
+      <pre><code>
+        SELECT * FROM имя_таблицы;
+      </code></pre>
+
+      <li><strong>Как выбрать конкретные столбцы?</strong></li>
+      <p>Чтобы выбрать только определённые столбцы, необходимо явно указать их в запросе:</p>
+      <pre><code>
+        SELECT столбец1, столбец2 FROM имя_таблицы;
+      </code></pre>
+
+      <li><strong>Как писать условия для фильтрации? (WHERE)</strong></li>
+      <p>Для фильтрации данных в таблице используется условие <code>WHERE</code>. С его помощью можно указать условия для выбора строк, которые удовлетворяют определённым критериям:</p>
+      <pre><code>
+        SELECT * FROM имя_таблицы
+        WHERE столбец = значение;
+      </code></pre>
+      <p>Также можно добавлять более сложные условия:</p>
+      <pre><code>
+        SELECT * FROM имя_таблицы
+        WHERE столбец1 = значение1 AND столбец2 > значение2;
+      </code></pre>
+      <p>Другие операторы для фильтрации включают <code>LIKE</code> (поиск по шаблону), <code>IN</code> (выбор из множества значений), <code>BETWEEN</code> (диапазоны), и многие другие.</p>
+
+      <li><strong>INSERT</strong> — добавляет новые записи в таблицу:</li>
+      <pre><code>
+        INSERT INTO имя_таблицы (столбец1, столбец2) VALUES (значение1, значение2);  -- Добавляет новую запись
+      </code></pre>
+
+      <li><strong>WHERE</strong> — используется для фильтрации строк в запросах:</li>
+      <pre><code>
+        SELECT * FROM имя_таблицы WHERE столбец = значение;  -- Условие для фильтрации данных
+        SELECT * FROM имя_таблицы WHERE столбец1 = значение1 AND столбец2 > значение2;  -- Усложнённая фильтрация
+      </code></pre>
+
+      <li><strong>JOIN</strong> — объединяет данные из нескольких таблиц на основе общих значений в связанных столбцах:</li>
+      <pre><code>
+        SELECT t1.столбец1, t2.столбец2 
+        FROM таблица1 t1
+        JOIN таблица2 t2 ON t1.ключ = t2.ключ;  -- Пример объединения двух таблиц
+      </code></pre>
+
+      <li><strong>INNER JOIN</strong> — возвращает строки, которые имеют совпадение в обеих таблицах:</li>
+      <pre><code>
+        SELECT employees.first_name, departments.department_name
+        FROM employees
+        INNER JOIN departments ON employees.department_id = departments.id;  -- Возвращает только совпадения
+      </code></pre>
+
+      <li><strong>LEFT JOIN</strong> — возвращает все строки из левой таблицы и совпадающие строки из правой таблицы. Если совпадений нет, правые значения будут NULL:</li>
+      <pre><code>
+        SELECT t1.столбец1, t2.столбец2
+        FROM таблица1 t1
+        LEFT JOIN таблица2 t2 ON t1.ключ = t2.ключ;
+      </code></pre>
+
+      <li><strong>GROUP BY</strong> — группирует строки с одинаковыми значениями в указанных столбцах и позволяет применять агрегатные функции:</li>
+      <pre><code>
+        SELECT столбец, COUNT(*) 
+        FROM имя_таблицы 
+        GROUP BY столбец;  -- Группировка по значению в столбце
+      </code></pre>
+
+      <li><strong>HAVING</strong> — используется для фильтрации результатов после группировки:</li>
+      <pre><code>
+        SELECT столбец, COUNT(*) 
+        FROM имя_таблицы 
+        GROUP BY столбец 
+        HAVING COUNT(*) > 5;  -- Фильтрация после группировки
+      </code></pre>
+
+      <li><strong>ORDER BY</strong> — сортирует результаты запроса по возрастанию или убыванию:</li>
+      <pre><code>
+        SELECT * FROM имя_таблицы ORDER BY столбец1 ASC, столбец2 DESC;  -- Сортировка данных по возрастанию и убыванию
+      </code></pre>
+
+      <li><strong>LIMIT</strong> — ограничивает количество возвращаемых строк в запросе:</li>
+      <pre><code>
+        SELECT * FROM имя_таблицы LIMIT 10;  -- Возвращает только первые 10 строк
+      </code></pre>
+
+      <li><strong>UNION</strong> — объединяет результаты двух запросов в одну таблицу, исключая дубликаты:</li>
+      <pre><code>
+        SELECT столбец1, столбец2 FROM таблица1 
+        UNION 
+        SELECT столбец1, столбец2 FROM таблица2;  -- Объединяет данные из двух таблиц
+      </code></pre>
+
+      <li><strong>Индексы (INDEX)</strong> — используются для ускорения поиска данных в таблице:</li>
+      <pre><code>
+        CREATE INDEX индекс_имя ON таблица(столбец);  -- Создание индекса для ускорения поиска по столбцу
+        EXPLAIN SELECT * FROM таблица WHERE столбец = значение;  -- Используется для анализа, применяются ли индексы
+      </code></pre>
+      </ul>
+      <ul>
+
+    </ul>
+        `,level:"INTERN",category:"load",title:"Perfomance engineer"},{id:14,question:"Что такое HTTP протокол? Что такое Request? Что такое Response? Что такое Headers? Что такое Cookie? Что такое Body? Что такое Method? Коды состояния и текст статуса",answer:`
           <p><strong>HTTP (HyperText Transfer Protocol)</strong> — это протокол прикладного уровня, который используется для передачи данных в интернете. Он обеспечивает взаимодействие между клиентом (например, браузером) и сервером, работая по принципу "запрос-ответ". Этот протокол передаёт данные, такие как текст, изображения, видео и другие форматы, используя протоколы TCP/IP для доставки.</p>
           
           <h4>Как работает HTTP:</h4>
@@ -702,23 +1150,142 @@
           
           <p>Таким образом, HTTP — это основа веб-связи, которая работает на уровне запросов и ответов, а HTTPS обеспечивает безопасность передачи данных в интернете.</p>
           
-          <p>Источник: <a href="https://skillbox.ru/media/code/chto-takoe-http-i-zachem-on-nuzhen/" target="_blank">https://skillbox.ru/media/code/chto-takoe-http-i-zachem-on-nuzhen/</a></p>
-        `,level:"INTERN",category:"load"},{id:19,question:"Что такое Request?",answer:"Request (Запрос) — это сообщение от клиента к серверу для получения данных или выполнения операций.",level:"INTERN",category:"load"},{id:20,question:"Что такое Response?",answer:"Response (Ответ) — это сообщение, которое сервер отправляет в ответ на запрос клиента.",level:"INTERN",category:"load"},{id:21,question:"Что такое Headers?",answer:"Headers (Заголовки) — это метаинформация, передаваемая в запросах и ответах HTTP.",level:"INTERN",category:"load"},{id:22,question:"Что такое Cookie?",answer:"Cookie — это небольшие данные, которые сервер отправляет клиенту для хранения информации о сессиях и настройках.",level:"INTERN",category:"load"},{id:23,question:"Что такое Body?",answer:"Body (Тело) — это основное содержимое HTTP-запроса или ответа, содержащее данные.",level:"INTERN",category:"load"},{id:24,question:"Что такое Method?",answer:`
+          <h4>Что такое Request?</h4>
+    <p><strong>Request (Запрос)</strong> — это сообщение от клиента к серверу для получения данных или выполнения операций. Он включает метод (например, GET или POST), URL-адрес, заголовки и, возможно, тело (в зависимости от типа запроса).</p>
+    
+    <h4>Что такое Response?</h4>
+    <p><strong>Response (Ответ)</strong> — это сообщение, которое сервер отправляет в ответ на запрос клиента. Оно содержит статус выполнения запроса (например, 200 OK), заголовки и тело ответа, которое может содержать запрашиваемые данные.</p>
+    
+    <h4>Что такое Headers?</h4>
+    <p><strong>Headers (Заголовки)</strong> — это метаинформация, передаваемая в запросах и ответах HTTP. Они содержат информацию о типе контента, статусе запроса, разрешённых методах и другую служебную информацию. Например, заголовок Content-Type указывает тип передаваемого контента, а Accept говорит серверу, какой тип данных клиент ожидает получить.</p>
+    
+    <h4>Что такое Cookie?</h4>
+    <p><strong>Cookie</strong> — это небольшие данные, которые сервер отправляет клиенту для хранения информации о сессиях, пользовательских настройках или других параметрах. При последующих запросах браузер автоматически отправляет эти cookie обратно серверу, что позволяет, например, сохранять авторизацию или пользовательские предпочтения.</p>
+    
+    <h4>Что такое Body?</h4>
+    <p><strong>Body (Тело)</strong> — это основное содержимое HTTP-запроса или ответа, которое передаёт данные. В запросах оно используется, например, для отправки данных формы (POST-запрос), а в ответах может содержать HTML, JSON, XML или другие данные, которые сервер отправляет клиенту.</p>
+    
+    <h4>Что такое Method?</h4>
+    <p><strong>Методы HTTP</strong> указывают, какое действие нужно выполнить на сервере:</p>
+    <ul>
+      <li><strong>GET:</strong> Получить данные с сервера.</li>
+      <li><strong>POST:</strong> Отправить данные на сервер.</li>
+      <li><strong>PUT:</strong> Обновить или создать ресурс на сервере.</li>
+      <li><strong>DELETE:</strong> Удалить ресурс на сервере.</li>
+      <li><strong>PATCH:</strong> Частичное обновление ресурса.</li>
+    </ul>
+    
+    <h4>Коды состояния и текст статуса</h4>
+    <p>Коды состояния показывают результат выполнения запроса:</p>
+    <ul>
+      <li><strong>200 OK:</strong> Запрос успешно выполнен.</li>
+      <li><strong>201 Created:</strong> Запрос выполнен успешно, создан новый ресурс.</li>
+      <li><strong>404 Not Found:</strong> Ресурс не найден.</li>
+      <li><strong>500 Internal Server Error:</strong> На сервере произошла ошибка.</li>
+    </ul>
+        `,level:"INTERN",category:"load",title:"Perfomance engineer"},{id:15,question:"На примере своего проекта расскажи об архитектуре и с чем работает?",answer:`
+      <p>Архитектура моего проекта включает в себя следующие компоненты:</p>
+      <ul>
+        <li><strong>Администратор Фин Портала:</strong> Работает с админкой финансового портала.</li>
+        <li><strong>Admin Frontend (Frontend: React):</strong> Фронтенд админки для взаимодействия с системой администраторами. Взаимодействует с:</li>
+        <ul>
+          <li><strong>Admin Backend (Node.js):</strong> Обрабатывает административные задачи через API запросы (GraphQL, JSON).</li>
+          <li><strong>FP Backend (Node.js):</strong> Отвечает за создание карточек инициатив и управление финансовыми показателями, взаимодействует с:</li>
           <ul>
-            <li><strong>GET:</strong> Получить данные с сервера.</li>
-            <li><strong>POST:</strong> Отправить данные на сервер.</li>
-            <li><strong>PUT:</strong> Обновить или создать ресурс на сервере.</li>
-            <li><strong>DELETE:</strong> Удалить ресурс на сервере.</li>
-            <li><strong>PATCH:</strong> Частичное обновление ресурса.</li>
+            <li><strong>X5 Key (HTTP):</strong> Система авторизации для пользователей.</li>
+            <li><strong>File Export Service (Node.js):</strong> Сервис рендеринга шаблонов документов (например, Word). Сохраненные документы отправляются в <strong>S3</strong> для хранения.</li>
+            <li><strong>Database (PostgreSQL):</strong> Сохранение инициатив и финансовых показателей.</li>
+            <li><strong>Gantt Converter API (Node.js):</strong> Сервис для построения диаграмм Ганта и рендеринга изображений, взаимодействует с <strong>MPP Converter API (Python)</strong> для конвертации файлов Microsoft Project.</li>
+            <li><strong>Camunda API (Node.js):</strong> Управляет состоянием задач и взаимодействует с <strong>Camunda (BPM-engine: Java)</strong> для управления процессами.</li>
           </ul>
-        `,level:"INTERN",category:"load"},{id:25,question:"Коды состояния и текст статуса",answer:`
+        </ul>
+        <li><strong>Teamplanner (Application System):</strong> Система для планирования ресурсов, взаимодействует с Gravitee для создания и управления проектами.</li>
+      </ul>
+      <p>Таким образом, проект включает в себя множество сервисов, взаимодействующих через HTTP, TCP, и GraphQL запросы с использованием баз данных, файловых хранилищ и внешних API.</p>
+    `,level:"INTERN",category:"load",title:"Perfomance engineer"},{id:47,question:"Что такое Kubernetes и основные элементы?",answer:`
+        <p>Kubernetes (или K8S) — это платформа с открытым исходным кодом для автоматического развертывания, управления и масштабирования контейнеризированных приложений. Она упрощает управление микросервисами и их взаимодействие.</p>
+
+        <h3>Основные компоненты Kubernetes:</h3>
+        <ul>
+            <li><strong>Кластер:</strong> Это группа серверов (узлов), объединенных для работы приложений. Включает <em>Master Node</em> (управляющий узел) и <em>Worker Nodes</em> (рабочие узлы).</li>
+
+            <li><strong>Узлы:</strong> Узел — это сервер (физический или виртуальный), на котором запускаются контейнеры. Каждый узел содержит агент Kubernetes (Kubelet) и среду для контейнеров, например Docker.</li>
+
+            <li><strong>Плоскость управления (Control Plane):</strong> Управляет кластером и распределяет задачи:
+                <ul>
+                    <li><strong>Kubernetes API Server:</strong> Основной интерфейс для управления кластером через команды и запросы.</li>
+                    <li><strong>etcd:</strong> Хранилище данных, где Kubernetes сохраняет всю информацию о кластере.</li>
+                    <li><strong>Контроллеры:</strong> Обеспечивают нужное количество работающих контейнеров.</li>
+                    <li><strong>Планировщик (Scheduler):</strong> Назначает контейнеры на узлы, оптимально распределяя их по серверу.</li>
+                </ul>
+            </li>
+
+            <li><strong>Pod (Поды):</strong> Основная единица Kubernetes, представляющая контейнер или группу контейнеров, которые делят ресурсы (сеть, хранилище).</li>
+
+            <li><strong>ReplicaSet:</strong> Гарантирует, что заданное количество подов будет всегда работать, поддерживая масштабирование подов.</li>
+
+            <li><strong>Deployment:</strong> Управляет обновлениями и откатами подов, автоматически восстанавливает их в случае ошибок.</li>
+
+            <li><strong>Service:</strong> Определяет, как можно получить доступ к подам, обеспечивает постоянный IP для группы подов.</li>
+
+            <li><strong>Kubelet:</strong> Агент на каждом узле, который запускает и поддерживает контейнеры.</li>
+
+            <li><strong>Kube-proxy:</strong> Сетевой компонент, управляет трафиком между подами и балансирует нагрузку внутри кластера.</li>
+        </ul>
+
+      <h3>Основные функции Kubernetes:</h3>
+      <ul>
+        <li>Масштабирование приложений в зависимости от нагрузки.</li>
+        <li>Автоматическое восстановление подов в случае их падения.</li>
+        <li>Балансировка нагрузки между узлами и репликами подов.</li>
+        <li>Автоматизация развертываний и откатов обновлений.</li>
+        <li>Мониторинг состояния приложений.</li>
+        <li>Декларативное управление конфигурацией через манифесты (YAML файлы).</li>
+      </ul>
+
+      <h3>Основные команды kubectl:</h3>
+      <ul>
+        <li><strong>kubectl get pods</strong> — показывает список всех подов в кластере или в указанном namespace.</li>
+        <li><strong>kubectl apply -f [файл]</strong> — применяет манифест для развертывания ресурсов (поды, сервисы и др.).</li>
+        <li><strong>kubectl describe pod [имя]</strong> — выводит детальную информацию о поде.</li>
+        <li><strong>kubectl logs [имя-пода]</strong> — показывает логи контейнера в поде.</li>
+        <li><strong>kubectl scale --replicas=N deployment [имя]</strong> — изменяет количество реплик подов в deployment.</li>
+      </ul>
+
+      <h3>Гибкость и преимущества:</h3>
+      <ul>
+        <li>Автоматическое масштабирование приложений при увеличении нагрузки.</li>
+        <li>Управление конфигурацией с помощью YAML манифестов.</li>
+        <li>Поддержка откатов и обновлений без прерывания работы сервиса.</li>
+        <li>Миграция приложений между различными облачными провайдерами благодаря независимости от инфраструктуры.</li>
+      </ul>
+
+      <h3>Когда использовать Kubernetes:</h3>
+      <p>Kubernetes особенно полезен для компаний, использующих микросервисную архитектуру, где важно быстрое развертывание и масштабирование отдельных сервисов. Однако, для небольших монолитных приложений он может быть избыточен.</p>
+      `,level:"JUNIOR",category:"load",title:"Perfomance engineer"},{id:99,question:"Перечень основных тестов нагрузочного тестирования и их цели",answer:`
+      <p><strong>Основные тесты:</strong> </p>
           <ul>
-            <li><strong>200 OK:</strong> Запрос успешно выполнен.</li>
-            <li><strong>201 Created:</strong> Запрос выполнен успешно, создан новый ресурс.</li>
-            <li><strong>404 Not Found:</strong> Ресурс не найден.</li>
-            <li><strong>500 Internal Server Error:</strong> На сервере произошла ошибка.</li>
+            <li><strong>Тест на поиск максимальной нагрузки:</strong> Определение предела, при котором система перестает справляться с запросами. </li>
+            <li><strong>Тест стабильности:</strong> Проверка работы системы при постоянной нагрузке в течение длительного времени (например, 10 часов). Цель — выявить проблемы с утечкой памяти и нестабильностью работы.</li>
+        <p><strong>Дополнительные тесты:</strong> </p>
+            <li><strong>Стрессовое тестирование:</strong> Тестирование системы при экстремальных условиях, когда ее ресурсы могут быть исчерпаны. Основная цель — проверка устойчивости системы при экстремальных условиях.</li>
+            <li><strong>Тестирование отказоустойчивости:</strong> Оценка способности системы сохранять работоспособность в условиях неблагоприятных факторов, таких как сбои в сети и отключение серверов.</li>
           </ul>
-        `,level:"INTERN",category:"load"},{id:26,question:"Простые циклы с условиями на Python и Java",answer:`
+        `,level:"INTERN",category:"load",title:"Perfomance engineer"},{id:155,question:"Статистика базы данных",answer:`
+          <ul>
+            <li><strong>Количество запросов:</strong> Общее количество SQL-запросов, обрабатываемых базой данных.</li>
+            <li><strong>Время выполнения запросов:</strong> Показывает среднее, максимальное и минимальное время выполнения запросов.</li>
+            <li><strong>Количество соединений:</strong> Количество активных соединений к базе данных.</li>
+            <li><strong>Закэшированные данные:</strong> Статистика использования кэша для ускорения выполнения запросов.</li>
+            <li><strong>Использование индексов:</strong> Статистика использования индексов для оптимизации запросов.</li>
+            <li><strong>Количество блокировок:</strong> Блокировки строк или таблиц, замедляющие работу базы данных.</li>
+          </ul>
+        `,level:"INTERN",category:"load",title:"Perfomance engineer"},{id:177,question:"Как снять heap dump и thread dump?",answer:`
+        <p><strong>1. Heap Dump:</strong> Используйте команду <code>jmap</code> для создания heap dump:</p>
+        <pre><code>jmap -dump:live,format=b,file=heapdump.hprof &lt;pid&gt;</code></pre>
+        <p><strong>2. Thread Dump:</strong> Используйте команду <code>jstack</code> для получения состояния потоков:</p>
+        <pre><code>jstack -l &lt;pid&gt; > threaddump.txt</code></pre>
+      `,level:"MIDDLE",category:"load",title:"Perfomance engineer"},{id:26,question:"Простые циклы с условиями на Python и Java",answer:`
           <p><strong>Цикл с условием while (Python):</strong></p>
           <pre><code>i = 0
 while i < 5:
@@ -738,7 +1305,7 @@ while (i < 5) {
     }
     i++;
 }</code></pre>
-        `,level:"INTERN",category:"load"},{id:27,question:"Реализация простейших алгоритмов на Python и Java",answer:`
+        `,level:"INTERN",category:"load",title:"Perfomance engineer"},{id:27,question:"Реализация простейших алгоритмов на Python и Java",answer:`
           <p><strong>Алгоритм нахождения максимума в списке (Python):</strong></p>
           <pre><code>def find_max(arr):
     max_value = arr[0]
@@ -767,7 +1334,7 @@ print(find_max(numbers))  # Вывод: 9</code></pre>
         System.out.println(findMax(numbers));  // Вывод: 9
     }
 }</code></pre>
-        `,level:"INTERN",category:"load"},{id:28,question:"Функции работы с массивами на Python и Java",answer:`
+        `,level:"INTERN",category:"load",title:"Perfomance engineer"},{id:28,question:"Функции работы с массивами на Python и Java",answer:`
           <p><strong>Обращение массива (Python):</strong></p>
           <pre><code>arr = [1, 2, 3, 4, 5]
 reversed_arr = arr[::-1]  # Метод срезов
@@ -791,7 +1358,7 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
         }
     }
 }</code></pre>
-        `,level:"INTERN",category:"load"},{id:29,question:"Как правильно использовать функции корреляции, проверок и границ транзакций в JMeter или другом инструменте нагрузочного тестирования?",answer:`
+        `,level:"INTERN",category:"load",title:"Perfomance engineer"},{id:29,question:"Как правильно использовать функции корреляции, проверок и границ транзакций в JMeter или другом инструменте нагрузочного тестирования?",answer:`
           <p><strong>JMeter:</strong></p>
           <ul>
             <li><strong>Корреляция:</strong> Это процесс захвата динамических данных из ответов сервера и их использования в последующих запросах.</li>
@@ -848,105 +1415,7 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
             <li><strong>Проверки:</strong> Используются <code>Checks</code>, например, для проверки кода ответа.</li>
             <li><strong>Границы транзакций:</strong> Транзакции автоматически измеряются, но можно добавить тайминги с помощью <code>exec().startTimer().stopTimer()</code>.</li>
           </ul>
-        `,level:"JUNIOR",category:"load"},{id:30,question:"Что такое пейсинг?",answer:`
-          <p>Пейсинг — это интервал времени между выполнением последовательных действий одного и того же виртуального пользователя в нагрузочном тесте. Пейсинг контролирует интенсивность нагрузки.</p>
-        `,level:"JUNIOR",category:"load"},{id:31,question:"Как правильно вычислять пейсинг и количество пользователей?",answer:`
-          <p>Формула пейсинга:</p>
-          <pre><code>
-            Пейсинг = (60 / Целевая нагрузка) - Время выполнения сценария
-          </code></pre>
-          <p>Пример:</p>
-          <ul>
-            <li>Целевая нагрузка: 1000 запросов в минуту</li>
-            <li>100 пользователей</li>
-            <li>Среднее время выполнения: 5 секунд</li>
-          </ul>
-        `,level:"JUNIOR",category:"load"},{id:32,question:"Как правильно вычислить количество виртуальных пользователей и пейсинг?",answer:`
-         <p>Для правильного расчета количества виртуальных пользователей и пейсинга нужно учитывать следующие параметры:</p>
-    
-    <h4>1. Количество виртуальных пользователей (Vusers):</h4>
-    <p>- Количество виртуальных пользователей зависит от того, сколько пользователей вы хотите симулировать в реальной системе.</p>
-    <p>- Для расчета количества виртуальных пользователей можно использовать следующую формулу:</p>
-    <pre><code>Vusers = (R * T) / P</code></pre>
-    <ul>
-      <li><strong>R</strong> — это желаемое количество запросов в секунду (RPS),</li>
-      <li><strong>T</strong> — это время выполнения одного сценария (в секундах),</li>
-      <li><strong>P</strong> — это пейсинг, то есть интервал между выполнением сценариев пользователями.</li>
-    </ul>
-    
-    <h4>2. Пейсинг (Pacing):</h4>
-    <p>- Пейсинг — это интервал времени между последовательными выполнениями сценариев одним пользователем.</p>
-    <p>- Формула для расчета пейсинга:</p>
-    <pre><code>P = (T * Vusers) / R</code></pre>
-    <ul>
-      <li><strong>P</strong> — это пейсинг (время между началом одного и начала следующего сценария),</li>
-      <li><strong>T</strong> — это время выполнения одного цикла сценария (в секундах),</li>
-      <li><strong>Vusers</strong> — это количество виртуальных пользователей,</li>
-      <li><strong>R</strong> — это желаемое количество запросов в секунду.</li>
-    </ul>
-    
-    <h4>Пример расчета:</h4>
-    <p>Допустим, вам нужно симулировать 1000 запросов в минуту (R = 1000 / 60 = ~16.67 RPS).</p>
-    <p>Если сценарий одного пользователя выполняется за 5 секунд (T = 5), и вы хотите использовать 100 виртуальных пользователей (Vusers = 100),</p>
-    <p>Тогда пейсинг можно рассчитать как:</p>
-    <pre><code>P = (T * Vusers) / R = (5 * 100) / 16.67 = ~30 секунд</code></pre>
-    <p>Это значит, что каждый виртуальный пользователь должен запускать сценарий каждые 30 секунд, чтобы достичь 1000 запросов в минуту.</p>
-        `,level:"JUNIOR",category:"load"},{id:33,question:"Что такое сущность в БД?",answer:`
-           <p>Сущность в базе данных (БД) — это объект или концепция, которая представляет собой некоторую информацию, которую необходимо хранить в системе. В контексте реляционных баз данных сущность обычно отображается в виде таблицы, где каждая строка представляет собой запись (экземпляр сущности), а столбцы — атрибуты (свойства) сущности.</p>
-    
-    <h4>Основные характеристики сущности:</h4>
-    <ol>
-      <li>Сущность — это объект, который может быть идентифицирован в системе. Примеры сущностей: пользователи, заказы, товары, транзакции и т.д.</li>
-      <li>Атрибуты сущности — это характеристики, которые описывают сущность. Например, сущность "Пользователь" может иметь атрибуты, такие как имя, электронная почта, возраст и т.д.</li>
-      <li>Экземпляры сущности — это конкретные записи в таблице базы данных. Например, каждый пользователь в таблице "Пользователи" — это экземпляр сущности "Пользователь".</li>
-    </ol>
-    
-    <h4>Пример:</h4>
-    <p>Для сущности "Пользователь" может быть создана таблица в базе данных, которая содержит следующие атрибуты:</p>
-    <ul>
-      <li>id (идентификатор пользователя),</li>
-      <li>first_name (имя),</li>
-      <li>last_name (фамилия),</li>
-      <li>email (электронная почта).</li>
-    </ul>
-    
-    <h4>Пример таблицы "Пользователи":</h4>
-    <pre><code>id   first_name  last_name  email
-1    Иван        Иванов     ivan@example.com
-2    Ольга       Смирнова   olga@example.com
-    </code></pre>
-    
-    <p>В данном случае сущность — это "Пользователь", а каждая строка таблицы представляет собой конкретного пользователя, то есть экземпляр этой сущности.</p>
-    
-    <h4>Заключение:</h4>
-    <p>Сущность — это ключевая концепция в базах данных, которая отражает объекты, с которыми работает система, и хранит информацию о них в виде записей (строк) в таблицах.</p
-        `,level:"JUNIOR",category:"load"},{id:34,question:"Как снять статистику с базы данных (PostgreSQL)?",answer:`
-          <ul>
-            <li>Включите расширение <code>pg_stat_statements</code> в конфигурации PostgreSQL:</li>
-            <pre><code>shared_preload_libraries = 'pg_stat_statements'</code></pre>
-            <li>Запрос для мониторинга производительности баз данных:</li>
-            <pre><code>
-              SELECT * FROM pg_stat_statements;
-            </code></pre>
-            <li>Запрос для мониторинга текущих активных запросов:</li>
-            <pre><code>
-              SELECT * FROM pg_stat_activity;
-            </code></pre>
-          </ul>
-        `,level:"JUNIOR",category:"load"},{id:35,question:"Что такое многопоточность в приложениях?",answer:`
-          <p>Многопоточность — это способность приложения выполнять несколько задач одновременно (параллельно) с использованием нескольких потоков. Программы, которые могут одновременно выполнять несколько задач, используя для этого разные потоки. Такие приложения обычно используются для улучшения производительности и эффективности работы.</p>
-          <p>В контексте многопоточности, поток — это отдельная последовательность инструкций, которая выполняется параллельно с другими потоками в пределах одного процесса.</p>
-          <h4>Основные характеристики потока:</h4>
-          <ol>
-            <li><strong>Легковесный процесс:</strong> Поток может рассматриваться как "легковесный" процесс, который разделяет память и ресурсы с другими потоками в одном процессе.</li>
-            <li><strong>Совместное использование ресурсов:</strong> Все потоки в одном процессе используют общую память, что позволяет обмениваться данными между ними быстрее, чем между отдельными процессами.</li>
-            <li><strong>Параллелизм:</strong> В многопоточном приложении несколько потоков могут выполняться одновременно, что улучшает производительность за счёт использования нескольких процессоров или ядер.</li>
-          </ol>
-          <p><strong>В контексте определения:</strong></p>
-          <p>В многопоточном приложении потоки используются для выполнения нескольких задач параллельно. Например, один поток может обрабатывать пользовательский ввод, в то время как другой выполняет сетевые запросы или вычисления. Это помогает более эффективно использовать ресурсы системы и улучшать отзывчивость приложения.</p>
-          <h4>Пример:</h4>
-          <p>В веб-сервере каждый запрос может обрабатываться отдельным потоком, что позволяет серверу одновременно обслуживать несколько клиентов.</p>
-        `,level:"JUNIOR",category:"load"},{id:36,question:"Какой есть предел потоков у приложения?",answer:`
+        `,level:"JUNIOR",category:"load",title:"Perfomance engineer"},{id:36,question:"Какой есть предел потоков у приложения?",answer:`
           <p>Предел количества потоков у приложения зависит от нескольких факторов, включая ресурсы системы и настройки операционной системы. Хотя теоретически можно создать очень много потоков, на практике существуют ограничения, которые зависят от следующих аспектов:</p>
           <ol>
             <li><strong>Ограничения операционной системы:</strong>
@@ -977,7 +1446,7 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
             <li><strong>В 32-битных системах:</strong> Ограничение на количество потоков может быть около 1000-2000, так как 32-битная система имеет ограниченный объём памяти.</li>
             <li><strong>В 64-битных системах:</strong> Количество потоков может быть значительно больше (десятки тысяч), так как 64-битная система поддерживает больше памяти.</li>
           </ul>
-        `,level:"JUNIOR",category:"load"},{id:37,question:"Чем отличается виртуальный пользователь(Thread) от потока внутри приложения?",answer:`
+        `,level:"JUNIOR",category:"load",title:"Perfomance engineer"},{id:37,question:"Чем отличается виртуальный пользователь(Thread) от потока внутри приложения?",answer:`
           <p><strong>Виртуальный пользователь (Thread)</strong> в нагрузочном тестировании и поток внутри приложения — это два разных понятия, хотя и имеют похожие принципы работы.</p>
           <h4>1. Виртуальный пользователь (Thread) в нагрузочном тестировании:</h4>
           <ul>
@@ -1046,7 +1515,7 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
             <li><strong>Поток внутри приложения:</strong> В Java может одновременно обрабатывать запросы от нескольких пользователей, где один поток работает с базой данных, а другой отправляет данные обратно пользователю.</li>
           </ul>
           <p><strong>Заключение:</strong> Виртуальный пользователь в нагрузочном тестировании — это инструмент для имитации реальных пользователей, создающий нагрузку на систему. Поток внутри приложения — это механизм параллельного выполнения задач в одном процессе программы, который повышает производительность работы приложения.</p>
-        `,level:"JUNIOR",category:"load"},{id:38,question:"Например, у нас залогинились 1000 виртуальных пользователей одновременно, сколько будет потоков?",answer:`
+        `,level:"JUNIOR",category:"load",title:"Perfomance engineer"},{id:38,question:"Например, у нас залогинились 1000 виртуальных пользователей одновременно, сколько будет потоков?",answer:`
           <p>Если у вас 1000 виртуальных пользователей в JMeter, это создаст 1000 потоков в самом JMeter, каждый из которых будет выполнять свои действия параллельно (например, логин).</p>
           <p>Однако на сервере количество потоков будет зависеть от его настроек. Сервер может использовать пул потоков (например, 200 потоков), и обрабатывать запросы по очереди, а не все одновременно.</p>
           <p>То есть:</p>
@@ -1054,7 +1523,7 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
             <li>1000 виртуальных пользователей в JMeter = 1000 потоков в JMeter.</li>
             <li>Сервер может иметь меньше потоков, в зависимости от своей конфигурации.</li>
           </ul>
-        `,level:"JUNIOR",category:"load"},{id:39,question:"Пул коннектов это?",answer:`
+        `,level:"JUNIOR",category:"load",title:"Perfomance engineer"},{id:39,question:"Пул коннектов это?",answer:`
           <p><strong>Пул коннектов</strong> — это механизм управления соединениями с базой данных или другим ресурсом, который позволяет многократно использовать созданные соединения. Вместо того чтобы каждый раз создавать и закрывать соединение, пул коннектов сохраняет несколько активных соединений, готовых к использованию, и предоставляет их по запросу.</p>
           <h4>Основные характеристики:</h4>
           <ul>
@@ -1064,7 +1533,7 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
           </ul>
           <h4>Пример:</h4>
           <p>Приложение может создать пул из 10 коннектов. Когда пользователю нужно соединение с базой данных, оно берётся из пула. После завершения работы соединение возвращается в пул для повторного использования другими пользователями.</p>
-        `,level:"JUNIOR",category:"load"},{id:40,question:"Что такое уровни логирования?",answer:`
+        `,level:"JUNIOR",category:"load",title:"Perfomance engineer"},{id:40,question:"Что такое уровни логирования?",answer:`
           <ul>
             <li><strong>TRACE:</strong> Самый детализированный уровень.</li>
             <li><strong>DEBUG:</strong> Отладочная информация.</li>
@@ -1073,7 +1542,7 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
             <li><strong>ERROR:</strong> Ошибки, которые требуют внимания.</li>
             <li><strong>FATAL:</strong> Критические ошибки, приводящие к завершению работы приложения.</li>
           </ul>
-        `,level:"JUNIOR",category:"load"},{id:41,question:"Что такое парсинг логов?",answer:`
+        `,level:"JUNIOR",category:"load",title:"Perfomance engineer"},{id:41,question:"Что такое парсинг логов?",answer:`
          <p>
       Парсинг логов — это процесс автоматического анализа и обработки лог-файлов с целью извлечения полезной информации, такой как ошибки, предупреждения, статистика производительности, успешные или неуспешные операции. Лог-файлы обычно содержат информацию о работе системы, которая записывается в текстовые файлы. Парсинг помогает структурировать эти данные и использовать их для мониторинга, анализа и отладки.
     </p>
@@ -1084,7 +1553,7 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
       <li><strong>Фильтрация данных:</strong> Удаление ненужной информации и извлечение только тех данных, которые важны для анализа.</li>
       <li><strong>Анализ событий:</strong> Определение последовательности событий и их влияние на производительность или стабильность системы.</li>
     </ol>
-        `,level:"JUNIOR",category:"load"},{id:42,question:"Простые запросы с помощью SELECT",answer:`
+        `,level:"JUNIOR",category:"load",title:"Perfomance engineer"},{id:42,question:"Простые запросы с помощью SELECT",answer:`
           <ul>
             <li>Получение всех строк из таблицы:</li>
             <pre><code>SELECT * FROM employees;</code></pre>
@@ -1093,29 +1562,7 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
             <li>Фильтрация с использованием WHERE:</li>
             <pre><code>SELECT * FROM employees WHERE age > 30;</code></pre>
           </ul>
-        `,level:"JUNIOR",category:"load"},{id:43,question:"Использование функций JOIN, GROUP BY, HAVING",answer:`
-          <ul>
-            <li><strong>JOIN:</strong> Объединение данных из двух таблиц.</li>
-            <pre><code>
-              SELECT employees.first_name, departments.department_name
-              FROM employees
-              INNER JOIN departments ON employees.department_id = departments.id;
-            </code></pre>
-            <li><strong>GROUP BY:</strong> Группировка строк по столбцам.</li>
-            <pre><code>
-              SELECT department_id, COUNT(*)
-              FROM employees
-              GROUP BY department_id;
-            </code></pre>
-            <li><strong>HAVING:</strong> Фильтрация результатов после группировки.</li>
-            <pre><code>
-              SELECT department_id, COUNT(*)
-              FROM employees
-              GROUP BY department_id
-              HAVING COUNT(*) > 5;
-            </code></pre>
-          </ul>
-        `,level:"JUNIOR",category:"load"},{id:44,question:"Что такое агрегирование функций?",answer:`
+        `,level:"JUNIOR",category:"load",title:"Perfomance engineer"},{id:44,question:"Что такое агрегирование функций?",answer:`
         <p>Агрегатные функции — это функции, которые применяются к группе строк и возвращают одно значение для каждой группы. Часто используются вместе с <code>GROUP BY</code>.</p>
         <ul>
           <li><strong>COUNT():</strong> Возвращает количество строк.</li>
@@ -1137,7 +1584,7 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
           HAVING AVG(salary) > 50000;
         </code></pre>
         <p>Этот запрос группирует сотрудников по отделам, вычисляет среднюю, максимальную и минимальную зарплату, и выводит только те отделы, где средняя зарплата больше 50 000.</p>
-      `,level:"JUNIOR",category:"load"},{id:45,question:"Что такое Spring Boot?",answer:`
+      `,level:"JUNIOR",category:"load",title:"Perfomance engineer"},{id:45,question:"Что такое Spring Boot?",answer:`
         <p><strong>Spring Boot</strong> — это фреймворк для упрощенной разработки Java-приложений с использованием экосистемы Spring. Он предоставляет встроенные механизмы для быстрой настройки и запуска приложений, минимизируя конфигурацию.</p>
         <p>Основные особенности Spring Boot:</p>
         <ul>
@@ -1169,7 +1616,7 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
           }
         </code></pre>
         <p>Этот код является простым примером Spring Boot приложения, которое запускает встроенный веб-сервер и предоставляет REST API с единственным HTTP-методом GET по пути <code>/hello</code>.</p>
-      `,level:"JUNIOR",category:"load"},{id:46,question:"Что такое Apache Kafka и основные принципы?",answer:`
+      `,level:"JUNIOR",category:"load",title:"Perfomance engineer"},{id:46,question:"Что такое Apache Kafka и основные принципы?",answer:`
         <p><strong>Apache Kafka</strong> — это распределённая платформа потоковой передачи сообщений, используемая для создания высокопроизводительных систем реального времени.</p>
         <p>Основные принципы работы Apache Kafka:</p>
         <ul>
@@ -1179,36 +1626,7 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
           <li><strong>Разделы (Partitions):</strong> Темы разделены на несколько частей для параллельной обработки.</li>
           <li><strong>Репликация и отказоустойчивость:</strong> Kafka поддерживает репликацию данных для повышения надёжности.</li>
         </ul>
-      `,level:"JUNIOR",category:"load"},{id:47,question:"Что такое Kubernetes и основные элементы?",answer:`
-        <p><strong>Kubernetes (K8s)</strong> — это платформа для автоматизации развертывания и управления контейнеризованными приложениями.</p>
-        <p>Основные элементы Kubernetes:</p>
-        <ul>
-          <li><strong>Кластер (Cluster):</strong> Группа серверов (узлов), на которых развернуты приложения.</li>
-          <li><strong>Под (Pod):</strong> Базовая единица развертывания в Kubernetes, которая может содержать один или несколько контейнеров.</li>
-          <li><strong>Узлы (Nodes):</strong> Физические или виртуальные серверы в кластере Kubernetes.</li>
-          <li><strong>Service:</strong> Обеспечивает доступ к подам через стабильный сетевой адрес.</li>
-          <li><strong>ReplicaSet:</strong> Гарантирует, что заданное количество подов работает в кластере в любое время.</li>
-        </ul>
-      `,level:"JUNIOR",category:"load"},{id:48,question:"Что такое пулы данных в нагрузочном тестировании и как их использовать?",answer:`
-        <p>Пулы данных — это наборы данных, которые используются для параметризации запросов в тестах, чтобы симулировать различные входные данные и избежать отправки однотипных запросов.</p>
-        <p><strong>Зачем нужны пулы данных:</strong></p>
-        <ul>
-          <li>Они позволяют разнообразить запросы, обеспечивая более реалистичное тестирование.</li>
-          <li>Помогают избежать кэширования запросов.</li>
-          <li>Используются для тестирования больших объёмов данных.</li>
-        </ul>
-        <p><strong>Как использовать пулы данных в нагрузочном тестировании:</strong></p>
-        <ol>
-          <li>Подготовьте пул данных в виде файла (например, CSV).</li>
-          <li>Настройте инструменты (JMeter, Locust) для использования данных из этого файла.</li>
-        </ol>
-        <p>Пример использования пула данных в JMeter:</p>
-        <pre><code>
-          user1,password1
-          user2,password2
-          user3,password3
-        </code></pre>
-      `,level:"MIDDLE",category:"load"},{id:49,question:"Скрипт для сбора логов",answer:`
+      `,level:"JUNIOR",category:"load",title:"Perfomance engineer"},{id:49,question:"Скрипт для сбора логов",answer:`
         <p>Пример скрипта на Python для сбора логов:</p>
         <pre><code class="language-python">
           import os
@@ -1273,13 +1691,13 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
               }
           }
         </code></pre>
-      `,level:"MIDDLE",category:"load"},{id:50,question:"Как анализировать систему по количеству потоков, пулов, коннектов, времени работы GC, heap и non-heap?",answer:`
+      `,level:"MIDDLE",category:"load",title:"Perfomance engineer"},{id:50,question:"Как анализировать систему по количеству потоков, пулов, коннектов, времени работы GC, heap и non-heap?",answer:`
         <p><strong>1. Количество потоков (Threads):</strong> Используйте <code>jconsole</code> или <code>jstack</code> для мониторинга потоков в JVM.</p>
         <p><strong>2. Пулы потоков (Thread Pools):</strong> Анализируйте пулы потоков, чтобы избежать перегрузки.</p>
         <p><strong>3. Пулы соединений (Connection Pools):</strong> Контролируйте количество соединений к БД (например, с HikariCP).</p>
         <p><strong>4. Время работы GC (Garbage Collection):</strong> Используйте <code>jstat</code> или <code>VisualVM</code> для мониторинга.</p>
         <p><strong>5. Heap и Non-Heap память:</strong> Анализируйте состояние heap и non-heap памяти с помощью <code>jconsole</code> или <code>VisualVM</code>.</p>
-      `,level:"MIDDLE",category:"load"},{id:51,question:"Как выявить долгие запросы в БД?",answer:`
+      `,level:"MIDDLE",category:"load",title:"Perfomance engineer"},{id:51,question:"Как выявить долгие запросы в БД?",answer:`
         <p>Мониторинг медленных запросов можно выполнять с помощью системных таблиц или включения логов медленных запросов.</p>
         <p>Пример запроса для PostgreSQL:</p>
         <pre><code>
@@ -1288,12 +1706,7 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
           WHERE state = 'active'
           ORDER BY duration DESC;
         </code></pre>
-      `,level:"MIDDLE",category:"load"},{id:52,question:"Как снять heap dump и thread dump?",answer:`
-        <p><strong>1. Heap Dump:</strong> Используйте команду <code>jmap</code> для создания heap dump:</p>
-        <pre><code>jmap -dump:live,format=b,file=heapdump.hprof &lt;pid&gt;</code></pre>
-        <p><strong>2. Thread Dump:</strong> Используйте команду <code>jstack</code> для получения состояния потоков:</p>
-        <pre><code>jstack -l &lt;pid&gt; > threaddump.txt</code></pre>
-      `,level:"MIDDLE",category:"load"},{id:53,question:"INSERT и UPDATE в SQL",answer:`
+      `,level:"MIDDLE",category:"load",title:"Perfomance engineer"},{id:53,question:"INSERT и UPDATE в SQL",answer:`
         <p><strong>INSERT:</strong> Команда для добавления новых записей в таблицу:</p>
         <pre><code>
           INSERT INTO employees (first_name, last_name, age, department)
@@ -1305,14 +1718,14 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
           SET age = 31
           WHERE first_name = 'John' AND last_name = 'Doe';
         </code></pre>
-      `,level:"MIDDLE",category:"load"},{id:54,question:"Как массово обновить данные в БД?",answer:`
+      `,level:"MIDDLE",category:"load",title:"Perfomance engineer"},{id:54,question:"Как массово обновить данные в БД?",answer:`
         <p>Массовое обновление данных в базе данных можно выполнить с помощью <code>UPDATE</code>:</p>
         <pre><code>
           UPDATE employees
           SET department = 'Sales'
           WHERE department = 'Marketing';
         </code></pre>
-      `,level:"MIDDLE",category:"load"},{id:55,question:"Что такое индекс и как с ним работать? Как проверять индексы в БД?",answer:`
+      `,level:"MIDDLE",category:"load",title:"Perfomance engineer"},{id:55,question:"Что такое индекс и как с ним работать? Как проверять индексы в БД?",answer:`
         <p><strong>Индекс</strong> — это структура данных для ускорения поиска и сортировки данных в таблице.</p>
         <p><strong>Преимущества индексов:</strong></p>
         <ul>
@@ -1322,14 +1735,14 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
         <pre><code>
           CREATE INDEX idx_employee_name ON employees (first_name, last_name);
         </code></pre>
-      `,level:"MIDDLE",category:"load"},{id:56,question:"Что такое системные таблицы в БД?",answer:`
+      `,level:"MIDDLE",category:"load",title:"Perfomance engineer"},{id:56,question:"Что такое системные таблицы в БД?",answer:`
         <p>Системные таблицы — это таблицы, которые хранят метаинформацию о структуре базы данных и активных сессиях.</p>
         <p>Пример для PostgreSQL:</p>
         <pre><code>
           SELECT pid, usename, state, query
           FROM pg_stat_activity;
         </code></pre>
-      `,level:"MIDDLE",category:"load"}],fi=[{id:1,question:"",answer:`
+      `,level:"MIDDLE",category:"load",title:"Perfomance engineer"},{id:57,question:"Балансировщики это?",answer:"Балансировщики нагрузки — это системы, распределяющие входящий трафик между несколькими серверами для обеспечения высокой доступности, повышения производительности и предотвращения перегрузки отдельных серверов.",level:"INTERN",category:"load",title:"Perfomance engineer"},{id:58,question:"Распределенные кэши это?",answer:"Распределенные кэши — это системы, хранящие данные в нескольких узлах или серверах, что позволяет приложениям быстрее обращаться к данным и снижает нагрузку на базу данных.",level:"INTERN",category:"load",title:"Perfomance engineer"},{id:59,question:"Чем контейнеры отличаются от виртуальных машин?",answer:"Контейнеры используют одно ядро операционной системы и изолируют приложения на уровне процессов, в то время как виртуальные машины (ВМ) имеют собственные операционные системы, что делает ВМ более тяжелыми и медленными. Контейнеры легче и быстрее развертываются.",level:"INTERN",category:"load",title:"Perfomance engineer"},{id:60,question:"Как работают контейнеры в Docker и Kubernetes?",answer:"Docker — это платформа для создания, развертывания и управления контейнерами. Kubernetes управляет контейнерами Docker на кластере серверов, автоматизируя их развертывание, масштабирование и управление, поддерживая высокую доступность и распределение нагрузки.",level:"INTERN",category:"load",title:"Perfomance engineer"},{id:61,question:"Чем характеризуется поиск максимума?",answer:"Поиск максимума характеризуется постепенным увеличением нагрузки на систему до достижения предельной производительности, после чего регистрируются сбои или падение производительности системы.",level:"INTERN",category:"load",title:"Perfomance engineer"},{id:62,question:"От чего зависит длина ступени в тесте поиска максимума?",answer:"Длина ступени в тесте поиска максимума зависит от времени, необходимого для стабилизации системы после увеличения нагрузки, чтобы можно было точно зафиксировать реакцию системы на изменение нагрузки.",level:"INTERN",category:"load",title:"Perfomance engineer"},{id:63,question:"От чего зависит длина теста надежности?",answer:"Длина теста надежности зависит от времени, необходимого для подтверждения того, что система стабильно работает при постоянной нагрузке. Это время определяется требованиями проекта и сценариями использования системы.",level:"INTERN",category:"load",title:"Perfomance engineer"},{id:64,question:"Объемное тестирование это?",answer:"Объемное тестирование — это тип тестирования, при котором система проверяется на способность обрабатывать большие объемы данных или трафика, чтобы выявить пределы производительности при максимальной нагрузке.",level:"INTERN",category:"load",title:"Perfomance engineer"}],fs=[{id:1,question:"",answer:`
  
         `,level:"JUNIOR"},{id:2,question:"",answer:`
 >
@@ -1363,7 +1776,7 @@ print(reversed_arr)  # Вывод: [5, 4, 3, 2, 1]</code></pre>
 
         `,level:"JUNIOR"},{id:20,question:"",answer:`
        
-        `,level:"JUNIOR"}],mi=[{id:1,question:"Что такое JMeter и для чего он используется?",answer:`
+        `,level:"JUNIOR"}],ms=[{id:1,question:"Что такое JMeter и для чего он используется?",answer:`
         <p>Приложение Apache JMeter ™ представляет собой программное обеспечение с открытым исходным кодом, на 100% чистое Java-приложение, предназначенное для нагрузочного тестирования функционального поведения и измерения производительности</p>
         <p>Apache JMeter может использоваться для тестирования производительности как статических, так и динамических ресурсов, веб-динамических приложений. Его можно использовать для моделирования высокой нагрузки на сервер, группу серверов, сеть или объект, чтобы проверить их прочность или проанализировать общую производительность при различных типах нагрузки.и</p>
         `,category:"tools",tool:"jmeter",title:"Jmeter"},{id:2,question:"Какие типы тестов поддерживает JMeter (нагрузочные, функциональные и т.д.)?",answer:`
@@ -2783,7 +3196,7 @@ vars.put("randomNumber", Integer.toString(randomNumber));</code></pre>
         <ul>
             <li><strong>Ступенчатое увеличение нагрузки</strong>: планируйте тесты с постепенным увеличением нагрузки, чтобы система могла адаптироваться к возрастанию запросов. Это также поможет избежать мгновенных перегрузок системы и даст возможность выявить критические пороги производительности.</li>
         </ul>
-    `,category:"tools",tool:"jmeter",title:"Jmeter"}],yi=[{id:1,question:"Что такое Chrome Dev Tools и для чего они используются?",level:"MID"},{id:2,question:"Как открыть и начать использовать Chrome Dev Tools в браузере?",level:"MID"},{id:3,question:"Как использовать вкладку Network для анализа сетевого трафика?",level:"MID"},{id:4,question:"Какие данные можно собирать на вкладке Network (время загрузки, статус код, размер и т.д.)?",level:"MID"},{id:5,question:"Как фильтровать запросы в Chrome Dev Tools по типу (XHR, JS, CSS и т.д.)?",level:"MID"},{id:6,question:"Как отслеживать время загрузки веб-страницы с помощью вкладки Network?",level:"MID"},{id:7,question:"Как работать с запросами и ответами HTTP на вкладке Network (просмотр, копирование и повторное выполнение запросов)?",level:"MID"},{id:8,question:"Как анализировать и устранять ошибки CORS с использованием Chrome Dev Tools?",level:"MID"},{id:9,question:"Что такое waterfall диаграмма и как ее интерпретировать для анализа производительности сайта?",level:"MID"},{id:10,question:"Как измерять и анализировать время ответа сервера с помощью Chrome Dev Tools?",level:"MID"},{id:11,question:"Как использовать вкладку Performance для анализа производительности рендеринга и JavaScript?",level:"MID"},{id:12,question:"Как отслеживать загрузку ресурсов (картинки, стили, скрипты) и их влияние на производительность?",level:"MID"},{id:13,question:"Как просматривать заголовки запросов и ответов HTTP с помощью Chrome Dev Tools?",level:"MID"},{id:14,question:"Как использовать вкладку Timeline для анализа активности на странице?",level:"MID"},{id:15,question:"Как анализировать и оптимизировать использование JavaScript с помощью вкладки Sources?",level:"MID"},{id:16,question:"Как отлаживать JavaScript-код с использованием Chrome Dev Tools (точки останова, пошаговое выполнение)?",level:"MID"},{id:17,question:"Как анализировать WebSocket соединения с помощью Chrome Dev Tools?",level:"MID"},{id:18,question:"Как просматривать и анализировать состояние кэша для оптимизации загрузки страниц?",level:"MID"},{id:19,question:"Как использовать вкладку Security для анализа сертификатов SSL и шифрования соединений?",level:"MID"},{id:20,question:"Как записывать и воспроизводить сетевые запросы с использованием инструмента HAR в Chrome Dev Tools?",level:"MID"},{id:21,question:"Как анализировать производительность сайта при медленных сетевых соединениях (использование профилирования сети)?",level:"MID"},{id:22,question:"Как использовать симуляцию медленных сетей и устройств с низкой производительностью для тестирования?",level:"MID"},{id:23,question:"Как работать с панелью Application для управления локальным хранилищем, куками и другими веб-данными?",level:"MID"},{id:24,question:"Как анализировать поток данных на уровне HTTP/2 с помощью Chrome Dev Tools?",level:"MID"},{id:25,question:"Какие инструменты Chrome Dev Tools можно использовать для профилирования производительности на мобильных устройствах?",level:"MID"},{id:26,question:"Как использовать панель Lighthouse для аудита производительности и SEO-оптимизации сайта?",level:"MID"},{id:27,question:"Как сохранить и экспортировать логи сети и производительности для дальнейшего анализа?",level:"MID"},{id:28,question:"Как отслеживать выполнение синхронных и асинхронных операций в JavaScript с помощью вкладки Sources?",level:"MID"},{id:29,question:"Как снимать и анализировать снимки стека вызовов (stack traces) в процессе выполнения JavaScript?",level:"MID"},{id:30,question:"Как использовать панель Memory для анализа утечек памяти и оптимизации использования памяти на веб-странице?",level:"MID"}],bi=[{id:1,question:"Что такое Git и для чего он используется?",level:"MID"},{id:2,question:"Как инициализировать новый репозиторий Git?",level:"MID"},{id:3,question:"Как добавить файлы в индекс (staging area) с помощью команды `git add`?",level:"MID"},{id:4,question:"Как выполнить коммит изменений с помощью команды `git commit`?",level:"MID"},{id:5,question:"Как просмотреть историю коммитов в Git с помощью команды `git log`?",level:"MID"},{id:6,question:"Что такое ветки (branches) в Git и как их создавать?",level:"MID"},{id:7,question:"Как переключаться между ветками в Git с помощью команды `git checkout`?",level:"MID"},{id:8,question:"Чем отличается команда `git merge` от команды `git rebase`?",level:"MID"},{id:9,question:"Как разрешить конфликты при слиянии веток в Git?",level:"MID"},{id:10,question:"Что такое `git pull` и как он отличается от `git fetch`?",level:"MID"},{id:11,question:"Как отменить последний коммит с помощью команды `git reset`?",level:"MID"},{id:12,question:"Как создать тег (tag) в Git для релиза?",level:"MID"},{id:13,question:"Как удалить файл из репозитория с помощью команды `git rm`?",level:"MID"},{id:14,question:"Как работать с удаленными репозиториями (remote repositories) в Git?",level:"MID"},{id:15,question:"Как просматривать и изменять историю коммитов с помощью команды `git reflog`?",level:"MID"},{id:16,question:"Что такое `git stash` и как его использовать для временного сохранения изменений?",level:"MID"},{id:17,question:"Как использовать команды `git cherry-pick` для выборочного переноса коммитов?",level:"MID"},{id:18,question:"Что такое submodules в Git и как их использовать?",level:"MID"},{id:19,question:"Как восстановить удаленные файлы или ветки с помощью команды `git reflog`?",level:"MID"},{id:20,question:"Как настроить глобальные и локальные конфигурации Git (например, имя пользователя, email)?",level:"MID"},{id:21,question:"Как создать alias для команд Git для упрощения работы?",level:"MID"},{id:22,question:"Что такое fast-forward merge и как он отличается от обычного merge?",level:"MID"},{id:23,question:"Как отложить коммит (amend) для внесения изменений в уже совершенный коммит?",level:"MID"},{id:24,question:"Как настроить hooks (хуки) в Git для выполнения автоматических действий перед или после коммита?",level:"MID"},{id:25,question:"Как работать с .gitignore и для чего он используется?",level:"MID"},{id:26,question:"Как работать с большими файлами и данными в Git с помощью Git LFS (Large File Storage)?",level:"MID"},{id:27,question:"Как настроить SSH-ключи для безопасной работы с удаленными репозиториями?",level:"MID"},{id:28,question:"Как клонировать удаленный репозиторий с помощью команды `git clone`?",level:"MID"},{id:29,question:"Как настроить двухфакторную аутентификацию для доступа к репозиторию?",level:"MID"},{id:30,question:"Как работать с ветками для параллельной разработки в Git Flow?",level:"MID"}],vi=[{id:1,question:"Что такое Java и для чего она используется?",answer:`
+    `,category:"tools",tool:"jmeter",title:"Jmeter"}],bs=[{id:1,question:"Что такое Chrome Dev Tools и для чего они используются?",level:"MID"},{id:2,question:"Как открыть и начать использовать Chrome Dev Tools в браузере?",level:"MID"},{id:3,question:"Как использовать вкладку Network для анализа сетевого трафика?",level:"MID"},{id:4,question:"Какие данные можно собирать на вкладке Network (время загрузки, статус код, размер и т.д.)?",level:"MID"},{id:5,question:"Как фильтровать запросы в Chrome Dev Tools по типу (XHR, JS, CSS и т.д.)?",level:"MID"},{id:6,question:"Как отслеживать время загрузки веб-страницы с помощью вкладки Network?",level:"MID"},{id:7,question:"Как работать с запросами и ответами HTTP на вкладке Network (просмотр, копирование и повторное выполнение запросов)?",level:"MID"},{id:8,question:"Как анализировать и устранять ошибки CORS с использованием Chrome Dev Tools?",level:"MID"},{id:9,question:"Что такое waterfall диаграмма и как ее интерпретировать для анализа производительности сайта?",level:"MID"},{id:10,question:"Как измерять и анализировать время ответа сервера с помощью Chrome Dev Tools?",level:"MID"},{id:11,question:"Как использовать вкладку Performance для анализа производительности рендеринга и JavaScript?",level:"MID"},{id:12,question:"Как отслеживать загрузку ресурсов (картинки, стили, скрипты) и их влияние на производительность?",level:"MID"},{id:13,question:"Как просматривать заголовки запросов и ответов HTTP с помощью Chrome Dev Tools?",level:"MID"},{id:14,question:"Как использовать вкладку Timeline для анализа активности на странице?",level:"MID"},{id:15,question:"Как анализировать и оптимизировать использование JavaScript с помощью вкладки Sources?",level:"MID"},{id:16,question:"Как отлаживать JavaScript-код с использованием Chrome Dev Tools (точки останова, пошаговое выполнение)?",level:"MID"},{id:17,question:"Как анализировать WebSocket соединения с помощью Chrome Dev Tools?",level:"MID"},{id:18,question:"Как просматривать и анализировать состояние кэша для оптимизации загрузки страниц?",level:"MID"},{id:19,question:"Как использовать вкладку Security для анализа сертификатов SSL и шифрования соединений?",level:"MID"},{id:20,question:"Как записывать и воспроизводить сетевые запросы с использованием инструмента HAR в Chrome Dev Tools?",level:"MID"},{id:21,question:"Как анализировать производительность сайта при медленных сетевых соединениях (использование профилирования сети)?",level:"MID"},{id:22,question:"Как использовать симуляцию медленных сетей и устройств с низкой производительностью для тестирования?",level:"MID"},{id:23,question:"Как работать с панелью Application для управления локальным хранилищем, куками и другими веб-данными?",level:"MID"},{id:24,question:"Как анализировать поток данных на уровне HTTP/2 с помощью Chrome Dev Tools?",level:"MID"},{id:25,question:"Какие инструменты Chrome Dev Tools можно использовать для профилирования производительности на мобильных устройствах?",level:"MID"},{id:26,question:"Как использовать панель Lighthouse для аудита производительности и SEO-оптимизации сайта?",level:"MID"},{id:27,question:"Как сохранить и экспортировать логи сети и производительности для дальнейшего анализа?",level:"MID"},{id:28,question:"Как отслеживать выполнение синхронных и асинхронных операций в JavaScript с помощью вкладки Sources?",level:"MID"},{id:29,question:"Как снимать и анализировать снимки стека вызовов (stack traces) в процессе выполнения JavaScript?",level:"MID"},{id:30,question:"Как использовать панель Memory для анализа утечек памяти и оптимизации использования памяти на веб-странице?",level:"MID"}],ys=[{id:1,question:"Что такое Git и для чего он используется?",level:"MID"},{id:2,question:"Как инициализировать новый репозиторий Git?",level:"MID"},{id:3,question:"Как добавить файлы в индекс (staging area) с помощью команды `git add`?",level:"MID"},{id:4,question:"Как выполнить коммит изменений с помощью команды `git commit`?",level:"MID"},{id:5,question:"Как просмотреть историю коммитов в Git с помощью команды `git log`?",level:"MID"},{id:6,question:"Что такое ветки (branches) в Git и как их создавать?",level:"MID"},{id:7,question:"Как переключаться между ветками в Git с помощью команды `git checkout`?",level:"MID"},{id:8,question:"Чем отличается команда `git merge` от команды `git rebase`?",level:"MID"},{id:9,question:"Как разрешить конфликты при слиянии веток в Git?",level:"MID"},{id:10,question:"Что такое `git pull` и как он отличается от `git fetch`?",level:"MID"},{id:11,question:"Как отменить последний коммит с помощью команды `git reset`?",level:"MID"},{id:12,question:"Как создать тег (tag) в Git для релиза?",level:"MID"},{id:13,question:"Как удалить файл из репозитория с помощью команды `git rm`?",level:"MID"},{id:14,question:"Как работать с удаленными репозиториями (remote repositories) в Git?",level:"MID"},{id:15,question:"Как просматривать и изменять историю коммитов с помощью команды `git reflog`?",level:"MID"},{id:16,question:"Что такое `git stash` и как его использовать для временного сохранения изменений?",level:"MID"},{id:17,question:"Как использовать команды `git cherry-pick` для выборочного переноса коммитов?",level:"MID"},{id:18,question:"Что такое submodules в Git и как их использовать?",level:"MID"},{id:19,question:"Как восстановить удаленные файлы или ветки с помощью команды `git reflog`?",level:"MID"},{id:20,question:"Как настроить глобальные и локальные конфигурации Git (например, имя пользователя, email)?",level:"MID"},{id:21,question:"Как создать alias для команд Git для упрощения работы?",level:"MID"},{id:22,question:"Что такое fast-forward merge и как он отличается от обычного merge?",level:"MID"},{id:23,question:"Как отложить коммит (amend) для внесения изменений в уже совершенный коммит?",level:"MID"},{id:24,question:"Как настроить hooks (хуки) в Git для выполнения автоматических действий перед или после коммита?",level:"MID"},{id:25,question:"Как работать с .gitignore и для чего он используется?",level:"MID"},{id:26,question:"Как работать с большими файлами и данными в Git с помощью Git LFS (Large File Storage)?",level:"MID"},{id:27,question:"Как настроить SSH-ключи для безопасной работы с удаленными репозиториями?",level:"MID"},{id:28,question:"Как клонировать удаленный репозиторий с помощью команды `git clone`?",level:"MID"},{id:29,question:"Как настроить двухфакторную аутентификацию для доступа к репозиторию?",level:"MID"},{id:30,question:"Как работать с ветками для параллельной разработки в Git Flow?",level:"MID"}],vs=[{id:1,question:"Что такое Java и для чего она используется?",answer:`
         <p><strong>Java</strong> — это объектно-ориентированный, высокоуровневый язык программирования, разработанный компанией Sun Microsystems (ныне принадлежащей Oracle) в 1995 году. Он используется для создания широкого спектра приложений, от настольных и веб-приложений до мобильных, серверных и встроенных систем. Java известна своей кроссплатформенностью, так как программы, написанные на Java, могут выполняться на любой системе с установленной виртуальной машиной Java (JVM).</p>
 
 <h4>Основные сферы применения Java:</h4>
@@ -5728,7 +6141,7 @@ ENTRYPOINT ["java", "-jar", "myapp.jar"]
             }
             </code></pre>
         </ul>
-        `,category:"tools",tool:"java",title:"Java"}],Si=[{id:1,question:"Что такое архитектура системы и зачем она нужна?",answer:`
+        `,category:"tools",tool:"java",title:"Java"}],Ss=[{id:1,question:"Что такое архитектура системы и зачем она нужна?",answer:`
         <p><strong>Архитектура системы</strong> — это структурированное описание того, как компоненты системы взаимодействуют друг с другом и с внешней средой. Она определяет основные элементы системы, их функции, взаимодействие между ними, а также принципы, которые обеспечивают выполнение требований к системе, таких как производительность, масштабируемость, безопасность и отказоустойчивость.</p>
 
         <h3>Зачем нужна архитектура системы:</h3>
@@ -6585,7 +6998,7 @@ ENTRYPOINT ["java", "-jar", "myapp.jar"]
     </ul>
 
     <p>При проектировании IoT-систем важно учитывать требования к масштабируемости, безопасности, энергопотреблению и совместимости, чтобы обеспечить надежную и гибкую архитектуру, способную поддерживать большое количество подключенных устройств и эффективную обработку данных в реальном времени.</p>
-    `,category:"tools",tool:"architecture"}],Ti=[{id:1,question:"Что такое Apache Kafka и для чего она используется?",answer:`
+    `,category:"tools",tool:"architecture"}],Ts=[{id:1,question:"Что такое Apache Kafka и для чего она используется?",answer:`
         <p><strong>Apache Kafka</strong> – это распределенное хранилище данных, оптимизированное для приема и обработки потоковых данных в режиме реального времени. Потоковые данные – это данные, непрерывно генерируемые тысячами источников данных, которые, как правило, передают записи данных одновременно. Потоковая платформа должна справляться с таким постоянным притоком данных и обрабатывать их последовательно и поэтапно.</p>
 
       <p>Kafka выполняет три основные функции:</p>
@@ -7013,7 +7426,7 @@ while (true) {
 
       <h4>Когда использовать log retention:</h4>
       <p>Настройка log retention полезна в случаях, когда необходимо контролировать объем хранимых данных в кластере Kafka, особенно если кластер используется для передачи данных в реальном времени, и старые данные не имеют значения после определенного периода времени или достижения определенного объема.</p>
-    `,category:"tools",category:"tools",tool:"kafka",title:"Apache Kafka"},{id:21,question:"Как удаляются старые сообщения из топиков в Kafka?",answer:`
+    `,category:"tools",tool:"kafka",title:"Apache Kafka"},{id:21,question:"Как удаляются старые сообщения из топиков в Kafka?",answer:`
         <p>В отличие от традиционных брокеров сообщений, которые удаляют данные сразу после их доставки, Apache Kafka сохраняет сообщения в топиках до тех пор, пока не сработает <strong>политика очистки</strong>. Однако в процессе разработки и отладки потоковых конвейеров могут возникнуть ситуации, когда нужно удалить все сообщения из топика. Это можно сделать двумя способами:</p>
       
       <ul>
@@ -7641,44 +8054,44 @@ while (true) {
     
           <h4>6. <strong>Мониторинг и алертинг:</strong></h4>
           <p>Настройка систем мониторинга и оповещений (например, с помощью Prometheus и Grafana) позволяет быстро реагировать на потенциальные сбои и проблемы производительности, предотвращая длительные простои.</p>
-        `,category:"tools",tool:"kafka",title:"Apache Kafka"}],ki=[{id:1,question:"Что такое Kubernetes и для чего он используется?",answer:`
-        <p><strong>Kubernetes</strong> — это портативная расширяемая платформа с открытым исходным кодом для управления контейнеризованными рабочими нагрузками и сервисами. Она облегчает как декларативную настройку, так и автоматизацию. Kubernetes обладает широкой и быстро развивающейся экосистемой, и поддержка для него доступна через множество сервисов и инструментов.</p>
+        `,category:"tools",tool:"kafka",title:"Apache Kafka"}],Ps=[{id:1,question:"Что такое Kubernetes и для чего он используется?",answer:`
+        <p><strong>Kubernetes</strong> — это платформа для автоматического управления контейнерами и их инфраструктурой. Она помогает поддерживать стабильную работу приложений и автоматизирует запуск, остановку и восстановление контейнеров при сбоях.</p>
 
-      <h4>Зачем вам Kubernetes и что он может сделать?</h4>
-      <p>Контейнеры являются отличным способом запуска приложений, но в производственной среде важно управлять контейнерами и предотвращать простои. Например, если контейнер выходит из строя, нужно запустить его снова. Kubernetes автоматизирует эти задачи, предоставляя вам фреймворк для управления распределенными системами.</p>
+        <h4>Зачем нужен Kubernetes?</h4>
+        <p>Kubernetes делает работу с контейнерами проще, особенно в производственной среде, где важна стабильность. Он сам управляет контейнерами: перезапускает их при сбоях, распределяет нагрузку и поддерживает нужное количество запущенных контейнеров.</p>
 
-      <p>Основные возможности Kubernetes:</p>
-      <ul>
-        <li><strong>Мониторинг сервисов и распределение нагрузки:</strong> Kubernetes может автоматически обнаруживать контейнеры и распределять нагрузку между ними, используя DNS или IP-адреса. Это обеспечивает стабильность развертывания и оптимальную работу приложения.</li>
-        <li><strong>Оркестрация хранилища:</strong> Kubernetes поддерживает автоматическое подключение систем хранения данных — локальных, облачных или других.</li>
-        <li><strong>Автоматическое развертывание и откаты:</strong> Вы можете описать желаемое состояние контейнеров, и Kubernetes автоматически приведет фактическое состояние к желаемому. Это включает создание и удаление контейнеров, перераспределение ресурсов и откаты в случае сбоев.</li>
-        <li><strong>Автоматическое распределение нагрузки:</strong> Kubernetes может эффективно управлять ресурсами (CPU и память) на узлах кластера, оптимально размещая контейнеры для достижения максимальной производительности.</li>
-        <li><strong>Самоконтроль:</strong> Kubernetes перезапускает контейнеры, которые вышли из строя, заменяет проблемные контейнеры и контролирует их готовность к обслуживанию.</li>
-        <li><strong>Управление конфиденциальной информацией и конфигурацией:</strong> Kubernetes может безопасно хранить и управлять конфиденциальной информацией (пароли, токены, ключи SSH) и конфигурациями приложений, не изменяя контейнеры и не раскрывая эти данные в коде.</li>
-      </ul>
+        <p>Ключевые возможности Kubernetes:</p>
+        <ul>
+            <li><strong>Распределение нагрузки:</strong> Автоматически распределяет нагрузку между контейнерами, чтобы приложение работало стабильно.</li>
+            <li><strong>Управление хранилищем:</strong> Подключает разные системы хранения данных (локальные и облачные) к контейнерам.</li>
+            <li><strong>Автоматическое развертывание и откаты:</strong> Поддерживает заданное количество контейнеров и откатывается к рабочей версии в случае сбоев.</li>
+            <li><strong>Оптимизация ресурсов:</strong> Эффективно распределяет доступные CPU и память для работы контейнеров.</li>
+            <li><strong>Самовосстановление:</strong> Перезапускает и заменяет контейнеры, которые перестали работать.</li>
+            <li><strong>Управление секретами и настройками:</strong> Безопасно хранит конфиденциальную информацию (пароли, ключи) и настройки приложений.</li>
+        </ul>
         `,category:"tools",tool:"kubernetes",title:"Kubernetes"},{id:2,question:"Какова архитектура Kubernetes и какие компоненты она включает?",answer:`
-        <p>Архитектура Kubernetes включает несколько ключевых компонентов, которые обеспечивают управление контейнеризованными приложениями и ресурсами. Основные компоненты архитектуры Kubernetes:</p>
+      <p>Архитектура Kubernetes состоит из нескольких компонентов, которые работают вместе для управления контейнерами и распределения ресурсов. Вот основные части:</p>
 
-      <ul>
-        <li><strong>Кластер:</strong> Совокупность физических или виртуальных машин (узлов), на которых выполняются контейнерные приложения. Узлы управляются плоскостью управления Kubernetes для распределения нагрузки и поддержания работоспособности приложений.</li>
+        <ul>
+            <li><strong>Кластер:</strong> Это группа серверов (узлов), где запускаются контейнеры. Кластер управляется центральной частью Kubernetes для распределения нагрузки и стабильной работы приложений.</li>
 
-        <li><strong>Узлы:</strong> Узел — это физический или виртуальный сервер в кластере, на котором размещаются подсистемы (Pods). Подсистема содержит один или несколько контейнеров, и узлы обеспечивают выполнение этих контейнеров. Каждый узел включает контейнерную среду выполнения (например, Docker) и агент Kubernetes (Kubelet).</li>
+            <li><strong>Узлы:</strong> Узел — это отдельный сервер (физический или виртуальный), на котором запускаются контейнеры. Каждый узел содержит агент Kubernetes (Kubelet) и программное обеспечение для работы с контейнерами, например Docker.</li>
 
-        <li><strong>Плоскость управления (Control Plane):</strong> Этот компонент отвечает за управление состоянием кластера и координацию выполнения контейнеров. Включает несколько подкомпонентов:
-          <ul>
-            <li><strong>Kubernetes API Server:</strong> Основной интерфейс для управления кластером через API-запросы.</li>
-            <li><strong>etcd:</strong> Распределенное хранилище ключ-значение, где хранится вся конфигурация и состояние кластера.</li>
-            <li><strong>Контроллеры:</strong> Компоненты, которые обеспечивают поддержание желаемого состояния кластера (например, контроллеры репликации).</li>
-            <li><strong>Планировщик (Scheduler):</strong> Компонент, который распределяет контейнеры (Pods) между узлами, исходя из доступных ресурсов и требований приложения.</li>
-          </ul>
-        </li>
+            <li><strong>Плоскость управления (Control Plane):</strong> Управляет кластером и координирует работу контейнеров. Включает:
+                <ul>
+                    <li><strong>Kubernetes API Server:</strong> Основной компонент для управления кластером. Все команды и запросы к Kubernetes проходят через него.</li>
+                    <li><strong>etcd:</strong> Хранилище данных, где Kubernetes сохраняет всю информацию о кластере.</li>
+                    <li><strong>Контроллеры:</strong> Следят за состоянием кластера, проверяя, чтобы нужное количество контейнеров было запущено.</li>
+                    <li><strong>Планировщик (Scheduler):</strong> Распределяет контейнеры между узлами, выбирая оптимальные серверы для их запуска.</li>
+                </ul>
+            </li>
 
-        <li><strong>Kubelet:</strong> Это агент, который запускается на каждом узле и отвечает за взаимодействие узла с плоскостью управления. Kubelet обеспечивает выполнение контейнеров, поддерживает их в рабочем состоянии и контролирует их работоспособность.</li>
+            <li><strong>Kubelet:</strong> Агент, который работает на каждом узле. Он отвечает за запуск и работу контейнеров, поддерживая их работоспособность.</li>
 
-        <li><strong>Kube-proxy:</strong> Сетевой прокси, работающий на каждом узле кластера, который управляет сетевыми запросами между различными подсистемами (Pods) и сервисами. Он обеспечивает балансировку нагрузки и маршрутизацию сетевого трафика внутри кластера.</li>
+            <li><strong>Kube-proxy:</strong> Сетевой компонент на каждом узле. Он управляет трафиком между контейнерами и следит за балансировкой нагрузки.</li>
 
-        <li><strong>etcd:</strong> Это распределенное хранилище данных, которое используется для хранения всей конфигурации кластера Kubernetes, включая информацию о сервисах и состоянии развертываний. Оно обеспечивает согласованность данных и высокую доступность в распределенной системе.</li>
-      </ul>
+            <li><strong>etcd:</strong> Это хранилище всех данных о кластере — от настроек до информации о контейнерах и узлах. Это распределенное хранилище, обеспечивающее доступность и надежность данных.</li>
+        </ul>
         `,category:"tools",tool:"kubernetes",title:"Kubernetes"},{id:3,question:"Что такое кластер Kubernetes и как он строится?",answer:`
         <p><strong>Кластер Kubernetes</strong> — это набор физических или виртуальных машин (узлов), которые работают вместе для запуска контейнеризованных приложений. Эти узлы связаны между собой и управляются плоскостью управления Kubernetes, что позволяет эффективно распределять рабочие нагрузки между ними и обеспечивать надежную работу приложений.</p>
 
@@ -7696,7 +8109,7 @@ while (true) {
       </ul>
 
       <p>Кластер Kubernetes можно масштабировать горизонтально, добавляя новые узлы для обработки большего объема нагрузки, и он автоматически распределяет контейнеры между доступными узлами для оптимальной работы приложений.</p>
-    `,category:"tools",category:"tools",tool:"kubernetes",title:"Kubernetes"},{id:4,question:"Что такое узлы (nodes) в Kubernetes и какие типы узлов существуют?",answer:`
+    `,category:"tools",tool:"kubernetes",title:"Kubernetes"},{id:4,question:"Что такое узлы (nodes) в Kubernetes и какие типы узлов существуют?",answer:`
         <p><strong>Узлы (Nodes)</strong> — это физические или виртуальные машины, на которых развертываются и запускаются контейнеры с приложениями в кластере Kubernetes. Каждый узел содержит все необходимые сервисы для управления и запуска подов, такие как Kubelet (агент, взаимодействующий с плоскостью управления) и Kube-proxy (сетевой прокси для управления трафиком).</p>
 
       <p><strong>Типы узлов:</strong></p>
@@ -8449,4 +8862,268 @@ while (true) {
             <li><strong>Helm и Argo CD:</strong> Также можно использовать Helm для управления конфигурациями развертываний и Argo CD для автоматического контроля версий и развертывания в Kubernetes, улучшая управление CD.</li>
           </ul>
           <p>Эти инструменты обеспечивают полную автоматизацию CI/CD, позволяя быстро и надежно развертывать приложения в Kubernetes.</p>
-        `,category:"tools",tool:"kubernetes",title:"Kubernetes"}],cu={data(){return{question:null,likes:0,liked:!1,comments:[],username:"",newComment:"",commentAdded:!1}},methods:{likeQuestion(){this.liked=!0,this.likes++,this.saveToLocalStorage()},addComment(){this.username.trim()&&this.newComment.trim()?(this.comments.push({name:this.username.trim(),text:this.newComment.trim()}),this.commentAdded=!0,this.username="",this.newComment="",this.saveToLocalStorage()):alert("Пожалуйста, заполните все поля.")},saveToLocalStorage(){const e={likes:this.likes,liked:this.liked,comments:this.comments,commentAdded:this.commentAdded};localStorage.setItem(`question_${this.question.id}_data`,JSON.stringify(e))},loadFromLocalStorage(){const e=localStorage.getItem(`question_${this.question.id}_data`);if(e){const t=JSON.parse(e);this.likes=t.likes,this.liked=t.liked,this.comments=t.comments,this.commentAdded=t.commentAdded}}},created(){const e=parseInt(this.$route.params.id),t=this.$route.query.category||"unknown",o=this.$route.query.tool||null;let r=[];t==="frontend"?r=di:t==="load"?r=hi:t==="backend"?r=fi:t==="tools"&&o&&(r={kubernetes:ki,kafka:Ti,architecture:Si,jmeter:mi,chrome:yi,git:bi,java:vi}[o]||[]),this.question=r.find(n=>n.id===e),console.log("Loaded question:",this.question)}},uu={key:0,class:"question-detail"},pu={class:"category-label"},gu={class:"question-text"},du={class:"answer-box"},hu=["innerHTML"],fu={class:"like-comments-section"},mu={class:"like-section"},yu=["disabled"],bu={class:"comments-section"},vu={key:0},Su={key:1},Tu={key:2},ku={key:3};function Pu(e,t,o,r,n,s){const i=io("router-link");return n.question?(ce(),ye("div",uu,[j("p",pu,"Вопрос из категории: "+at(e.categoryName),1),j("h3",gu,at(n.question.question),1),j("div",du,[j("div",{innerHTML:n.question.answer,class:"answer-text"},null,8,hu)]),Z(i,{to:"/",class:"back-button"},{default:Ce(()=>t[4]||(t[4]=[be("← Back to Questions")])),_:1}),j("div",fu,[j("div",mu,[j("button",{onClick:t[0]||(t[0]=(...l)=>s.likeQuestion&&s.likeQuestion(...l)),disabled:n.liked,class:"like-button"}," 👍 "+at(n.likes)+" Like ",9,yu)]),j("div",bu,[t[6]||(t[6]=j("h4",null,"Комментарии:",-1)),n.comments.length===0?(ce(),ye("p",vu,"Комментариев пока нет.")):(ce(),ye("ul",Su,[(ce(!0),ye(Ae,null,As(n.comments,(l,a)=>(ce(),ye("li",{key:a,class:"comment-item"},[j("strong",null,at(l.name)+":",1),be(" "+at(l.text),1)]))),128))])),n.commentAdded?(ce(),ye("div",ku,t[5]||(t[5]=[j("p",null,"Вы уже оставили комментарий для этого ответа.",-1)]))):(ce(),ye("div",Tu,[cr(j("input",{"onUpdate:modelValue":t[1]||(t[1]=l=>n.username=l),placeholder:"Ваше имя"},null,512),[[wn,n.username]]),cr(j("textarea",{"onUpdate:modelValue":t[2]||(t[2]=l=>n.newComment=l),placeholder:"Добавьте комментарий"},null,512),[[wn,n.newComment]]),j("button",{onClick:t[3]||(t[3]=(...l)=>s.addComment&&s.addComment(...l)),class:"add-comment-button"},"Добавить комментарий")]))])])])):zs("",!0)}const Cu=qt(cu,[["render",Pu],["__scopeId","data-v-de7c69e1"]]),wu={name:"ToolsList"},Mu={class:"tools-list"},Ru={class:"tool-cards"},Au={class:"tool-card"},Ju={class:"tool-card"},Ku={class:"tool-card"},Iu={class:"tool-card"},Eu={class:"tool-card"},_u={class:"tool-card"},xu={class:"tool-card"};function Du(e,t,o,r,n,s){const i=io("router-link");return ce(),ye("div",Mu,[t[7]||(t[7]=j("h2",null,"Выберите инструмент",-1)),j("div",Ru,[j("div",Au,[Z(i,{to:{path:"/tools/jmeter"}},{default:Ce(()=>t[0]||(t[0]=[be("JMeter")])),_:1})]),j("div",Ju,[Z(i,{to:{path:"/tools/kafka"}},{default:Ce(()=>t[1]||(t[1]=[be("Kafka")])),_:1})]),j("div",Ku,[Z(i,{to:{path:"/tools/kubernetes"}},{default:Ce(()=>t[2]||(t[2]=[be("Kubernetes")])),_:1})]),j("div",Iu,[Z(i,{to:{path:"/tools/chrome"}},{default:Ce(()=>t[3]||(t[3]=[be("Chrome DevTools")])),_:1})]),j("div",Eu,[Z(i,{to:{path:"/tools/git"}},{default:Ce(()=>t[4]||(t[4]=[be("Git")])),_:1})]),j("div",_u,[Z(i,{to:{path:"/tools/java"}},{default:Ce(()=>t[5]||(t[5]=[be("Java")])),_:1})]),j("div",xu,[Z(i,{to:{path:"/tools/architecture"}},{default:Ce(()=>t[6]||(t[6]=[be("Architecture")])),_:1})])])])}const Ou=qt(wu,[["render",Du],["__scopeId","data-v-20546086"]]),qu={name:"CategoryList"},Lu={class:"category-list"},Nu={class:"category-cards"},Hu={class:"category-card"},ju={class:"category-card"},Fu={class:"category-card"},Uu={class:"category-card"};function Bu(e,t,o,r,n,s){const i=io("router-link");return ce(),ye("div",Lu,[t[4]||(t[4]=j("h2",null,"Выберите категорию",-1)),j("div",Nu,[j("div",Hu,[Z(i,{to:{path:"/performance"}},{default:Ce(()=>t[0]||(t[0]=[be("Performance Engineer")])),_:1})]),j("div",ju,[Z(i,{to:{path:"/frontend"}},{default:Ce(()=>t[1]||(t[1]=[be("Frontend")])),_:1})]),j("div",Fu,[Z(i,{to:{path:"/backend"}},{default:Ce(()=>t[2]||(t[2]=[be("Backend")])),_:1})]),j("div",Uu,[Z(i,{to:{path:"/tools"}},{default:Ce(()=>t[3]||(t[3]=[be("Tools")])),_:1})])])])}const Gu=qt(qu,[["render",Bu],["__scopeId","data-v-37a65be5"]]),Vu=[{path:"/",component:Gu},{path:"/performance",component:mo,props:{questions:hi,title:"Performance Engineer"}},{path:"/frontend",component:mo,props:{questions:di,title:"Frontend"}},{path:"/backend",component:mo,props:{questions:fi,title:"Backend"}},{path:"/tools",component:Ou},{path:"/tools/:tool",component:mo,props:e=>({questions:$u(e.params.tool),title:e.params.tool.toUpperCase()})},{path:"/questions/:id",component:Cu,props:e=>({id:e.params.id,category:e.query.category})}],Wu=Zc({history:Jc(),routes:Vu});function $u(e){return{kubernetes:ki,kafka:Ti,architecture:Si,jmeter:mi,chrome:yi,git:bi,java:vi}[e]||[]}Va(Xa).use(Wu).mount("#app");
+        `,category:"tools",tool:"kubernetes",title:"Kubernetes"}],ks=[{id:1,question:"Что такое VictoriaMetrics и какие основные возможности она предоставляет для мониторинга метрик?",answer:`
+    <p><strong>VictoriaMetrics</strong> — БД временных рядов для хранения и обработки данных в форме временного ряда (запись образует время и набор соответствующих этому времени значений, например, полученных через периодический опрос состояния датчиков или сбор метрик).</p>
+    <p>Основные возможности VictoriaMetrics включают:</p>
+    <ul>
+      <li>Сбор метрик из различных источников, включая Prometheus, InfluxDB и Graphite.</li>
+      <li>Высокую производительность и масштабируемость для обработки большого объема метрик.</li>
+      <li>Поддержку различных форматов данных и гибкие возможности для анализа.</li>
+    </ul>
+     <p>Пример записи в VictoriaMetrics: <code>sensor_temperature{sensor="sensor_1"} 22.5 1697107200000</code>, где фиксируется температура датчика в определенное время.</p>
+  `,category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:2,question:"Какие компоненты входят в архитектуру VictoriaMetrics?",answer:`
+    <p>Основные компоненты архитектуры <strong>VictoriaMetrics</strong>:</p>
+    <ul>
+      <li><strong>VMInsert:</strong> отвечает за запись данных и прием метрик от различных источников.</li>
+      <li><strong>VMSelect:</strong> компонент для выполнения запросов и обработки данных временных рядов, включая агрегацию и фильтрацию.</li>
+      <li><strong>VMAgent:</strong> собирает метрики из внешних систем и отправляет их в VictoriaMetrics для дальнейшего анализа.</li>
+    </ul>
+  `,category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:3,question:"Как установить и настроить VictoriaMetrics на Windows/Linux?",answer:`
+    <p><strong>Установка и настройка VictoriaMetrics</strong> на Windows и Linux осуществляется через простую загрузку и запуск исполняемого файла или через Docker.</p>
+    
+    <h4>1. Установка на Windows</h4>
+    <ol>
+      <li>Скачайте архив с <a href="https://github.com/VictoriaMetrics/VictoriaMetrics/releases" target="_blank">официальной страницы VictoriaMetrics</a> для Windows.</li>
+      <li>Распакуйте архив и запустите <code>VictoriaMetrics.exe</code>:
+        <pre><code>VictoriaMetrics.exe -storageDataPath="victoria_data"</code></pre>
+      <p>Параметр <code>-storageDataPath</code> задает путь для хранения данных.</p>
+    </ol>
+
+    <h4>2. Установка на Linux</h4>
+    <ol>
+      <li>Скачайте VictoriaMetrics командой:
+        <pre><code>wget https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v1.71.0/victoria-metrics-linux-amd64-v1.71.0.tar.gz</code></pre>
+      </li>
+      <li>Распакуйте архив и запустите VictoriaMetrics:
+        <pre><code>
+tar -xvf victoria-metrics-linux-amd64-v1.71.0.tar.gz
+./victoria-metrics-linux-amd64 -storageDataPath="victoria_data"
+        </code></pre>
+      </li>
+    </ol>
+
+    <h4>3. Установка через Docker</h4>
+    <p>Если у вас установлен Docker, вы можете запустить VictoriaMetrics командой:</p>
+    <pre><code>
+docker run -d -p 8428:8428 --name victoriametrics victoriametrics/victoria-metrics -storageDataPath="/victoria_data"
+    </code></pre>
+    <p>Это развернет контейнер с VictoriaMetrics, доступный по адресу <code>http://localhost:8428</code>.</p>
+
+    <h4>Пример проверки данных:</h4>
+    <p>После установки вы можете отправить метрику для проверки:</p>
+    <pre><code>curl -d 'sensor_temperature{sensor="sensor_1"} 22.5' http://localhost:8428/api/v1/import/prometheus</code></pre>
+    <p>Это создаст запись с температурой датчика <code>sensor_1</code> со значением <code>22.5</code>.</p>
+    `,category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:4,question:"Какие данные может собирать и хранить VictoriaMetrics?",answer:`
+    <p><strong>VictoriaMetrics</strong> может собирать и хранить данные временных рядов, которые обычно представляют собой метрики, измеренные во времени. Эти данные используются для мониторинга и анализа работы систем. Примеры данных, которые можно собирать и хранить в VictoriaMetrics:</p>
+    <ul>
+      <li><strong>Системные метрики:</strong> Загрузка процессора, использование памяти, диск I/O, сетевой трафик.</li>
+      <li><strong>Метрики приложений:</strong> Количество запросов, время отклика, состояние кэша, ошибки.</li>
+      <li><strong>Бизнес-метрики:</strong> Число активных пользователей, продажи, транзакции, метрики поведения.</li>
+      <li><strong>Пользовательские метрики:</strong> Данные от IoT-устройств, датчиков, произвольные метрики, специфичные для организации.</li>
+    </ul>
+    <p>VictoriaMetrics поддерживает форматы данных, такие как <strong>Prometheus remote write</strong>, <strong>Graphite</strong>, <strong>InfluxDB line protocol</strong>, что позволяет интегрироваться с множеством источников данных.</p>
+  `,category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:5,question:"Как настроить сбор метрик и настроить удаленную запись (remote write) с использованием Prometheus и VictoriaMetrics?",answer:`<p>Для настройки сбора метрик с помощью Prometheus и VictoriaMetrics можно использовать встроенную совместимость VictoriaMetrics с <strong>Prometheus remote write API</strong>. Это позволяет отправлять метрики, собранные Prometheus, в VictoriaMetrics для долгосрочного хранения и анализа.</p>
+    <p><strong>Шаги для настройки:</strong></p>
+    <ol>
+      <li><strong>Установите и настройте Prometheus:</strong> В файле конфигурации Prometheus <code>prometheus.yml</code> добавьте источники метрик (targets), которые вы хотите мониторить, например:
+        <pre><code>
+        scrape_configs:
+          - job_name: 'example_metrics'
+            static_configs:
+              - targets: ['localhost:8080'] # Укажите свои цели
+        </code></pre>
+      </li>
+      <li><strong>Настройте remote_write в Prometheus:</strong> В том же файле <code>prometheus.yml</code> добавьте раздел <code>remote_write</code> для отправки данных в VictoriaMetrics:
+        <pre><code>
+        remote_write:
+          - url: 'http://<victoriametrics_host>:8428/api/v1/write'
+        </code></pre>
+        <p>Замените <code>&lt;victoriametrics_host&gt;</code> на адрес вашего сервера VictoriaMetrics.</p>
+      </li>
+      <li><strong>Запустите VictoriaMetrics:</strong> Убедитесь, что VictoriaMetrics запущена и доступна по указанному адресу, используя команду:
+        <pre><code>
+        ./victoria-metrics-prod -retentionPeriod=12 -storageDataPath=/path/to/data
+        </code></pre>
+      </li>
+      <li><strong>Перезапустите Prometheus:</strong> После изменений перезапустите Prometheus. Теперь Prometheus будет отправлять метрики в VictoriaMetrics для долговременного хранения.</li>
+    </ol>
+  `,category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:7,question:"Что такое кластеры в VictoriaMetrics и как они работают?",answer:` <p><strong>Кластеры в VictoriaMetrics</strong> позволяют масштабировать систему горизонтально, распределяя нагрузку на несколько узлов, что помогает обработке больших объемов данных и повышает отказоустойчивость. Кластерная версия VictoriaMetrics состоит из трех основных компонентов:</p>
+    <ul>
+      <li><strong>vminsert:</strong> Узел для записи данных. Принимает метрики и распределяет их между узлами хранения (vmstorage) в кластере.</li>
+      <li><strong>vmstorage:</strong> Узел для хранения данных. Сохраняет метрики и обрабатывает запросы от vmselect для извлечения нужных данных.</li>
+      <li><strong>vmselect:</strong> Узел для выполнения запросов. Обрабатывает запросы на чтение, выполняя их на узлах vmstorage, и возвращает результаты клиенту.</li>
+    </ul>
+    <p>При масштабировании VictoriaMetrics можно добавлять больше узлов vminsert, vmselect и vmstorage, что позволяет увеличивать как объем обрабатываемых данных, так и количество одновременно выполняемых запросов.</p>
+    <p>Основные преимущества кластерного подхода в VictoriaMetrics включают:</p>
+    <ul>
+      <li>Горизонтальное масштабирование для работы с большими объемами данных.</li>
+      <li>Отказоустойчивость благодаря распределению данных и запросов на несколько узлов.</li>
+      <li>Повышенная производительность за счет разделения задач записи, хранения и чтения между разными компонентами.</li>
+    </ul>`,category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:8,question:"Как VictoriaMetrics обрабатывает большие объемы данных?",answer:`<p><strong>VictoriaMetrics</strong> обрабатывает большие объемы данных за счет оптимизированной архитектуры и эффективного использования ресурсов, включая следующие ключевые особенности:</p>
+    <ul>
+      <li><strong>Компрессия данных:</strong> VictoriaMetrics использует продвинутые методы сжатия данных, что позволяет уменьшить объем хранимых данных без потери информации и снизить потребление дискового пространства.</li>
+      <li><strong>Многопоточность и асинхронная обработка:</strong> Записи данных и выполнение запросов реализованы с поддержкой многопоточности, что позволяет задействовать все доступные ядра процессора для обработки больших объемов информации.</li>
+      <li><strong>Горизонтальное масштабирование:</strong> В кластерной версии VictoriaMetrics можно добавлять дополнительные узлы, распределяя нагрузку и улучшая производительность.</li>
+      <li><strong>Эффективное хранение временных рядов:</strong> Данные временных рядов организованы и хранятся в оптимизированном формате, что ускоряет как запись, так и чтение данных.</li>
+      <li><strong>Инкрементальное обновление индексов:</strong> Индексы обновляются постепенно, что минимизирует накладные расходы на их поддержание и ускоряет обработку запросов.</li>
+    </ul>
+    <p>Эти особенности делают VictoriaMetrics подходящей для долгосрочного хранения и анализа больших объемов метрик в реальном времени с минимальными затратами ресурсов.</p>`,category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:9,question:"Как настроить агрегацию метрик в VictoriaMetrics?",answer:` <p>В <strong>VictoriaMetrics</strong> настройка агрегации метрик позволяет сократить объем хранимых данных, сохраняя ключевые показатели на длительный срок. Это особенно полезно для долгосрочного мониторинга и анализа данных.</p>
+    <p><strong>Шаги для настройки агрегации метрик:</strong></p>
+    <ol>
+      <li><strong>Определите нужные агрегаты:</strong> Например, среднее, максимум, минимум или медиану. Эти значения можно использовать для уменьшения детализации метрик.</li>
+      <li><strong>Используйте VMSelect и VMStorage:</strong> В интерфейсе <code>VMSelect</code> можно выполнять запросы для создания агрегированных данных, которые <code>VMStorage</code> сохранит на долгосрочное хранение.</li>
+      <li><strong>Применение агрегаций с помощью VMQL:</strong> В <code>VictoriaMetrics Query Language (VMQL)</code> доступны функции для агрегации, такие как <code>avg_over_time()</code>, <code>max_over_time()</code> и <code>min_over_time()</code>. Например:
+        <pre><code>
+        avg_over_time(metric_name[1h])
+        </code></pre>
+        Этот запрос вычислит среднее значение <code>metric_name</code> за каждый час.</li>
+      <li><strong>Настройка агрегации с помощью remote_write:</strong> Можно настроить отправку агрегированных данных в другую систему для хранения или дальнейшего анализа.</li>
+    </ol>
+    <p>Такая настройка агрегации метрик помогает оптимизировать хранилище, сохраняя важные показатели для последующего анализа.</p>`,category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:10,question:"Как настроить интеграцию VictoriaMetrics с Grafana для визуализации метрик?",answer:`
+        <p>Интеграция <strong>VictoriaMetrics</strong> с <strong>Grafana</strong> позволяет визуализировать метрики для упрощения мониторинга и анализа данных. Вот как настроить эту интеграцию:</p>
+    <p><strong>Шаги для настройки интеграции:</strong></p>
+    <ol>
+      <li><strong>Установите Grafana:</strong> Скачайте и установите Grafana с официального сайта, если она еще не установлена.</li>
+      <li><strong>Запустите Grafana:</strong> Запустите Grafana и перейдите в интерфейс через браузер (обычно по адресу <code>http://localhost:3000</code>).</li>
+      <li><strong>Добавьте VictoriaMetrics в качестве источника данных:</strong>
+        <ul>
+          <li>Зайдите в <strong>Configuration</strong> &gt; <strong>Data Sources</strong>.</li>
+          <li>Нажмите на кнопку <strong>Add data source</strong> и выберите <strong>Prometheus</strong> в списке.</li>
+          <li>В поле <code>URL</code> укажите адрес вашего сервера VictoriaMetrics (например, <code>http://<victoriametrics_host>:8428</code>).</li>
+          <li>Нажмите <strong>Save & Test</strong>, чтобы убедиться, что соединение установлено.</li>
+        </ul>
+      </li>
+      <li><strong>Создайте графики и панели:</strong> После добавления VictoriaMetrics в качестве источника данных вы можете перейти в <strong>Dashboards</strong> и начать создавать визуализации метрик, выбирая нужные метрики и настраивая их отображение.</li>
+    </ol>
+      `,category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:11,question:"Какие преимущества имеет VictoriaMetrics по сравнению с Prometheus?",answer:`<p><strong>VictoriaMetrics</strong> имеет несколько преимуществ по сравнению с <strong>Prometheus</strong>, особенно при работе с большими объемами данных и в масштабируемых средах. Основные из них:</p>
+    <ul>
+      <li><strong>Эффективное использование памяти и диска:</strong> VictoriaMetrics использует более компактные алгоритмы хранения и сжатия данных, что позволяет экономить место на диске и оперативную память.</li>
+      <li><strong>Масштабируемость:</strong> В отличие от Prometheus, который обычно развертывается как отдельный экземпляр, VictoriaMetrics поддерживает горизонтальное масштабирование и кластеризацию, что делает ее подходящей для больших распределенных систем.</li>
+      <li><strong>Долгосрочное хранение данных:</strong> VictoriaMetrics позволяет хранить метрики на гораздо более длительный период времени без значительной потери производительности.</li>
+      <li><strong>Поддержка различных протоколов:</strong> VictoriaMetrics поддерживает несколько стандартов записи данных (Prometheus remote write, InfluxDB line protocol, Graphite и др.), что делает ее универсальной для интеграции с другими системами.</li>
+      <li><strong>Более высокая производительность:</strong> VictoriaMetrics лучше справляется с высоконагруженными системами и может обрабатывать большие объемы запросов благодаря оптимизированной архитектуре.</li>
+    </ul>`,category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:12,question:"Как мониторить и управлять производительностью VictoriaMetrics?",answer:`<p><strong>Мониторинг и управление производительностью</strong> в VictoriaMetrics важны для обеспечения стабильной работы системы и своевременного реагирования на потенциальные узкие места. Для этого VictoriaMetrics предлагает несколько встроенных метрик и инструментов для мониторинга.</p>
+    <h3>Основные шаги для мониторинга и управления производительностью VictoriaMetrics:</h3>
+    <ul>
+      <li><strong>Использование встроенных метрик:</strong> VictoriaMetrics публикует собственные метрики, такие как <code>vm_rows</code>, <code>vm_requests</code>, <code>vm_active_series</code> и другие, которые можно использовать для оценки состояния системы. Эти метрики позволяют отслеживать текущую загрузку, количество сохраненных рядов данных и активные временные ряды.</li>
+      
+      <li><strong>Мониторинг через Grafana:</strong> VictoriaMetrics интегрируется с Grafana, предоставляя удобную визуализацию и графики. Используя Grafana, можно строить дашборды для анализа метрик производительности в реальном времени и отслеживания трендов. Чтобы интегрировать VictoriaMetrics с Grafana, добавьте ее как источник данных и настройте графики для нужных метрик.</li>
+      
+      <li><strong>Анализ узких мест:</strong> Просмотр показателей, таких как потребление памяти, дискового пространства и сетевой активности, поможет выявить узкие места в производительности. Например, если <code>vm_memory_usage</code> или <code>vm_disk_usage</code> начинают резко возрастать, это может свидетельствовать о повышенной нагрузке или необходимости оптимизации конфигурации.</li>
+      
+      <li><strong>Настройка параметров ретенции:</strong> Параметры ретенции определяют, как долго данные будут храниться в системе. Оптимальная настройка ретенции данных (<code>-retentionPeriod</code>) помогает балансировать между объемом хранимых данных и производительностью, не перегружая систему избыточными данными.</li>
+      
+      <li><strong>Автоматизация управления ресурсами:</strong> Используйте автонастройки, такие как <code>-search.maxConcurrentRequests</code> для управления количеством запросов, и <code>-memory.allowedPercent</code> для ограничения использования памяти. Эти параметры позволяют избежать перегрузки и поддерживать стабильную работу системы при повышенной нагрузке.</li>
+    </ul>`,category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:14,question:"Какие существуют возможности для алертинга (уведомления) с использованием VictoriaMetrics?",answer:`<p><strong>VictoriaMetrics</strong> поддерживает несколько возможностей для настройки алертинга, которые помогают своевременно получать уведомления об изменениях в состоянии системы или о возникновении критических событий.</p>
+    <h3>Возможности для алертинга:</h3>
+    <ul>
+      <li><strong>Интеграция с Alertmanager:</strong> VictoriaMetrics может быть использована совместно с <code>Prometheus Alertmanager</code>. Для этого необходимо настроить правила в Prometheus, а затем использовать <code>remote_write</code> для отправки данных в VictoriaMetrics для долговременного хранения.</li>
+      <li><strong>vmalert:</strong> VictoriaMetrics предоставляет собственный компонент <code>vmalert</code>, который позволяет определять правила и отправлять уведомления при выполнении условий алертинга. <code>vmalert</code> считывает правила из конфигурационного файла и выполняет их через заданные интервалы времени, отправляя уведомления при достижении пороговых значений.</li>
+      <li><strong>Поддержка Grafana:</strong> При интеграции с Grafana можно использовать встроенные возможности алертинга Grafana для настройки условий оповещения на основе визуализируемых данных из VictoriaMetrics.</li>
+      <li><strong>Настройка правил:</strong> С помощью <code>vmalert</code> можно задать правила на основе определенных метрик, например, по уровням нагрузки на процессор, объемам использования памяти или скорости обработки запросов. Когда условия алерта выполняются, <code>vmalert</code> может отправить уведомления через каналы, такие как email, Slack, или вебхуки.</li>
+    </ul>`,category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:15,question:"Как использовать VictoriaMetrics для долгосрочного хранения временных рядов данных?",answer:`<p>VictoriaMetrics подходит для <strong>долгосрочного хранения временных рядов данных</strong> благодаря оптимизированной архитектуре и поддержке сжатия данных, что позволяет хранить большие объемы информации с минимальными затратами на ресурсы.</p>
+    <p><strong>Основные шаги для настройки долгосрочного хранения:</strong></p>
+    <ul>
+      <li><strong>Настройка периода хранения (retention period):</strong> Установите желаемый период хранения данных с помощью параметра <code>-retentionPeriod</code> при запуске VictoriaMetrics:
+        <pre><code>
+        ./victoria-metrics-prod -retentionPeriod=12 -storageDataPath=/path/to/data
+        </code></pre>
+        <p>Здесь <code>-retentionPeriod=12</code> указывает на хранение данных в течение 12 месяцев. Вы можете задать период хранения в зависимости от ваших требований.</p>
+      </li>
+      <li><strong>Сжатие данных:</strong> VictoriaMetrics использует алгоритмы сжатия, которые минимизируют объем хранимых данных, что позволяет экономить дисковое пространство.</li>
+      <li><strong>Использование кластерного режима:</strong> Если необходимы более высокие требования к доступности данных, можно использовать кластерную версию VictoriaMetrics для резервирования и распределения данных между нодами.</li>
+      <li><strong>Настройка резервного копирования:</strong> Периодически создавайте резервные копии данных для дополнительной защиты долгосрочного хранилища. Это можно сделать с помощью инструмента <code>vmbackup</code>, который доступен в VictoriaMetrics:
+        <pre><code>
+        ./vmbackup -storageDataPath=/path/to/data -snapshot.createURL=http://localhost:8428/snapshot/create
+        </code></pre>
+      </li>
+    </ul>`,category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:16,question:"Как автоматизировать сбор метрик с помощью VictoriaMetrics и систем оркестрации (например, Kubernetes)?",answer:`<p>Для автоматизации сбора метрик с помощью <strong>VictoriaMetrics</strong> в системах оркестрации, таких как Kubernetes, рекомендуется использовать <strong>vmagent</strong> для централизованного сбора и отправки метрик в кластер VictoriaMetrics.</p>
+    <h3>Шаги по автоматизации сбора метрик в Kubernetes:</h3>
+    <ol>
+      <li><strong>Установите vmagent:</strong> Разверните <code>vmagent</code> как DaemonSet в кластере Kubernetes, чтобы агент автоматически запускался на каждом узле и собирал метрики с различных сервисов и контейнеров.</li>
+      <li><strong>Настройте vmaagent для сбора метрик:</strong> Укажите цели для сбора метрик в файле конфигурации <code>scrape_config</code>. Например:
+        <pre><code>
+        scrape_configs:
+          - job_name: 'kubernetes'
+            kubernetes_sd_configs:
+              - role: pod
+            relabel_configs:
+              - source_labels: ['__meta_kubernetes_pod_label_app']
+                target_label: 'app'
+        </code></pre>
+        <p>Эта конфигурация настраивает vmaagent на сбор метрик с контейнеров в кластере Kubernetes.</p>
+      </li>
+      <li><strong>Отправка данных в VictoriaMetrics:</strong> Укажите адрес кластера VictoriaMetrics для удаленной записи метрик в <code>vmaagent.yml</code>:
+        <pre><code>
+        remote_write:
+          - url: 'http://<victoriametrics_host>:8428/api/v1/write'
+        </code></pre>
+        <p>Замените <code>&lt;victoriametrics_host&gt;</code> на адрес сервера VictoriaMetrics.</p>
+      </li>
+      <li><strong>Интеграция с Grafana для визуализации:</strong> Используйте Grafana для визуализации метрик, собираемых VictoriaMetrics, и создайте дашборды для мониторинга производительности Kubernetes и приложений.</li>
+      <li><strong>Настройка алертинга:</strong> Используйте <code>vmalert</code> для создания правил алертинга на основе метрик в VictoriaMetrics, чтобы оперативно реагировать на аномалии в кластере.</li>
+    </ol>`,category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:17,question:"Как экспортировать метрики в другие системы для дальнейшего анализа?",answer:`
+      <p><strong>Экспорт метрик из VictoriaMetrics</strong> в другие системы для дальнейшего анализа можно выполнить несколькими способами:</p>
+    <ul>
+      <li><strong>API запросы:</strong> VictoriaMetrics поддерживает HTTP API, через который можно выполнять запросы для извлечения метрик. Используйте <code>/api/v1/export</code> для экспорта данных в формате JSON или CSV:
+        <pre><code>
+        curl -G 'http://<victoriametrics_host>:8428/api/v1/export' --data-urlencode 'match={__name__="metric_name"}'
+        </code></pre>
+        <p>Замените <code>&lt;victoriametrics_host&gt;</code> и <code>metric_name</code> на адрес вашего сервера и имя метрики.</p>
+      </li>
+      <li><strong>Экспорт в Grafana:</strong> VictoriaMetrics можно интегрировать с Grafana для визуализации и анализа метрик в режиме реального времени. Создайте нужные дашборды в Grafana и используйте возможности аналитики и экспорта.</li>
+      <li><strong>Интеграция с внешними аналитическими системами:</strong> Метрики из VictoriaMetrics можно перенаправлять в другие системы, такие как ElasticSearch, Hadoop или базы данных, поддерживающие формат JSON/CSV. Сначала извлеките метрики с помощью API, затем отправьте их в нужное хранилище.</li>
+      <li><str
+      `,category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:18,question:"В чем ключевые особенности VictoriaMetrics по сравнению с Prometheus или InfluxDB?",answer:"VictoriaMetrics отличается высокой производительностью, эффективной компрессией данных, поддержкой различных протоколов для записи метрик и легким горизонтальным масштабированием.",category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:19,question:"Какие методы отправки данных поддерживаются в VictoriaMetrics?",answer:"VictoriaMetrics поддерживает методы отправки данных через Prometheus remote write, InfluxDB line protocol, Graphite, OpenTSDB, и другие.",category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:20,question:"Как интегрировать VictoriaMetrics с Prometheus?",answer:"Для интеграции с Prometheus можно использовать remote_write и remote_read, что позволяет использовать VictoriaMetrics в качестве долговременного хранилища для данных Prometheus.",category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:21,question:"Как настроить период хранения данных (retention) в VictoriaMetrics?",answer:"Retention period можно настроить с помощью параметров конфигурации. Например, `retentionPeriod` указывает, сколько времени метрики хранятся до автоматической очистки.",category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:22,question:"Какие основные функции доступны в VictoriaMetrics для анализа метрик?",answer:"VictoriaMetrics поддерживает агрегацию, фильтрацию, сложные математические операции и функцию VMQL для выполнения запросов и анализа метрик.",category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:23,question:"Как работать с VMQL (VictoriaMetrics Query Language)?",answer:"VMQL позволяет строить запросы для анализа данных временных рядов, включая агрегацию и фильтрацию по меткам. VMQL предоставляет гибкость для обработки временных рядов в реальном времени.",category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"},{id:24,question:"Какие инструменты можно использовать для мониторинга состояния VictoriaMetrics?",answer:"Для мониторинга VictoriaMetrics можно использовать Prometheus и Grafana для визуализации метрик, таких как задержки, использование ресурсов и ошибки.",category:"tools",tool:"victoriametrics",title:"VictoriaMetrics"}],Ms=[{id:1,question:"Что такое GitLab и для чего он используется?",answer:`<p><strong>GitLab</strong> — это платформа для хостинга Git-репозиториев, предназначенная для управления проектами и командной работы. Основные возможности GitLab включают:</p>
+             <ul>
+               <li>Управление версиями кода с помощью Git;</li>
+               <li>Автоматизацию сборки, тестирования и развёртывания с CI/CD;</li>
+               <li>Отслеживание задач и управление проектом.</li>
+             </ul>`,category:"tools",tool:"GitLab",title:"GitLab"},{id:2,question:"Как создать и инициализировать новый проект в GitLab?",answer:`<p>Для создания и инициализации нового проекта:</p>
+             <ol>
+               <li>Зайдите на свою панель в GitLab и выберите "Новый проект".</li>
+               <li>Выберите "Создать пустой проект" или используйте шаблон.</li>
+               <li>Введите название проекта и настройте параметры доступа.</li>
+               <li>Нажмите "Создать проект", после чего можно инициализировать проект с пустым репозиторием или добавить существующий.</li>
+             </ol>`,category:"tools",tool:"GitLab",title:"GitLab"},{id:3,question:"Что такое GitLab CI/CD и как настроить простой конвейер?",answer:`<p><strong>GitLab CI/CD</strong> — это инструмент автоматизации, позволяющий настраивать конвейеры (pipelines) для сборки, тестирования и развёртывания кода. Для настройки простого конвейера:</p>
+             <ol>
+               <li>Создайте файл <code>.gitlab-ci.yml</code> в корневой директории проекта.</li>
+               <li>Определите этапы (например, build, test, deploy) и команды для каждого этапа.</li>
+               <li>Сохраните изменения, и GitLab автоматически запустит конвейер при каждом коммите.</li>
+             </ol>`,category:"tools",tool:"GitLab",title:"GitLab"},{id:4,question:"Какую структуру имеет файл .gitlab-ci.yml?",answer:`<p>Файл <code>.gitlab-ci.yml</code> содержит конфигурацию для конвейеров GitLab CI/CD и включает:</p>
+             <ul>
+               <li><strong>Stages (Этапы):</strong> определяют последовательность выполнения, такие как <code>build</code>, <code>test</code>, <code>deploy</code>.</li>
+               <li><strong>Jobs (Задачи):</strong> команды, которые выполняются на каждом этапе.</li>
+               <li><strong>Script:</strong> команда или список команд, выполняемых в задаче.</li>
+               <li><strong>Variables:</strong> переменные окружения для параметризации задач.</li>
+             </ul>`,category:"tools",tool:"GitLab",title:"GitLab"},{id:5,question:"Что такое GitLab Runner и как его установить?",answer:`<p><strong>GitLab Runner</strong> — это агент, который выполняет задачи конвейера. Для установки Runner:</p>
+             <ol>
+               <li>Скачайте GitLab Runner для своей операционной системы с официального сайта.</li>
+               <li>Установите и зарегистрируйте Runner с помощью команды <code>gitlab-runner register</code>, указав URL и токен вашего GitLab-проекта.</li>
+               <li>Выберите тип Runner (например, shell, docker) и завершите регистрацию.</li>
+             </ol>`,category:"tools",tool:"GitLab",title:"GitLab"},{id:6,question:"Как работают этапы (stages) и задачи (jobs) в GitLab CI/CD?",answer:`<p>Этапы (<strong>stages</strong>) и задачи (<strong>jobs</strong>) организуют выполнение конвейеров:</p>
+             <ul>
+               <li><strong>Stages:</strong> определяют последовательные этапы, которые выполняются один за другим, например, <code>build</code>, <code>test</code>, <code>deploy</code>.</li>
+               <li><strong>Jobs:</strong> задачи, выполняемые на каждом этапе. Задачи в одном этапе выполняются параллельно, если это возможно.</li>
+             </ul>`,category:"tools",tool:"GitLab",title:"GitLab"},{id:7,question:"Как настроить переменные среды (environment variables) в GitLab CI/CD?",answer:`<p>Переменные среды используются для передачи конфиденциальных данных, таких как токены API или параметры конфигурации:</p>
+             <ol>
+               <li>Перейдите в настройки проекта <strong>Settings</strong> > <strong>CI/CD</strong>.</li>
+               <li>В разделе <strong>Variables</strong> нажмите <strong>Add variable</strong>, задайте имя и значение переменной.</li>
+               <li>Установите переменной уровень безопасности, указав <code>protected</code> или <code>masked</code>, если необходимо.</li>
+             </ol>`,category:"tools",tool:"GitLab",title:"GitLab"},{id:8,question:"Что такое окружения (environments) и как с ними работать?",answer:`<p>Окружения (<strong>environments</strong>) в GitLab CI/CD используются для развертывания приложений в разных средах (например, staging, production). Окружения помогают управлять процессами развертывания и контроля версий:</p>
+             <ol>
+               <li>Задайте окружение в <code>.gitlab-ci.yml</code> в параметре <code>environment</code> для задачи (job).</li>
+               <li>Назначьте URL для отслеживания развернутого приложения в каждом окружении.</li>
+               <li>Окружения позволяют запускать действия вручную и управлять задачами развертывания.</li>
+             </ol>`,category:"tools",tool:"GitLab",title:"GitLab"},{id:9,question:"Как использовать GitLab для управления задачами и проектами?",answer:`<p>GitLab поддерживает систему управления задачами и проектами с использованием следующих инструментов:</p>
+             <ul>
+               <li><strong>Issues:</strong> позволяют создавать и отслеживать задачи в проекте.</li>
+               <li><strong>Milestones:</strong> для группировки задач в рамках сроков проекта.</li>
+               <li><strong>Boards:</strong> визуальные доски для управления задачами и распределения задач по этапам.</li>
+               <li><strong>Labels:</strong> помогают категоризировать задачи для удобной навигации.</li>
+             </ul>`,category:"tools",tool:"GitLab",title:"GitLab"},{id:10,question:"Как настроить защиту веток в GitLab?",answer:`<p>Защита веток позволяет установить правила для важных веток, таких как <code>main</code> или <code>master</code>, чтобы предотвратить случайное изменение или удаление:</p>
+             <ol>
+               <li>Перейдите в настройки проекта в разделе <strong>Settings</strong> > <strong>Repository</strong>.</li>
+               <li>В разделе <strong>Protected Branches</strong> выберите ветки, которые необходимо защитить.</li>
+               <li>Настройте уровни доступа (например, разрешите push только администраторам) и сохраните настройки.</li>
+             </ol>`,category:"tools",tool:"GitLab",title:"GitLab"}],pu={props:{id:Number,category:String},data(){return{question:null,likes:0,liked:!1,comments:[],username:"",newComment:"",commentAdded:!1}},computed:{categoryName(){return{performance:"Performance Engineer",frontend:"Frontend",backend:"Backend",tools:"Tools"}[this.category]||"Unknown Category"}},created(){const e=parseInt(this.$route.params.id),t=this.$route.query.category||"unknown",o=this.$route.query.tool||null;let r=[];t==="frontend"?r=ds:t==="load"?r=hs:t==="backend"?r=fs:t==="tools"&&o&&(r={kubernetes:Ps,victoriametrics:ks,gitlab:Ms,kafka:Ts,architecture:Ss,jmeter:ms,chrome:bs,git:ys,java:vs}[o]||[]),this.question=r.find(n=>n.id===e)},methods:{likeQuestion(){this.liked=!0,this.likes++,this.saveToLocalStorage()},addComment(){this.username.trim()&&this.newComment.trim()?(this.comments.push({name:this.username.trim(),text:this.newComment.trim()}),this.commentAdded=!0,this.username="",this.newComment="",this.saveToLocalStorage()):alert("Пожалуйста, заполните все поля.")},saveToLocalStorage(){const e={likes:this.likes,liked:this.liked,comments:this.comments,commentAdded:this.commentAdded};localStorage.setItem(`question_${this.question.id}_data`,JSON.stringify(e))},loadFromLocalStorage(){const e=localStorage.getItem(`question_${this.question.id}_data`);if(e){const t=JSON.parse(e);this.likes=t.likes,this.liked=t.liked,this.comments=t.comments,this.commentAdded=t.commentAdded}}}},du={key:0,class:"question-detail"},hu={class:"category-label"},fu={class:"question-text"},mu={class:"answer-box"},bu=["innerHTML"],yu={class:"like-comments-section"},vu={class:"like-section"},Su=["disabled"],Tu={class:"comments-section"},Pu={key:0},ku={key:1},Mu={key:2},Cu={key:3};function wu(e,t,o,r,n,i){const s=so("router-link");return n.question?(ue(),ve("div",du,[V("p",hu,"Вопрос из категории: "+ze(i.categoryName),1),V("h3",fu,ze(n.question.question),1),V("div",mu,[V("div",{class:"answer-text",innerHTML:n.question.answer},null,8,bu)]),$(s,{to:"/",class:"back-button"},{default:me(()=>t[4]||(t[4]=[ce("← Back to Questions")])),_:1}),V("div",yu,[V("div",vu,[V("button",{disabled:n.liked,class:"like-button",onClick:t[0]||(t[0]=(...l)=>i.likeQuestion&&i.likeQuestion(...l))}," 👍 "+ze(n.likes)+" Like ",9,Su)]),V("div",Tu,[t[6]||(t[6]=V("h4",null,"Комментарии:",-1)),n.comments.length===0?(ue(),ve("p",Pu,"Комментариев пока нет.")):(ue(),ve("ul",ku,[(ue(!0),ve(Ae,null,Ai(n.comments,(l,a)=>(ue(),ve("li",{key:a,class:"comment-item"},[V("strong",null,ze(l.name)+":",1),ce(" "+ze(l.text),1)]))),128))])),n.commentAdded?(ue(),ve("div",Cu,t[5]||(t[5]=[V("p",null,"Вы уже оставили комментарий для этого ответа.",-1)]))):(ue(),ve("div",Mu,[cr(V("input",{"onUpdate:modelValue":t[1]||(t[1]=l=>n.username=l),placeholder:"Ваше имя"},null,512),[[Cn,n.username]]),cr(V("textarea",{"onUpdate:modelValue":t[2]||(t[2]=l=>n.newComment=l),placeholder:"Добавьте комментарий"},null,512),[[Cn,n.newComment]]),V("button",{class:"add-comment-button",onClick:t[3]||(t[3]=(...l)=>i.addComment&&i.addComment(...l))}," Добавить комментарий ")]))])])])):$i("",!0)}const Ru=Ot(pu,[["render",wu],["__scopeId","data-v-ab7ee79a"]]),Au={name:"ToolsList"},Eu={class:"tools-list"},Iu={class:"tool-cards"},Ju={class:"tool-card"},Ku={class:"tool-card"},_u={class:"tool-card"},Du={class:"tool-card"},xu={class:"tool-card"},Lu={class:"tool-card"},Ou={class:"tool-card"},qu={class:"tool-card"},Nu={class:"tool-card"};function Vu(e,t,o,r,n,i){const s=so("router-link");return ue(),ve("div",Eu,[t[9]||(t[9]=V("h2",null,"Выберите инструмент",-1)),V("div",Iu,[V("div",Ju,[$(s,{to:{path:"/tools/jmeter"}},{default:me(()=>t[0]||(t[0]=[ce("JMeter")])),_:1})]),V("div",Ku,[$(s,{to:{path:"/tools/victoriametrics"}},{default:me(()=>t[1]||(t[1]=[ce("VictoriaMetrics")])),_:1})]),V("div",_u,[$(s,{to:{path:"/tools/gitlab"}},{default:me(()=>t[2]||(t[2]=[ce("Gitlab")])),_:1})]),V("div",Du,[$(s,{to:{path:"/tools/kafka"}},{default:me(()=>t[3]||(t[3]=[ce("Kafka")])),_:1})]),V("div",xu,[$(s,{to:{path:"/tools/kubernetes"}},{default:me(()=>t[4]||(t[4]=[ce("Kubernetes")])),_:1})]),V("div",Lu,[$(s,{to:{path:"/tools/chrome"}},{default:me(()=>t[5]||(t[5]=[ce("Chrome DevTools")])),_:1})]),V("div",Ou,[$(s,{to:{path:"/tools/git"}},{default:me(()=>t[6]||(t[6]=[ce("Git")])),_:1})]),V("div",qu,[$(s,{to:{path:"/tools/java"}},{default:me(()=>t[7]||(t[7]=[ce("Java")])),_:1})]),V("div",Nu,[$(s,{to:{path:"/tools/architecture"}},{default:me(()=>t[8]||(t[8]=[ce("Architecture")])),_:1})])])])}const Hu=Ot(Au,[["render",Vu],["__scopeId","data-v-226edd03"]]),ju={name:"CategoryList"},Gu={class:"category-list"},Fu={class:"category-cards"},Bu={class:"category-card"},Uu={class:"category-card"},Wu={class:"category-card"},Qu={class:"category-card"};function $u(e,t,o,r,n,i){const s=so("router-link");return ue(),ve("div",Gu,[t[4]||(t[4]=V("h2",null,"Выберите категорию",-1)),V("div",Fu,[V("div",Bu,[$(s,{to:{path:"/performance"}},{default:me(()=>t[0]||(t[0]=[ce("Performance Engineer")])),_:1})]),V("div",Uu,[$(s,{to:{path:"/frontend"}},{default:me(()=>t[1]||(t[1]=[ce("Frontend")])),_:1})]),V("div",Wu,[$(s,{to:{path:"/backend"}},{default:me(()=>t[2]||(t[2]=[ce("Backend")])),_:1})]),V("div",Qu,[$(s,{to:{path:"/tools"}},{default:me(()=>t[3]||(t[3]=[ce("Tools")])),_:1})])])])}const zu=Ot(ju,[["render",$u],["__scopeId","data-v-b128c813"]]),Xu=[{path:"/",component:zu},{path:"/performance",component:mo,props:{questions:hs,title:"Performance Engineer"}},{path:"/frontend",component:mo,props:{questions:ds,title:"Frontend"}},{path:"/backend",component:mo,props:{questions:fs,title:"Backend"}},{path:"/tools",component:Hu},{path:"/tools/:tool",component:mo,props:e=>({questions:Zu(e.params.tool),title:e.params.tool.toUpperCase()})},{path:"/questions/:id",component:Ru,props:e=>({id:e.params.id,category:e.query.category})}],Yu=tu({history:Jc(),routes:Xu});function Zu(e){return{kubernetes:Ps,victoriametrics:ks,kafka:Ts,architecture:Ss,jmeter:ms,chrome:bs,git:ys,java:vs,gitlab:Ms}[e]||[]}Qa(Za).use(Yu).mount("#app");
