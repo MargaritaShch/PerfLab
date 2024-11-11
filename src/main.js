@@ -13,33 +13,60 @@ import { JavaQuestions } from './data/tools/JavaQuestions';
 import { SystemArchitectureQuestions } from './data/tools/SystemArchitectureQuestions';
 import { KafkaQuestions } from './data/tools/KafkaQuestions';
 import { KubernetesQuestions } from './data/tools/KubernetesQuestions';
+import { VictoriaMetricsQuestions } from './data/tools/VictoriaMetricsQuestions';
+import { GitlabQuestions } from './data/tools/GitlabQuestions';
 import ToolsList from './components/ToolsList.vue';
-import CategoryList from './components/CategoryList.vue'; 
+import CategoryList from './components/CategoryList.vue';
 
 const routes = [
-  { path: '/', component: CategoryList }, 
-  { path: '/performance', component: QuestionList, props: { questions: LoadTestingQuestions, title: 'Performance Engineer' } },
-  { path: '/frontend', component: QuestionList, props: { questions: FrontendQuestions, title: 'Frontend' } },
-  { path: '/backend', component: QuestionList, props: { questions: BackendQuestions, title: 'Backend' } },
+  { path: '/', component: CategoryList },
+  {
+    path: '/performance',
+    component: QuestionList,
+    props: { questions: LoadTestingQuestions, title: 'Performance Engineer' },
+  },
+  {
+    path: '/frontend',
+    component: QuestionList,
+    props: { questions: FrontendQuestions, title: 'Frontend' },
+  },
+  {
+    path: '/backend',
+    component: QuestionList,
+    props: { questions: BackendQuestions, title: 'Backend' },
+  },
   { path: '/tools', component: ToolsList },
-  { path: '/tools/:tool', component: QuestionList, props: route => ({ questions: getToolQuestions(route.params.tool), title: route.params.tool.toUpperCase() }) },
-  { path: '/questions/:id', component: QuestionDetail, props: route => ({ id: route.params.id, category: route.query.category }) }
+  {
+    path: '/tools/:tool',
+    component: QuestionList,
+    props: (route) => ({
+      questions: getToolQuestions(route.params.tool),
+      title: route.params.tool.toUpperCase(),
+    }),
+  },
+  {
+    path: '/questions/:id',
+    component: QuestionDetail,
+    props: (route) => ({ id: route.params.id, category: route.query.category }),
+  },
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
 });
 
 function getToolQuestions(tool) {
   const toolsMap = {
     kubernetes: KubernetesQuestions,
+    victoriametrics: VictoriaMetricsQuestions,
     kafka: KafkaQuestions,
     architecture: SystemArchitectureQuestions,
     jmeter: JmeterQuestions,
     chrome: ChromeDevToolsQuestions,
     git: GitQuestions,
     java: JavaQuestions,
+    gitlab: GitlabQuestions
   };
   return toolsMap[tool] || [];
 }

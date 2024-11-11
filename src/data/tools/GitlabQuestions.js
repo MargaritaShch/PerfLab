@@ -1,153 +1,134 @@
 export const GitlabQuestions = [
-    {
-        id: 1,
-        question: "Что такое GitLab и для чего он используется?",
-        level: "JUNIOR"
-    },
-    {
-        id: 2,
-        question: "Как создать новый репозиторий в GitLab?",
-        level: "JUNIOR"
-    },
-    {
-        id: 3,
-        question: "Как настроить доступ к репозиторию для разных пользователей в GitLab?",
-        level: "JUNIOR"
-    },
-    {
-        id: 4,
-        question: "Какие роли пользователей существуют в GitLab и чем они отличаются?",
-        level: "JUNIOR"
-    },
-    {
-        id: 5,
-        question: "Что такое Fork в GitLab и как его использовать?",
-        level: "JUNIOR"
-    },
-    {
-        id: 6,
-        question: "Как создать и настроить Merge Request (MR) в GitLab?",
-        level: "JUNIOR"
-    },
-    {
-        id: 7,
-        question: "Чем отличается Merge Request от Pull Request?",
-        level: "JUNIOR"
-    },
-    {
-        id: 8,
-        question: "Как комментировать код и отслеживать замечания в Merge Request?",
-        level: "JUNIOR"
-    },
-    {
-        id: 9,
-        question: "Что такое GitLab CI/CD и как его настроить для автоматического тестирования?",
-        level: "JUNIOR"
-    },
-    {
-        id: 10,
-        question: "Как создать и настроить `.gitlab-ci.yml` файл для автоматического развертывания?",
-        level: "JUNIOR"
-    },
-    {
-        id: 11,
-        question: "Как работает пайплайн в GitLab и как его настроить?",
-        level: "JUNIOR"
-    },
-    {
-        id: 12,
-        question: "Что такое stages в GitLab CI/CD и как их использовать для разделения этапов работы?",
-        level: "JUNIOR"
-    },
-    {
-        id: 13,
-        question: "Как настроить автоматические уведомления о статусе сборки в GitLab?",
-        level: "JUNIOR"
-    },
-    {
-        id: 14,
-        question: "Как подключить внешние сервисы (например, Slack или Jira) к GitLab для отслеживания задач?",
-        level: "JUNIOR"
-    },
-    {
-        id: 15,
-        question: "Как использовать GitLab для работы с группами и проектами?",
-        level: "JUNIOR"
-    },
-    {
-        id: 16,
-        question: "Как клонировать репозиторий из GitLab на локальную машину?",
-        level: "JUNIOR"
-    },
-    {
-        id: 17,
-        question: "Что такое Personal Access Token в GitLab и как его использовать?",
-        level: "JUNIOR"
-    },
-    {
-        id: 18,
-        question: "Как настроить двухфакторную аутентификацию в GitLab?",
-        level: "JUNIOR"
-    },
-    {
-        id: 19,
-        question: "Что такое milestones и как они используются в GitLab для управления проектами?",
-        level: "JUNIOR"
-    },
-    {
-        id: 20,
-        question: "Как отслеживать изменения и историю коммитов в GitLab?",
-        level: "JUNIOR"
-    },
-    {
-        id: 21,
-        question: "Как защитить ветку от прямого коммита (Protected Branches) в GitLab?",
-        level: "JUNIOR"
-    },
-    {
-        id: 22,
-        question: "Как использовать теги и релизы в GitLab для управления версиями проекта?",
-        level: "JUNIOR"
-    },
-    {
-        id: 23,
-        question: "Что такое issues в GitLab и как их использовать для управления задачами?",
-        level: "JUNIOR"
-    },
-    {
-        id: 24,
-        question: "Как организовать Code Review процесс в GitLab?",
-        level: "JUNIOR"
-    },
-    {
-        id: 25,
-        question: "Какие отчеты и дашборды доступны в GitLab для мониторинга производительности разработки?",
-        level: "JUNIOR"
-    },
-    {
-        id: 26,
-        question: "Как настроить автоматическое закрытие задач из Merge Request с помощью ключевых слов?",
-        level: "JUNIOR"
-    },
-    {
-        id: 27,
-        question: "Как создать дочерний проект (submodule) в GitLab и для чего он используется?",
-        level: "JUNIOR"
-    },
-    {
-        id: 28,
-        question: "Как использовать GitLab для создания приватных репозиториев?",
-        level: "JUNIOR"
-    },
-    {
-        id: 29,
-        question: "Какие плагины и расширения поддерживаются в GitLab для расширения функциональности?",
-        level: "JUNIOR"
-    },
-    {
-        id: 30,
-        question: "Как восстановить удаленный коммит или ветку в GitLab?",
-        level: "JUNIOR",
-        title:"GitLab"
-    }
+  {
+    id: 1,
+    question: "Что такое GitLab и для чего он используется?",
+    answer: `<p><strong>GitLab</strong> — это платформа для хостинга Git-репозиториев, предназначенная для управления проектами и командной работы. Основные возможности GitLab включают:</p>
+             <ul>
+               <li>Управление версиями кода с помощью Git;</li>
+               <li>Автоматизацию сборки, тестирования и развёртывания с CI/CD;</li>
+               <li>Отслеживание задач и управление проектом.</li>
+             </ul>`,
+    category: "tools",
+    tool: "GitLab",
+    title: "GitLab",
+  },
+  {
+    id: 2,
+    question: "Как создать и инициализировать новый проект в GitLab?",
+    answer: `<p>Для создания и инициализации нового проекта:</p>
+             <ol>
+               <li>Зайдите на свою панель в GitLab и выберите "Новый проект".</li>
+               <li>Выберите "Создать пустой проект" или используйте шаблон.</li>
+               <li>Введите название проекта и настройте параметры доступа.</li>
+               <li>Нажмите "Создать проект", после чего можно инициализировать проект с пустым репозиторием или добавить существующий.</li>
+             </ol>`,
+    category: "tools",
+    tool: "GitLab",
+    title: "GitLab",
+  },
+  {
+    id: 3,
+    question: "Что такое GitLab CI/CD и как настроить простой конвейер?",
+    answer: `<p><strong>GitLab CI/CD</strong> — это инструмент автоматизации, позволяющий настраивать конвейеры (pipelines) для сборки, тестирования и развёртывания кода. Для настройки простого конвейера:</p>
+             <ol>
+               <li>Создайте файл <code>.gitlab-ci.yml</code> в корневой директории проекта.</li>
+               <li>Определите этапы (например, build, test, deploy) и команды для каждого этапа.</li>
+               <li>Сохраните изменения, и GitLab автоматически запустит конвейер при каждом коммите.</li>
+             </ol>`,
+    category: "tools",
+    tool: "GitLab",
+    title: "GitLab",
+  },
+  {
+    id: 4,
+    question: "Какую структуру имеет файл .gitlab-ci.yml?",
+    answer: `<p>Файл <code>.gitlab-ci.yml</code> содержит конфигурацию для конвейеров GitLab CI/CD и включает:</p>
+             <ul>
+               <li><strong>Stages (Этапы):</strong> определяют последовательность выполнения, такие как <code>build</code>, <code>test</code>, <code>deploy</code>.</li>
+               <li><strong>Jobs (Задачи):</strong> команды, которые выполняются на каждом этапе.</li>
+               <li><strong>Script:</strong> команда или список команд, выполняемых в задаче.</li>
+               <li><strong>Variables:</strong> переменные окружения для параметризации задач.</li>
+             </ul>`,
+    category: "tools",
+    tool: "GitLab",
+    title: "GitLab",
+  },
+  {
+    id: 5,
+    question: "Что такое GitLab Runner и как его установить?",
+    answer: `<p><strong>GitLab Runner</strong> — это агент, который выполняет задачи конвейера. Для установки Runner:</p>
+             <ol>
+               <li>Скачайте GitLab Runner для своей операционной системы с официального сайта.</li>
+               <li>Установите и зарегистрируйте Runner с помощью команды <code>gitlab-runner register</code>, указав URL и токен вашего GitLab-проекта.</li>
+               <li>Выберите тип Runner (например, shell, docker) и завершите регистрацию.</li>
+             </ol>`,
+    category: "tools",
+    tool: "GitLab",
+    title: "GitLab",
+  },
+  {
+    id: 6,
+    question: "Как работают этапы (stages) и задачи (jobs) в GitLab CI/CD?",
+    answer: `<p>Этапы (<strong>stages</strong>) и задачи (<strong>jobs</strong>) организуют выполнение конвейеров:</p>
+             <ul>
+               <li><strong>Stages:</strong> определяют последовательные этапы, которые выполняются один за другим, например, <code>build</code>, <code>test</code>, <code>deploy</code>.</li>
+               <li><strong>Jobs:</strong> задачи, выполняемые на каждом этапе. Задачи в одном этапе выполняются параллельно, если это возможно.</li>
+             </ul>`,
+    category: "tools",
+    tool: "GitLab",
+    title: "GitLab",
+  },
+  {
+    id: 7,
+    question: "Как настроить переменные среды (environment variables) в GitLab CI/CD?",
+    answer: `<p>Переменные среды используются для передачи конфиденциальных данных, таких как токены API или параметры конфигурации:</p>
+             <ol>
+               <li>Перейдите в настройки проекта <strong>Settings</strong> > <strong>CI/CD</strong>.</li>
+               <li>В разделе <strong>Variables</strong> нажмите <strong>Add variable</strong>, задайте имя и значение переменной.</li>
+               <li>Установите переменной уровень безопасности, указав <code>protected</code> или <code>masked</code>, если необходимо.</li>
+             </ol>`,
+    category: "tools",
+    tool: "GitLab",
+    title: "GitLab",
+  },
+  {
+    id: 8,
+    question: "Что такое окружения (environments) и как с ними работать?",
+    answer: `<p>Окружения (<strong>environments</strong>) в GitLab CI/CD используются для развертывания приложений в разных средах (например, staging, production). Окружения помогают управлять процессами развертывания и контроля версий:</p>
+             <ol>
+               <li>Задайте окружение в <code>.gitlab-ci.yml</code> в параметре <code>environment</code> для задачи (job).</li>
+               <li>Назначьте URL для отслеживания развернутого приложения в каждом окружении.</li>
+               <li>Окружения позволяют запускать действия вручную и управлять задачами развертывания.</li>
+             </ol>`,
+    category: "tools",
+    tool: "GitLab",
+    title: "GitLab",
+  },
+  {
+    id: 9,
+    question: "Как использовать GitLab для управления задачами и проектами?",
+    answer: `<p>GitLab поддерживает систему управления задачами и проектами с использованием следующих инструментов:</p>
+             <ul>
+               <li><strong>Issues:</strong> позволяют создавать и отслеживать задачи в проекте.</li>
+               <li><strong>Milestones:</strong> для группировки задач в рамках сроков проекта.</li>
+               <li><strong>Boards:</strong> визуальные доски для управления задачами и распределения задач по этапам.</li>
+               <li><strong>Labels:</strong> помогают категоризировать задачи для удобной навигации.</li>
+             </ul>`,
+    category: "tools",
+    tool: "GitLab",
+    title: "GitLab",
+  },
+  {
+    id: 10,
+    question: "Как настроить защиту веток в GitLab?",
+    answer: `<p>Защита веток позволяет установить правила для важных веток, таких как <code>main</code> или <code>master</code>, чтобы предотвратить случайное изменение или удаление:</p>
+             <ol>
+               <li>Перейдите в настройки проекта в разделе <strong>Settings</strong> > <strong>Repository</strong>.</li>
+               <li>В разделе <strong>Protected Branches</strong> выберите ветки, которые необходимо защитить.</li>
+               <li>Настройте уровни доступа (например, разрешите push только администраторам) и сохраните настройки.</li>
+             </ol>`,
+    category: "tools",
+    tool: "GitLab",
+    title: "GitLab",
+  },
 ];
